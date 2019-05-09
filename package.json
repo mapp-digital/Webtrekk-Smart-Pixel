@@ -1,0 +1,17 @@
+{
+  "name": "webtrekk-smart-pixel",
+  "version": "1.0.4",
+  "description": "Webtrekk provides a high-end analytical tool to analyze the traffic on your website, identify success factors and optimize it on the basis of actual key indicators.",
+  "main": "./index.js",
+  "typings": "./lib/smart-pixel.d.ts",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel.git"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "author": "Webtrekk GmbH",
+  "license": "MIT"
+}
