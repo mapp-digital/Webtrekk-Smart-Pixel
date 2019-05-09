@@ -28,8 +28,7 @@ In a browser:
 Using npm:
 
 ```shell
-$ npm i -g npm
-$ npm i lodash
+$ npm i webtrekk-smart-pixel
 ```
 
 In Node.js:

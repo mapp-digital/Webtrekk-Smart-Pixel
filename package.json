@@ -7,11 +7,18 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel.git"
+    "url": "git+https://github.com/Webtrekk/Webtrekk-Smart-Pixel.git"
   },
   "engines": {
     "node": ">=4.0.0"
   },
   "author": "Webtrekk GmbH",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/issues"
+  },
+  "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel#readme",
+  "directories": {
+    "lib": "lib"
+  }
 }
