@@ -3,8 +3,8 @@
 
 ### Extensions
 
-* Extension for Content Engagement ([Media](https://docs.webtrekk.com/display/WSP/wtSmart.extension.content_engagement))
-* Extension for Cookie Control ([Media](https://docs.webtrekk.com/display/WSP/wtSmart.extension.cookie_control))
+* Extension for Content Engagement ([Content Engagement](https://docs.webtrekk.com/display/WSP/wtSmart.extension.content_engagement))
+* Extension for Cookie Control ([Cookie Control](https://docs.webtrekk.com/display/WSP/wtSmart.extension.cookie_control))
 
 <a name="1.0.6"></a>
 ## 1.0.6 (2019-05-10)
