@@ -1601,6 +1601,12 @@ wtSmart.prototype.utils = {
          */
         isChrome: function() {
             return false;
+        },
+        /**
+         * @returns {boolean}
+         */
+        isPhantom: function() {
+            return false;
         }
     },
     /**
@@ -2016,6 +2022,165 @@ wtSmart.extension.cdb = {
      * @param {string} custom
      */
     setCustom: function(id, custom) {
+        // ...
+    }
+};
+
+/* **********************************************
+ *                                              *
+ *         EXTENSION:CONTENT_ENGAGEMENT         *
+ *                                              *
+ ********************************************** */
+/**
+ * @object
+ */
+wtSmart.extension.content_engagement = {
+    /**
+     * @string
+     */
+    name: '',
+    /**
+     * @string
+     */
+    version: '',
+    /**
+     * @variation 1
+     * @returns {{
+     *      percentageStepsInAnalytics: number,
+     *      sendContentEngagement: number,
+     *      percentageReached: number,
+     *      secondsReached: number,
+     *      largeBrowserResolution: number,
+     *      largeBrowserSeconds: number,
+     *      mediumBrowserResolution: number,
+     *      mediumBrowserSeconds: number,
+     *      smallBrowserResolution: number,
+     *      smallBrowserSeconds: number
+     * }}
+     */
+    config: function() {
+        return {
+            percentageStepsInAnalytics: 5,
+            sendContentEngagement: 0,
+            percentageReached: 25,
+            secondsReached: 30,
+            largeBrowserResolution: 1080,
+            largeBrowserSeconds: 20,
+            mediumBrowserResolution: 700,
+            mediumBrowserSeconds: 10,
+            smallBrowserResolution: 400,
+            smallBrowserSeconds: 5
+        };
+    },
+    /**
+     * @variation 2
+     * @param {{
+     *      percentageStepsInAnalytics: number,
+     *      sendContentEngagement: number,
+     *      percentageReached: number,
+     *      secondsReached: number,
+     *      largeBrowserResolution: number,
+     *      largeBrowserSeconds: number,
+     *      mediumBrowserResolution: number,
+     *      mediumBrowserSeconds: number,
+     *      smallBrowserResolution: number,
+     *      smallBrowserSeconds: number
+     * }} data
+     */
+    config: function(data) {
+        // ...
+    },
+    /**
+     * @returns {boolean}
+     */
+    isActivated: function() {
+        return false;
+    },
+    /**
+     *
+     */
+    activate: function() {
+        // ...
+    },
+    /**
+     *
+     */
+    deactivate: function() {
+        // ...
+    }
+};
+
+/* **********************************************
+ *                                              *
+ *           EXTENSION:COOKIE_CONTROL           *
+ *                                              *
+ ********************************************** */
+/**
+ * @object
+ */
+wtSmart.extension.cookie_control = {
+    /**
+     * @string
+     */
+    name: '',
+    /**
+     * @string
+     */
+    version: '',
+    /**
+     * @variation 1
+     * @returns {{
+     *      action: string,
+     *      lifeTime: string,
+     *      duration: number,
+     *      currentTrackId: string,
+     *      currentTrackDomain: string,
+     *      oldTrackId: string,
+     *      oldTrackDomain: string
+     * }}
+     */
+    config: function() {
+        return {
+            action: '',
+            lifeTime: '',
+            duration: 180,
+            currentTrackId: '',
+            currentTrackDomain: '',
+            oldTrackId: '',
+            oldTrackDomain: ''
+        };
+    },
+    /**
+     * @variation 2
+     * @param {{
+     *      action: string,
+     *      lifeTime: string,
+     *      duration?: number,
+     *      currentTrackId?: string,
+     *      currentTrackDomain?: string,
+     *      oldTrackId: string,
+     *      oldTrackDomain: string
+     * }} data
+     */
+    config: function(data) {
+        // ...
+    },
+    /**
+     * @returns {boolean}
+     */
+    isActivated: function() {
+        return false;
+    },
+    /**
+     *
+     */
+    activate: function() {
+        // ...
+    },
+    /**
+     *
+     */
+    deactivate: function() {
         // ...
     }
 };
