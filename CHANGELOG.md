@@ -1,3 +1,10 @@
+<a name="1.0.8"></a>
+## 1.0.8 (2019-07-18)
+
+### Features
+
+* Change the default page and action name (based on URL)
+
 <a name="1.0.7"></a>
 ## 1.0.7 (2019-06-12)
 

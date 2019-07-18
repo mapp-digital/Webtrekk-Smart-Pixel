@@ -158,6 +158,8 @@ wtSmart.prototype.advanced = {
      *      forceOldEverId?: boolean,
      *      execCDB?: boolean,
      *      useCDBCache?: boolean,
+     *      useHashForDefaultPageName?: boolean,
+     *      useParamsForDefaultPageName?: Array.<string>,
      *      requestQueue?: {
      *          activated?: boolean,
      *          ttl?: number,
@@ -178,6 +180,8 @@ wtSmart.prototype.advanced = {
      *      forceOldEverId?: boolean,
      *      execCDB?: boolean,
      *      useCDBCache?: boolean,
+     *      useHashForDefaultPageName?: boolean,
+     *      useParamsForDefaultPageName?: Array.<string>,
      *      requestQueue?: {
      *          activated?: boolean,
      *          ttl?: number,
@@ -198,6 +202,8 @@ wtSmart.prototype.advanced = {
      *      forceOldEverId: boolean,
      *      execCDB: boolean,
      *      useCDBCache: boolean,
+     *      useHashForDefaultPageName: boolean,
+     *      useParamsForDefaultPageName: Array.<string>,
      *      requestQueue: {
      *          activated: boolean,
      *          ttl: number,
@@ -214,6 +220,8 @@ wtSmart.prototype.advanced = {
             forceOldEverId: false,
             execCDB: false,
             useCDBCache: false,
+            useHashForDefaultPageName: false,
+            useParamsForDefaultPageName: [],
             requestQueue: {
                 activated: false,
                 ttl: 5 * 60 * 1000,
@@ -1847,6 +1855,7 @@ wtSmart.extension.action = {
      *          replacement: string
      *      }[],
      *      ignore: RegExp,
+     *      withHash: boolean,
      *      delay: boolean,
      *      delayDuration: number,
      *      noDelayAttribute: string
@@ -1860,6 +1869,7 @@ wtSmart.extension.action = {
             extend: [],
             replace: [],
             ignore: /(?:)/,
+            withHash: false,
             delay: false,
             delayDuration: 0,
             noDelayAttribute: ''
@@ -1877,6 +1887,7 @@ wtSmart.extension.action = {
      *          replacement: string
      *      }[],
      *      ignore?: RegExp,
+     *      withHash?: boolean,
      *      delay?: boolean,
      *      delayDuration?: number,
      *      noDelayAttribute?: string
