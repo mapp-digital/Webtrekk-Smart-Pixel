@@ -1,3 +1,10 @@
+<a name="1.0.9"></a>
+## 1.0.9 (2019-08-06)
+
+### Optimization
+
+* optimized automatic page tracking for SPAs
+
 <a name="1.0.8"></a>
 ## 1.0.8 (2019-07-18)
 
