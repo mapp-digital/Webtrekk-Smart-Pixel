@@ -1,3 +1,15 @@
+<a name="1.1.0"></a>
+## 1.1.0 (2019-09-12)
+
+### Features
+
+* Implement "Web to App" tracking ([sendViaSDK](https://docs.webtrekk.com/display/WSP/Advanced%3A+Configuration+Options))
+
+### Bug Fixes
+
+* Support *CTRL & Left Mouse Button*, if using delay for actions
+* `trackAction` force a page request, if it is the first request on the page
+
 <a name="1.0.9"></a>
 ## 1.0.9 (2019-08-06)
 

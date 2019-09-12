@@ -158,6 +158,7 @@ wtSmart.prototype.advanced = {
      *      forceOldEverId?: boolean,
      *      execCDB?: boolean,
      *      useCDBCache?: boolean,
+     *      sendViaSDK?: boolean,
      *      useHashForDefaultPageName?: boolean,
      *      useParamsForDefaultPageName?: Array.<string>,
      *      requestQueue?: {
@@ -180,6 +181,7 @@ wtSmart.prototype.advanced = {
      *      forceOldEverId?: boolean,
      *      execCDB?: boolean,
      *      useCDBCache?: boolean,
+     *      sendViaSDK?: boolean,
      *      useHashForDefaultPageName?: boolean,
      *      useParamsForDefaultPageName?: Array.<string>,
      *      requestQueue?: {
@@ -202,6 +204,7 @@ wtSmart.prototype.advanced = {
      *      forceOldEverId: boolean,
      *      execCDB: boolean,
      *      useCDBCache: boolean,
+     *      sendViaSDK: boolean,
      *      useHashForDefaultPageName: boolean,
      *      useParamsForDefaultPageName: Array.<string>,
      *      requestQueue: {
@@ -220,6 +223,7 @@ wtSmart.prototype.advanced = {
             forceOldEverId: false,
             execCDB: false,
             useCDBCache: false,
+            sendViaSDK: false,
             useHashForDefaultPageName: false,
             useParamsForDefaultPageName: [],
             requestQueue: {
