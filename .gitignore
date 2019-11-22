@@ -1,4 +1,50 @@
-.idea
-*.iml
-.DS_Store
-node_modules
+# ignore everything files
+*/*
+
+# packages
+!packages/
+!packages/*
+packages/*/*
+
+## general
+!packages/*/dist
+packages/*/dist/*
+!packages/*/dist/*.min.js
+!packages/*/dist/*.debug.js
+!packages/*/dist/*.umd.js
+!packages/*/types
+!packages/*/index.js
+!packages/*/package.json
+!packages/*/README.md
+!packages/*/CHANGELOG.md
+
+## angular
+!packages/angular/src
+
+## next
+!packages/next/demo
+!packages/next/src
+!packages/next/test
+
+## react
+!packages/react/src
+!packages/react/test
+
+## vue
+!packages/vue/demo
+!packages/vue/src
+!packages/vue/test
+
+# packages
+!scripts/
+!scripts/install/
+!scripts/jest/
+!scripts/rollup/
+!scripts/server/
+!scripts/webpack/
+!scripts/color.js
+
+# temp files
+**/.tmp/*
+**/.next/*
+**/.nuxt/*

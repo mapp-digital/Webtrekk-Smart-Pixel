@@ -1,0 +1,115 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "smart-pixel-angular": {
+      "root": "packages/angular",
+      "sourceRoot": "packages/angular/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "packages/angular/demo/dist/browser",
+            "index": "packages/angular/src/index.html",
+            "main": "packages/angular/src/main.ts",
+            "polyfills": "packages/angular/src/polyfills.ts",
+            "tsConfig": "packages/angular/src/tsconfig.app.json",
+            "assets": [
+              "packages/angular/src/favicon.ico",
+              "packages/angular/src/assets"
+            ],
+            "styles": [
+              "packages/angular/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "packages/angular/src/environments/environment.ts",
+                  "with": "packages/angular/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "smart-pixel-angular:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "smart-pixel-angular:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "smart-pixel-angular:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "configPath": "../../scripts/jest/angular.config.js",
+            "main": "packages/angular/src/test.ts",
+            "polyfills": "packages/angular/src/polyfills.ts",
+            "tsConfig": "packages/angular/src/tsconfig.spec.json",
+            "styles": [
+              "packages/angular/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "packages/angular/src/favicon.ico",
+              "packages/angular/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/angular/src/tsconfig.app.json",
+              "packages/angular/src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "packages/angular/demo/dist/server",
+            "main": "packages/angular/src/main.server.ts",
+            "tsConfig": "packages/angular/src/tsconfig.server.json"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "smart-pixel-angular"
+}

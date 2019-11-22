@@ -1,0 +1,47 @@
+{
+    "name": "@webtrekk-smart-pixel/angular",
+    "version": "1.0.0",
+    "title": "Webtrekk Smart Pixel for Angular",
+    "description": "A Angular implementation of the Webtrekk Smart Pixel.",
+    "main": "./index.js",
+    "types": "./types/index.d.ts",
+    "author": "Webtrekk GmbH",
+    "license": "MIT",
+    "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/packages/angular#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel"
+    },
+    "bugs": {
+        "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/issues"
+    },
+    "engines": {
+        "node": ">=6.0.0"
+    },
+    "peerDependencies": {
+        "@angular/core": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0",
+        "rxjs": "^5.0.0 || ^6.0.0",
+        "zone.js": "^0.8.4"
+    },
+    "dependencies": {
+        "@webtrekk-smart-pixel/core": "^1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.3",
+        "@types/jasmine": "2.5.53",
+        "@types/jasminewd2": "~2.0.3",
+        "@types/jest": "^24.0.18",
+        "@types/node": "~6.0.60",
+        "@babel/preset-env": "^7.4.3",
+        "istanbul": "^0.4.5",
+        "jest": "^24.8.0",
+        "rollup": "^1.10.0",
+        "rollup-plugin-babel": "^4.3.2",
+        "rollup-plugin-typescript": "^1.0.1",
+        "rxjs": "^6.0.0",
+        "rxjs-compat": "^6.3.3",
+        "ts-loader": "^4.2.0",
+        "webpack-cli": "^3.3.9",
+        "zone.js": "^0.8.26"
+    }
+}
