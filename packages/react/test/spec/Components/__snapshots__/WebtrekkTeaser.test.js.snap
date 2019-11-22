@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WebtrekkTeaser shallow rendering check element via snapshot 1`] = `"<div style={{...}} />"`;

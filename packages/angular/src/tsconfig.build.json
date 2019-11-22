@@ -1,0 +1,30 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../build",
+    "rootDir": ".",
+    "module": "es2015",
+    "target": "es5",
+    "baseUrl": ".",
+    "declaration": true,
+    "stripInternal": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "types": []
+  },
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": false,
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": true,
+    "flatModuleOutFile": "smart-pixel-angular.umd.js",
+    "flatModuleId": "smart-pixel-angular"
+  },
+  "files": [
+    "index.ts"
+  ]
+}

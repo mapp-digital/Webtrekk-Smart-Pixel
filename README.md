@@ -1,45 +1,15 @@
 # Webtrekk Smart Pixel
 
 [Site](https://www.webtrekk.com/) |
-[Docs](https://docs.webtrekk.com/display/WSP/) |
-[Support](https://support.webtrekk.com/) |
-[Changelog](./CHANGELOG.md) |
+[Docs](https://docs.webtrekk.com/display/WSPD/) |
+[Support](https://support.webtrekk.com/)
 
-## Download
+Webtrekk provides a high-end analytical tool to analyze the traffic on your website, identify success factors
+and optimize it on the basis of actual key indicators.
 
- * [minified](./lib/smart-pixel.min.js)
- * [debug](./lib/smart-pixel.debug.js)
-
-## Installation
-
-In a browser:
-
-```html
-<!-- load via loader -->
-<script type="text/javascript" async src="lib/loader.min.js"></script>
-
-<!-- load the minified build -->
-<script type="text/javascript" async src="lib/smart-pixel.min.js"></script>
-
-<!-- load the debug build -->
-<script type="text/javascript" async src="lib/smart-pixel.debug.js"></script>
-```
-
-Using npm:
-
-```shell
-$ npm i webtrekk-smart-pixel
-```
-
-In Node.js:
-
-```js
-// load the minified build
-var webtrekkSmartPixel = require('webtrekk-smart-pixel');
-
-// load the debug build
-var webtrekkSmartPixel = require('webtrekk-smart-pixel/debug');
-
-// initializise webtrekk-smart-pixel with window and document
-var wtSmart = webtrekkSmartPixel.use(window, window.document);
-```
+The basis for web analysis with Webtrekk is the pixel, which entails embedding a Webtrekk code in your
+pages. This guide describes the technical implementation of the pixel. Some aspects/parameters are
+mandatory while others are optional. Conceptual support about which functionalities and parameters you
+should use and how the corresponding values should be set can be found in our online support center (you
+can get access via your Webtrekk account). Our consultants are also available to help. Feel free to contact
+us!
