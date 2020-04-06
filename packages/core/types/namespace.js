@@ -159,6 +159,13 @@ wtSmart.prototype.advanced = {
      *      execCDB?: boolean,
      *      useCDBCache?: boolean,
      *      sendViaSDK?: boolean,
+     *      sendViaServer?: {
+     *          activated?: boolean,
+     *          serverDomain?: string,
+     *          serverPath?: string,
+     *          droppedRequests?: number,
+     *          blacklist?: Array.<string|RegExp>
+     *      },
      *      useHashForDefaultPageName?: boolean,
      *      useParamsForDefaultPageName?: Array.<string>,
      *      requestQueue?: {
@@ -182,6 +189,13 @@ wtSmart.prototype.advanced = {
      *      execCDB?: boolean,
      *      useCDBCache?: boolean,
      *      sendViaSDK?: boolean,
+     *      sendViaServer?: {
+     *          activated?: boolean,
+     *          serverDomain?: string,
+     *          serverPath?: string,
+     *          filter?: number,
+     *          blacklist: Array.<string|RegExp>
+     *      },
      *      useHashForDefaultPageName?: boolean,
      *      useParamsForDefaultPageName?: Array.<string>,
      *      requestQueue?: {
@@ -205,6 +219,13 @@ wtSmart.prototype.advanced = {
      *      execCDB: boolean,
      *      useCDBCache: boolean,
      *      sendViaSDK: boolean,
+     *      sendViaServer: {
+     *          activated: boolean,
+     *          serverDomain: string,
+     *          serverPath: string,
+     *          filter: number,
+     *          blacklist: Array.<string|RegExp>
+     *      },
      *      useHashForDefaultPageName: boolean,
      *      useParamsForDefaultPageName: Array.<string>,
      *      requestQueue: {
@@ -224,6 +245,13 @@ wtSmart.prototype.advanced = {
             execCDB: false,
             useCDBCache: false,
             sendViaSDK: false,
+            sendViaServer: {
+                activated: false,
+                serverDomain: '',
+                serverPath: '',
+                filter: 0,
+                blacklist: [/.+/]
+            },
             useHashForDefaultPageName: false,
             useParamsForDefaultPageName: [],
             requestQueue: {
@@ -2546,6 +2574,13 @@ wtSmart.extension.media.MediaSession = function(name) {
      *
      */
     this.unMute = function() {
+        // ...
+    };
+    /**
+     * @param {number} current
+     * @param {Object.<number, string>?} parameter
+     */
+    this.init = function(current, parameter) {
         // ...
     };
     /**

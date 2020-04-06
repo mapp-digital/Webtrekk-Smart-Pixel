@@ -36,6 +36,14 @@ module.exports = {
             'typescript': '~3.5.0', '@angular/platform-server': '^8', '@angular/animations': '^8',
             '@nguniversal/express-engine': '^8', '@nguniversal/module-map-ngfactory-loader': '^8'
         },
+        '9': {
+            '@angular/core': '^9', '@angular/router': '^9', '@angular/common': '^9',
+            '@angular/cli': '^9', '@angular/platform-browser': '^9', '@angular/compiler': '^9',
+            '@angular/compiler-cli': '^9', '@angular/platform-browser-dynamic': '^9',
+            '@angular-builders/jest': '^8', '@angular-devkit/build-angular': '^0.900',
+            'typescript': '~3.5.0', '@angular/platform-server': '^9', '@angular/animations': '^9',
+            '@nguniversal/express-engine': '^9', '@nguniversal/module-map-ngfactory-loader': '^9'
+        },
         'latest': {
             '@angular/core': 'latest', '@angular/router': 'latest', '@angular/common': 'latest',
             '@angular/cli': 'latest', '@angular/platform-browser': 'latest', '@angular/compiler': 'latest',
@@ -99,6 +107,7 @@ module.exports = {
         '2.5': {'vue': '~2.5', 'vue-template-compiler': '~2.5'},
         '2.6': {'vue': '~2.6', 'vue-template-compiler': '~2.6'},
         'latest': {'vue': 'latest', 'vue-template-compiler': 'latest'},
+        'next': {'vue': 'next', 'vue-template-compiler': 'latest'},
         'beta': {'vue': 'beta', 'vue-template-compiler': 'beta'}
     }
 };
