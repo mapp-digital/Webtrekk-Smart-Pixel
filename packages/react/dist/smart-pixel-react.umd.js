@@ -2,11 +2,11 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('prop-types'), require('react-router-dom'), require('react'), require('@webtrekk-smart-pixel/core')) :
   typeof define === 'function' && define.amd ? define(['exports', 'prop-types', 'react-router-dom', 'react', '@webtrekk-smart-pixel/core'], factory) :
   (global = global || self, factory(global['@webtrekk-smart-pixel/react'] = {}, global.PropTypes, global.reactRouterDom, global.React, global.wtSmart));
-}(this, function (exports, PropTypes, reactRouterDom, React, wtSmart) { 'use strict';
+}(this, (function (exports, PropTypes, reactRouterDom, React, wtSmart) { 'use strict';
 
-  PropTypes = PropTypes && PropTypes.hasOwnProperty('default') ? PropTypes['default'] : PropTypes;
+  PropTypes = PropTypes && Object.prototype.hasOwnProperty.call(PropTypes, 'default') ? PropTypes['default'] : PropTypes;
   var React__default = 'default' in React ? React['default'] : React;
-  wtSmart = wtSmart && wtSmart.hasOwnProperty('default') ? wtSmart['default'] : wtSmart;
+  wtSmart = wtSmart && Object.prototype.hasOwnProperty.call(wtSmart, 'default') ? wtSmart['default'] : wtSmart;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -61,6 +61,19 @@
     return _setPrototypeOf(o, p);
   }
 
+  function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+
+    try {
+      Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
   function _assertThisInitialized(self) {
     if (self === void 0) {
       throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -75,6 +88,23 @@
     }
 
     return _assertThisInitialized(self);
+  }
+
+  function _createSuper(Derived) {
+    return function () {
+      var Super = _getPrototypeOf(Derived),
+          result;
+
+      if (_isNativeReflectConstruct()) {
+        var NewTarget = _getPrototypeOf(this).constructor;
+
+        result = Reflect.construct(Super, arguments, NewTarget);
+      } else {
+        result = Super.apply(this, arguments);
+      }
+
+      return _possibleConstructorReturn(this, result);
+    };
   }
 
   /**
@@ -117,9 +147,7 @@
    */
 
 
-  var WebtrekkSmartPixelReact =
-  /*#__PURE__*/
-  function () {
+  var WebtrekkSmartPixelReact = /*#__PURE__*/function () {
     function WebtrekkSmartPixelReact() {
       _classCallCheck(this, WebtrekkSmartPixelReact);
     }
@@ -336,10 +364,10 @@
 
   var SmartPixelReact = new WebtrekkSmartPixelReact();
 
-  var WebtrekkReactComponent =
-  /*#__PURE__*/
-  function (_React$Component) {
+  var WebtrekkReactComponent = /*#__PURE__*/function (_React$Component) {
     _inherits(WebtrekkReactComponent, _React$Component);
+
+    var _super = _createSuper(WebtrekkReactComponent);
 
     /**
      * @param {string} type
@@ -349,7 +377,7 @@
 
       _classCallCheck(this, WebtrekkReactComponent);
 
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkReactComponent).call(this));
+      _this = _super.call(this);
       _this.type = type;
       return _this;
     }
@@ -541,15 +569,15 @@
     return WebtrekkReactComponent;
   }(React__default.Component);
 
-  var WebtrekkAutoTracking =
-  /*#__PURE__*/
-  function (_WebtrekkReactCompone) {
+  var WebtrekkAutoTracking = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkAutoTracking, _WebtrekkReactCompone);
+
+    var _super = _createSuper(WebtrekkAutoTracking);
 
     function WebtrekkAutoTracking() {
       _classCallCheck(this, WebtrekkAutoTracking);
 
-      return _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkAutoTracking).call(this, 'auto'));
+      return _super.call(this, 'auto');
     }
 
     _createClass(WebtrekkAutoTracking, [{
@@ -623,15 +651,15 @@
   };
   var AutoTracking = reactRouterDom.withRouter(WebtrekkAutoTracking);
 
-  var WebtrekkInitData =
-  /*#__PURE__*/
-  function (_WebtrekkReactCompone) {
+  var WebtrekkInitData = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkInitData, _WebtrekkReactCompone);
+
+    var _super = _createSuper(WebtrekkInitData);
 
     function WebtrekkInitData() {
       _classCallCheck(this, WebtrekkInitData);
 
-      return _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkInitData).call(this, 'init'));
+      return _super.call(this, 'init');
     }
 
     return WebtrekkInitData;
@@ -650,15 +678,15 @@
     cookie: null
   };
 
-  var WebtrekkAdvancedData =
-  /*#__PURE__*/
-  function (_WebtrekkReactCompone) {
+  var WebtrekkAdvancedData = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkAdvancedData, _WebtrekkReactCompone);
+
+    var _super = _createSuper(WebtrekkAdvancedData);
 
     function WebtrekkAdvancedData() {
       _classCallCheck(this, WebtrekkAdvancedData);
 
-      return _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkAdvancedData).call(this, 'advanced'));
+      return _super.call(this, 'advanced');
     }
 
     return WebtrekkAdvancedData;
@@ -670,6 +698,14 @@
     requestObfuscation: PropTypes.bool,
     execCDB: PropTypes.bool,
     useCDBCache: PropTypes.bool,
+    sendViaSDK: PropTypes.bool,
+    sendViaServer: PropTypes.shape({
+      activated: PropTypes.bool,
+      serverDomain: PropTypes.string,
+      serverPath: PropTypes.string,
+      droppedRequests: PropTypes.number,
+      blacklist: PropTypes.array
+    }),
     useHashForDefaultPageName: PropTypes.bool,
     useParamsForDefaultPageName: PropTypes.arrayOf(PropTypes.string),
     requestQueue: PropTypes.shape({
@@ -685,6 +721,14 @@
     requestObfuscation: null,
     execCDB: null,
     useCDBCache: null,
+    sendViaSDK: null,
+    sendViaServer: {
+      activated: null,
+      serverDomain: null,
+      serverPath: null,
+      droppedRequests: null,
+      blacklist: null
+    },
     useHashForDefaultPageName: null,
     useParamsForDefaultPageName: null,
     requestQueue: {
@@ -695,15 +739,15 @@
     }
   };
 
-  var WebtrekkCampaignData =
-  /*#__PURE__*/
-  function (_WebtrekkReactCompone) {
+  var WebtrekkCampaignData = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkCampaignData, _WebtrekkReactCompone);
+
+    var _super = _createSuper(WebtrekkCampaignData);
 
     function WebtrekkCampaignData() {
       _classCallCheck(this, WebtrekkCampaignData);
 
-      return _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkCampaignData).call(this, 'campaign'));
+      return _super.call(this, 'campaign');
     }
 
     return WebtrekkCampaignData;
@@ -724,15 +768,15 @@
     sendInstantly: false
   };
 
-  var WebtrekkCustomerData =
-  /*#__PURE__*/
-  function (_WebtrekkReactCompone) {
+  var WebtrekkCustomerData = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkCustomerData, _WebtrekkReactCompone);
+
+    var _super = _createSuper(WebtrekkCustomerData);
 
     function WebtrekkCustomerData() {
       _classCallCheck(this, WebtrekkCustomerData);
 
-      return _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkCustomerData).call(this, 'customer'));
+      return _super.call(this, 'customer');
     }
 
     return WebtrekkCustomerData;
@@ -777,15 +821,15 @@
     sendInstantly: false
   };
 
-  var WebtrekkOrderData =
-  /*#__PURE__*/
-  function (_WebtrekkReactCompone) {
+  var WebtrekkOrderData = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkOrderData, _WebtrekkReactCompone);
+
+    var _super = _createSuper(WebtrekkOrderData);
 
     function WebtrekkOrderData() {
       _classCallCheck(this, WebtrekkOrderData);
 
-      return _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkOrderData).call(this, 'order'));
+      return _super.call(this, 'order');
     }
 
     return WebtrekkOrderData;
@@ -820,15 +864,15 @@
     sendInstantly: false
   };
 
-  var WebtrekkPageData =
-  /*#__PURE__*/
-  function (_WebtrekkReactCompone) {
+  var WebtrekkPageData = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkPageData, _WebtrekkReactCompone);
+
+    var _super = _createSuper(WebtrekkPageData);
 
     function WebtrekkPageData() {
       _classCallCheck(this, WebtrekkPageData);
 
-      return _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkPageData).call(this, 'page'));
+      return _super.call(this, 'page');
     }
 
     return WebtrekkPageData;
@@ -873,15 +917,15 @@
     sendInstantly: false
   };
 
-  var WebtrekkProductData =
-  /*#__PURE__*/
-  function (_WebtrekkReactCompone) {
+  var WebtrekkProductData = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkProductData, _WebtrekkReactCompone);
+
+    var _super = _createSuper(WebtrekkProductData);
 
     function WebtrekkProductData() {
       _classCallCheck(this, WebtrekkProductData);
 
-      return _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkProductData).call(this, 'product'));
+      return _super.call(this, 'product');
     }
 
     return WebtrekkProductData;
@@ -910,15 +954,15 @@
     sendInstantly: false
   };
 
-  var WebtrekkSessionData =
-  /*#__PURE__*/
-  function (_WebtrekkReactCompone) {
+  var WebtrekkSessionData = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkSessionData, _WebtrekkReactCompone);
+
+    var _super = _createSuper(WebtrekkSessionData);
 
     function WebtrekkSessionData() {
       _classCallCheck(this, WebtrekkSessionData);
 
-      return _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkSessionData).call(this, 'session'));
+      return _super.call(this, 'session');
     }
 
     return WebtrekkSessionData;
@@ -962,17 +1006,17 @@
     return ref;
   };
 
-  var WebtrekkTeaser =
-  /*#__PURE__*/
-  function (_WebtrekkReactCompone) {
+  var WebtrekkTeaser = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkTeaser, _WebtrekkReactCompone);
+
+    var _super = _createSuper(WebtrekkTeaser);
 
     function WebtrekkTeaser() {
       var _this;
 
       _classCallCheck(this, WebtrekkTeaser);
 
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkTeaser).call(this, 'teaser_tracking'));
+      _this = _super.call(this, 'teaser_tracking');
       _this.elementRef = createRef();
       return _this;
     }
@@ -1027,17 +1071,17 @@
     value: null
   };
 
-  var WebtrekkProductList =
-  /*#__PURE__*/
-  function (_WebtrekkReactCompone) {
+  var WebtrekkProductList = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkProductList, _WebtrekkReactCompone);
+
+    var _super = _createSuper(WebtrekkProductList);
 
     function WebtrekkProductList() {
       var _this;
 
       _classCallCheck(this, WebtrekkProductList);
 
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkProductList).call(this, 'product_list_tracking'));
+      _this = _super.call(this, 'product_list_tracking');
       _this.elementRef = createRef();
       return _this;
     }
@@ -1092,17 +1136,17 @@
     parameter: null
   };
 
-  var WebtrekkContentEngagement =
-  /*#__PURE__*/
-  function (_WebtrekkReactCompone) {
+  var WebtrekkContentEngagement = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkContentEngagement, _WebtrekkReactCompone);
+
+    var _super = _createSuper(WebtrekkContentEngagement);
 
     function WebtrekkContentEngagement() {
       var _this;
 
       _classCallCheck(this, WebtrekkContentEngagement);
 
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkContentEngagement).call(this, 'content_engagement'));
+      _this = _super.call(this, 'content_engagement');
       _this.elementRef = createRef();
       return _this;
     }
@@ -1163,15 +1207,15 @@
     smallBrowserSeconds: null
   };
 
-  var WebtrekkExtension =
-  /*#__PURE__*/
-  function (_WebtrekkReactCompone) {
+  var WebtrekkExtension = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkExtension, _WebtrekkReactCompone);
+
+    var _super = _createSuper(WebtrekkExtension);
 
     function WebtrekkExtension() {
       _classCallCheck(this, WebtrekkExtension);
 
-      return _possibleConstructorReturn(this, _getPrototypeOf(WebtrekkExtension).call(this, 'extension'));
+      return _super.call(this, 'extension');
     }
 
     _createClass(WebtrekkExtension, [{
@@ -1444,4 +1488,4 @@
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
-}));
+})));

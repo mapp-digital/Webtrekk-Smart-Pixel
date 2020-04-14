@@ -13,6 +13,14 @@ WebtrekkAdvancedData.propTypes = {
     requestObfuscation: PropTypes.bool,
     execCDB: PropTypes.bool,
     useCDBCache: PropTypes.bool,
+    sendViaSDK: PropTypes.bool,
+    sendViaServer: PropTypes.shape({
+        activated: PropTypes.bool,
+        serverDomain: PropTypes.string,
+        serverPath: PropTypes.string,
+        droppedRequests: PropTypes.number,
+        blacklist: PropTypes.array
+    }),
     useHashForDefaultPageName: PropTypes.bool,
     useParamsForDefaultPageName: PropTypes.arrayOf(PropTypes.string),
     requestQueue: PropTypes.shape({
@@ -29,6 +37,14 @@ WebtrekkAdvancedData.defaultProps = {
     requestObfuscation: null,
     execCDB: null,
     useCDBCache: null,
+    sendViaSDK: null,
+    sendViaServer: {
+        activated: null,
+        serverDomain: null,
+        serverPath: null,
+        droppedRequests: null,
+        blacklist: null
+    },
     useHashForDefaultPageName: null,
     useParamsForDefaultPageName: null,
     requestQueue: {

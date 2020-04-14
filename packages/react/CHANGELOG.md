@@ -1,7 +1,14 @@
+<a name="1.0.4"></a>
+## 1.0.4 (2020-04-14)
+
+### Features
+
+* Support configuration of *sendViaSDK* and *sendViaServer* in \<WebtrekkAdvancedData\>
+
 <a name="1.0.3"></a>
 ## 1.0.3 (2019-11-21)
 
-* renaming package to **@webtrekk-smart-pixel/react**
+* Renaming package to **@webtrekk-smart-pixel/react**
 
 <a name="1.0.2"></a>
 ## 1.0.2 (2019-09-10)

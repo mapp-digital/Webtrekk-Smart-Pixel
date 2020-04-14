@@ -62,6 +62,14 @@ declare interface WebtrekkAdvancedProps {
     requestObfuscation?: boolean,
     execCDB?: boolean,
     useCDBCache?: boolean,
+    sendViaSDK?: boolean,
+    sendViaServer?: {
+        activated?: boolean,
+        serverDomain?: string,
+        serverPath?: string,
+        droppedRequests?: number,
+        blacklist?: string[]
+    },
     useHashForDefaultPageName?: boolean,
     useParamsForDefaultPageName?: string[],
     requestQueue?: {
