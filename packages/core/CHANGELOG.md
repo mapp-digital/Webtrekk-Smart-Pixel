@@ -1,3 +1,16 @@
+<a name="1.2.2"></a>
+# 1.2.2 (2020-06-09)
+
+## Features
+- Allow semicolon separated products
+- Support *unload* event simulation for scroll position extension
+
+<a name="1.2.1"></a>
+# 1.2.1 (2020-05-04)
+
+## Features
+- Improve src path for smart-pixel.*.js to allow relative path
+
 <a name="1.2.0"></a>
 # 1.2.0 (2020-04-07)
 

@@ -2738,6 +2738,12 @@ wtSmart.extension.scroll_position = {
      */
     deactivate: function() {
         // ...
+    },
+    /**
+     * @param {string} eventName
+     */
+    simulate: function(eventName) {
+        // ...
     }
 };
 
