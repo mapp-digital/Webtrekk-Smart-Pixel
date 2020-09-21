@@ -1,3 +1,17 @@
+<a name="1.2.3"></a>
+# 1.2.3 (2020-09-21)
+
+## Features
+- Suppress parameters in each track request
+- Add public methods to set an identifier opt-out cookie
+- Implement Opt-in/Opt-out of tracking cookies
+- Add *SameSite* flag with value *Lax* to each smart pixel cookies
+- Allow product tracking via an event request
+
+## Bug Fixes
+- Missing secure flag in cookies
+- Cookie control extension supports 'old' EverId cookie
+
 <a name="1.2.2"></a>
 # 1.2.2 (2020-06-09)
 

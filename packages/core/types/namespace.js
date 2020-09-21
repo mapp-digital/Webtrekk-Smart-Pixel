@@ -173,6 +173,11 @@ wtSmart.prototype.advanced = {
      *          ttl?: number,
      *          resendInterval?: number,
      *          size?: number
+     *      },
+     *      userIdentification?: {
+     *          enableOptOut?: boolean,
+     *          optOutCookieName?: string,
+     *          suppressParameter?: string[]
      *      }
      * }} data
      * @returns {wtSmart.advanced}
@@ -203,6 +208,11 @@ wtSmart.prototype.advanced = {
      *          ttl?: number,
      *          resendInterval?: number,
      *          size?: number
+     *      },
+     *      userIdentification?: {
+     *          enableOptOut?: boolean,
+     *          optOutCookieName?: string,
+     *          suppressParameter?: string[]
      *      }
      * }} data
      * @returns {wtSmart.advanced}
@@ -233,13 +243,18 @@ wtSmart.prototype.advanced = {
      *          ttl: number,
      *          resendInterval: number,
      *          size: number
+     *      },
+     *      userIdentification: {
+     *          enableOptOut: boolean,
+     *          optOutCookieName: string,
+     *          suppressParameter: string[]
      *      }
      * }}
      */
     get: function() {
         return {
             secureCookie: false,
-            optOutName: '',
+            optOutName: 'webtrekkOptOut',
             requestObfuscation: false,
             forceOldEverId: false,
             execCDB: false,
@@ -259,6 +274,11 @@ wtSmart.prototype.advanced = {
                 ttl: 5 * 60 * 1000,
                 resendInterval: 5 * 1000,
                 size: 100
+            },
+            userIdentification: {
+                enableOptOut: false,
+                optOutCookieName: 'miCookieOptOut',
+                suppressParameter: []
             }
         }
     },
@@ -1749,16 +1769,46 @@ wtSmart.prototype.utils = {
      */
     optout: {
         /**
+         * @deprecated use method getTrackingOptOut
+         *
          * @returns {boolean}
          */
         get: function() {
             return false;
         },
         /**
+         * @returns {boolean}
+         */
+        getTrackingOptOut: function() {
+            return false;
+        },
+        /**
+         * @returns {boolean}
+         */
+        getIdentifierOptOut: function() {
+            return false;
+        },
+        /**
+         * @deprecated use method setTrackingOptOut
+         *
          * @param {number?} duration
          * @param {function(img: HTMLElement, status: string, duration: number)?} callback
          */
         set: function(duration, callback) {
+            // ...
+        },
+        /**
+         * @param {number?} duration
+         * @param {function(img: HTMLElement, status: string, duration: number)?} callback
+         */
+        setTrackingOptOut: function(duration, callback) {
+            // ...
+        },
+        /**
+         * @param {number?} duration
+         * @param {function()?} callback
+         */
+        setIdentifierOptOut: function(duration, callback) {
             // ...
         }
     },
