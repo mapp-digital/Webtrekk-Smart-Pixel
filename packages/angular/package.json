@@ -1,13 +1,13 @@
 {
     "name": "@webtrekk-smart-pixel/angular",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "Webtrekk Smart Pixel for Angular",
     "description": "A Angular implementation of the Webtrekk Smart Pixel.",
     "main": "./index.js",
     "types": "./types/index.d.ts",
     "author": "Webtrekk GmbH",
     "license": "MIT",
-    "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/packages/angular#readme",
+    "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/tree/master/packages/angular#readme",
     "repository": {
         "type": "git",
         "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel"

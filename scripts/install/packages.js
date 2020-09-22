@@ -56,7 +56,7 @@ module.exports = {
             '@angular/core': 'next', '@angular/router': 'next', '@angular/common': 'next',
             '@angular/cli': 'next', '@angular/platform-browser': 'next', '@angular/compiler': 'next',
             '@angular/compiler-cli': 'next', '@angular/platform-browser-dynamic': 'next',
-            '@angular-builders/jest': '^8', '@angular-devkit/build-angular': 'next',
+            '@angular-builders/jest': '^10', '@angular-devkit/build-angular': 'next',
             'typescript': '~3.5.0', '@angular/platform-server': 'next', '@angular/animations': 'next',
             '@nguniversal/express-engine': 'next', '@nguniversal/module-map-ngfactory-loader': 'next'
         }

@@ -39,7 +39,7 @@ const defaultConfig = new DefaultConfig();
     bootstrap: []
 })
 export class WebtrekkSmartPixelModule {
-    static forRoot(conf: WebtrekkSmartPixelConfig = {}): ModuleWithProviders {
+    static forRoot(conf: WebtrekkSmartPixelConfig = {}): ModuleWithProviders<WebtrekkSmartPixelModule> {
         return {
             ngModule: WebtrekkSmartPixelModule,
             providers: [
