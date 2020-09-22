@@ -77,6 +77,11 @@ declare interface WebtrekkAdvancedProps {
         ttl?: number,
         resendInterval?: number,
         size?: number
+    },
+    userIdentification: {
+        enableOptOut:boolean,
+        optOutCookieName: string,
+        suppressParameter: string[]
     }
 }
 

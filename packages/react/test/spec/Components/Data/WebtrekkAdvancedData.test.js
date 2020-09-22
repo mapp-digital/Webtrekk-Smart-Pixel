@@ -42,11 +42,16 @@ describe('WebtrekkAdvancedData', () => {
                         resendInterval: false,
                         size: ''
                     } }
+                    userIdentification={ {
+                        enableOptOut: 0,
+                        optOutCookieName: false,
+                        suppressParameter: ''
+                    } }
                 />
             );
 
             expect(spyOnError).toHaveBeenCalled();
-            expect(spyOnError.mock.calls.length).toBe(10);
+            expect(spyOnError.mock.calls.length).toBe(11);
 
             expect(spyOnError.mock.calls[0][0]).toContain('Invalid prop `secureCookie` of type `string` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
             expect(spyOnError.mock.calls[1][0]).toContain('Invalid prop `optOutName` of type `number` supplied to `WebtrekkAdvancedData`, expected `string`.');
@@ -58,6 +63,7 @@ describe('WebtrekkAdvancedData', () => {
             expect(spyOnError.mock.calls[7][0]).toContain('Invalid prop `useHashForDefaultPageName` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
             expect(spyOnError.mock.calls[8][0]).toContain('Invalid prop `useParamsForDefaultPageName` of type `string` supplied to `WebtrekkAdvancedData`, expected an array.');
             expect(spyOnError.mock.calls[9][0]).toContain('Invalid prop `requestQueue.activated` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
+            expect(spyOnError.mock.calls[10][0]).toContain('Invalid prop `userIdentification.enableOptOut` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
         });
 
         test('don\'t returns children', () => {

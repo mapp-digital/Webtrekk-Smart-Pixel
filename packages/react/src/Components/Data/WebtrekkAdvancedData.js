@@ -28,6 +28,11 @@ WebtrekkAdvancedData.propTypes = {
         ttl: PropTypes.number,
         resendInterval: PropTypes.number,
         size: PropTypes.number
+    }),
+    userIdentification: PropTypes.shape({
+        enableOptOut: PropTypes.bool,
+        optOutCookieName: PropTypes.string,
+        suppressParameter: PropTypes.arrayOf(PropTypes.string)
     })
 };
 
@@ -52,6 +57,11 @@ WebtrekkAdvancedData.defaultProps = {
         ttl: null,
         resendInterval: null,
         size: null
+    },
+    userIdentification: {
+        enableOptOut: null,
+        optOutCookieName: null,
+        suppressParameter: null
     }
 };
 

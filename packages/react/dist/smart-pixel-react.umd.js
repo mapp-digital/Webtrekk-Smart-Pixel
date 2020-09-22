@@ -91,11 +91,13 @@
   }
 
   function _createSuper(Derived) {
-    return function () {
+    var hasNativeReflectConstruct = _isNativeReflectConstruct();
+
+    return function _createSuperInternal() {
       var Super = _getPrototypeOf(Derived),
           result;
 
-      if (_isNativeReflectConstruct()) {
+      if (hasNativeReflectConstruct) {
         var NewTarget = _getPrototypeOf(this).constructor;
 
         result = Reflect.construct(Super, arguments, NewTarget);
@@ -713,6 +715,11 @@
       ttl: PropTypes.number,
       resendInterval: PropTypes.number,
       size: PropTypes.number
+    }),
+    userIdentification: PropTypes.shape({
+      enableOptOut: PropTypes.bool,
+      optOutCookieName: PropTypes.string,
+      suppressParameter: PropTypes.arrayOf(PropTypes.string)
     })
   };
   WebtrekkAdvancedData.defaultProps = {
@@ -736,6 +743,11 @@
       ttl: null,
       resendInterval: null,
       size: null
+    },
+    userIdentification: {
+      enableOptOut: null,
+      optOutCookieName: null,
+      suppressParameter: null
     }
   };
 
@@ -1037,7 +1049,7 @@
         var _this2 = this;
 
         var children = React__default.Children.map(this.props.children, function (element) {
-          return React__default.cloneElement(element, {
+          return /*#__PURE__*/React__default.cloneElement(element, {
             ref: _this2.elementRef
           });
         });
@@ -1102,7 +1114,7 @@
         var _this2 = this;
 
         var children = React__default.Children.map(this.props.children, function (element) {
-          return React__default.cloneElement(element, {
+          return /*#__PURE__*/React__default.cloneElement(element, {
             ref: _this2.elementRef
           });
         });
@@ -1167,7 +1179,7 @@
         var _this2 = this;
 
         var children = React__default.Children.map(this.props.children, function (element) {
-          return React__default.cloneElement(element, {
+          return /*#__PURE__*/React__default.cloneElement(element, {
             ref: _this2.elementRef
           });
         });
