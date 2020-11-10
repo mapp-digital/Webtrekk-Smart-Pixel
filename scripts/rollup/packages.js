@@ -17,7 +17,7 @@ module.exports = {
     /* @webtrekk-smart-pixel/react */
     react: [
         {
-            packagePath: `${PACKAGES_PATH}/react`,
+            packagePath: `${PACKAGES_PATH}/react/vanilla`,
             packageName: '@webtrekk-smart-pixel/react',
             outputPath: 'dist',
             outputName: 'smart-pixel-react',
@@ -105,7 +105,7 @@ module.exports = {
     /* @webtrekk-smart-pixel/next */
     next: [
         {
-            packagePath: `${PACKAGES_PATH}/next`,
+            packagePath: `${PACKAGES_PATH}/react/next`,
             packageName: '@webtrekk-smart-pixel/next',
             outputPath: 'dist',
             outputName: 'smart-pixel-next',
@@ -117,15 +117,15 @@ module.exports = {
             ],
             external: [
                 'react',
-                'react-router-dom',
+                // 'react-router-dom',
                 'prop-types',
-                '@webtrekk-smart-pixel/react'
+                '@webtrekk-smart-pixel/core'
             ],
             global: {
                 'react': 'React',
-                'react-router-dom': 'reactRouterDom',
+                // 'react-router-dom': 'reactRouterDom',
                 'prop-types': 'PropTypes',
-                '@webtrekk-smart-pixel/react': 'SmartPixelReact'
+                '@webtrekk-smart-pixel/core': 'wtSmart'
             },
             format: [FORMAT.UMD]
         }

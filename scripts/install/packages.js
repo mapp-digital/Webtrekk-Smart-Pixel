@@ -1,5 +1,5 @@
 module.exports = {
-    angular: {
+    'angular': {
         '4': {
             '@angular/core': '^4', '@angular/router': '^4', '@angular/common': '^4',
             '@angular/cli': '^6', '@angular/platform-browser': '^4', '@angular/compiler': '^4',
@@ -61,7 +61,7 @@ module.exports = {
             '@nguniversal/express-engine': 'next', '@nguniversal/module-map-ngfactory-loader': 'next'
         }
     },
-    react: {
+    'react/vanilla': {
         '14': {
             'react': '^0.14', 'react-dom': '^0.14', 'react-router-dom': '^5',
             'react-addons-test-utils': '^0.14', 'react-test-renderer': '^1',
@@ -82,25 +82,25 @@ module.exports = {
         },
         'latest': {
             'react': 'latest', 'react-dom': 'latest', 'react-router-dom': '^5',
-            'react-test-renderer': 'latest', 'enzyme-adapter-react-16': 'latest'
+            'react-test-renderer': 'latest', '@wojtekmaj/enzyme-adapter-react-17': 'latest'
         },
         'next': {
             'react': 'next', 'react-dom': 'next', 'react-router-dom': '^5',
             'react-test-renderer': 'next', 'enzyme-adapter-react-16': 'latest'
         }
     },
-    next: {
+    'react/next': {
         '7': {'next': '^7'},
         '8': {'next': '^8'},
         '9': {'next': '^9'},
         'latest': {'next': 'latest'},
         'canary': {'next': 'canary'}
     },
-    nuxt: {
+    'nuxt': {
         '1': {'nuxt': '^1', 'axios': 'latest'},
         '2': {'nuxt': '^2', 'axios': 'latest'}
     },
-    vue: {
+    'vue': {
         '2.2': {'vue': '~2.2', 'vue-template-compiler': '~2.2'},
         '2.3': {'vue': '~2.3', 'vue-template-compiler': '~2.3'},
         '2.4': {'vue': '~2.4', 'vue-template-compiler': '~2.4'},

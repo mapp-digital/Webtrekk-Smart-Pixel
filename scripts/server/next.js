@@ -3,7 +3,7 @@ const next = require('next');
 
 const dir = process.cwd();
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({dev, dir: `${dir}/packages/next/demo`});
+const app = next({dev, dir: `${dir}/packages/react/next/demo`});
 const handle = app.getRequestHandler();
 
 app.prepare().then(() => {

@@ -21,14 +21,11 @@ packages/*/dist/*
 ## angular
 !packages/angular/src
 
-## next
-!packages/next/demo
-!packages/next/src
-!packages/next/test
-
-## react
-!packages/react/src
-!packages/react/test
+## react / next
+!packages/react/
+!packages/react/next/
+!packages/react/shared/
+!packages/react/vanilla/
 
 ## vue
 !packages/vue/demo
@@ -48,3 +45,5 @@ packages/*/dist/*
 **/.tmp/*
 **/.next/*
 **/.nuxt/*
+**/.release/*
+**/reports/*
