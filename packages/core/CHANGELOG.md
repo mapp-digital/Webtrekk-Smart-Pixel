@@ -1,3 +1,13 @@
+<a name="1.2.4"></a>
+# 1.2.4 (2020-xx-xx)
+
+## Features
+- Extension for User ID Disclosure ([User ID Disclosure](https://docs.mapp.com/display/WSPD/User-ID-Disclosure))
+- Update anonymous tracking to activate default opt-in
+
+## Bug Fixes
+- Support linebreaks in page name for request queue
+
 <a name="1.2.3"></a>
 # 1.2.3 (2020-09-21)
 

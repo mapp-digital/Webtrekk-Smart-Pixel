@@ -175,8 +175,9 @@ wtSmart.prototype.advanced = {
      *          size?: number
      *      },
      *      userIdentification?: {
-     *          enableOptOut?: boolean,
-     *          optOutCookieName?: string,
+     *          enableAnonymousFunction?: boolean,
+     *          anonymousOptIn?: boolean,
+     *          anonymousCookieName?: string,
      *          suppressParameter?: string[]
      *      }
      * }} data
@@ -210,8 +211,9 @@ wtSmart.prototype.advanced = {
      *          size?: number
      *      },
      *      userIdentification?: {
-     *          enableOptOut?: boolean,
-     *          optOutCookieName?: string,
+     *          enableAnonymousFunction?: boolean,
+     *          anonymousOptIn?: boolean,
+     *          anonymousCookieName?: string,
      *          suppressParameter?: string[]
      *      }
      * }} data
@@ -245,8 +247,9 @@ wtSmart.prototype.advanced = {
      *          size: number
      *      },
      *      userIdentification: {
-     *          enableOptOut: boolean,
-     *          optOutCookieName: string,
+     *          enableAnonymousFunction: boolean,
+     *          anonymousOptIn: boolean,
+     *          anonymousCookieName: string,
      *          suppressParameter: string[]
      *      }
      * }}
@@ -276,8 +279,9 @@ wtSmart.prototype.advanced = {
                 size: 100
             },
             userIdentification: {
-                enableOptOut: false,
-                optOutCookieName: 'miCookieOptOut',
+                enableAnonymousFunction: false,
+                anonymousOptIn: false,
+                anonymousCookieName: 'miCookieOptOut',
                 suppressParameter: []
             }
         }
@@ -1783,9 +1787,17 @@ wtSmart.prototype.utils = {
             return false;
         },
         /**
+         * @deprecated use method getAnonymousCookie
+         *
          * @returns {boolean}
          */
         getIdentifierOptOut: function() {
+            return false;
+        },
+        /**
+         * @returns {boolean}
+         */
+        getAnonymousCookie: function() {
             return false;
         },
         /**
@@ -1805,10 +1817,37 @@ wtSmart.prototype.utils = {
             // ...
         },
         /**
+         * @deprecated use method setAnonymousCookie
+         *
          * @param {number?} duration
          * @param {function()?} callback
          */
         setIdentifierOptOut: function(duration, callback) {
+            // ...
+        },
+        /**
+         * @param {number?} duration
+         * @param {function()?} callback
+         */
+        setAnonymousCookie: function(duration, callback) {
+            // ...
+        },
+        /**
+         *
+         */
+        deleteTrackingOptOut: function() {
+            // ...
+        },
+        /**
+         * @deprecated use method deleteAnonymousCookie
+         */
+        deleteIdentifierOptOut: function() {
+            // ...
+        },
+        /**
+         *
+         */
+        deleteAnonymousCookie: function() {
             // ...
         }
     },
@@ -2313,6 +2352,32 @@ wtSmart.extension.identifier = {
      * @string
      */
     version: ''
+};
+
+/* **********************************************
+ *                                              *
+ *       EXTENSION:IDENTIFIER DISCLOSURE        *
+ *                                              *
+ ********************************************** */
+/**
+ * @object
+ */
+wtSmart.extension.identifier_disclosure = {
+    /**
+     * @string
+     */
+    name: '',
+    /**
+     * @string
+     */
+    version: '',
+    /**
+     *
+     * @param {(function(status: number, data: {}): void)} callback
+     */
+    getEverIDs: function(callback) {
+        // ...
+    }
 };
 
 /* **********************************************

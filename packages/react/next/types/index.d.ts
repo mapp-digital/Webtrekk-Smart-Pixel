@@ -4,7 +4,7 @@
 
 import * as React from 'react';
 import * as Redux from 'redux';
-import * as wtSmart from './../../core';
+import * as wtSmart from './../../../core';
 
 declare interface DataObject {
     [i: number]: string;
@@ -69,6 +69,14 @@ declare interface WebtrekkAdvancedProps {
         ttl?: number,
         resendInterval?: number,
         size?: number
+    },
+    userIdentification?: {
+        enableOptOut?: boolean,
+        enableAnonymousFunction?: boolean,
+        anonymousOptIn?: boolean,
+        optOutCookieName?: string,
+        anonymousCookieName?: string,
+        suppressParameter?: string[]
     }
 }
 

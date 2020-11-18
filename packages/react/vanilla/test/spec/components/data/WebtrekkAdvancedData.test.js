@@ -59,7 +59,6 @@ describe('WebtrekkAdvancedData', () => {
 
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(11);
-
             expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `secureCookie` of type `string` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
             expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `optOutName` of type `number` supplied to `WebtrekkAdvancedData`, expected `string`.');
             expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `requestObfuscation` of type `string` supplied to `WebtrekkAdvancedData`, expected `boolean`.');

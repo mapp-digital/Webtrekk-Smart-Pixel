@@ -759,7 +759,10 @@
     }),
     userIdentification: PropTypes.shape({
       enableOptOut: PropTypes.bool,
+      enableAnonymousFunction: PropTypes.bool,
+      anonymousOptIn: PropTypes.bool,
       optOutCookieName: PropTypes.string,
+      anonymousCookieName: PropTypes.string,
       suppressParameter: PropTypes.arrayOf(PropTypes.string)
     })
   };
@@ -787,7 +790,10 @@
     },
     userIdentification: {
       enableOptOut: null,
+      enableAnonymousFunction: null,
+      anonymousOptIn: null,
       optOutCookieName: null,
+      anonymousCookieName: null,
       suppressParameter: null
     }
   };
