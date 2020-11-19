@@ -7,7 +7,7 @@
     "typings": "./types/namespace.js",
     "author": "Webtrekk GmbH",
     "license": "MIT",
-    "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/tree/master/packages/abtasty",
+    "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/packages/abtasty#readme",
     "repository": {
         "type": "git",
         "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel"
