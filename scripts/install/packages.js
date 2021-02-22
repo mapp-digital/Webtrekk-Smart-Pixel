@@ -18,21 +18,21 @@ module.exports = {
             '@angular/core': '^6', '@angular/router': '^6', '@angular/common': '^6',
             '@angular/cli': '^6', '@angular/platform-browser': '^6', '@angular/compiler': '^6',
             '@angular/compiler-cli': '^6', '@angular/platform-browser-dynamic': '^6',
-            '@angular-builders/jest': '^7', '@angular-devkit/build-angular': '^0.10',
+            '@angular-builders/jest': '^7', '@angular-devkit/build-angular': 'v6-lts',
             'typescript': '~3.1.0'
         },
         '7': {
             '@angular/core': '^7', '@angular/router': '^7', '@angular/common': '^7',
             '@angular/cli': '^7', '@angular/platform-browser': '^7', '@angular/compiler': '^7',
             '@angular/compiler-cli': '^7', '@angular/platform-browser-dynamic': '^7',
-            '@angular-builders/jest': '^7', '@angular-devkit/build-angular': '^0.10',
+            '@angular-builders/jest': '^7', '@angular-devkit/build-angular': 'v7-lts',
             'typescript': '~3.1.0'
         },
         '8': {
             '@angular/core': '^8', '@angular/router': '^8', '@angular/common': '^8',
             '@angular/cli': '^8', '@angular/platform-browser': '^8', '@angular/compiler': '^8',
             '@angular/compiler-cli': '^8', '@angular/platform-browser-dynamic': '^8',
-            '@angular-builders/jest': '^8', '@angular-devkit/build-angular': '^0.800',
+            '@angular-builders/jest': '^8', '@angular-devkit/build-angular': 'v8-lts',
             'typescript': '~3.5.0', '@angular/platform-server': '^8', '@angular/animations': '^8',
             '@nguniversal/express-engine': '^8', '@nguniversal/module-map-ngfactory-loader': '^8'
         },
@@ -40,25 +40,33 @@ module.exports = {
             '@angular/core': '^9', '@angular/router': '^9', '@angular/common': '^9',
             '@angular/cli': '^9', '@angular/platform-browser': '^9', '@angular/compiler': '^9',
             '@angular/compiler-cli': '^9', '@angular/platform-browser-dynamic': '^9',
-            '@angular-builders/jest': '^8', '@angular-devkit/build-angular': '^0.900',
-            'typescript': '~3.5.0', '@angular/platform-server': '^9', '@angular/animations': '^9',
-            '@nguniversal/express-engine': '^9', '@nguniversal/module-map-ngfactory-loader': '^9'
+            '@angular-builders/jest': '^9', '@angular-devkit/build-angular': 'v9-lts',
+            'typescript': '^4', '@angular/platform-server': '^9', '@angular/animations': '^9',
+            '@nguniversal/express-engine': '^9', 'jest': '^26'
+        },
+        '10': {
+            '@angular/core': '^10', '@angular/router': '^10', '@angular/common': '^10',
+            '@angular/cli': '^10', '@angular/platform-browser': '^10', '@angular/compiler': '^10',
+            '@angular/compiler-cli': '^10', '@angular/platform-browser-dynamic': '^10',
+            '@angular-builders/jest': '^10', '@angular-devkit/build-angular': 'v10-lts',
+            'typescript': '^4', '@angular/platform-server': '^10', '@angular/animations': '^10',
+            '@nguniversal/express-engine': '^10', 'jest': '^26'
         },
         'latest': {
             '@angular/core': 'latest', '@angular/router': 'latest', '@angular/common': 'latest',
             '@angular/cli': 'latest', '@angular/platform-browser': 'latest', '@angular/compiler': 'latest',
             '@angular/compiler-cli': 'latest', '@angular/platform-browser-dynamic': 'latest',
-            '@angular-builders/jest': '^8', '@angular-devkit/build-angular': 'latest',
+            '@angular-builders/jest': 'latest', '@angular-devkit/build-angular': 'latest',
             'typescript': '~3.5.0', '@angular/platform-server': 'latest', '@angular/animations': 'latest',
-            '@nguniversal/express-engine': 'latest', '@nguniversal/module-map-ngfactory-loader': 'latest'
+            '@nguniversal/express-engine': 'latest', 'jest': '^26'
         },
         'next': {
             '@angular/core': 'next', '@angular/router': 'next', '@angular/common': 'next',
             '@angular/cli': 'next', '@angular/platform-browser': 'next', '@angular/compiler': 'next',
             '@angular/compiler-cli': 'next', '@angular/platform-browser-dynamic': 'next',
-            '@angular-builders/jest': '^10', '@angular-devkit/build-angular': 'next',
+            '@angular-builders/jest': 'next', '@angular-devkit/build-angular': 'next',
             'typescript': '~3.5.0', '@angular/platform-server': 'next', '@angular/animations': 'next',
-            '@nguniversal/express-engine': 'next', '@nguniversal/module-map-ngfactory-loader': 'next'
+            '@nguniversal/express-engine': 'next', 'jest': '^26'
         }
     },
     'react/vanilla': {
@@ -76,9 +84,9 @@ module.exports = {
             'react': '^16', 'react-dom': '^16', 'react-router-dom': '^5',
             'react-test-renderer': '^16', 'enzyme-adapter-react-16': 'latest'
         },
-        'alpha': {
-            'react': 'alpha', 'react-dom': 'alpha', 'react-router-dom': '^5',
-            'react-test-renderer': 'alpha', 'enzyme-adapter-react-16': 'latest'
+        '17': {
+            'react': '^17', 'react-dom': '^17', 'react-router-dom': '^5',
+            'react-test-renderer': '^17', '@wojtekmaj/enzyme-adapter-react-17': 'latest'
         },
         'latest': {
             'react': 'latest', 'react-dom': 'latest', 'react-router-dom': '^5',
@@ -86,13 +94,14 @@ module.exports = {
         },
         'next': {
             'react': 'next', 'react-dom': 'next', 'react-router-dom': '^5',
-            'react-test-renderer': 'next', 'enzyme-adapter-react-16': 'latest'
+            'react-test-renderer': 'next', '@wojtekmaj/enzyme-adapter-react-17': 'latest'
         }
     },
     'react/next': {
         '7': {'next': '^7'},
         '8': {'next': '^8'},
         '9': {'next': '^9'},
+        '10': {'next': '^10'},
         'latest': {'next': 'latest'},
         'canary': {'next': 'canary'}
     },

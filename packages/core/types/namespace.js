@@ -1006,6 +1006,7 @@ wtSmart.prototype.product = {
              *      id?: string,
              *      cost?: number,
              *      quantity?: number,
+             *      currency?: string,
              *      variant?: string,
              *      soldOut?: boolean,
              *      parameter?: Object.<number, string>,
@@ -1021,6 +1022,7 @@ wtSmart.prototype.product = {
              *      id: string,
              *      cost: number,
              *      quantity: number,
+             *      currency: string,
              *      variant: string,
              *      soldOut: boolean,
              *      parameter: Object.<number, string>,
@@ -1032,6 +1034,7 @@ wtSmart.prototype.product = {
                     id: '',
                     cost: 0,
                     quantity: 0,
+                    currency: '',
                     variant: '',
                     soldOut: false,
                     parameter: {},
@@ -1128,6 +1131,7 @@ wtSmart.product.list = {
          *      id: string,
          *      cost?: number,
          *      quantity?: number,
+         *      currency?: string,
          *      variant?: string,
          *      soldOut?: boolean,
          *      parameter?: Object.<number, string>,
@@ -1143,6 +1147,7 @@ wtSmart.product.list = {
          *      id: string,
          *      cost?: number,
          *      quantity?: number,
+         *      currency?: string,
          *      variant?: string,
          *      soldOut?: boolean,
          *      parameter?: Object.<number, string>,
@@ -1158,6 +1163,7 @@ wtSmart.product.list = {
          *      id: string,
          *      cost: number,
          *      quantity: number,
+         *      currency: string,
          *      variant: string,
          *      soldOut: boolean,
          *      parameter: Object.<number, string>,
@@ -1231,6 +1237,7 @@ wtSmart.product.view = {
          *      id: string,
          *      cost?: number,
          *      quantity?: number,
+         *      currency?: string,
          *      variant?: string,
          *      soldOut?: boolean,
          *      parameter?: Object.<number, string>,
@@ -1246,6 +1253,7 @@ wtSmart.product.view = {
          *      id: string,
          *      cost?: number,
          *      quantity?: number,
+         *      currency?: string,
          *      variant?: string,
          *      soldOut?: boolean,
          *      parameter?: Object.<number, string>,
@@ -1261,6 +1269,7 @@ wtSmart.product.view = {
          *      id: string,
          *      cost: number,
          *      quantity: number,
+         *      currency: string,
          *      variant: string,
          *      soldOut: boolean,
          *      parameter: Object.<number, string>,
@@ -1334,6 +1343,7 @@ wtSmart.product.basket = {
          *      id: string,
          *      cost?: number,
          *      quantity?: number,
+         *      currency?: string,
          *      variant?: string,
          *      soldOut?: boolean,
          *      parameter?: Object.<number, string>,
@@ -1349,6 +1359,7 @@ wtSmart.product.basket = {
          *      id: string,
          *      cost?: number,
          *      quantity?: number,
+         *      currency?: string,
          *      variant?: string,
          *      soldOut?: boolean,
          *      parameter?: Object.<number, string>,
@@ -1364,6 +1375,7 @@ wtSmart.product.basket = {
          *      id: string,
          *      cost: number,
          *      quantity: number,
+         *      currency: string,
          *      variant: string,
          *      soldOut: boolean,
          *      parameter: Object.<number, string>,
@@ -1437,6 +1449,7 @@ wtSmart.product.confirmation = {
          *      id: string,
          *      cost?: number,
          *      quantity?: number,
+         *      currency?: string,
          *      variant?: string,
          *      soldOut?: boolean,
          *      parameter?: Object.<number, string>,
@@ -1452,6 +1465,7 @@ wtSmart.product.confirmation = {
          *      id: string,
          *      cost?: number,
          *      quantity?: number,
+         *      currency?: string,
          *      variant?: string,
          *      soldOut?: boolean,
          *      parameter?: Object.<number, string>,
@@ -1467,6 +1481,7 @@ wtSmart.product.confirmation = {
          *      id: string,
          *      cost: number,
          *      quantity: number,
+         *      currency: string,
          *      variant: string,
          *      soldOut: boolean,
          *      parameter: Object.<number, string>,
@@ -3023,6 +3038,7 @@ wtSmart.extension.teaser_tracking = {
      *          session: number,
      *          page: number
      *      },
+     *      maxCookieSize: number,
      *      clearConversions: boolean,
      *      autoEngagements: boolean
      * }}
@@ -3036,6 +3052,7 @@ wtSmart.extension.teaser_tracking = {
                 session: 0,
                 page: 0
             },
+            maxCookieSize: 4000,
             clearConversions: false,
             autoEngagements: false
         };
@@ -3050,6 +3067,7 @@ wtSmart.extension.teaser_tracking = {
      *          session?: number,
      *          page?: number
      *      },
+     *      maxCookieSize?: number,
      *      clearConversions?: boolean,
      *      autoEngagements?: boolean
      * }} data
@@ -3110,6 +3128,7 @@ wtSmart.extension.product_list_tracking = {
      *          session: number,
      *          page: number
      *      },
+     *      maxCookieSize: number,
      *      sendMultipleProductViews: boolean
      * }}
      */
@@ -3122,6 +3141,7 @@ wtSmart.extension.product_list_tracking = {
                 session: 0,
                 page: 0
             },
+            maxCookieSize: 4000,
             sendMultipleProductViews: false
         };
     },
@@ -3135,6 +3155,7 @@ wtSmart.extension.product_list_tracking = {
      *          session?: number,
      *          page?: number
      *      },
+     *      maxCookieSize?: number,
      *      sendMultipleProductViews?: boolean
      * }} data
      */

@@ -1,5 +1,23 @@
+<a name="1.2.6"></a>
+# 1.2.6 (2021-02-22)
+
+## Features
+- Change *wtstp_rla* cookie duration to session
+- Add cookie size configuration option for Teaser- and Product-List-Tracking
+- Support product currency for each product
+- Support 'old' EverId in URL parameter and hash
+
+## Bug Fixes
+- TabBrowsing issue (2nd request has the exact same timestamp as the first one)
+
+<a name="1.2.5"></a>
+# 1.2.5 (2020-11-19)
+
+## Bug Fixes
+- *anonymousCookieName* will not be accepted
+
 <a name="1.2.4"></a>
-# 1.2.4 (2020-xx-xx)
+# 1.2.4 (2020-11-18)
 
 ## Features
 - Extension for User ID Disclosure ([User ID Disclosure](https://docs.mapp.com/display/WSPD/User-ID-Disclosure))
