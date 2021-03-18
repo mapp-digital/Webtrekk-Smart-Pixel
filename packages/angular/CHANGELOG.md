@@ -1,5 +1,5 @@
 <a name="1.0.2"></a>
-## 1.0.12(2021-03-18)
+## 1.0.2 (2021-03-18)
 
 * Update peer dependencies (support v4 - v12)
 
