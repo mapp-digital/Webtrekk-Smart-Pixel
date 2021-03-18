@@ -1,6 +1,6 @@
 {
     "name": "@webtrekk-smart-pixel/angular",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "title": "Webtrekk Smart Pixel for Angular",
     "description": "A Angular implementation of the Webtrekk Smart Pixel.",
     "main": "./index.js",
@@ -19,7 +19,7 @@
         "node": ">=6.0.0"
     },
     "peerDependencies": {
-        "@angular/core": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0",
+        "@angular/core": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0",
         "rxjs": "^5.0.0 || ^6.0.0",
         "zone.js": "^0.8.4"
     },

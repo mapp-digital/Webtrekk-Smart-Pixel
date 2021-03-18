@@ -1,3 +1,8 @@
+<a name="1.0.2"></a>
+## 1.0.12(2021-03-18)
+
+* Update peer dependencies (support v4 - v12)
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2019-11-22)
 
