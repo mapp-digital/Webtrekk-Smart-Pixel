@@ -13,6 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "@webtrekk-smart-pixel/core"
+            ],
             "outputPath": "packages/angular/demo/dist/browser",
             "index": "packages/angular/src/index.html",
             "main": "packages/angular/src/main.ts",

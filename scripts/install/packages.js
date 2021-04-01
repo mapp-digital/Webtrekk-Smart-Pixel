@@ -52,6 +52,15 @@ module.exports = {
             'typescript': '^4', '@angular/platform-server': '^10', '@angular/animations': '^10',
             '@nguniversal/express-engine': '^10', 'jest': '^26'
         },
+        '11': {
+            '@angular/core': '^11', '@angular/router': '^11', '@angular/common': '^11',
+            '@angular/cli': '^11', '@angular/platform-browser': '^11', '@angular/compiler': '^11',
+            '@angular/compiler-cli': '^11', '@angular/platform-browser-dynamic': '^11',
+            '@angular-builders/jest': '^11', '@angular-devkit/build-angular': 'latest',
+            'typescript': '~4.1.0', '@angular/platform-server': '^11', '@angular/animations': '^11',
+            '@nguniversal/express-engine': '^11', '@nguniversal/module-map-ngfactory-loader': 'next',
+            'jest': '^26'
+        },
         'latest': {
             '@angular/core': 'latest', '@angular/router': 'latest', '@angular/common': 'latest',
             '@angular/cli': 'latest', '@angular/platform-browser': 'latest', '@angular/compiler': 'latest',
