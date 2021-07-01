@@ -24,6 +24,14 @@
         "test:abtasty:dev": "node ./scripts/karma/start.js abtasty dev",
         "test:abtasty:prod": "node ./scripts/karma/start.js abtasty prod",
 
+        "// @webtrekk-smart-pixel/kameleoon": "",
+        "build:kameleoon": "npm run install:kameleoon && npm run build-only:kameleoon",
+        "build-only:kameleoon": "node ./scripts/closure/build.js kameleoon",
+        "install:kameleoon": "node ./scripts/install/installer.js kameleoon",
+        "release:kameleoon": "npm run build:kameleoon && npm run test:kameleoon:dev && npm run test:kameleoon:prod && node ./scripts/release/copy.js kameleoon",
+        "test:kameleoon:dev": "node ./scripts/karma/start.js kameleoon dev",
+        "test:kameleoon:prod": "node ./scripts/karma/start.js kameleoon prod",
+
         "// @webtrekk-smart-pixel/angular": "",
         "build:angular": "npm run install:angular:8 && npm run build-only:angular",
         "build-only:angular": "cross-env ANGULAR_VERSION=8 ANGULAR=build node ./scripts/rollup/build.js angular",
@@ -155,8 +163,5 @@
         "eslint": "^6.5.1",
         "rimraf": "^2.6.3",
         "typescript": "^3.6.4"
-    },
-    "workspaces": [
-        "packages/*"
-    ]
+    }
 }
