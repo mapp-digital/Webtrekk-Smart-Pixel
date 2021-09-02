@@ -1,15 +1,17 @@
 import Enzyme, {configure, shallow, mount, render} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 
-// if (process.env.NEXT_VERSION === '7') {
-//    Adapter = require('enzyme-adapter-react-14');
-// }
-// else if (process.env.NEXT_VERSION === '8') {
-//    Adapter = require('enzyme-adapter-react-15');
-// }
-// else {
-//    Adapter = require('enzyme-adapter-react-16');
-// }
+let Adapter;
+
+if (process.env.NEXT_VERSION === '7'
+    || process.env.NEXT_VERSION === '8'
+    || process.env.NEXT_VERSION === '9'
+    || process.env.NEXT_VERSION === '10'
+) {
+    Adapter = require('enzyme-adapter-react-16');
+}
+else {
+    Adapter = require('@wojtekmaj/enzyme-adapter-react-17');
+}
 
 configure({adapter: new Adapter()});
 

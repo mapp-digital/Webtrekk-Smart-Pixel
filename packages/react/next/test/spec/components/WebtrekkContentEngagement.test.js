@@ -3,6 +3,12 @@ import { shallow, mount } from './../../enzyme';
 import { expectInCallback } from './../../helper';
 import { WebtrekkContentEngagement, WebtrekkSmartPixelReact } from './../../../src/index';
 
+const reactVersion = parseInt(React.version.split('.')[0]);
+let invalidPropIndex = 0;
+if (reactVersion > 16) {
+    invalidPropIndex = 2;
+}
+
 describe('WebtrekkContentEngagement', () => {
     let renderedWebtrekkContentEngagement;
     let spyOnError;
@@ -107,16 +113,16 @@ describe('WebtrekkContentEngagement', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(10);
 
-            expect(spyOnError.mock.calls[0][0]).toContain('Invalid prop `percentageStepsInAnalytics` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
-            expect(spyOnError.mock.calls[1][0]).toContain('Invalid prop `sendContentEngagement` of value `true` supplied to `WebtrekkContentEngagement`, expected one of [0,1,2].');
-            expect(spyOnError.mock.calls[2][0]).toContain('Invalid prop `percentageReached` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
-            expect(spyOnError.mock.calls[3][0]).toContain('Invalid prop `secondsReached` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
-            expect(spyOnError.mock.calls[4][0]).toContain('Invalid prop `largeBrowserResolution` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
-            expect(spyOnError.mock.calls[5][0]).toContain('Invalid prop `largeBrowserSeconds` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
-            expect(spyOnError.mock.calls[6][0]).toContain('Invalid prop `mediumBrowserResolution` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
-            expect(spyOnError.mock.calls[7][0]).toContain('Invalid prop `mediumBrowserSeconds` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
-            expect(spyOnError.mock.calls[8][0]).toContain('Invalid prop `smallBrowserResolution` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
-            expect(spyOnError.mock.calls[9][0]).toContain('Invalid prop `smallBrowserSeconds` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `percentageStepsInAnalytics` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `sendContentEngagement` of value `true` supplied to `WebtrekkContentEngagement`, expected one of [0,1,2].');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `percentageReached` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `secondsReached` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
+            expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `largeBrowserResolution` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
+            expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `largeBrowserSeconds` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
+            expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `mediumBrowserResolution` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
+            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `mediumBrowserSeconds` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
+            expect(spyOnError.mock.calls[8][invalidPropIndex]).toContain('Invalid prop `smallBrowserResolution` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
+            expect(spyOnError.mock.calls[9][invalidPropIndex]).toContain('Invalid prop `smallBrowserSeconds` of type `boolean` supplied to `WebtrekkContentEngagement`, expected `number`.');
         });
 
         test('create an element', () => {

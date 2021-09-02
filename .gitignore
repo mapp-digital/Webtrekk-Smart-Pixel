@@ -41,6 +41,18 @@ packages/*/dist/*
 !scripts/webpack/
 !scripts/color.js
 
+# tests
+!tests/
+!tests/admin/
+!tests/apps/
+!tests/E2E/
+!tests/fixture/
+!tests/pseudo_db/
+!tests/request_logger/
+!tests/server/
+!tests/Makefile
+!tests/README.md
+
 # temp files
 **/.tmp/*
 **/.next/*

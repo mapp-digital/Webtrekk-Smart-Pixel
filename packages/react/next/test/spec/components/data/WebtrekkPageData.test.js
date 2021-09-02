@@ -3,6 +3,12 @@ import { shallow, mount } from './../../../enzyme';
 import { expectInCallback } from './../../../helper';
 import { WebtrekkPageData, WebtrekkSmartPixelReact } from './../../../../src/index';
 
+const reactVersion = parseInt(React.version.split('.')[0]);
+let invalidPropIndex = 0;
+if (reactVersion > 16) {
+    invalidPropIndex = 2;
+}
+
 describe('WebtrekkPageData', () => {
     let spyOnError;
     let renderedWebtrekkPageData;
@@ -43,22 +49,22 @@ describe('WebtrekkPageData', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(16);
 
-            expect(spyOnError.mock.calls[0][0]).toContain('Invalid prop `name` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
-            expect(spyOnError.mock.calls[1][0]).toContain('Invalid prop `search` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
-            expect(spyOnError.mock.calls[2][0]).toContain('Invalid prop `numberSearchResults` of type `string` supplied to `WebtrekkPageData`, expected `number`.');
-            expect(spyOnError.mock.calls[3][0]).toContain('Invalid prop `errorMessages` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
-            expect(spyOnError.mock.calls[4][0]).toContain('Invalid prop `paywall` of type `number` supplied to `WebtrekkPageData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[5][0]).toContain('Invalid prop `articleTitle` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
-            expect(spyOnError.mock.calls[6][0]).toContain('Invalid prop `contentTags` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
-            expect(spyOnError.mock.calls[7][0]).toContain('Invalid prop `title` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
-            expect(spyOnError.mock.calls[8][0]).toContain('Invalid prop `type` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
-            expect(spyOnError.mock.calls[9][0]).toContain('Invalid prop `length` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
-            expect(spyOnError.mock.calls[10][0]).toContain('Invalid prop `daysSincePublication` of type `string` supplied to `WebtrekkPageData`, expected `number`.');
-            expect(spyOnError.mock.calls[11][0]).toContain('Invalid prop `testVariant` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
-            expect(spyOnError.mock.calls[12][0]).toContain('Invalid prop `testExperiment` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
-            expect(spyOnError.mock.calls[13][0]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
-            expect(spyOnError.mock.calls[14][0]).toContain('Invalid prop `category.3` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
-            expect(spyOnError.mock.calls[15][0]).toContain('Invalid prop `goal.4` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `name` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `search` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `numberSearchResults` of type `string` supplied to `WebtrekkPageData`, expected `number`.');
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `errorMessages` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
+            expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `paywall` of type `number` supplied to `WebtrekkPageData`, expected `boolean`.');
+            expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `articleTitle` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
+            expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `contentTags` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
+            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `title` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
+            expect(spyOnError.mock.calls[8][invalidPropIndex]).toContain('Invalid prop `type` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
+            expect(spyOnError.mock.calls[9][invalidPropIndex]).toContain('Invalid prop `length` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
+            expect(spyOnError.mock.calls[10][invalidPropIndex]).toContain('Invalid prop `daysSincePublication` of type `string` supplied to `WebtrekkPageData`, expected `number`.');
+            expect(spyOnError.mock.calls[11][invalidPropIndex]).toContain('Invalid prop `testVariant` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
+            expect(spyOnError.mock.calls[12][invalidPropIndex]).toContain('Invalid prop `testExperiment` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
+            expect(spyOnError.mock.calls[13][invalidPropIndex]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
+            expect(spyOnError.mock.calls[14][invalidPropIndex]).toContain('Invalid prop `category.3` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
+            expect(spyOnError.mock.calls[15][invalidPropIndex]).toContain('Invalid prop `goal.4` of type `number` supplied to `WebtrekkPageData`, expected `string`.');
         });
 
         test('don\'t returns children', () => {

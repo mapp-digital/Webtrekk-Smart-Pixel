@@ -3,6 +3,12 @@ import { shallow, mount } from './../../../enzyme';
 import { expectInCallback } from './../../../helper';
 import { WebtrekkSessionData, WebtrekkSmartPixelReact } from './../../../../src/index';
 
+const reactVersion = parseInt(React.version.split('.')[0]);
+let invalidPropIndex = 0;
+if (reactVersion > 16) {
+    invalidPropIndex = 2;
+}
+
 describe('WebtrekkSessionData', () => {
     let spyOnError;
     let renderedWebtrekkSessionData;
@@ -29,8 +35,8 @@ describe('WebtrekkSessionData', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(2);
 
-            expect(spyOnError.mock.calls[0][0]).toContain('Invalid prop `loginStatus` of type `number` supplied to `WebtrekkSessionData`, expected `string`.');
-            expect(spyOnError.mock.calls[1][0]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkSessionData`, expected `string`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `loginStatus` of type `number` supplied to `WebtrekkSessionData`, expected `string`.');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkSessionData`, expected `string`.');
         });
 
         test('don\'t returns children', () => {

@@ -3,6 +3,12 @@ import { shallow, mount } from './../../../enzyme';
 import { expectInCallback } from './../../../helper';
 import { WebtrekkCustomerData, WebtrekkSmartPixelReact } from './../../../../src/index';
 
+const reactVersion = parseInt(React.version.split('.')[0]);
+let invalidPropIndex = 0;
+if (reactVersion > 16) {
+    invalidPropIndex = 2;
+}
+
 describe('WebtrekkCustomerData', () => {
     let spyOnError;
     let renderedWebtrekkCustomerData;
@@ -43,22 +49,22 @@ describe('WebtrekkCustomerData', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(16);
 
-            expect(spyOnError.mock.calls[0][0]).toContain('Invalid prop `id` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
-            expect(spyOnError.mock.calls[1][0]).toContain('Invalid prop `email` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
-            expect(spyOnError.mock.calls[2][0]).toContain('Invalid prop `emailRID` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
-            expect(spyOnError.mock.calls[3][0]).toContain('Invalid prop `emailOptin` of type `number` supplied to `WebtrekkCustomerData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[4][0]).toContain('Invalid prop `firstName` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
-            expect(spyOnError.mock.calls[5][0]).toContain('Invalid prop `lastName` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
-            expect(spyOnError.mock.calls[6][0]).toContain('Invalid prop `telephone` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
-            expect(spyOnError.mock.calls[7][0]).toContain('Invalid prop `gender` of type `string` supplied to `WebtrekkCustomerData`, expected `number`.');
-            expect(spyOnError.mock.calls[8][0]).toContain('Invalid prop `birthday` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
-            expect(spyOnError.mock.calls[9][0]).toContain('Invalid prop `country` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
-            expect(spyOnError.mock.calls[10][0]).toContain('Invalid prop `city` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
-            expect(spyOnError.mock.calls[11][0]).toContain('Invalid prop `postalCode` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
-            expect(spyOnError.mock.calls[12][0]).toContain('Invalid prop `street` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
-            expect(spyOnError.mock.calls[13][0]).toContain('Invalid prop `streetNumber` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
-            expect(spyOnError.mock.calls[14][0]).toContain('Invalid prop `validation` of type `number` supplied to `WebtrekkCustomerData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[15][0]).toContain('Invalid prop `category.2` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `id` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `email` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `emailRID` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `emailOptin` of type `number` supplied to `WebtrekkCustomerData`, expected `boolean`.');
+            expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `firstName` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
+            expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `lastName` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
+            expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `telephone` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
+            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `gender` of type `string` supplied to `WebtrekkCustomerData`, expected `number`.');
+            expect(spyOnError.mock.calls[8][invalidPropIndex]).toContain('Invalid prop `birthday` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
+            expect(spyOnError.mock.calls[9][invalidPropIndex]).toContain('Invalid prop `country` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
+            expect(spyOnError.mock.calls[10][invalidPropIndex]).toContain('Invalid prop `city` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
+            expect(spyOnError.mock.calls[11][invalidPropIndex]).toContain('Invalid prop `postalCode` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
+            expect(spyOnError.mock.calls[12][invalidPropIndex]).toContain('Invalid prop `street` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
+            expect(spyOnError.mock.calls[13][invalidPropIndex]).toContain('Invalid prop `streetNumber` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
+            expect(spyOnError.mock.calls[14][invalidPropIndex]).toContain('Invalid prop `validation` of type `number` supplied to `WebtrekkCustomerData`, expected `boolean`.');
+            expect(spyOnError.mock.calls[15][invalidPropIndex]).toContain('Invalid prop `category.2` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
         });
 
         test('required props', () => {
@@ -67,7 +73,7 @@ describe('WebtrekkCustomerData', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(1);
 
-            expect(spyOnError.mock.calls[0][0]).toContain('The prop `id` is marked as required in `WebtrekkCustomerData`, but its value is `null`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('The prop `id` is marked as required in `WebtrekkCustomerData`, but its value is `null`.');
         });
 
         test('don\'t returns children', () => {

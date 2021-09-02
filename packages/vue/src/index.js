@@ -1,11 +1,36 @@
 import SmartPixelVue from './lib/WebtrekkSmartPixelVue';
 import WebtrekkDirective from './lib/WebtrekkDirective';
 import {wtBeforeRouteEnter, wtBeforeRouteLeave} from './lib/routerHookFunctions';
+import {mappBeforeResolve, autoTrack} from './lib/routerHookFunctionsV3';
 
 const webtrekk = {
     install(Vue, webtrekkConfig) {
-        // mounting Smartpixel to Vue instance so it is available under this.$webtrekk
-        Vue.prototype.$webtrekk = SmartPixelVue;
+        const isVue3 = Vue?.hasOwnProperty('config') && Vue.config?.hasOwnProperty('globalProperties');
+        if (isVue3) {
+            Vue.config.globalProperties.$webtrekk = SmartPixelVue;
+            if (webtrekkConfig.activateAutoTracking && webtrekkConfig.activateAutoTracking.beforeResolve) {
+                webtrekkConfig.activateAutoTracking.beforeResolve(to => {
+                    mappBeforeResolve(to, webtrekkConfig);
+                });
+                webtrekkConfig.activateAutoTracking.afterEach(async() => {
+                    autoTrack(webtrekkConfig);
+                });
+            }
+        }
+        else {
+            Vue.prototype.$webtrekk = SmartPixelVue;
+            if (webtrekkConfig.activateAutoTracking) {
+                Vue.mixin({
+                    beforeRouteEnter(to, from, next) {
+                        wtBeforeRouteEnter(webtrekkConfig, next);
+                    },
+                    /* istanbul ignore next */
+                    beforeRouteLeave(to, from, next) {
+                        wtBeforeRouteLeave(next);
+                    }
+                });
+            }
+        }
 
         // initialization of global Webtrekk configuration
         SmartPixelVue.init(webtrekkConfig);
@@ -13,17 +38,6 @@ const webtrekk = {
         // optional activation of auto linktracking
         if (webtrekkConfig.activateLinkTracking) {
             SmartPixelVue.extension('action');
-        }
-        if (webtrekkConfig.activateAutoTracking) {
-            Vue.mixin({
-                beforeRouteEnter(to, from, next) {
-                    wtBeforeRouteEnter(webtrekkConfig, next);
-                },
-                /* istanbul ignore next */
-                beforeRouteLeave(to, from, next) {
-                    wtBeforeRouteLeave(next);
-                }
-            });
         }
 
         // optional activation of teaser_tracking
@@ -57,5 +71,4 @@ const webtrekk = {
         Vue.directive(WebtrekkDirective.name, WebtrekkDirective);
     }
 };
-
 export default webtrekk;

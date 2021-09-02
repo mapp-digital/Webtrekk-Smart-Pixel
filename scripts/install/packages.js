@@ -67,7 +67,7 @@ module.exports = {
             '@angular/compiler-cli': 'latest', '@angular/platform-browser-dynamic': 'latest',
             '@angular-builders/jest': 'latest', '@angular-devkit/build-angular': 'latest',
             'typescript': '~3.5.0', '@angular/platform-server': 'latest', '@angular/animations': 'latest',
-            '@nguniversal/express-engine': 'latest', 'jest': '^26'
+            '@nguniversal/express-engine': 'latest', 'jest': 'latest'
         },
         'next': {
             '@angular/core': 'next', '@angular/router': 'next', '@angular/common': 'next',
@@ -75,7 +75,7 @@ module.exports = {
             '@angular/compiler-cli': 'next', '@angular/platform-browser-dynamic': 'next',
             '@angular-builders/jest': 'next', '@angular-devkit/build-angular': 'next',
             'typescript': '~3.5.0', '@angular/platform-server': 'next', '@angular/animations': 'next',
-            '@nguniversal/express-engine': 'next', 'jest': '^26'
+            '@nguniversal/express-engine': 'next', 'jest': 'next'
         }
     },
     'react/vanilla': {
@@ -103,29 +103,62 @@ module.exports = {
         },
         'next': {
             'react': 'next', 'react-dom': 'next', 'react-router-dom': '^5',
-            'react-test-renderer': 'next', '@wojtekmaj/enzyme-adapter-react-17': 'latest'
+            'react-test-renderer': 'next', '@wojtekmaj/enzyme-adapter-react-17': 'latest',
+            '@testing-library/react-hooks': '^7.0.0'
         }
     },
     'react/next': {
-        '7': {'next': '^7'},
-        '8': {'next': '^8'},
-        '9': {'next': '^9'},
-        '10': {'next': '^10'},
-        'latest': {'next': 'latest'},
-        'canary': {'next': 'canary'}
+        '7': {'next': '^7', 'enzyme-adapter-react-16': 'latest'},
+        '8': {'next': '^8', 'enzyme-adapter-react-16': 'latest'},
+        '9': {'next': '^9', 'enzyme-adapter-react-16': 'latest'},
+        '10': {'next': '^10', 'enzyme-adapter-react-16': 'latest'},
+        '11': {
+            'next': '^11',
+            'react': '^17', 'react-dom': '^17', 'react-router-dom': '^5',
+            'react-test-renderer': '^17', '@wojtekmaj/enzyme-adapter-react-17': 'latest'
+        },
+        'latest': {
+            'next': 'latest',
+            'react': '^17', 'react-dom': '^17', 'react-router-dom': '^5',
+            'react-test-renderer': '^17', '@wojtekmaj/enzyme-adapter-react-17': 'latest'
+        },
+        'canary': {
+            'next': 'canary',
+            'react': '^17', 'react-dom': '^17', 'react-router-dom': '^5',
+            'react-test-renderer': '^17', '@wojtekmaj/enzyme-adapter-react-17': 'latest'
+        }
     },
     'nuxt': {
         '1': {'nuxt': '^1', 'axios': 'latest'},
         '2': {'nuxt': '^2', 'axios': 'latest'}
     },
     'vue': {
-        '2.2': {'vue': '~2.2', 'vue-template-compiler': '~2.2'},
-        '2.3': {'vue': '~2.3', 'vue-template-compiler': '~2.3'},
-        '2.4': {'vue': '~2.4', 'vue-template-compiler': '~2.4'},
-        '2.5': {'vue': '~2.5', 'vue-template-compiler': '~2.5'},
-        '2.6': {'vue': '~2.6', 'vue-template-compiler': '~2.6'},
-        'latest': {'vue': 'latest', 'vue-template-compiler': 'latest'},
-        'next': {'vue': 'next', 'vue-template-compiler': 'latest'},
+        '2.2': {'vue': '~2.2', 'vue-template-compiler': '~2.2', 'vue-router': '^3.1.3', 'vuex': '3.0.1'},
+        '2.3': {'vue': '~2.3', 'vue-template-compiler': '~2.3', 'vue-router': '^3.1.3', 'vuex': '3.0.1'},
+        '2.4': {'vue': '~2.4', 'vue-template-compiler': '~2.4', 'vue-router': '^3.1.3', 'vuex': '3.0.1'},
+        '2.5': {'vue': '~2.5', 'vue-template-compiler': '~2.5', 'vue-router': '^3.1.3', 'vuex': '3.0.1'},
+        '2.6': {'vue': '~2.6', 'vue-template-compiler': '~2.6', 'vue-router': '^3.1.3', 'vuex': '3.0.1'},
+        'latest': {'vue': 'latest', 'vue-template-compiler': 'latest', 'vue-router': 'latest', 'vuex': 'latest'},
+        'next': {
+            'vue': 'next', '@vue/compiler-sfc': 'latest',
+            '@vue/eslint-config-prettier': 'latest',
+            'vue-router': 'next', 'vuex': 'next', '@vue/test-utils': 'next', 'vue-jest': 'next', '@vue/cli-plugin-pwa': 'next',
+            '@vue/cli-plugin-typescript': 'next', 'register-service-worker': '1.7.2',
+            'core-js': '^3.6.5',
+            '@typescript-eslint/eslint-plugin': '^4.18.0',
+            '@typescript-eslint/parser': '^4.18.0',
+            '@vue/cli-plugin-babel': '~4.5.0',
+            '@vue/cli-plugin-eslint': '~4.5.0',
+            '@vue/cli-plugin-router': '~4.5.0',
+            '@vue/cli-plugin-vuex': '~4.5.0',
+            '@vue/cli-service': '~4.5.0',
+            '@vue/eslint-config-typescript': '^7.0.0',
+            'eslint': '^6.7.2',
+            'eslint-plugin-prettier': '^3.3.1',
+            'eslint-plugin-vue': '^7.0.0',
+            'prettier': '^2.2.1',
+            'typescript': '~4.1.5'
+        },
         'beta': {'vue': 'beta', 'vue-template-compiler': 'beta'}
     }
 };

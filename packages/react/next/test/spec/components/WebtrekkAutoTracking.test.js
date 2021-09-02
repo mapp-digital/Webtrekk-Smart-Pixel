@@ -4,6 +4,12 @@ import {shallow, mount} from './../../enzyme';
 import {expectInCallback} from './../../helper';
 import {WebtrekkAutoTracking, WebtrekkSmartPixelReact} from './../../../src/index';
 
+const reactVersion = parseInt(React.version.split('.')[0]);
+let invalidPropIndex = 0;
+if (reactVersion > 16) {
+    invalidPropIndex = 2;
+}
+
 let mockOnRouteChangeComplete;
 Router.events.on = jest.fn((event, callback) => {
     mockOnRouteChangeComplete = callback;
@@ -44,25 +50,25 @@ describe('WebtrekkAutoTracking', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(7);
 
-            expect(spyOnError.mock.calls[0][0]).toContain(
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain(
                 'Invalid prop `trackId` of type `number` supplied to `WebtrekkAutoTracking`, expected `string`.'
             );
-            expect(spyOnError.mock.calls[1][0]).toContain(
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain(
                 'Invalid prop `trackDomain` of type `number` supplied to `WebtrekkAutoTracking`, expected `string`.'
             );
-            expect(spyOnError.mock.calls[2][0]).toContain(
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain(
                 'Invalid prop `activateAutoTracking` of type `number` supplied to `WebtrekkAutoTracking`, expected `boolean`.'
             );
-            expect(spyOnError.mock.calls[3][0]).toContain(
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain(
                 'Invalid prop `activateActions` of type `number` supplied to `WebtrekkAutoTracking`, expected `boolean`.'
             );
-            expect(spyOnError.mock.calls[4][0]).toContain(
+            expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain(
                 'Invalid prop `activateTeaser` of type `number` supplied to `WebtrekkAutoTracking`, expected `boolean`.'
             );
-            expect(spyOnError.mock.calls[5][0]).toContain(
+            expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain(
                 'Invalid prop `activateProductList` of type `number` supplied to `WebtrekkAutoTracking`, expected `boolean`.'
             );
-            expect(spyOnError.mock.calls[6][0]).toContain(
+            expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain(
                 'Invalid prop `activateContentEngagement` of type `number` supplied to `WebtrekkAutoTracking`, expected `boolean`.'
             );
         });
@@ -75,10 +81,10 @@ describe('WebtrekkAutoTracking', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(2);
 
-            expect(spyOnError.mock.calls[0][0]).toContain(
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain(
                 'The prop `trackId` is marked as required in `WebtrekkAutoTracking`, but its value is `null`.'
             );
-            expect(spyOnError.mock.calls[1][0]).toContain(
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain(
                 'The prop `trackDomain` is marked as required in `WebtrekkAutoTracking`, but its value is `null`.'
             );
         });

@@ -1,0 +1,42 @@
+version: '3.1'
+
+services:
+  phoenix:
+      build:
+          context: ..
+          dockerfile: ./admin/Dockerfile
+          args:
+              USER_ID: ${USER_ID}
+              GROUP_ID: ${GROUP_ID}
+      container_name: phoenix
+      ports:
+          - "4000:4000"
+          - "4001:4001"
+      environment:
+          - TERM=xterm-256color
+      networks:
+          - mapp
+      volumes:
+          - ./../..:/mapp
+      command: bash -c "/mapp/tests/admin/docker_runner.sh ${ACTION:-start_phoenix}"
+  cypress:
+      container_name: mapp_e2e_cypress
+      # the Docker image to use from https://github.com/cypress-io/cypress-docker-images
+      image: "cypress/included:8.3.0"
+      depends_on:
+          - phoenix
+      entrypoint: ["/bin/bash", "./cypress_entrypoint.sh"]
+      environment:
+          # pass base url to test pointing at the web application
+          - CYPRESS_baseUrl=http://phoenix:4000
+          - DISPLAY=:99
+      # share the current folder as volume to avoid copying
+      working_dir: /
+      volumes:
+          - ./../E2E:/E2E
+          - ./cypress_entrypoint.sh:/cypress_entrypoint.sh
+      networks:
+          - mapp
+networks:
+    mapp:
+

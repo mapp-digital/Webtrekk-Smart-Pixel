@@ -3,6 +3,12 @@ import { shallow, mount } from './../../../enzyme';
 import { expectInCallback } from './../../../helper';
 import { WebtrekkCampaignData, WebtrekkSmartPixelReact } from './../../../../src/index';
 
+const reactVersion = parseInt(React.version.split('.')[0]);
+let invalidPropIndex = 0;
+if (reactVersion > 16) {
+    invalidPropIndex = 2;
+}
+
 describe('WebtrekkCampaignData', () => {
     let spyOnError;
     let renderedWebtrekkCampaignData;
@@ -31,10 +37,10 @@ describe('WebtrekkCampaignData', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(4);
 
-            expect(spyOnError.mock.calls[0][0]).toContain('Invalid prop `id` of type `number` supplied to `WebtrekkCampaignData`, expected `string`.');
-            expect(spyOnError.mock.calls[1][0]).toContain('Invalid prop `mediaCode` of type `string` supplied to `WebtrekkCampaignData`, expected an array.');
-            expect(spyOnError.mock.calls[2][0]).toContain('Invalid prop `oncePerSession` of type `number` supplied to `WebtrekkCampaignData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[3][0]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkCampaignData`, expected `string`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `id` of type `number` supplied to `WebtrekkCampaignData`, expected `string`.');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `mediaCode` of type `string` supplied to `WebtrekkCampaignData`, expected an array.');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `oncePerSession` of type `number` supplied to `WebtrekkCampaignData`, expected `boolean`.');
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkCampaignData`, expected `string`.');
         });
 
         test('required props', () => {
@@ -43,7 +49,7 @@ describe('WebtrekkCampaignData', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(1);
 
-            expect(spyOnError.mock.calls[0][0]).toContain('The prop `id` is marked as required in `WebtrekkCampaignData`, but its value is `null`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('The prop `id` is marked as required in `WebtrekkCampaignData`, but its value is `null`.');
         });
 
         test('don\'t returns children', () => {

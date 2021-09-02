@@ -3,6 +3,12 @@ import { shallow, mount } from './../../../enzyme';
 import { expectInCallback } from './../../../helper';
 import { WebtrekkProductData, WebtrekkSmartPixelReact } from './../../../../src/index';
 
+const reactVersion = parseInt(React.version.split('.')[0]);
+let invalidPropIndex = 0;
+if (reactVersion > 16) {
+    invalidPropIndex = 2;
+}
+
 describe('WebtrekkProductData', () => {
     let spyOnError;
     let renderedWebtrekkProductData;
@@ -35,14 +41,14 @@ describe('WebtrekkProductData', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(9);
 
-            expect(spyOnError.mock.calls[0][0]).toContain('Invalid prop `id` of type `number` supplied to `WebtrekkProductData`, expected `string`.');
-            expect(spyOnError.mock.calls[1][0]).toContain('Invalid prop `action` of value `0` supplied to `WebtrekkProductData`, expected one of ["list","view","basket","confirmation"].');
-            expect(spyOnError.mock.calls[2][0]).toContain('Invalid prop `cost` of type `string` supplied to `WebtrekkProductData`, expected `number`.');
-            expect(spyOnError.mock.calls[3][0]).toContain('Invalid prop `quantity` of type `string` supplied to `WebtrekkProductData`, expected `number`.');
-            expect(spyOnError.mock.calls[4][0]).toContain('Invalid prop `variant` of type `number` supplied to `WebtrekkProductData`, expected `string`.');
-            expect(spyOnError.mock.calls[5][0]).toContain('Invalid prop `soldOut` of type `string` supplied to `WebtrekkProductData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[6][0]).toContain('Invalid prop `parameter.1` of type `number` supplied to `WebtrekkProductData`, expected `string`.');
-            expect(spyOnError.mock.calls[7][0]).toContain(' Invalid prop `category.1` of type `number` supplied to `WebtrekkProductData`, expected `string`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `id` of type `number` supplied to `WebtrekkProductData`, expected `string`.');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `action` of value `0` supplied to `WebtrekkProductData`, expected one of ["list","view","basket","confirmation"].');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `cost` of type `string` supplied to `WebtrekkProductData`, expected `number`.');
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `quantity` of type `string` supplied to `WebtrekkProductData`, expected `number`.');
+            expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `variant` of type `number` supplied to `WebtrekkProductData`, expected `string`.');
+            expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `soldOut` of type `string` supplied to `WebtrekkProductData`, expected `boolean`.');
+            expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `parameter.1` of type `number` supplied to `WebtrekkProductData`, expected `string`.');
+            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `category.1` of type `number` supplied to `WebtrekkProductData`, expected `string`.');
         });
 
         test('required props', () => {
@@ -51,8 +57,8 @@ describe('WebtrekkProductData', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(3);
 
-            expect(spyOnError.mock.calls[0][0]).toContain('The prop `id` is marked as required in `WebtrekkProductData`, but its value is `null`.');
-            expect(spyOnError.mock.calls[1][0]).toContain('The prop `action` is marked as required in `WebtrekkProductData`, but its value is `null`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('The prop `id` is marked as required in `WebtrekkProductData`, but its value is `null`.');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('The prop `action` is marked as required in `WebtrekkProductData`, but its value is `null`.');
         });
 
         test('don\'t returns children', () => {

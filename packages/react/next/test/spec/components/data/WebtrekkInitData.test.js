@@ -3,6 +3,12 @@ import { shallow, mount } from './../../../enzyme';
 import { expectInCallback } from './../../../helper';
 import { WebtrekkInitData, WebtrekkSmartPixelReact } from './../../../../src/index';
 
+const reactVersion = parseInt(React.version.split('.')[0]);
+let invalidPropIndex = 0;
+if (reactVersion > 16) {
+    invalidPropIndex = 2;
+}
+
 describe('WebtrekkInitData', () => {
     let spyOnError;
     let renderedWebtrekkInitData;
@@ -31,10 +37,10 @@ describe('WebtrekkInitData', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(4);
 
-            expect(spyOnError.mock.calls[0][0]).toContain('Invalid prop `trackId` of type `number` supplied to `WebtrekkInitData`, expected `string`.');
-            expect(spyOnError.mock.calls[1][0]).toContain('Invalid prop `trackDomain` of type `number` supplied to `WebtrekkInitData`, expected `string`.');
-            expect(spyOnError.mock.calls[2][0]).toContain('Invalid prop `domain` of type `string` supplied to `WebtrekkInitData`, expected an array.');
-            expect(spyOnError.mock.calls[3][0]).toContain('Invalid prop `cookie` of value `4` supplied to `WebtrekkInitData`, expected one of ["1","3"].');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `trackId` of type `number` supplied to `WebtrekkInitData`, expected `string`.');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `trackDomain` of type `number` supplied to `WebtrekkInitData`, expected `string`.');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `domain` of type `string` supplied to `WebtrekkInitData`, expected an array.');
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `cookie` of value `4` supplied to `WebtrekkInitData`, expected one of ["1","3"].');
         });
 
         test('required props', () => {
@@ -43,8 +49,8 @@ describe('WebtrekkInitData', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(2);
 
-            expect(spyOnError.mock.calls[0][0]).toContain('The prop `trackId` is marked as required in `WebtrekkInitData`, but its value is `null`.');
-            expect(spyOnError.mock.calls[1][0]).toContain('The prop `trackDomain` is marked as required in `WebtrekkInitData`, but its value is `null`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('The prop `trackId` is marked as required in `WebtrekkInitData`, but its value is `null`.');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('The prop `trackDomain` is marked as required in `WebtrekkInitData`, but its value is `null`.');
         });
 
         test('don\'t returns children', () => {

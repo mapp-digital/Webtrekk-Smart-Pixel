@@ -1,48 +1,28 @@
-// Type definitions for webtrekk-smart-pixel-react 1.0.0
-// Project: https://github.com/Webtrekk/Webtrekk-Smart-Pixel-React
+// Type definitions for @webtrekk-smart-pixel/next
+// Project: https://github.com/Webtrekk/Webtrekk-Smart-Pixel/tree/master/packages/react/next
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 import * as React from 'react';
-import * as Redux from 'redux';
-import * as wtSmart from './../../../core';
+import * as wtSmart from '@webtrekk-smart-pixel/core';
 
 declare interface DataObject {
     [i: number]: string;
 }
 
-declare enum WebtrekkInitCookie {
-    First = '1',
-    Third = '3'
-}
+declare type WebtrekkInitCookie = '1' | '3';
 
-declare enum WebtrekkProductStatus {
-    List = 'list',
-    View = 'view',
-    Basket = 'basket',
-    Confirmation = 'confirmation'
-}
+declare type WebtrekkProductStatus = 'view' | 'list' | 'basket' | 'confirmation';
 
-declare enum WebtrekkTeaserType {
-    View = 'view',
-    Click = 'click',
-    Product = 'product'
-}
+declare type WebtrekkTeaserType = 'view' | 'click' | 'product';
 
-declare enum WebtrekkTeaserGoal {
-    Order = 'order',
-    Goal = 'goal',
-    Both = 'both'
-}
+declare type WebtrekkTeaserGoal = 'order' | 'goal' | 'both';
 
-declare enum WebtrekkContentEngagementSendContentEngagement {
-    Zero = 0,
-    One = 1,
-    Two = 2
-}
+declare type WebtrekkContentEngagementSendContentEngagement = 0 | 1 | 2;
 
 declare interface WebtrekkAutoTrackingProps {
     trackId: string,
     trackDomain: string,
+    activateAutoTracking?: boolean,
     activateActions?: boolean,
     activateTeaser?: boolean,
     activateProductList?: boolean,
@@ -52,7 +32,7 @@ declare interface WebtrekkAutoTrackingProps {
 declare interface WebtrekkInitProps {
     trackId: string,
     trackDomain: string,
-    domain?: string[],
+    domain?: string | string[] | RegExp | RegExp[],
     cookie?: WebtrekkInitCookie
 }
 
@@ -62,6 +42,14 @@ declare interface WebtrekkAdvancedProps {
     requestObfuscation?: boolean,
     execCDB?: boolean,
     useCDBCache?: boolean,
+    sendViaSDK?: boolean,
+    sendViaServer?: {
+        activated?: boolean,
+        serverDomain?: string,
+        serverPath?: string,
+        droppedRequests?: number,
+        blacklist?: string[]
+    },
     useHashForDefaultPageName?: boolean,
     useParamsForDefaultPageName?: string[],
     requestQueue?: {
@@ -139,6 +127,12 @@ declare interface WebtrekkPageProps {
     goal?: DataObject
 }
 
+declare interface WebtrekkActionProps {
+    name: string;
+    parameter?: DataObject;
+    goal?: DataObject;
+}
+
 declare interface WebtrekkProductProps {
     id: string,
     action: WebtrekkProductStatus,
@@ -200,6 +194,24 @@ declare interface WebtrekkExtensionProps {
     config?: any
 }
 
+declare interface WebtrekkReact {
+    call: (call: (wtSmart: wtSmart) => void) => void,
+    init: (data: WebtrekkInitProps) => void,
+    advanced: (data: WebtrekkAdvancedProps) => void,
+    page: (name: string, data?: WebtrekkPageProps) => void,
+    action: (data: WebtrekkActionProps) => void,
+    session: (data: WebtrekkSessionProps) => void,
+    campaign: (data: WebtrekkCampaignProps) => void,
+    customer: (id: string, data?: WebtrekkCustomerProps, validation?: boolean) => void,
+    product: (action: WebtrekkProductStatus, data: WebtrekkProductProps) => void,
+    products: (action: WebtrekkProductStatus, data: WebtrekkProductProps[]) => void,
+    order: (data: WebtrekkOrderProps) => void,
+    extension: (extension: string, action?: string, config?: any) => void,
+    track: (keepData?: boolean) => void,
+    trackPage: (keepData?: boolean) => void,
+    trackAction: (keepData?: boolean) => void
+}
+
 export const WebtrekkAutoTracking: React.ComponentClass<WebtrekkAutoTrackingProps>;
 export const WebtrekkInitData: React.ComponentClass<WebtrekkInitProps>;
 export const WebtrekkAdvancedData: React.ComponentClass<WebtrekkAdvancedProps>;
@@ -213,29 +225,12 @@ export const WebtrekkTeaser: React.ComponentClass<WebtrekkTeaserProps & React.HT
 export const WebtrekkProductList: React.ComponentClass<WebtrekkProductListProps & React.HTMLProps<HTMLElement>>;
 export const WebtrekkContentEngagement: React.ComponentClass<WebtrekkContentEngagementProps & React.HTMLProps<HTMLElement>>;
 export const WebtrekkExtension: React.ComponentClass<WebtrekkExtensionProps>;
-
-export interface WebtrekkSmartPixelReact {
-    call: (call: (wtSmart: wtSmart) => void) => void,
-    init: (data: WebtrekkInitProps) => void,
-    advanced: (data: WebtrekkAdvancedProps) => void,
-    page: (name: string, data?: WebtrekkPageProps) => void,
-    action: () => void,
-    session: (data: WebtrekkSessionProps) => void,
-    campaign: (data: WebtrekkCampaignProps) => void,
-    customer: (id: string, data?: WebtrekkCustomerProps, validation?: boolean) => void,
-    product: (action: WebtrekkProductStatus, data: WebtrekkProductProps) => void,
-    products: (action: WebtrekkProductStatus, data: WebtrekkProductProps[]) => void,
-    order: (data: WebtrekkOrderProps) => void,
-    extension: (extension: string, action?: string, config?: any) => void,
-    track: () => void,
-    trackPage: () => void,
-    trackAction: () => void
-}
+export const WebtrekkSmartPixelReact: WebtrekkReact;
 
 export function webtrekkMiddleware(custom: {
-    [i: string]: (state: any, action: Object) => void;
-}): (store: Redux.Store) => (next: () => any) => (action: Object) => void;
+    [i: string]: (state: any, action: any) => void;
+}): (store: any) => (next: () => any) => (action: any) => void;
 
 export function webtrekkReducer(custom: {
-    [i: string]: (state: any, action: Object) => void;
-}): (reducer: () => {}) => React.useCallback;
+    [i: string]: (state: any, action: any) => void;
+}): (reducer: () => {}) => typeof React.useCallback;

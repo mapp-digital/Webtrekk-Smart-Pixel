@@ -1,8 +1,8 @@
-# Webtrekk Smart Pixel Vue
+# Webtrekk Smart Pixel - Vue
 
-[Site](https://www.webtrekk.com/) |
-[Docs](https://docs.webtrekk.com/display/WSPD/Vue) |
-[Support](https://support.webtrekk.com/) |
-[Changelog](./packages/vue/CHANGELOG.md) |
+[Site](https://mapp.com) |
+[Docs](https://documentation.mapp.com/latest/en/vue-15741417.html) |
+[Support](https://github.com/Webtrekk/Webtrekk-Smart-Pixel/issues) |
+[Changelog](./CHANGELOG.md)
 
 A Vue implementation of the Webtrekk Smart Pixel.
