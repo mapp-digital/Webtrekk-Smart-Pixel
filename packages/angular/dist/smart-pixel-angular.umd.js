@@ -4,6 +4,8 @@
     (global = global || self, factory(global['@webtrekk-smart-pixel/angular'] = {}, global.ng.core, global.wtSmart, global.ng.router, global.Rx.operators));
 }(this, (function (exports, core, wtSmart, router, operators) { 'use strict';
 
+    wtSmart = wtSmart && Object.prototype.hasOwnProperty.call(wtSmart, 'default') ? wtSmart['default'] : wtSmart;
+
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
 
@@ -226,7 +228,6 @@
     var getDocument_ = function () {
         return ((typeof window !== 'undefined' && typeof window.document !== 'undefined') ? window.document : null);
     };
-    var emptyObject = {};
     var init_ = function () {
         var window_ = getWindow_();
         var document_ = getDocument_();
@@ -247,97 +248,94 @@
             }
         };
         WebtrekkSmartPixelAngular.prototype.init = function (data) {
-            if (data === void 0) { data = { trackId: '', trackDomain: '' }; }
             this.call(function (pix) {
                 pix.init.add(data);
             });
         };
         WebtrekkSmartPixelAngular.prototype.advanced = function (data) {
-            if (data === void 0) { data = emptyObject; }
             this.call(function (pix) {
                 pix.advanced.add(data);
             });
         };
         WebtrekkSmartPixelAngular.prototype.page = function (name, data) {
-            if (name === void 0) { name = ''; }
-            if (data === void 0) { data = emptyObject; }
             this.call(function (pix) {
-                pix.page.data.add(name, data);
+                if (typeof name === 'string') {
+                    pix.page.data.add(name, data);
+                }
+                else {
+                    pix.page.data.add(name);
+                }
             });
         };
-        WebtrekkSmartPixelAngular.prototype.action = function (data) {
-            if (data === void 0) { data = emptyObject; }
+        WebtrekkSmartPixelAngular.prototype.action = function (name, data) {
             this.call(function (pix) {
-                pix.action.data.add(data);
+                if (typeof name === 'string') {
+                    pix.action.data.add(name, data);
+                }
+                else {
+                    pix.action.data.add(name);
+                }
             });
         };
         WebtrekkSmartPixelAngular.prototype.session = function (data) {
-            if (data === void 0) { data = emptyObject; }
             this.call(function (pix) {
                 pix.session.data.add(data);
             });
         };
         WebtrekkSmartPixelAngular.prototype.campaign = function (data) {
-            if (data === void 0) { data = { id: '' }; }
             this.call(function (pix) {
                 pix.campaign.data.add(data);
             });
         };
         WebtrekkSmartPixelAngular.prototype.customer = function (id, data, validation) {
-            if (id === void 0) { id = ''; }
-            if (data === void 0) { data = emptyObject; }
-            if (validation === void 0) { validation = false; }
             this.call(function (pix) {
-                pix.customer.data.add(id, data, validation);
+                if (typeof id === 'string') {
+                    pix.customer.data.add(id, data, validation);
+                }
+                else {
+                    pix.customer.data.add(id);
+                }
             });
         };
         WebtrekkSmartPixelAngular.prototype.product = function (action, data) {
-            if (action === void 0) { action = 'view'; }
-            if (data === void 0) { data = { id: '' }; }
             this.call(function (pix) {
                 var method = (action === 'view' || action === 'basket') ? 'set' : 'add';
                 pix.product[action].data[method]([data]);
             });
         };
         WebtrekkSmartPixelAngular.prototype.products = function (action, data) {
-            if (action === void 0) { action = 'view'; }
-            if (data === void 0) { data = []; }
             this.call(function (pix) {
                 var method = (action === 'view' || action === 'basket') ? 'set' : 'add';
                 pix.product[action].data[method](data);
             });
         };
         WebtrekkSmartPixelAngular.prototype.order = function (data) {
-            if (data === void 0) { data = { value: '' }; }
             this.call(function (pix) {
                 pix.order.data.add(data);
             });
         };
         WebtrekkSmartPixelAngular.prototype.extension = function (extension, action, config) {
-            if (extension === void 0) { extension = ''; }
-            if (action === void 0) { action = 'activate'; }
-            if (config === void 0) { config = emptyObject; }
             if (!extension) {
                 return;
+            }
+            if (!action) {
+                action = 'activate';
             }
             this.call(function (pix) {
                 pix.extension[extension][action](config);
             });
         };
         WebtrekkSmartPixelAngular.prototype.track = function (keepData) {
-            if (keepData === void 0) { keepData = false; }
             this.call(function (pix) {
                 pix.track(keepData);
             });
         };
         WebtrekkSmartPixelAngular.prototype.trackPage = function (keepData) {
-            if (keepData === void 0) { keepData = false; }
             this.call(function (pix) {
                 pix.trackPage(keepData);
             });
         };
         WebtrekkSmartPixelAngular.prototype.trackAction = function (keepData) {
-            if (keepData === void 0) { keepData = false; }
             this.call(function (pix) {
                 pix.trackAction(keepData);
             });

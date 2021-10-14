@@ -8,7 +8,7 @@
         "// @webtrekk-smart-pixel/core": "",
         "build:core": "npm run install:core && npm run build-only:core",
         "build-only:core": "node ./scripts/closure/build.js core",
-        "express:start": "forever start ./scripts/express/server.js",
+        "express:start": "forever start --minUptime=10000 --spinSleepTime=10000 ./scripts/express/server.js",
         "install:core": "node ./scripts/install/installer.js core",
         "release:core": "npm run build:core && npm run test:core:dev && npm run test:core:prod && node ./scripts/release/copy.js core",
         "test:core:dev": "npm run express:start && node ./scripts/karma/start.js core dev",

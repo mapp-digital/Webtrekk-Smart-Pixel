@@ -1,10 +1,10 @@
-import { Location } from '@angular/common';
-import { SpyLocation } from '@angular/common/testing';
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import {Location} from '@angular/common';
+import {SpyLocation} from '@angular/common/testing';
+import {TestBed} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
 
-import { WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular } from './index';
-import { expectInCallback } from './_helper/expectInCallback';
+import {WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular} from './index';
+import {expectInCallback} from './_helper/expectInCallback';
 
 describe('WebtrekkSmartPixelAngular', () => {
     let service: WebtrekkSmartPixelAngular;
@@ -17,7 +17,7 @@ describe('WebtrekkSmartPixelAngular', () => {
                     activateAutoTracking: false
                 })
             ],
-            providers: [{ provide: Location, useClass: SpyLocation }]
+            providers: [{provide: Location, useClass: SpyLocation}]
         });
 
         service = TestBed.get(WebtrekkSmartPixelAngular);
@@ -44,7 +44,7 @@ describe('WebtrekkSmartPixelAngular', () => {
 
     describe('init', () => {
         test('without data', (done) => {
-            service.init();
+            service.init({});
 
             service.call((wtSmart) => {
                 expectInCallback(() => {
@@ -81,7 +81,7 @@ describe('WebtrekkSmartPixelAngular', () => {
 
     describe('advanced', () => {
         test('without data', (done) => {
-            service.advanced();
+            service.advanced({});
 
             service.call((wtSmart) => {
                 expectInCallback(() => {
@@ -127,7 +127,7 @@ describe('WebtrekkSmartPixelAngular', () => {
 
     describe('page', () => {
         test('without data', (done) => {
-            service.page();
+            service.page({});
 
             service.call((wtSmart) => {
                 expectInCallback(() => {
@@ -220,7 +220,7 @@ describe('WebtrekkSmartPixelAngular', () => {
 
     describe('action', () => {
         test('without data', (done) => {
-            service.action();
+            service.action('', {});
 
             service.call((wtSmart) => {
                 expectInCallback(() => {
@@ -262,7 +262,7 @@ describe('WebtrekkSmartPixelAngular', () => {
 
     describe('session', () => {
         test('without data', (done) => {
-            service.session();
+            service.session({});
 
             service.call((wtSmart) => {
                 expectInCallback(() => {
@@ -299,14 +299,13 @@ describe('WebtrekkSmartPixelAngular', () => {
 
     describe('campaign', () => {
         test('without data', (done) => {
-            service.campaign();
+            service.campaign({});
 
             service.call((wtSmart) => {
                 expectInCallback(() => {
                     let data = wtSmart.campaign.data.get();
 
                     expect(data.id).toBe('');
-                    expect(data.action).toBe('c');
                     expect(data.mediaCode).toEqual(['mc', 'wt_mc']);
                     expect(data.oncePerSession).toBe(false);
                     expect(data.parameter).toEqual({});
@@ -326,7 +325,6 @@ describe('WebtrekkSmartPixelAngular', () => {
                     let data = wtSmart.campaign.data.get();
 
                     expect(data.id).toBe('wt_mc%3D_test.campaign');
-                    expect(data.action).toBe('c');
                     expect(data.mediaCode).toEqual(['wt_ga']);
                     expect(data.oncePerSession).toBe(true);
                 }, done);
@@ -336,7 +334,7 @@ describe('WebtrekkSmartPixelAngular', () => {
 
     describe('customer', () => {
         test('without data', (done) => {
-            service.customer();
+            service.customer({});
 
             service.call((wtSmart) => {
                 expectInCallback(() => {
@@ -410,7 +408,7 @@ describe('WebtrekkSmartPixelAngular', () => {
 
     describe('product', () => {
         test('without data', (done) => {
-            service.product();
+            service.product('view', {id: ''});
 
             service.call((wtSmart) => {
                 expectInCallback(() => {
@@ -443,7 +441,6 @@ describe('WebtrekkSmartPixelAngular', () => {
                     expect(data.id).toBe('abc123def456');
                     expect(data.cost).toBe(13.99);
                     expect(data.quantity).toBe(3);
-                    expect(data.status).toBe('view');
                     expect(data.variant).toBe('green');
                     expect(data.soldOut).toBe(true);
                     expect(data.parameter[5]).toBe('parameter 5');
@@ -474,7 +471,6 @@ describe('WebtrekkSmartPixelAngular', () => {
                     expect(data.id).toBe('abc123def456');
                     expect(data.cost).toBe(13.99);
                     expect(data.quantity).toBe(3);
-                    expect(data.status).toBe('add');
                     expect(data.variant).toBe('green');
                     expect(data.soldOut).toBe(true);
                     expect(data.parameter[5]).toBe('parameter 5');
@@ -505,7 +501,6 @@ describe('WebtrekkSmartPixelAngular', () => {
                     expect(data.id).toBe('abc123def456');
                     expect(data.cost).toBe(13.99);
                     expect(data.quantity).toBe(3);
-                    expect(data.status).toBe('conf');
                     expect(data.variant).toBe('green');
                     expect(data.soldOut).toBe(true);
                     expect(data.parameter[5]).toBe('parameter 5');
@@ -517,7 +512,7 @@ describe('WebtrekkSmartPixelAngular', () => {
 
     describe('products', () => {
         test('without data', (done) => {
-            service.products();
+            service.products('basket', []);
 
             service.call((wtSmart) => {
                 expectInCallback(() => {
@@ -564,7 +559,6 @@ describe('WebtrekkSmartPixelAngular', () => {
                     expect(data[0].id).toBe('product 1');
                     expect(data[0].cost).toBe(13.99);
                     expect(data[0].quantity).toBe(3);
-                    expect(data[0].status).toBe('add');
                     expect(data[0].variant).toBe('green');
                     expect(data[0].soldOut).toBe(false);
                     expect(data[0].parameter[2]).toBe('parameter 2');
@@ -574,7 +568,6 @@ describe('WebtrekkSmartPixelAngular', () => {
                     expect(data[1].id).toBe('product 2');
                     expect(data[1].cost).toBe(19.95);
                     expect(data[1].quantity).toBe(1);
-                    expect(data[1].status).toBe('add');
                     expect(data[1].variant).toBe('yellow');
                     expect(data[1].soldOut).toBe(true);
                     expect(data[1].parameter[5]).toBe('parameter 5');
@@ -620,7 +613,6 @@ describe('WebtrekkSmartPixelAngular', () => {
                     expect(data[0].id).toBe('product 1');
                     expect(data[0].cost).toBe(13.99);
                     expect(data[0].quantity).toBe(3);
-                    expect(data[0].status).toBe('conf');
                     expect(data[0].variant).toBe('green');
                     expect(data[0].soldOut).toBe(false);
                     expect(data[0].parameter[2]).toBe('parameter 2');
@@ -630,7 +622,6 @@ describe('WebtrekkSmartPixelAngular', () => {
                     expect(data[1].id).toBe('product 2');
                     expect(data[1].cost).toBe(19.95);
                     expect(data[1].quantity).toBe(1);
-                    expect(data[1].status).toBe('conf');
                     expect(data[1].variant).toBe('yellow');
                     expect(data[1].soldOut).toBe(true);
                     expect(data[1].parameter[5]).toBe('parameter 5');
@@ -643,7 +634,7 @@ describe('WebtrekkSmartPixelAngular', () => {
 
     describe('order', () => {
         test('without data', (done) => {
-            service.order();
+            service.order({});
 
             service.call((wtSmart) => {
                 expectInCallback(() => {
@@ -702,8 +693,12 @@ describe('WebtrekkSmartPixelAngular', () => {
     });
 
     describe('extension', () => {
-        test('without data', () => {
-            expect(service.extension()).toBeUndefined();
+        test('without data - 1', () => {
+            expect(service.extension('')).toBeUndefined();
+        });
+
+        test('without data - 2', () => {
+            expect(service.extension('scroll_position')).toBeUndefined();
         });
 
         test('with data', (done) => {
@@ -741,9 +736,12 @@ describe('WebtrekkSmartPixelAngular', () => {
 
         beforeEach((done) => {
             service.call((wtSmart) => {
-                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {});
-                spyOnTrackPage = jest.spyOn(wtSmart, 'trackPage').mockImplementation(() => {});
-                spyOnTrackAction = jest.spyOn(wtSmart, 'trackAction').mockImplementation(() => {});
+                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {
+                });
+                spyOnTrackPage = jest.spyOn(wtSmart, 'trackPage').mockImplementation(() => {
+                });
+                spyOnTrackAction = jest.spyOn(wtSmart, 'trackAction').mockImplementation(() => {
+                });
 
                 done();
             });

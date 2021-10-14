@@ -13,7 +13,7 @@ class WebtrekkExtension extends WebtrekkReactComponent {
 
 WebtrekkExtension.propTypes = {
     name: PropTypes.string.isRequired,
-    action: PropTypes.string.isRequired,
+    action: PropTypes.string,
     config: PropTypes.object
 };
 

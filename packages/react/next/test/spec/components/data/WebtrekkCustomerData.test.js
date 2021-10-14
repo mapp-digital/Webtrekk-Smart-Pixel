@@ -27,22 +27,22 @@ describe('WebtrekkCustomerData', () => {
         test('ignore wrong type', () => {
             shallow(
                 <WebtrekkCustomerData
-                    id={ 123456789 }
-                    email={ 1 }
-                    emailRID={ 2 }
-                    emailOptin={ 1 }
-                    firstName={ 1 }
-                    lastName={ 1 }
-                    telephone={ 1 }
-                    gender={ 'm' }
-                    birthday={ 1 }
-                    country={ 1 }
-                    city={ 1 }
-                    postalCode={ 1 }
-                    street={ 1 }
-                    streetNumber={ 1 }
-                    validation={ 1 }
-                    category={ {1: 'foo', 2: 3} }
+                    id={123456789}
+                    email={1}
+                    emailRID={2}
+                    emailOptin={1}
+                    firstName={1}
+                    lastName={1}
+                    telephone={1}
+                    gender={{}}
+                    birthday={1}
+                    country={1}
+                    city={1}
+                    postalCode={1}
+                    street={1}
+                    streetNumber={1}
+                    validation={1}
+                    category={{1: 'foo', 2: 3}}
                 />
             );
 
@@ -56,7 +56,7 @@ describe('WebtrekkCustomerData', () => {
             expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `firstName` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
             expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `lastName` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
             expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `telephone` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
-            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `gender` of type `string` supplied to `WebtrekkCustomerData`, expected `number`.');
+            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `gender` supplied to `WebtrekkCustomerData`.');
             expect(spyOnError.mock.calls[8][invalidPropIndex]).toContain('Invalid prop `birthday` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
             expect(spyOnError.mock.calls[9][invalidPropIndex]).toContain('Invalid prop `country` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
             expect(spyOnError.mock.calls[10][invalidPropIndex]).toContain('Invalid prop `city` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
@@ -67,18 +67,8 @@ describe('WebtrekkCustomerData', () => {
             expect(spyOnError.mock.calls[15][invalidPropIndex]).toContain('Invalid prop `category.2` of type `number` supplied to `WebtrekkCustomerData`, expected `string`.');
         });
 
-        test('required props', () => {
-            shallow(<WebtrekkCustomerData />);
-
-            expect(spyOnError).toHaveBeenCalled();
-            expect(spyOnError.mock.calls.length).toBe(1);
-
-            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('The prop `id` is marked as required in `WebtrekkCustomerData`, but its value is `null`.');
-        });
-
         test('don\'t returns children', () => {
-            const renderedWebtrekkCustomerData = shallow(<WebtrekkCustomerData />);
-            expect(renderedWebtrekkCustomerData).toEqual({});
+            expect(shallow(<WebtrekkCustomerData />)).toEqual({});
         });
     });
 

@@ -7,6 +7,11 @@ class WebtrekkAdvancedData extends WebtrekkReactComponent {
     }
 }
 
+const PropTypesOfTypesNumberOrString = PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+]);
+
 WebtrekkAdvancedData.propTypes = {
     secureCookie: PropTypes.bool,
     optOutName: PropTypes.string,
@@ -18,16 +23,16 @@ WebtrekkAdvancedData.propTypes = {
         activated: PropTypes.bool,
         serverDomain: PropTypes.string,
         serverPath: PropTypes.string,
-        droppedRequests: PropTypes.number,
+        droppedRequests: PropTypesOfTypesNumberOrString,
         blacklist: PropTypes.array
     }),
     useHashForDefaultPageName: PropTypes.bool,
     useParamsForDefaultPageName: PropTypes.arrayOf(PropTypes.string),
     requestQueue: PropTypes.shape({
         activated: PropTypes.bool,
-        ttl: PropTypes.number,
-        resendInterval: PropTypes.number,
-        size: PropTypes.number
+        ttl: PropTypesOfTypesNumberOrString,
+        resendInterval: PropTypesOfTypesNumberOrString,
+        size: PropTypesOfTypesNumberOrString
     }),
     userIdentification: PropTypes.shape({
         enableOptOut: PropTypes.bool,

@@ -1,79 +1,80 @@
-import WebtrekkSmartpixelVue from "../src/index";
-import * as wtSmart from "./../../core";
+import WebtrekkSmartpixelVue from '../src/index';
+import {SmartPixel} from '@webtrekk-smart-pixel/core';
 
-declare interface DataObject {
-    [i: number]: string;
+type NumberOrString = number | string;
+type DataObject = {
+    [i in NumberOrString]: string;
+};
+
+type WebtrekkInitCookie = '1' | '3';
+type WebtrekkProductStatus = 'view' | 'list' | 'basket' | 'confirmation';
+type WebtrekkTeaserType = 'view' | 'click' | 'product';
+type WebtrekkTeaserGoal = 'order' | 'goal' | 'both';
+type WebtrekkContentEngagementSendContentEngagement = 0 | 1 | 2;
+type WebtrekkInitPropDomainList = string | RegExp;
+type WebtrekkInitPropDomain = string | RegExp | WebtrekkInitPropDomainList[];
+
+type WebtrekkAdvancedPropSendViaServer = {
+    activated?: boolean;
+    serverDomain?: string;
+    serverPath?: string;
+    droppedRequests?: NumberOrString;
+    blacklist?: string[];
 }
 
-declare type WebtrekkInitCookie = "1" | "3";
+type WebtrekkAdvancedPropRequestQueue = {
+    activated?: boolean;
+    ttl?: NumberOrString;
+    resendInterval?: NumberOrString;
+    size?: NumberOrString;
+}
 
-declare type WebtrekkProductStatus =
-    | "view"
-    | "list"
-    | "basket"
-    | "confirmation";
+type WebtrekkAdvancedPropUserIdentification = {
+    enableOptOut?: boolean;
+    enableAnonymousFunction?: boolean;
+    anonymousOptIn?: boolean;
+    optOutCookieName?: string;
+    anonymousCookieName?: string;
+    suppressParameter?: string[];
+}
 
-declare type WebtrekkTeaserType = "view" | "click" | "product";
-
-declare type WebtrekkTeaserGoal = "order" | "goal" | "both";
-
-declare type WebtrekkContentEngagementSendContentEngagement = 0 | 1 | 2;
-
-declare interface WebtrekkInitProps {
-    trackId: string;
-    trackDomain: string;
-    domain?: string[];
+interface WebtrekkInitProps {
+    trackId?: string;
+    trackDomain?: string;
+    domain?: WebtrekkInitPropDomain;
     cookie?: WebtrekkInitCookie;
 }
 
-declare interface WebtrekkAdvancedProps {
+interface WebtrekkAdvancedProps {
     secureCookie?: boolean;
     optOutName?: string;
     requestObfuscation?: boolean;
     execCDB?: boolean;
     useCDBCache?: boolean;
     sendViaSDK?: boolean;
-    sendViaServer?: {
-        activated?: boolean;
-        serverDomain?: string;
-        serverPath?: string;
-        droppedRequests?: number;
-        blacklist?: string[];
-    };
+    sendViaServer?: WebtrekkAdvancedPropSendViaServer;
     useHashForDefaultPageName?: boolean;
     useParamsForDefaultPageName?: string[];
-    requestQueue?: {
-        activated?: boolean;
-        ttl?: number;
-        resendInterval?: number;
-        size?: number;
-    };
-    userIdentification?: {
-        enableOptOut?: boolean;
-        enableAnonymousFunction?: boolean;
-        anonymousOptIn?: boolean;
-        optOutCookieName?: string;
-        anonymousCookieName?: string;
-        suppressParameter?: string[];
-    };
+    requestQueue?: WebtrekkAdvancedPropRequestQueue;
+    userIdentification?: WebtrekkAdvancedPropUserIdentification;
 }
 
-declare interface WebtrekkCampaignProps {
-    id: string;
+interface WebtrekkCampaignProps {
+    id?: string;
     mediaCode?: string[];
     oncePerSession?: boolean;
     parameter?: DataObject;
 }
 
-declare interface WebtrekkCustomerProps {
-    id: string;
+interface WebtrekkCustomerProps {
+    id?: string;
     email?: string;
     emailRID?: string;
     emailOptin?: boolean;
     firstName?: string;
     lastName?: string;
     telephone?: string;
-    gender?: number;
+    gender?: NumberOrString;
     birthday?: string;
     country?: string;
     city?: string;
@@ -84,24 +85,24 @@ declare interface WebtrekkCustomerProps {
     category?: DataObject;
 }
 
-declare interface WebtrekkOrderProps {
-    value: number;
+interface WebtrekkOrderProps {
+    value?: NumberOrString;
     id?: string;
     currency?: string;
-    couponValue?: number;
+    couponValue?: NumberOrString;
     paymentMethod?: string;
     shippingService?: string;
     shippingSpeed?: string;
-    shippingCosts?: number;
-    grossMargin?: number;
+    shippingCosts?: NumberOrString;
+    grossMargin?: NumberOrString;
     orderStatus?: string;
     parameter?: DataObject;
 }
 
-declare interface WebtrekkPageProps {
+interface WebtrekkPageProps {
     name?: string;
     search?: string;
-    numberSearchResults?: number;
+    numberSearchResults?: NumberOrString;
     errorMessages?: string;
     paywall?: boolean;
     articleTitle?: string;
@@ -109,7 +110,7 @@ declare interface WebtrekkPageProps {
     title?: string;
     type?: string;
     length?: string;
-    daysSincePublication?: number;
+    daysSincePublication?: NumberOrString;
     testVariant?: string;
     testExperiment?: string;
     parameter?: DataObject;
@@ -117,29 +118,29 @@ declare interface WebtrekkPageProps {
     goal?: DataObject;
 }
 
-declare interface WebtrekkActionProps {
-    name: string;
+interface WebtrekkActionProps {
+    name?: string;
     parameter?: DataObject;
     goal?: DataObject;
 }
 
-declare interface WebtrekkProductProps {
+interface WebtrekkProductProps {
     id: string;
     action?: WebtrekkProductStatus;
-    cost?: number;
-    quantity?: number;
+    cost?: NumberOrString;
+    quantity?: NumberOrString;
     variant?: string;
     soldOut?: boolean;
     parameter?: DataObject;
     category?: DataObject;
 }
 
-declare interface WebtrekkSessionProps {
-    loginStatus: string;
-    parameter: DataObject;
+interface WebtrekkSessionProps {
+    loginStatus?: string;
+    parameter?: DataObject;
 }
 
-declare interface WebtrekkTeaserProps {
+interface WebtrekkTeaserProps {
     selector?: string | HTMLElement;
     name: string;
     rank?: string;
@@ -151,7 +152,7 @@ declare interface WebtrekkTeaserProps {
     value?: string;
 }
 
-declare interface WebtrekkTeaserConfig {
+interface WebtrekkTeaserConfig {
     viewPercent?: number;
     viewTime?: number;
     attribution?: "first" | "last" | "all";
@@ -163,7 +164,7 @@ declare interface WebtrekkTeaserConfig {
     autoEngagements?: boolean;
 }
 
-declare interface WebtrekkProductListConfig {
+interface WebtrekkProductListConfig {
     viewPercent?: number;
     viewTime?: number;
     sampling?: number;
@@ -174,32 +175,34 @@ declare interface WebtrekkProductListConfig {
     sendMultipleProductViews?: boolean;
 }
 
-declare interface WebtrekkContentEngagementConfig {
-    percentageStepsInAnalytics?: number;
-    sendContentEngagement?: 0 | 1 | 2;
-    percentageReached?: number;
-    secondsReached?: number;
-    largeBrowserResolution?: number;
-    largeBrowserSeconds?: number;
-    mediumBrowserResolution?: number;
-    mediumBrowserSeconds?: number;
-    smallBrowserResolution?: number;
-    smallBrowserSeconds?: number;
+interface WebtrekkContentEngagementConfig {
+    selector?: string | HTMLElement;
+    name: string;
+    percentageStepsInAnalytics?: NumberOrString;
+    sendContentEngagement?: WebtrekkContentEngagementSendContentEngagement;
+    percentageReached?: NumberOrString;
+    secondsReached?: NumberOrString;
+    largeBrowserResolution?: NumberOrString;
+    largeBrowserSeconds?: NumberOrString;
+    mediumBrowserResolution?: NumberOrString;
+    mediumBrowserSeconds?: NumberOrString;
+    smallBrowserResolution?: NumberOrString;
+    smallBrowserSeconds?: NumberOrString;
 }
 
-declare interface WebtrekkProductListProps {
+interface WebtrekkProductListProps {
     selector?: string | HTMLElement;
     id: string;
-    position: number;
-    cost?: number;
-    quantity?: number;
+    position: NumberOrString;
+    cost?: NumberOrString;
+    quantity?: NumberOrString;
     variant?: string;
     soldOut?: boolean;
     category?: DataObject;
     parameter?: DataObject;
 }
 
-declare interface WebtrekkContentEngagementProps {
+interface WebtrekkContentEngagementProps {
     selector: string | HTMLElement;
     name: string;
     percentageStepsInAnalytics: number;
@@ -216,36 +219,25 @@ declare interface WebtrekkContentEngagementProps {
 
 interface Webtrekk {
     deactivateAutoTracking: boolean;
-    call: (call: (wtSmart: wtSmart) => void) => void;
-    init: (data: WebtrekkInitProps) => void;
-    advanced: (data: WebtrekkAdvancedProps) => void;
-    page: (name: string, data?: WebtrekkPageProps) => void;
-    action: (data: WebtrekkActionProps) => void;
-    session: (data: WebtrekkSessionProps) => void;
-    campaign: (data: WebtrekkCampaignProps) => void;
-    customer: (
-        id: string,
-        data?: WebtrekkCustomerProps,
-        validation?: boolean
-    ) => void;
-    product: (
-        action: WebtrekkProductStatus,
-        data: WebtrekkProductProps
-    ) => void;
-    products: (
-        action: WebtrekkProductStatus,
-        data: WebtrekkProductProps[]
-    ) => void;
-    order: (data: WebtrekkOrderProps) => void;
-    extension: (
-        extension: string,
-        action?: string,
-        config?: { [key: string]: any }
-    ) => void;
-    track: (keepData?: boolean) => void;
-    trackPage: (keepData?: boolean) => void;
-    trackAction: (keepData?: boolean) => void;
-    clear: () => void;
+    call(call: (wtSmart: SmartPixel) => void): void;
+    init(data: WebtrekkInitProps): void;
+    advanced(data: WebtrekkAdvancedProps): void;
+    page(data: WebtrekkPageProps): void;
+    page(name: string, data?: WebtrekkPageProps): void;
+    action(data: WebtrekkActionProps): void;
+    action(name: string, data?: WebtrekkActionProps): void;
+    session(data: WebtrekkSessionProps): void;
+    campaign(data: WebtrekkCampaignProps): void;
+    customer(data: WebtrekkCustomerProps): void;
+    customer(id: string, data?: WebtrekkCustomerProps, validation?: boolean): void;
+    product(action: WebtrekkProductStatus, data: WebtrekkProductProps): void;
+    products(action: WebtrekkProductStatus, data: WebtrekkProductProps[]): void;
+    order(data: WebtrekkOrderProps): void;
+    extension(extension: string, action?: string, config?: any): void;
+    track(keepData?: boolean): void;
+    trackPage(keepData?: boolean): void;
+    trackAction(keepData?: boolean): void;
+    clear(): void;
 }
 
 interface Router {

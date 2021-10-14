@@ -2,12 +2,12 @@ import {Injectable} from '@angular/core';
 import {
     WebtrekkActionProps, WebtrekkAdvancedProps, WebtrekkCampaignProps,
     WebtrekkCustomerProps, WebtrekkInitProps, WebtrekkOrderProps,
-    WebtrekkPageProps, WebtrekkProductProps, WebtrekkSessionProps
+    WebtrekkPageProps, WebtrekkProductProps, WebtrekkSessionProps,
+    WebtrekkProductStatus
 } from './Directives/DataTypes';
-import {WebtrekkSmartPixelConfig} from './WebtrekkSmartPixelConfig';
-import * as wtSmart from '@webtrekk-smart-pixel/core';
+import wtSmart, {SmartPixel} from '@webtrekk-smart-pixel/core';
 
-var pixel_: wtSmart = null;
+var pixel_: SmartPixel = null;
 
 const getWindow_ = (): Window => {
     return ((typeof window !== 'undefined') ? window : null);
@@ -17,7 +17,6 @@ const getDocument_ = (): Document => {
     return ((typeof window !== 'undefined' && typeof window.document !== 'undefined') ? window.document : null);
 };
 
-const emptyObject = {};
 const init_ = (): void => {
     var window_: Window = getWindow_();
     var document_: Document = getDocument_();
@@ -30,7 +29,7 @@ const init_ = (): void => {
 
 @Injectable()
 export class WebtrekkSmartPixelAngular {
-    call(call: (wtSmart: wtSmart) => void): void {
+    call(call: (wtSmart: SmartPixel) => void): void {
         if (pixel_ === null) {
             init_();
         }
@@ -38,95 +37,114 @@ export class WebtrekkSmartPixelAngular {
         if (pixel_ !== null) {
             pixel_.push(call);
         }
-    };
+    }
 
-    init(data: WebtrekkSmartPixelConfig | WebtrekkInitProps = {trackId: '', trackDomain: ''}): void {
+    init(data: WebtrekkInitProps): void {
         this.call((pix) => {
             pix.init.add(data);
         });
-    };
+    }
 
-    advanced(data: WebtrekkAdvancedProps = emptyObject): void {
+    advanced(data: WebtrekkAdvancedProps): void {
         this.call((pix) => {
             pix.advanced.add(data);
         });
-    };
+    }
 
-    page(name: string = '', data: WebtrekkPageProps = emptyObject): void {
+    page(name: string | WebtrekkPageProps, data?: WebtrekkPageProps): void {
         this.call((pix) => {
-            pix.page.data.add(name, data);
+            if (typeof name === 'string') {
+                pix.page.data.add(name, data);
+            }
+            else {
+                pix.page.data.add(name);
+            }
         });
-    };
+    }
 
-    action(data: WebtrekkActionProps = emptyObject): void {
+    action(name: string | WebtrekkActionProps, data?: WebtrekkActionProps): void {
         this.call((pix) => {
-            pix.action.data.add(data);
+            if (typeof name === 'string') {
+                pix.action.data.add(name, data);
+            }
+            else {
+                pix.action.data.add(name);
+            }
         });
-    };
+    }
 
-    session(data: WebtrekkSessionProps = emptyObject): void {
+    session(data: WebtrekkSessionProps): void {
         this.call((pix) => {
             pix.session.data.add(data);
         });
-    };
+    }
 
-    campaign(data: WebtrekkCampaignProps = {id: ''}): void {
+    campaign(data: WebtrekkCampaignProps): void {
         this.call((pix) => {
             pix.campaign.data.add(data);
         });
-    };
+    }
 
-    customer(id: string = '', data: WebtrekkCustomerProps = emptyObject, validation: boolean = false): void {
+    customer(id: string | WebtrekkCustomerProps, data?: WebtrekkCustomerProps, validation?: boolean): void {
         this.call((pix) => {
-            pix.customer.data.add(id, data, validation);
+            if (typeof id === 'string') {
+                pix.customer.data.add(id, data, validation);
+            }
+            else {
+                pix.customer.data.add(id);
+            }
         });
-    };
+    }
 
-    product(action: string = 'view', data: WebtrekkProductProps = {id: ''}): void {
+    product(action: WebtrekkProductStatus, data: WebtrekkProductProps): void {
         this.call((pix) => {
             var method = (action === 'view' || action === 'basket') ? 'set' : 'add';
             pix.product[action].data[method]([data]);
         });
-    };
+    }
 
-    products(action: string = 'view', data: WebtrekkProductProps[] = []): void {
+    products(action: WebtrekkProductStatus, data: WebtrekkProductProps[]): void {
         this.call((pix) => {
             var method = (action === 'view' || action === 'basket') ? 'set' : 'add';
             pix.product[action].data[method](data);
         });
-    };
+    }
 
-    order(data: WebtrekkOrderProps = {value: ''}): void {
+    order(data: WebtrekkOrderProps): void {
         this.call((pix) => {
             pix.order.data.add(data);
         });
-    };
+    }
 
-    extension(extension: string = '', action: string = 'activate', config: any = emptyObject): void {
+    extension(extension: string, action?: string, config?: any): void {
         if (!extension) {
             return;
+        }
+
+        if (!action) {
+            action = 'activate';
         }
 
         this.call((pix) => {
             pix.extension[extension][action](config);
         });
-    };
+    }
 
-    track(keepData: boolean = false): void {
+    track(keepData?: boolean): void {
         this.call((pix) => {
             pix.track(keepData);
         });
-    };
+    }
 
-    trackPage(keepData: boolean = false): void {
+    trackPage(keepData?: boolean): void {
         this.call((pix) => {
             pix.trackPage(keepData);
         });
-    };
+    }
 
-    trackAction(keepData: boolean = false): void {
+    trackAction(keepData?: boolean): void {
         this.call((pix) => {
             pix.trackAction(keepData);
         });
-    };
+    }
 }

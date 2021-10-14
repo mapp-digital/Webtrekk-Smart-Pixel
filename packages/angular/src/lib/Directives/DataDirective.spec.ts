@@ -1,22 +1,22 @@
-import { Location } from '@angular/common';
-import { SpyLocation } from '@angular/common/testing';
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import {Location} from '@angular/common';
+import {SpyLocation} from '@angular/common/testing';
+import {TestBed} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
 
-import { WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular } from './../index';
-import { expectInCallback } from './../_helper/expectInCallback';
+import {WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular} from './../index';
+import {expectInCallback} from './../_helper/expectInCallback';
 
-import { AdvancedData } from "./../_helper/components"
-import { CampaignData, CampaignDataTrack } from "./../_helper/components";
-import { CustomerData, CustomerDataTrack } from "./../_helper/components";
-import { InitData } from "./../_helper/components"
-import { OrderData, OrderDataTrack } from "./../_helper/components";
-import { PageData, PageDataTrack } from "./../_helper/components";
+import {AdvancedData} from './../_helper/components';
+import {CampaignData, CampaignDataTrack} from './../_helper/components';
+import {CustomerData, CustomerDataTrack} from './../_helper/components';
+import {InitData} from './../_helper/components';
+import {OrderData, OrderDataTrack} from './../_helper/components';
+import {PageData, PageDataTrack} from './../_helper/components';
 import {
     ProductViewData, ProductBasketData, ProductConfirmationData,
     ProductViewDataTrack, ProductBasketDataTrack, ProductConfirmationDataTrack
-} from "./../_helper/components";
-import { SessionData, SessionDataTrack } from "./../_helper/components";
+} from './../_helper/components';
+import {SessionData, SessionDataTrack} from './../_helper/components';
 
 describe('DataDirective', () => {
     describe('Advanced', () => {
@@ -31,7 +31,7 @@ describe('DataDirective', () => {
                         activateAutoTracking: false
                     })
                 ],
-                declarations: [ AdvancedData ]
+                declarations: [AdvancedData]
             });
 
             service = TestBed.get(WebtrekkSmartPixelAngular);
@@ -81,7 +81,7 @@ describe('DataDirective', () => {
                         activateAutoTracking: false
                     })
                 ],
-                declarations: [ CampaignData, CampaignDataTrack ]
+                declarations: [CampaignData, CampaignDataTrack]
             });
 
             service = TestBed.get(WebtrekkSmartPixelAngular);
@@ -147,7 +147,7 @@ describe('DataDirective', () => {
                         activateAutoTracking: false
                     })
                 ],
-                declarations: [ CustomerData, CustomerDataTrack ]
+                declarations: [CustomerData, CustomerDataTrack]
             });
 
             service = TestBed.get(WebtrekkSmartPixelAngular);
@@ -224,7 +224,7 @@ describe('DataDirective', () => {
                         activateAutoTracking: false
                     })
                 ],
-                declarations: [ InitData ]
+                declarations: [InitData]
             });
 
             service = TestBed.get(WebtrekkSmartPixelAngular);
@@ -247,7 +247,7 @@ describe('DataDirective', () => {
                     const initData = wtSmart.init.get();
                     expect(initData.trackId).toBe('123451234512345');
                     expect(initData.trackDomain).toBe('analytics01.webtrekk.net');
-                    expect(initData.domain.join(',')).toBe('sub.domain.tld');
+                    expect(initData.domain).toEqual(['sub.domain.tld']);
                     expect(initData.cookie).toBe('1');
                 }, done);
             });
@@ -267,7 +267,7 @@ describe('DataDirective', () => {
                         activateAutoTracking: false
                     })
                 ],
-                declarations: [ OrderData, OrderDataTrack ]
+                declarations: [OrderData, OrderDataTrack]
             });
 
             service = TestBed.get(WebtrekkSmartPixelAngular);
@@ -340,7 +340,7 @@ describe('DataDirective', () => {
                         activateAutoTracking: false
                     })
                 ],
-                declarations: [ PageData, PageDataTrack ]
+                declarations: [PageData, PageDataTrack]
             });
 
             service = TestBed.get(WebtrekkSmartPixelAngular);
@@ -552,7 +552,7 @@ describe('DataDirective', () => {
                         activateAutoTracking: false
                     })
                 ],
-                declarations: [ SessionData, SessionDataTrack ]
+                declarations: [SessionData, SessionDataTrack]
             });
 
             service = TestBed.get(WebtrekkSmartPixelAngular);

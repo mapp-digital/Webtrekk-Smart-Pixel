@@ -85,9 +85,9 @@ describe('WebtrekkProductList', () => {
             renderedWebtrekkProductList = shallow(
                 <WebtrekkProductList
                     id={0}
-                    position="0"
-                    cost="0"
-                    quantity="0"
+                    position={{}}
+                    cost={{}}
+                    quantity={{}}
                     variant={0}
                     soldOut="false"
                     category={['category-1']}
@@ -104,9 +104,9 @@ describe('WebtrekkProductList', () => {
             expect(spyOnError.mock.calls.length).toBe(8);
 
             expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `id` of type `number` supplied to `WebtrekkProductList`, expected `string`.');
-            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `position` of type `string` supplied to `WebtrekkProductList`, expected `number`.');
-            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `cost` of type `string` supplied to `WebtrekkProductList`, expected `number`.');
-            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `quantity` of type `string` supplied to `WebtrekkProductList`, expected `number`.');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `position` supplied to `WebtrekkProductList`.');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `cost` supplied to `WebtrekkProductList`.');
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `quantity` supplied to `WebtrekkProductList`.');
             expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `variant` of type `number` supplied to `WebtrekkProductList`, expected `string`.');
             expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `soldOut` of type `string` supplied to `WebtrekkProductList`, expected `boolean`.');
             expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `category` of type `array` supplied to `WebtrekkProductList`, expected an object.');

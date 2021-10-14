@@ -8,14 +8,17 @@ class WebtrekkCustomerData extends WebtrekkReactComponent {
 }
 
 WebtrekkCustomerData.propTypes = {
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     email: PropTypes.string,
     emailRID: PropTypes.string,
     emailOptin: PropTypes.bool,
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     telephone: PropTypes.string,
-    gender: PropTypes.number,
+    gender: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string
+    ]),
     birthday: PropTypes.string,
     country: PropTypes.string,
     city: PropTypes.string,

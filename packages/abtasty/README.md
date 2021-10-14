@@ -1,9 +1,8 @@
 # Smart Tracking Pixel - A/B Tasty
 
-[Site](https://www.webtrekk.com/) |
-[Docs](https://docs.webtrekk.com/display/WSPD/AB+Tasty) |
-[Support](https://support.webtrekk.com/) |
-[Changelog](https://docs.webtrekk.com/display/WSPD/Changelog)
+[Site](https://mapp.com/) |
+[Docs](https://documentation.mapp.com/latest/en/ab-tasty-15741387.html) |
+[Changelog](https://documentation.mapp.com/latest/en/changelog-15741423.html)
 
 The Webtrekk A/B Tasty extension makes it easier for you to analyse the displayed A/B test and variants. Webtrekk
 integration on your website is required for a successful set-up. Using the extension, the information from A/B Tasty

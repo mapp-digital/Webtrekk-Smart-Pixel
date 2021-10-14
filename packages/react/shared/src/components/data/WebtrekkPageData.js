@@ -7,10 +7,15 @@ class WebtrekkPageData extends WebtrekkReactComponent {
     }
 }
 
+const PropTypesOfTypesNumberOrString = PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+]);
+
 WebtrekkPageData.propTypes = {
     name: PropTypes.string,
     search: PropTypes.string,
-    numberSearchResults: PropTypes.number,
+    numberSearchResults: PropTypesOfTypesNumberOrString,
     errorMessages: PropTypes.string,
     paywall: PropTypes.bool,
     articleTitle: PropTypes.string,
@@ -18,7 +23,7 @@ WebtrekkPageData.propTypes = {
     title: PropTypes.string,
     type: PropTypes.string,
     length: PropTypes.string,
-    daysSincePublication: PropTypes.number,
+    daysSincePublication: PropTypesOfTypesNumberOrString,
     testVariant: PropTypes.string,
     testExperiment: PropTypes.string,
     parameter: PropTypes.objectOf(PropTypes.string),

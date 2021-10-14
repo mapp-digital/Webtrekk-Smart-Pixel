@@ -8,7 +8,7 @@ class WebtrekkCampaignData extends WebtrekkReactComponent {
 }
 
 WebtrekkCampaignData.propTypes = {
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     mediaCode: PropTypes.arrayOf(PropTypes.string),
     oncePerSession: PropTypes.bool,
     parameter: PropTypes.objectOf(PropTypes.string),

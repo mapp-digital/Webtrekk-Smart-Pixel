@@ -1,3 +1,10 @@
+<a name="1.2.0"></a>
+## 1.2.0 (2021-10-14)
+
+### Features
+
+* Optimize components property types
+
 <a name="1.1.3"></a>
 ## 1.1.3 (2021-09-01)
 
@@ -46,10 +53,10 @@
 
 ### Features
 
-* Support tracking components ([see](https://docs.webtrekk.com/display/WSPD/React#React-Components))
-* Support new tracking functionalities ([see](https://docs.webtrekk.com/display/WSPD/React#React-WebtrekkSmartPixelReact))
-* Support react hook reducer ([see](https://docs.webtrekk.com/display/WSPD/React#React-webtrekkReducer))
-* Support react redux middleware ([see](https://docs.webtrekk.com/display/WSPD/React#React-webtrekkMiddleware))
+* Support tracking components ([see](https://documentation.mapp.com/latest/en/react-15741412.html#id-.SMPReactv1.0-Components))
+* Support new tracking functionalities ([see](https://documentation.mapp.com/latest/en/react-15741412.html#id-.SMPReactv1.0-WebtrekkSmartPixelReact))
+* Support react hook reducer ([see](https://documentation.mapp.com/latest/en/react-15741412.html#id-.SMPReactv1.0-webtrekkReducer))
+* Support react redux middleware ([see](https://documentation.mapp.com/latest/en/react-15741412.html#id-.SMPReactv1.0-webtrekkMiddleware))
 
 <a name="0.2.5"></a>
 ## 0.2.5 (2019-09-10)
@@ -66,8 +73,8 @@
 
 ### Documentation
 
-* Extension for Content Engagement ([Content Engagement](https://docs.webtrekk.com/display/WSPD/Content+Engagement))
-* Extension for Cookie Control ([Cookie Control](https://docs.webtrekk.com/display/WSPD/Cookie+Control))
+* Extension for Content Engagement ([Content Engagement](https://documentation.mapp.com/latest/en/content-engagement-15741314.html))
+* Extension for Cookie Control ([Cookie Control](https://documentation.mapp.com/latest/en/cookie-control-15741322.html))
 
 <a name="0.2.2"></a>
 ## 0.2.2 (2019-05-29)

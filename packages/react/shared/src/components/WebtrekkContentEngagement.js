@@ -28,19 +28,24 @@ class WebtrekkContentEngagement extends WebtrekkReactComponent {
     }
 }
 
+const PropTypesOfTypesNumberOrString = PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+]);
+
 WebtrekkContentEngagement.propTypes = {
     selector: PropTypes.string,
-    name: PropTypes.string,
-    percentageStepsInAnalytics: PropTypes.number,
-    sendContentEngagement: PropTypes.oneOf([0, 1, 2]),
-    percentageReached: PropTypes.number,
-    secondsReached: PropTypes.number,
-    largeBrowserResolution: PropTypes.number,
-    largeBrowserSeconds: PropTypes.number,
-    mediumBrowserResolution: PropTypes.number,
-    mediumBrowserSeconds: PropTypes.number,
-    smallBrowserResolution: PropTypes.number,
-    smallBrowserSeconds: PropTypes.number
+    name: PropTypes.string.isRequired,
+    percentageStepsInAnalytics: PropTypesOfTypesNumberOrString,
+    sendContentEngagement: PropTypes.oneOf([0, 1, 2, '0', '1', '2']),
+    percentageReached: PropTypesOfTypesNumberOrString,
+    secondsReached: PropTypesOfTypesNumberOrString,
+    largeBrowserResolution: PropTypesOfTypesNumberOrString,
+    largeBrowserSeconds: PropTypesOfTypesNumberOrString,
+    mediumBrowserResolution: PropTypesOfTypesNumberOrString,
+    mediumBrowserSeconds: PropTypesOfTypesNumberOrString,
+    smallBrowserResolution: PropTypesOfTypesNumberOrString,
+    smallBrowserSeconds: PropTypesOfTypesNumberOrString
 };
 
 WebtrekkContentEngagement.defaultProps = {

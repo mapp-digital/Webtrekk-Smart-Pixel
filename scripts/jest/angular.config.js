@@ -20,7 +20,7 @@ module.exports = {
             statements: 100
         },
         [`${rootDir}/src/lib/WebtrekkSmartPixelAngular.ts`]: {
-            branches: 90
+            branches: 85
         }
     }
 };

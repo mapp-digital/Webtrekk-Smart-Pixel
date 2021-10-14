@@ -7,16 +7,21 @@ class WebtrekkOrderData extends WebtrekkReactComponent {
     }
 }
 
+const PropTypesOfTypesNumberOrString = PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+]);
+
 WebtrekkOrderData.propTypes = {
-    value: PropTypes.number.isRequired,
+    value: PropTypesOfTypesNumberOrString,
     id: PropTypes.string,
     currency: PropTypes.string,
-    couponValue: PropTypes.number,
+    couponValue: PropTypesOfTypesNumberOrString,
     paymentMethod: PropTypes.string,
     shippingService: PropTypes.string,
     shippingSpeed: PropTypes.string,
-    shippingCosts: PropTypes.number,
-    grossMargin: PropTypes.number,
+    shippingCosts: PropTypesOfTypesNumberOrString,
+    grossMargin: PropTypesOfTypesNumberOrString,
     orderStatus: PropTypes.string,
     parameter: PropTypes.objectOf(PropTypes.string),
     sendInstantly: PropTypes.bool

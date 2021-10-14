@@ -1,9 +1,24 @@
+<a name="1.2.7"></a>
+# 1.2.7 (2021-10-14)
+
+## Features
+- Include option to change event name in Product-List-Tracking ([Product-List-Tracking](https://documentation.mapp.com/latest/en/product-list-tracking-15741357.html))
+- Search in loop for elements, every 500ms, with *querySelector* (Product-List-Tracking, Teaser-Tracking and Content Engagement)
+- Internal queue implemented to process and send elements together (Product-List-Tracking and Teaser-Tracking)
+- Add TypeScript definition file (d.ts)
+
+## Bug Fixes
+- Content Engagement fired requests when element is removed
+- Missing order data if the first request is an action
+- Independent product parameters are not sent
+- Marketing Automation does not receive all data
+
 <a name="1.2.6"></a>
 # 1.2.6 (2021-02-22)
 
 ## Features
 - Change *wtstp_rla* cookie duration to session
-- Add cookie size configuration option for Teaser- and Product-List-Tracking
+- Add cookie size configuration option for Teaser- and Product-List-Tracking ([Teaser-Tracking](https://documentation.mapp.com/latest/en/teaser-tracking-15741363.html) and [Product-List-Tracking](https://documentation.mapp.com/latest/en/product-list-tracking-15741357.html))
 - Support product currency for each product
 - Support 'old' EverId in URL parameter and hash
 
@@ -20,7 +35,7 @@
 # 1.2.4 (2020-11-18)
 
 ## Features
-- Extension for User ID Disclosure ([User ID Disclosure](https://docs.mapp.com/display/WSPD/User-ID-Disclosure))
+- Extension for User ID Disclosure ([User ID Disclosure](https://documentation.mapp.com/latest/en/user-id-disclosure-15741370.html))
 - Update anonymous tracking to activate default opt-in
 
 ## Bug Fixes
@@ -57,8 +72,8 @@
 # 1.2.0 (2020-04-07)
 
 ## Features
-- Support server-to-server communication ([Advanced](https://docs.mapp.com/display/WSPD/advanced))
-- Add new media player event `init` ([MediaSession](https://docs.mapp.com/display/WSPD/MediaSession#MediaSession-init))
+- Support server-to-server communication ([Advanced](https://documentation.mapp.com/latest/en/advanced-15741253.html))
+- Add new media player event `init` ([MediaSession](https://documentation.mapp.com/latest/en/mediasession-15741348.html#id-.SMPMediaSessionv1.0-init))
 
 ## Bug Fixes
 - Fixed focus and blur event problem on MacOS for form tracking
@@ -68,12 +83,12 @@
 
 ## Features
 
-- Implement automatic form tracking ([Form](https://docs.mapp.com/display/WSPD/Form+tracking))
-- Easier solution to `get` and `set` "OptOut" status ([OptOut](https://docs.mapp.com/display/WSPD/Utils#Utils-OptOut))
+- Implement automatic form tracking ([Form](https://documentation.mapp.com/latest/en/form-tracking-15741328.html))
+- Easier solution to `get` and `set` "OptOut" status ([OptOut](https://documentation.mapp.com/latest/en/utils-15741396.html#id-.SMPUtilsv1.0-OptOut))
 - Accept number values for **parameter**, **category** and **goal**
 - Merge added product information, if the product exists (identifier is **id**)
-- Support additionally one argument as object for tracking data ([Page](https://docs.mapp.com/display/WSPD/page) and [Customer](https://docs.mapp.com/display/WSPD/customer))
-- Support `*` as wildcard in domain string ([Init](https://docs.mapp.com/display/WSPD/init))
+- Support additionally one argument as object for tracking data ([Page](https://documentation.mapp.com/latest/en/page-15741259.html) and [Customer](https://documentation.mapp.com/latest/en/customer-15741271.html))
+- Support `*` as wildcard in domain string ([Init](https://documentation.mapp.com/latest/en/init-15741249.html))
 
 ## Bug Fixes
 
@@ -84,7 +99,7 @@
 
 ## Features
 
-- Implement "Web to App" tracking ([sendViaSDK](https://docs.mapp.com/display/WSPD/advanced))
+- Implement "Web to App" tracking ([sendViaSDK](https://documentation.mapp.com/latest/en/advanced-15741253.html))
 
 ## Bug Fixes
 
@@ -111,8 +126,8 @@
 
 ## Extensions
 
-- Extension for Content Engagement ([Content Engagement](https://docs.mapp.com/display/WSPD/Content+Engagement))
-- Extension for Cookie Control ([Cookie Control](https://docs.mapp.com/display/WSPD/Cookie+Control))
+- Extension for Content Engagement ([Content Engagement](https://documentation.mapp.com/latest/en/content-engagement-15741314.html))
+- Extension for Cookie Control ([Cookie Control](https://documentation.mapp.com/latest/en/cookie-control-15741322.html))
 
 <a name="1.0.6"></a>
 # 1.0.6 (2019-05-10)
@@ -157,8 +172,8 @@
 
 ## Features
 
-- Add website goals to actions ([Action](https://docs.mapp.com/display/WSPD/action))
-- Support an array of TrackIds ([Init](https://docs.mapp.com/display/WSPD/init))
+- Add website goals to actions ([Action](https://documentation.mapp.com/latest/en/action-15741264.html))
+- Support an array of TrackIds ([Init](https://documentation.mapp.com/latest/en/init-15741249.html))
 
 ## Performance Improvements
 
@@ -170,18 +185,18 @@
 
 ## Features
 
-- Integrate 'update' for manually page changes ([Product-List-Tracking](https://docs.mapp.com/display/WSPD/Product+List+Tracking))
-- Integrate 'reload' for manually page changes ([Teaser-Tracking](https://docs.mapp.com/display/WSPD/Teaser+Tracking))
-- Integrate 'trackPage' and 'trackAction' to force page and action requests ([track](https://docs.mapp.com/display/WSPD/track))
-- Integrate offline tracking ([requestQueue](https://docs.mapp.com/display/WSPD/advanced))
-- Use existing old EverID ([forceOldEverId](https://docs.mapp.com/display/WSPD/advanced))
+- Integrate 'update' for manually page changes ([Product-List-Tracking](https://documentation.mapp.com/latest/en/product-list-tracking-15741357.html))
+- Integrate 'reload' for manually page changes ([Teaser-Tracking](https://documentation.mapp.com/latest/en/teaser-tracking-15741363.html))
+- Integrate 'trackPage' and 'trackAction' to force page and action requests ([track](https://documentation.mapp.com/latest/en/track-15741256.html))
+- Integrate offline tracking ([requestQueue](https://documentation.mapp.com/latest/en/advanced-15741253.html))
+- Use existing old EverID ([forceOldEverId](https://documentation.mapp.com/latest/en/advanced-15741253.html))
 - Possibility to remove individual properties
 
 ## Extensions
 
-- Extension for Product-List-Tracking ([Product-List-Tracking](https://docs.mapp.com/display/WSPD/Product+List+Tracking))
-- Extension for CDB-IDd ([CDB](https://docs.mapp.com/display/WSPD/Cross+Device+Bridge))
-- Extension for MediaTracking ([Media](https://docs.mapp.com/display/WSPD/Media+Tracking))
+- Extension for Product-List-Tracking ([Product-List-Tracking](https://documentation.mapp.com/latest/en/product-list-tracking-15741357.html))
+- Extension for CDB-IDd ([CDB](https://documentation.mapp.com/latest/en/cross-device-bridge-15741325.html))
+- Extension for MediaTracking ([Media](https://documentation.mapp.com/latest/en/media-tracking-15741345.html))
 
 <a name="1.0.0"></a>
 # 1.0.0 (2018-08-08)

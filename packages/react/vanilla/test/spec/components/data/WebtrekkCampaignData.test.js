@@ -44,15 +44,6 @@ describe('WebtrekkCampaignData', () => {
             expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkCampaignData`, expected `string`.');
         });
 
-        test('required props', () => {
-            shallow(<WebtrekkCampaignData/>);
-
-            expect(spyOnError).toHaveBeenCalled();
-            expect(spyOnError.mock.calls.length).toBe(1);
-
-            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('The prop `id` is marked as required in `WebtrekkCampaignData`, but its value is `null`.');
-        });
-
         test('don\'t returns children', () => {
             const renderedWebtrekkCampaignData = shallow(<WebtrekkCampaignData/>);
             expect(renderedWebtrekkCampaignData).toEqual({});

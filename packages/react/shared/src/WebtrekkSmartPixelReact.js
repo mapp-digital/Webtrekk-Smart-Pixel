@@ -1,7 +1,7 @@
 import wtSmart from '@webtrekk-smart-pixel/core';
 
 /**
- * @type {wtSmart|null}
+ * @type {SmartPixel|null}
  */
 var pixel_ = null;
 
@@ -39,7 +39,7 @@ const init_ = function() {
  */
 class WebtrekkSmartPixelReact {
     /**
-     * @param {function(wtSmart: wtSmart)} call
+     * @param {function(wtSmart: SmartPixel)} call
      */
     call(call) {
         if (pixel_ === null) {
@@ -80,11 +80,12 @@ class WebtrekkSmartPixelReact {
     }
 
     /**
+     * @param {string} name
      * @param {object} data
      */
-    action(data = emptyObject) {
+    action(name = '', data = emptyObject) {
         this.call(function(pix) {
-            pix.action.data.add(data);
+            pix.action.data.add(name, data);
         });
     }
 

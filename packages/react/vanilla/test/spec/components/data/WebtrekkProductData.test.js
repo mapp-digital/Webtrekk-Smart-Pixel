@@ -30,10 +30,10 @@ describe('WebtrekkProductData', () => {
                 <WebtrekkProductData
                     id={123456789}
                     action={0}
-                    cost='0'
-                    quantity='0'
+                    cost={{}}
+                    quantity={{}}
                     variant={0}
-                    soldOut='false'
+                    soldOut={'false'}
                     parameter={{1: 2}}
                     category={{1: 1}}
                 />
@@ -44,8 +44,8 @@ describe('WebtrekkProductData', () => {
 
             expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `id` of type `number` supplied to `WebtrekkProductData`, expected `string`.');
             expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `action` of value `0` supplied to `WebtrekkProductData`, expected one of ["list","view","basket","confirmation"].');
-            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `cost` of type `string` supplied to `WebtrekkProductData`, expected `number`.');
-            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `quantity` of type `string` supplied to `WebtrekkProductData`, expected `number`.');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `cost` supplied to `WebtrekkProductData`.');
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `quantity` supplied to `WebtrekkProductData`');
             expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `variant` of type `number` supplied to `WebtrekkProductData`, expected `string`.');
             expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `soldOut` of type `string` supplied to `WebtrekkProductData`, expected `boolean`.');
             expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `parameter.1` of type `number` supplied to `WebtrekkProductData`, expected `string`.');

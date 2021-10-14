@@ -8,9 +8,14 @@ class WebtrekkInitData extends WebtrekkReactComponent {
 }
 
 WebtrekkInitData.propTypes = {
-    trackId: PropTypes.string.isRequired,
-    trackDomain: PropTypes.string.isRequired,
-    domain: PropTypes.arrayOf(PropTypes.string),
+    trackId: PropTypes.string,
+    trackDomain: PropTypes.string,
+    domain: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string),
+        PropTypes.instanceOf(RegExp),
+        PropTypes.arrayOf(PropTypes.instanceOf(RegExp))
+    ]),
     cookie: PropTypes.oneOf(['1', '3'])
 };
 

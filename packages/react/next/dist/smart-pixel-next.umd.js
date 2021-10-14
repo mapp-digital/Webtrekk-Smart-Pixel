@@ -67,7 +67,7 @@
     if (typeof Proxy === "function") return true;
 
     try {
-      Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+      Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
       return true;
     } catch (e) {
       return false;
@@ -85,6 +85,8 @@
   function _possibleConstructorReturn(self, call) {
     if (call && (typeof call === "object" || typeof call === "function")) {
       return call;
+    } else if (call !== void 0) {
+      throw new TypeError("Derived constructors may only return object or undefined");
     }
 
     return _assertThisInitialized(self);
@@ -110,7 +112,7 @@
   }
 
   /**
-   * @type {wtSmart|null}
+   * @type {SmartPixel|null}
    */
 
   var pixel_ = null;
@@ -156,11 +158,11 @@
 
     _createClass(WebtrekkSmartPixelReact, [{
       key: "call",
-
+      value:
       /**
-       * @param {function(wtSmart: wtSmart)} call
+       * @param {function(wtSmart: SmartPixel)} call
        */
-      value: function call(_call) {
+      function call(_call) {
         if (pixel_ === null) {
           init_();
         }
@@ -208,15 +210,17 @@
         });
       }
       /**
+       * @param {string} name
        * @param {object} data
        */
 
     }, {
       key: "action",
       value: function action() {
-        var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : emptyObject;
+        var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+        var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : emptyObject;
         this.call(function (pix) {
-          pix.action.data.add(data);
+          pix.action.data.add(name, data);
         });
       }
       /**
@@ -379,12 +383,12 @@
 
     _createClass(WebtrekkAutoTracking, [{
       key: "addExtension",
-
+      value:
       /**
        * @param {string} extension
        * @param {string} action
        */
-      value: function addExtension(extension) {
+      function addExtension(extension) {
         var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'activate';
         SmartPixelReact.extension(extension, action);
       }
@@ -709,9 +713,9 @@
   }(WebtrekkReactComponent);
 
   WebtrekkInitData.propTypes = {
-    trackId: PropTypes.string.isRequired,
-    trackDomain: PropTypes.string.isRequired,
-    domain: PropTypes.arrayOf(PropTypes.string),
+    trackId: PropTypes.string,
+    trackDomain: PropTypes.string,
+    domain: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string), PropTypes.instanceOf(RegExp), PropTypes.arrayOf(PropTypes.instanceOf(RegExp))]),
     cookie: PropTypes.oneOf(['1', '3'])
   };
   WebtrekkInitData.defaultProps = {
@@ -735,6 +739,7 @@
     return WebtrekkAdvancedData;
   }(WebtrekkReactComponent);
 
+  var PropTypesOfTypesNumberOrString = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
   WebtrekkAdvancedData.propTypes = {
     secureCookie: PropTypes.bool,
     optOutName: PropTypes.string,
@@ -746,16 +751,16 @@
       activated: PropTypes.bool,
       serverDomain: PropTypes.string,
       serverPath: PropTypes.string,
-      droppedRequests: PropTypes.number,
+      droppedRequests: PropTypesOfTypesNumberOrString,
       blacklist: PropTypes.array
     }),
     useHashForDefaultPageName: PropTypes.bool,
     useParamsForDefaultPageName: PropTypes.arrayOf(PropTypes.string),
     requestQueue: PropTypes.shape({
       activated: PropTypes.bool,
-      ttl: PropTypes.number,
-      resendInterval: PropTypes.number,
-      size: PropTypes.number
+      ttl: PropTypesOfTypesNumberOrString,
+      resendInterval: PropTypesOfTypesNumberOrString,
+      size: PropTypesOfTypesNumberOrString
     }),
     userIdentification: PropTypes.shape({
       enableOptOut: PropTypes.bool,
@@ -813,7 +818,7 @@
   }(WebtrekkReactComponent);
 
   WebtrekkCampaignData.propTypes = {
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     mediaCode: PropTypes.arrayOf(PropTypes.string),
     oncePerSession: PropTypes.bool,
     parameter: PropTypes.objectOf(PropTypes.string),
@@ -842,14 +847,14 @@
   }(WebtrekkReactComponent);
 
   WebtrekkCustomerData.propTypes = {
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     email: PropTypes.string,
     emailRID: PropTypes.string,
     emailOptin: PropTypes.bool,
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     telephone: PropTypes.string,
-    gender: PropTypes.number,
+    gender: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     birthday: PropTypes.string,
     country: PropTypes.string,
     city: PropTypes.string,
@@ -894,16 +899,17 @@
     return WebtrekkOrderData;
   }(WebtrekkReactComponent);
 
+  var PropTypesOfTypesNumberOrString$1 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
   WebtrekkOrderData.propTypes = {
-    value: PropTypes.number.isRequired,
+    value: PropTypesOfTypesNumberOrString$1,
     id: PropTypes.string,
     currency: PropTypes.string,
-    couponValue: PropTypes.number,
+    couponValue: PropTypesOfTypesNumberOrString$1,
     paymentMethod: PropTypes.string,
     shippingService: PropTypes.string,
     shippingSpeed: PropTypes.string,
-    shippingCosts: PropTypes.number,
-    grossMargin: PropTypes.number,
+    shippingCosts: PropTypesOfTypesNumberOrString$1,
+    grossMargin: PropTypesOfTypesNumberOrString$1,
     orderStatus: PropTypes.string,
     parameter: PropTypes.objectOf(PropTypes.string),
     sendInstantly: PropTypes.bool
@@ -937,10 +943,11 @@
     return WebtrekkPageData;
   }(WebtrekkReactComponent);
 
+  var PropTypesOfTypesNumberOrString$2 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
   WebtrekkPageData.propTypes = {
     name: PropTypes.string,
     search: PropTypes.string,
-    numberSearchResults: PropTypes.number,
+    numberSearchResults: PropTypesOfTypesNumberOrString$2,
     errorMessages: PropTypes.string,
     paywall: PropTypes.bool,
     articleTitle: PropTypes.string,
@@ -948,7 +955,7 @@
     title: PropTypes.string,
     type: PropTypes.string,
     length: PropTypes.string,
-    daysSincePublication: PropTypes.number,
+    daysSincePublication: PropTypesOfTypesNumberOrString$2,
     testVariant: PropTypes.string,
     testExperiment: PropTypes.string,
     parameter: PropTypes.objectOf(PropTypes.string),
@@ -990,11 +997,12 @@
     return WebtrekkProductData;
   }(WebtrekkReactComponent);
 
+  var PropTypesOfTypesNumberOrString$3 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
   WebtrekkProductData.propTypes = {
     id: PropTypes.string.isRequired,
     action: PropTypes.oneOf(['list', 'view', 'basket', 'confirmation']).isRequired,
-    cost: PropTypes.number,
-    quantity: PropTypes.number,
+    cost: PropTypesOfTypesNumberOrString$3,
+    quantity: PropTypesOfTypesNumberOrString$3,
     variant: PropTypes.string,
     soldOut: PropTypes.bool,
     parameter: PropTypes.objectOf(PropTypes.string),
@@ -1172,12 +1180,13 @@
     return WebtrekkProductList;
   }(WebtrekkReactComponent);
 
+  var PropTypesOfTypesNumberOrString$4 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
   WebtrekkProductList.propTypes = {
     selector: PropTypes.string,
     id: PropTypes.string.isRequired,
-    position: PropTypes.number.isRequired,
-    cost: PropTypes.number,
-    quantity: PropTypes.number,
+    position: PropTypesOfTypesNumberOrString$4.isRequired,
+    cost: PropTypesOfTypesNumberOrString$4,
+    quantity: PropTypesOfTypesNumberOrString$4,
     variant: PropTypes.string,
     soldOut: PropTypes.bool,
     category: PropTypes.objectOf(PropTypes.string),
@@ -1237,19 +1246,20 @@
     return WebtrekkContentEngagement;
   }(WebtrekkReactComponent);
 
+  var PropTypesOfTypesNumberOrString$5 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
   WebtrekkContentEngagement.propTypes = {
     selector: PropTypes.string,
-    name: PropTypes.string,
-    percentageStepsInAnalytics: PropTypes.number,
-    sendContentEngagement: PropTypes.oneOf([0, 1, 2]),
-    percentageReached: PropTypes.number,
-    secondsReached: PropTypes.number,
-    largeBrowserResolution: PropTypes.number,
-    largeBrowserSeconds: PropTypes.number,
-    mediumBrowserResolution: PropTypes.number,
-    mediumBrowserSeconds: PropTypes.number,
-    smallBrowserResolution: PropTypes.number,
-    smallBrowserSeconds: PropTypes.number
+    name: PropTypes.string.isRequired,
+    percentageStepsInAnalytics: PropTypesOfTypesNumberOrString$5,
+    sendContentEngagement: PropTypes.oneOf([0, 1, 2, '0', '1', '2']),
+    percentageReached: PropTypesOfTypesNumberOrString$5,
+    secondsReached: PropTypesOfTypesNumberOrString$5,
+    largeBrowserResolution: PropTypesOfTypesNumberOrString$5,
+    largeBrowserSeconds: PropTypesOfTypesNumberOrString$5,
+    mediumBrowserResolution: PropTypesOfTypesNumberOrString$5,
+    mediumBrowserSeconds: PropTypesOfTypesNumberOrString$5,
+    smallBrowserResolution: PropTypesOfTypesNumberOrString$5,
+    smallBrowserSeconds: PropTypesOfTypesNumberOrString$5
   };
   WebtrekkContentEngagement.defaultProps = {
     selector: null,
@@ -1289,7 +1299,7 @@
 
   WebtrekkExtension.propTypes = {
     name: PropTypes.string.isRequired,
-    action: PropTypes.string.isRequired,
+    action: PropTypes.string,
     config: PropTypes.object
   };
   WebtrekkExtension.defaultProps = {

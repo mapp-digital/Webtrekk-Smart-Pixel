@@ -28,12 +28,17 @@ class WebtrekkProductList extends WebtrekkReactComponent {
     }
 }
 
+const PropTypesOfTypesNumberOrString = PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+]);
+
 WebtrekkProductList.propTypes = {
     selector: PropTypes.string,
     id: PropTypes.string.isRequired,
-    position: PropTypes.number.isRequired,
-    cost: PropTypes.number,
-    quantity: PropTypes.number,
+    position: PropTypesOfTypesNumberOrString.isRequired,
+    cost: PropTypesOfTypesNumberOrString,
+    quantity: PropTypesOfTypesNumberOrString,
     variant: PropTypes.string,
     soldOut: PropTypes.bool,
     category: PropTypes.objectOf(PropTypes.string),

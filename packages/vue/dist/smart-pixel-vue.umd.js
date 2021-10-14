@@ -167,7 +167,7 @@
   }
 
   /**
-   * @type {wtSmart|null}
+   * @type {SmartPixel|null}
    */
 
   var pixel_ = null;
@@ -216,7 +216,7 @@
       this.deactivateAutoTracking = false;
     }
     /**
-     * @param {function(wtSmart: wtSmart)} call
+     * @param {function(wtSmart: SmartPixel)} call
      */
     // eslint-disable-next-line
 
@@ -271,15 +271,17 @@
         });
       }
       /**
+       * @param {string} name
        * @param {object} data
        */
 
     }, {
       key: "action",
       value: function action() {
-        var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : emptyObject;
+        var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+        var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : emptyObject;
         this.call(function (pix) {
-          pix.action.data.add(data);
+          pix.action.data.add(name, data);
         });
       }
       /**
