@@ -1085,7 +1085,7 @@ interface SmartPixelExtension {
 /* **********************************************
  *                SMART PIXEL                   *
  ********************************************** */
-interface SmartPixel {
+export interface SmartPixel {
     version: string;
     push(fn: (wtSmart: SmartPixel) => void): void;
     track(keepData?: boolean): void;
@@ -1104,7 +1104,5 @@ interface SmartPixel {
     utils: SmartPixelUtils;
     extension: SmartPixelExtension;
 }
-
-export type { SmartPixel }
 
 export function use(window: any, document: any): SmartPixel;

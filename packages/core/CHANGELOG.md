@@ -1,3 +1,9 @@
+<a name="1.2.8"></a>
+# 1.2.8 (2021-10-15)
+
+## Bug Fixes
+- Fix TypeScript definition error
+
 <a name="1.2.7"></a>
 # 1.2.7 (2021-10-14)
 
