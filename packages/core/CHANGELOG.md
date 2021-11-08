@@ -1,3 +1,10 @@
+<a name="1.2.9"></a>
+# 1.2.9 (2021-11-08)
+
+## Bug Fixes
+- First media action is not sent if no page request has been sent for the current page
+- Duplicate query parameters in the track request
+
 <a name="1.2.8"></a>
 # 1.2.8 (2021-10-15)
 
