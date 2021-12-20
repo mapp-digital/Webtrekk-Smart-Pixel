@@ -1,3 +1,10 @@
+<a name="1.2.1"></a>
+## 1.2.1 (2021-12-20)
+
+### Features
+
+* Add a property to configure request limitation ([WebtrekkAdvancedData](https://documentation.mapp.com/latest/en/react-15741412.html#id-.SMPReactv1.0-%3CWebtrekkAdvancedData%3E) and [advanced](https://documentation.mapp.com/latest/en/react-15741412.html#id-.SMPReactv1.0-advanced))
+
 <a name="1.2.0"></a>
 ## 1.2.0 (2021-10-14)
 

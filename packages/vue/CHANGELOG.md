@@ -1,3 +1,10 @@
+<a name="1.2.1"></a>
+## 1.2.1 (2021-12-20)
+
+### Features
+
+* Add a property to configure request limitation ([advanced](https://documentation.mapp.com/latest/en/vue-15741417.html#id-.SMPVuev1.0-advanced) and [advanced-method](https://documentation.mapp.com/latest/en/vue-15741417.html#id-.SMPVuev1.0-advanced-method))
+
 <a name="1.2.0"></a>
 ## 1.2.0 (2021-10-14)
 

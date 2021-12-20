@@ -33,6 +33,12 @@ type WebtrekkAdvancedPropRequestQueue = {
     size?: NumberOrString;
 }
 
+type WebtrekkAdvancedPropRequestLimit = {
+    activated?: boolean;
+    amount?: NumberOrString;
+    duration?: NumberOrString;
+}
+
 type WebtrekkAdvancedPropUserIdentification = {
     enableOptOut?: boolean;
     enableAnonymousFunction?: boolean;
@@ -71,6 +77,7 @@ interface WebtrekkAdvancedProps {
     useHashForDefaultPageName?: boolean;
     useParamsForDefaultPageName?: string[];
     requestQueue?: WebtrekkAdvancedPropRequestQueue;
+    requestLimit?: WebtrekkAdvancedPropRequestLimit;
     userIdentification?: WebtrekkAdvancedPropUserIdentification;
 }
 

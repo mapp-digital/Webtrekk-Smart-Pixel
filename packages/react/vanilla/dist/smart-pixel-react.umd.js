@@ -27,6 +27,9 @@
   function _createClass(Constructor, protoProps, staticProps) {
     if (protoProps) _defineProperties(Constructor.prototype, protoProps);
     if (staticProps) _defineProperties(Constructor, staticProps);
+    Object.defineProperty(Constructor, "prototype", {
+      writable: false
+    });
     return Constructor;
   }
 
@@ -35,12 +38,15 @@
       throw new TypeError("Super expression must either be null or a function");
     }
 
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        writable: true,
-        configurable: true
-      }
+    Object.defineProperty(subClass, "prototype", {
+      value: Object.create(superClass && superClass.prototype, {
+        constructor: {
+          value: subClass,
+          writable: true,
+          configurable: true
+        }
+      }),
+      writable: false
     });
     if (superClass) _setPrototypeOf(subClass, superClass);
   }
@@ -668,7 +674,7 @@
       return _super.call(this, 'init');
     }
 
-    return WebtrekkInitData;
+    return _createClass(WebtrekkInitData);
   }(WebtrekkReactComponent);
 
   WebtrekkInitData.propTypes = {
@@ -695,7 +701,7 @@
       return _super.call(this, 'advanced');
     }
 
-    return WebtrekkAdvancedData;
+    return _createClass(WebtrekkAdvancedData);
   }(WebtrekkReactComponent);
 
   var PropTypesOfTypesNumberOrString = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
@@ -720,6 +726,11 @@
       ttl: PropTypesOfTypesNumberOrString,
       resendInterval: PropTypesOfTypesNumberOrString,
       size: PropTypesOfTypesNumberOrString
+    }),
+    requestLimit: PropTypes.shape({
+      activated: PropTypes.bool,
+      amount: PropTypesOfTypesNumberOrString,
+      duration: PropTypesOfTypesNumberOrString
     }),
     userIdentification: PropTypes.shape({
       enableOptOut: PropTypes.bool,
@@ -752,6 +763,11 @@
       resendInterval: null,
       size: null
     },
+    requestLimit: {
+      activated: null,
+      amount: null,
+      duration: null
+    },
     userIdentification: {
       enableOptOut: null,
       enableAnonymousFunction: null,
@@ -773,7 +789,7 @@
       return _super.call(this, 'campaign');
     }
 
-    return WebtrekkCampaignData;
+    return _createClass(WebtrekkCampaignData);
   }(WebtrekkReactComponent);
 
   WebtrekkCampaignData.propTypes = {
@@ -802,7 +818,7 @@
       return _super.call(this, 'customer');
     }
 
-    return WebtrekkCustomerData;
+    return _createClass(WebtrekkCustomerData);
   }(WebtrekkReactComponent);
 
   WebtrekkCustomerData.propTypes = {
@@ -855,7 +871,7 @@
       return _super.call(this, 'order');
     }
 
-    return WebtrekkOrderData;
+    return _createClass(WebtrekkOrderData);
   }(WebtrekkReactComponent);
 
   var PropTypesOfTypesNumberOrString$1 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
@@ -899,7 +915,7 @@
       return _super.call(this, 'page');
     }
 
-    return WebtrekkPageData;
+    return _createClass(WebtrekkPageData);
   }(WebtrekkReactComponent);
 
   var PropTypesOfTypesNumberOrString$2 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
@@ -953,7 +969,7 @@
       return _super.call(this, 'product');
     }
 
-    return WebtrekkProductData;
+    return _createClass(WebtrekkProductData);
   }(WebtrekkReactComponent);
 
   var PropTypesOfTypesNumberOrString$3 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
@@ -991,7 +1007,7 @@
       return _super.call(this, 'session');
     }
 
-    return WebtrekkSessionData;
+    return _createClass(WebtrekkSessionData);
   }(WebtrekkReactComponent);
 
   WebtrekkSessionData.propTypes = {

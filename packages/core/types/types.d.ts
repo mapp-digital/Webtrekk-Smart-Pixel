@@ -92,6 +92,12 @@ interface SmartPixelAdvancedRequestQueue {
     size?:NumberOrString;
 }
 
+type WebtrekkAdvancedPropRequestLimit = {
+    activated?: boolean;
+    amount?: NumberOrString;
+    duration?: NumberOrString;
+}
+
 interface SmartPixelAdvancedUserIdentification {
     enableAnonymousFunction?: boolean;
     anonymousOptIn?: boolean;
@@ -110,6 +116,7 @@ interface SmartPixelAdvancedSetProps {
     useHashForDefaultPageName?: boolean;
     useParamsForDefaultPageName?: string[];
     requestQueue?: SmartPixelAdvancedRequestQueue;
+    requestLimit?: WebtrekkAdvancedPropRequestLimit;
     userIdentification?: SmartPixelAdvancedUserIdentification;
 }
 
@@ -126,6 +133,7 @@ interface SmartPixelAdvancedGetProps {
     useHashForDefaultPageName: boolean;
     useParamsForDefaultPageName: string[];
     requestQueue: SmartPixelAdvancedRequestQueue;
+    requestLimit: WebtrekkAdvancedPropRequestLimit;
     userIdentification: SmartPixelAdvancedUserIdentification;
 }
 

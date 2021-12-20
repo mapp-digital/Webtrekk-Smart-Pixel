@@ -1,3 +1,9 @@
+<a name="1.3.0"></a>
+# 1.3.0 (2021-12-20)
+
+## Features
+- Add a property to configure request limitation ([Advanced](https://documentation.mapp.com/latest/en/advanced-15741253.html))
+
 <a name="1.2.9"></a>
 # 1.2.9 (2021-11-08)
 

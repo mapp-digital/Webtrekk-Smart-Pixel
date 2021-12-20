@@ -34,6 +34,11 @@ WebtrekkAdvancedData.propTypes = {
         resendInterval: PropTypesOfTypesNumberOrString,
         size: PropTypesOfTypesNumberOrString
     }),
+    requestLimit: PropTypes.shape({
+        activated: PropTypes.bool,
+        amount: PropTypesOfTypesNumberOrString,
+        duration: PropTypesOfTypesNumberOrString
+    }),
     userIdentification: PropTypes.shape({
         enableOptOut: PropTypes.bool,
         enableAnonymousFunction: PropTypes.bool,
@@ -65,6 +70,11 @@ WebtrekkAdvancedData.defaultProps = {
         ttl: null,
         resendInterval: null,
         size: null
+    },
+    requestLimit: {
+        activated: null,
+        amount: null,
+        duration: null
     },
     userIdentification: {
         enableOptOut: null,

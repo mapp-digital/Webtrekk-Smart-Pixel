@@ -1,3 +1,10 @@
+<a name="1.1.1"></a>
+## 1.1.1 (2021-12-20)
+
+### Features
+
+* Add a property to configure request limitation ([wt-advanced-data](https://documentation.mapp.com/latest/en/angular-15741405.html#id-.SMPAngularv1.0-wt-advanced-data) and [advanced](https://documentation.mapp.com/latest/en/angular-15741405.html#id-.SMPAngularv1.0-advanced))
+
 <a name="1.1.0"></a>
 ## 1.1.0 (2021-10-14)
 

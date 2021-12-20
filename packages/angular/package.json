@@ -1,6 +1,6 @@
 {
     "name": "@webtrekk-smart-pixel/angular",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "title": "Webtrekk Smart Pixel for Angular",
     "description": "A Angular implementation of the Webtrekk Smart Pixel.",
     "main": "./index.js",
