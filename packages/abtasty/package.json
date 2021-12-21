@@ -1,6 +1,6 @@
 {
     "name": "@webtrekk-smart-pixel/abtasty",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "title": "Webtrekk Smart Pixel ABTasty",
     "description": "The Webtrekk A/B Tasty extension makes it easier for you to analyse the displayed A/B test and variants. Using the extension, the information from A/B Tasty tests are sent directly to Webtrekk.",
     "main": "./index.js",
