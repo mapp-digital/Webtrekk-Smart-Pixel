@@ -36,8 +36,8 @@ describe('WebtrekkSessionData', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(2);
 
-            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `loginStatus` of type `number` supplied to `WebtrekkSessionData`, expected `string`.');
-            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkSessionData`, expected `string`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `loginStatus` of type `number` supplied to `WebtrekkSessionData`, expected `string`');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkSessionData`, expected `string`');
         });
 
         test('don\'t returns children', () => {
@@ -68,7 +68,7 @@ describe('WebtrekkSessionData', () => {
 
         test('mount campaign', (done) => {
             mount(<WebtrekkSessionData
-                loginStatus='logged in'
+                loginStatus="logged in"
                 parameter={{1: 'foo', 2: 'bar'}}
             />);
 
@@ -84,7 +84,7 @@ describe('WebtrekkSessionData', () => {
 
         test('update campaign', (done) => {
             renderedWebtrekkSessionData = mount(<WebtrekkSessionData
-                loginStatus='logged in'
+                loginStatus="logged in"
                 parameter={{1: 'foo', 2: 'bar'}}
             />);
 

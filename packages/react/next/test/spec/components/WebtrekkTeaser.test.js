@@ -103,15 +103,15 @@ describe('WebtrekkTeaser', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(9);
 
-            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `selector` of type `number` supplied to `WebtrekkTeaser`, expected `string`.');
-            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `name` of type `number` supplied to `WebtrekkTeaser`, expected `string`.');
-            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `rank` of type `number` supplied to `WebtrekkTeaser`, expected `string`.');
-            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `content` of type `number` supplied to `WebtrekkTeaser`, expected `string`.');
-            expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `variant` of type `number` supplied to `WebtrekkTeaser`, expected `string`.');
-            expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `seen` of type `string` supplied to `WebtrekkTeaser`, expected `boolean`.');
-            expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `type` of value `type` supplied to `WebtrekkTeaser`, expected one of ["view","click","product"].');
-            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `goal` of value `true` supplied to `WebtrekkTeaser`, expected one of ["order","goal","both"].');
-            expect(spyOnError.mock.calls[8][invalidPropIndex]).toContain('Invalid prop `value` of type `number` supplied to `WebtrekkTeaser`, expected `string`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `selector` of type `number` supplied to `WebtrekkTeaser`, expected `string`');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `name` of type `number` supplied to `WebtrekkTeaser`, expected `string`');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `rank` of type `number` supplied to `WebtrekkTeaser`, expected `string`');
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `content` of type `number` supplied to `WebtrekkTeaser`, expected `string`');
+            expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `variant` of type `number` supplied to `WebtrekkTeaser`, expected `string`');
+            expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `seen` of type `string` supplied to `WebtrekkTeaser`, expected `boolean`');
+            expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `type` of value `type` supplied to `WebtrekkTeaser`, expected one of ["view","click","product"]');
+            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `goal` of value `true` supplied to `WebtrekkTeaser`, expected one of ["order","goal","both"]');
+            expect(spyOnError.mock.calls[8][invalidPropIndex]).toContain('Invalid prop `value` of type `number` supplied to `WebtrekkTeaser`, expected `string`');
         });
 
         test('create an element', () => {

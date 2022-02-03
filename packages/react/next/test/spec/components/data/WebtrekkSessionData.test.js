@@ -1,7 +1,7 @@
 import React from 'react';
-import { shallow, mount } from './../../../enzyme';
-import { expectInCallback } from './../../../helper';
-import { WebtrekkSessionData, WebtrekkSmartPixelReact } from './../../../../src/index';
+import {shallow, mount} from './../../../enzyme';
+import {expectInCallback} from './../../../helper';
+import {WebtrekkSessionData, WebtrekkSmartPixelReact} from './../../../../src/index';
 
 const reactVersion = parseInt(React.version.split('.')[0]);
 let invalidPropIndex = 0;
@@ -15,7 +15,8 @@ describe('WebtrekkSessionData', () => {
 
     describe('shallow rendering', () => {
         beforeEach(() => {
-            spyOnError = jest.spyOn(console, 'error').mockImplementation(() => {});
+            spyOnError = jest.spyOn(console, 'error').mockImplementation(() => {
+            });
         });
 
         afterEach(() => {
@@ -27,28 +28,28 @@ describe('WebtrekkSessionData', () => {
         test('ignore wrong type', () => {
             shallow(
                 <WebtrekkSessionData
-                    loginStatus={ 123451234512345 }
-                    parameter={ {1: 'foo', 2: 2} }
+                    loginStatus={123451234512345}
+                    parameter={{1: 'foo', 2: 2}}
                 />
             );
 
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(2);
 
-            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `loginStatus` of type `number` supplied to `WebtrekkSessionData`, expected `string`.');
-            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkSessionData`, expected `string`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `loginStatus` of type `number` supplied to `WebtrekkSessionData`, expected `string`');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkSessionData`, expected `string`');
         });
 
         test('don\'t returns children', () => {
-            const renderedWebtrekkSessionData = shallow(<WebtrekkSessionData />);
-            expect(renderedWebtrekkSessionData).toEqual({});
+            expect(shallow(<WebtrekkSessionData/>)).toEqual({});
         });
     });
 
     describe('full rendering', () => {
         beforeEach((done) => {
             WebtrekkSmartPixelReact.call(() => {
-                spyOnError = jest.spyOn(console, 'error').mockImplementation(() => {});
+                spyOnError = jest.spyOn(console, 'error').mockImplementation(() => {
+                });
                 done();
             });
         });
@@ -66,8 +67,8 @@ describe('WebtrekkSessionData', () => {
 
         test('mount campaign', (done) => {
             mount(<WebtrekkSessionData
-                loginStatus='logged in'
-                parameter={ {1: 'foo', 2: 'bar'} }
+                loginStatus="logged in"
+                parameter={{1: 'foo', 2: 'bar'}}
             />);
 
             WebtrekkSmartPixelReact.call((wtSmart) => {
@@ -82,8 +83,8 @@ describe('WebtrekkSessionData', () => {
 
         test('update campaign', (done) => {
             renderedWebtrekkSessionData = mount(<WebtrekkSessionData
-                loginStatus='logged in'
-                parameter={ {1: 'foo', 2: 'bar'} }
+                loginStatus="logged in"
+                parameter={{1: 'foo', 2: 'bar'}}
             />);
 
             renderedWebtrekkSessionData.setProps({

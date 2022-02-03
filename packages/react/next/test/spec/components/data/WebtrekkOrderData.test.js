@@ -44,17 +44,17 @@ describe('WebtrekkOrderData', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(11);
 
-            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `value` supplied to `WebtrekkOrderData`.');
-            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `id` of type `number` supplied to `WebtrekkOrderData`, expected `string`.');
-            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `currency` of type `boolean` supplied to `WebtrekkOrderData`, expected `string`.');
-            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `couponValue` supplied to `WebtrekkOrderData`.');
-            expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `paymentMethod` of type `number` supplied to `WebtrekkOrderData`, expected `string`.');
-            expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `shippingService` of type `number` supplied to `WebtrekkOrderData`, expected `string`.');
-            expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `shippingSpeed` of type `number` supplied to `WebtrekkOrderData`, expected `string`.');
-            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `shippingCosts` supplied to `WebtrekkOrderData`.');
-            expect(spyOnError.mock.calls[8][invalidPropIndex]).toContain('Invalid prop `grossMargin` supplied to `WebtrekkOrderData`.');
-            expect(spyOnError.mock.calls[9][invalidPropIndex]).toContain('Invalid prop `orderStatus` of type `number` supplied to `WebtrekkOrderData`, expected `string`.');
-            expect(spyOnError.mock.calls[10][invalidPropIndex]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkOrderData`, expected `string`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `value` supplied to `WebtrekkOrderData`');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `id` of type `number` supplied to `WebtrekkOrderData`, expected `string`');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `currency` of type `boolean` supplied to `WebtrekkOrderData`, expected `string`');
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `couponValue` supplied to `WebtrekkOrderData`');
+            expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `paymentMethod` of type `number` supplied to `WebtrekkOrderData`, expected `string`');
+            expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `shippingService` of type `number` supplied to `WebtrekkOrderData`, expected `string`');
+            expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `shippingSpeed` of type `number` supplied to `WebtrekkOrderData`, expected `string`');
+            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `shippingCosts` supplied to `WebtrekkOrderData`');
+            expect(spyOnError.mock.calls[8][invalidPropIndex]).toContain('Invalid prop `grossMargin` supplied to `WebtrekkOrderData`');
+            expect(spyOnError.mock.calls[9][invalidPropIndex]).toContain('Invalid prop `orderStatus` of type `number` supplied to `WebtrekkOrderData`, expected `string`');
+            expect(spyOnError.mock.calls[10][invalidPropIndex]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkOrderData`, expected `string`');
         });
 
         test('don\'t returns children', () => {

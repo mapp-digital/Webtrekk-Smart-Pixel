@@ -59,17 +59,17 @@ describe('WebtrekkAdvancedData', () => {
 
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(11);
-            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `secureCookie` of type `string` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `optOutName` of type `number` supplied to `WebtrekkAdvancedData`, expected `string`.');
-            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `requestObfuscation` of type `string` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `execCDB` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `useCDBCache` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `sendViaSDK` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `sendViaServer.activated` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `useHashForDefaultPageName` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[8][invalidPropIndex]).toContain('Invalid prop `useParamsForDefaultPageName` of type `string` supplied to `WebtrekkAdvancedData`, expected an array.');
-            expect(spyOnError.mock.calls[9][invalidPropIndex]).toContain('Invalid prop `requestQueue.activated` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[10][invalidPropIndex]).toContain('Invalid prop `userIdentification.enableOptOut` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `secureCookie` of type `string` supplied to `WebtrekkAdvancedData`, expected `boolean`');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `optOutName` of type `number` supplied to `WebtrekkAdvancedData`, expected `string`');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `requestObfuscation` of type `string` supplied to `WebtrekkAdvancedData`, expected `boolean`');
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `execCDB` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`');
+            expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `useCDBCache` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`');
+            expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `sendViaSDK` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`');
+            expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `sendViaServer.activated` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`');
+            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `useHashForDefaultPageName` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`');
+            expect(spyOnError.mock.calls[8][invalidPropIndex]).toContain('Invalid prop `useParamsForDefaultPageName` of type `string` supplied to `WebtrekkAdvancedData`, expected an array');
+            expect(spyOnError.mock.calls[9][invalidPropIndex]).toContain('Invalid prop `requestQueue.activated` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`');
+            expect(spyOnError.mock.calls[10][invalidPropIndex]).toContain('Invalid prop `userIdentification.enableOptOut` of type `number` supplied to `WebtrekkAdvancedData`, expected `boolean`');
         });
 
         test('don\'t returns children', () => {

@@ -1,3 +1,13 @@
+<a name="1.3.1"></a>
+# 1.3.1 (2022-01-xx)
+
+## Features
+- Create option for Mapp user matching
+
+## Bug Fixes
+- Duplicate query parameters in the track request again
+- Anonymous tracking not consistent with tab browsing and pre-rendering
+
 <a name="1.3.0"></a>
 # 1.3.0 (2021-12-20)
 

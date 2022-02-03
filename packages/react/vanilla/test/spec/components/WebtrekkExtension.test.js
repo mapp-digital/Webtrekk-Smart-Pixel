@@ -32,9 +32,9 @@ describe('WebtrekkExtension', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(4);
 
-            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `name` of type `boolean` supplied to `WebtrekkExtension`, expected `string`.');
-            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `action` of type `boolean` supplied to `WebtrekkExtension`, expected `string`.');
-            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `config` of type `number` supplied to `WebtrekkExtension`, expected `object`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `name` of type `boolean` supplied to `WebtrekkExtension`, expected `string`');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `action` of type `boolean` supplied to `WebtrekkExtension`, expected `string`');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `config` of type `number` supplied to `WebtrekkExtension`, expected `object`');
         });
 
         test('don\'t returns children', () => {

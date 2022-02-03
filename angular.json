@@ -78,8 +78,8 @@
           "builder": "@angular-builders/jest:run",
           "options": {
             "configPath": "../../scripts/jest/angular.config.js",
-            "main": "packages/angular/src/test.ts",
-            "polyfills": "packages/angular/src/polyfills.ts",
+            "main": ["packages/angular/src/test.ts"],
+            "polyfills": ["packages/angular/src/polyfills.ts"],
             "tsConfig": "src/tsconfig.spec.json",
             "styles": [
               "packages/angular/src/styles.css"

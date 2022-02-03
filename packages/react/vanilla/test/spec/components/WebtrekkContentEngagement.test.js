@@ -115,15 +115,15 @@ describe('WebtrekkContentEngagement', () => {
             expect(spyOnError.mock.calls.length).toBe(10);
 
             expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `percentageStepsInAnalytics` supplied to `WebtrekkContentEngagement`');
-            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `sendContentEngagement` of value `true` supplied to `WebtrekkContentEngagement`, expected one of [0,1,2,"0","1","2"].');
-            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `percentageReached` supplied to `WebtrekkContentEngagement`.');
-            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `secondsReached` supplied to `WebtrekkContentEngagement`.');
-            expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `largeBrowserResolution` supplied to `WebtrekkContentEngagement`.');
-            expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `largeBrowserSeconds` supplied to `WebtrekkContentEngagement`.');
-            expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `mediumBrowserResolution` supplied to `WebtrekkContentEngagement`.');
-            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `mediumBrowserSeconds` supplied to `WebtrekkContentEngagement`.');
-            expect(spyOnError.mock.calls[8][invalidPropIndex]).toContain('Invalid prop `smallBrowserResolution` supplied to `WebtrekkContentEngagement`.');
-            expect(spyOnError.mock.calls[9][invalidPropIndex]).toContain('Invalid prop `smallBrowserSeconds` supplied to `WebtrekkContentEngagement`.');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `sendContentEngagement` of value `true` supplied to `WebtrekkContentEngagement`, expected one of [0,1,2,"0","1","2"]');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `percentageReached` supplied to `WebtrekkContentEngagement`');
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `secondsReached` supplied to `WebtrekkContentEngagement`');
+            expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `largeBrowserResolution` supplied to `WebtrekkContentEngagement`');
+            expect(spyOnError.mock.calls[5][invalidPropIndex]).toContain('Invalid prop `largeBrowserSeconds` supplied to `WebtrekkContentEngagement`');
+            expect(spyOnError.mock.calls[6][invalidPropIndex]).toContain('Invalid prop `mediumBrowserResolution` supplied to `WebtrekkContentEngagement`');
+            expect(spyOnError.mock.calls[7][invalidPropIndex]).toContain('Invalid prop `mediumBrowserSeconds` supplied to `WebtrekkContentEngagement`');
+            expect(spyOnError.mock.calls[8][invalidPropIndex]).toContain('Invalid prop `smallBrowserResolution` supplied to `WebtrekkContentEngagement`');
+            expect(spyOnError.mock.calls[9][invalidPropIndex]).toContain('Invalid prop `smallBrowserSeconds` supplied to `WebtrekkContentEngagement`');
         });
 
         test('create an element', () => {

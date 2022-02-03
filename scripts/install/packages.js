@@ -56,18 +56,25 @@ module.exports = {
             '@angular/core': '^11', '@angular/router': '^11', '@angular/common': '^11',
             '@angular/cli': '^11', '@angular/platform-browser': '^11', '@angular/compiler': '^11',
             '@angular/compiler-cli': '^11', '@angular/platform-browser-dynamic': '^11',
-            '@angular-builders/jest': '^11', '@angular-devkit/build-angular': 'latest',
+            '@angular-builders/jest': '^11', '@angular-devkit/build-angular': 'v11-lts',
             'typescript': '~4.1.0', '@angular/platform-server': '^11', '@angular/animations': '^11',
-            '@nguniversal/express-engine': '^11', '@nguniversal/module-map-ngfactory-loader': 'next',
-            'jest': '^26'
+            '@nguniversal/express-engine': '^11', 'jest': '^26'
+        },
+        '12': {
+            '@angular/core': '^12', '@angular/router': '^12', '@angular/common': '^12',
+            '@angular/cli': '^12', '@angular/platform-browser': '^12', '@angular/compiler': '^12',
+            '@angular/compiler-cli': '^12', '@angular/platform-browser-dynamic': '^12',
+            '@angular-builders/jest': '12.1.0', '@angular-devkit/build-angular': 'v12-lts',
+            'typescript': '~4.1.0', '@angular/platform-server': '^12', '@angular/animations': '^12',
+            '@nguniversal/express-engine': '^12', 'jest': '^27'
         },
         'latest': {
             '@angular/core': 'latest', '@angular/router': 'latest', '@angular/common': 'latest',
             '@angular/cli': 'latest', '@angular/platform-browser': 'latest', '@angular/compiler': 'latest',
             '@angular/compiler-cli': 'latest', '@angular/platform-browser-dynamic': 'latest',
-            '@angular-builders/jest': 'latest', '@angular-devkit/build-angular': 'latest',
+            '@angular-builders/jest': 'latest', '@angular-devkit/build-angular': '^13',
             'typescript': '~3.5.0', '@angular/platform-server': 'latest', '@angular/animations': 'latest',
-            '@nguniversal/express-engine': 'latest', 'jest': 'latest'
+            '@nguniversal/express-engine': 'latest', 'jest': 'latest', 'zone.js': '~0.11.4'
         },
         'next': {
             '@angular/core': 'next', '@angular/router': 'next', '@angular/common': 'next',
@@ -75,7 +82,7 @@ module.exports = {
             '@angular/compiler-cli': 'next', '@angular/platform-browser-dynamic': 'next',
             '@angular-builders/jest': 'next', '@angular-devkit/build-angular': 'next',
             'typescript': '~3.5.0', '@angular/platform-server': 'next', '@angular/animations': 'next',
-            '@nguniversal/express-engine': 'next', 'jest': 'next'
+            '@nguniversal/express-engine': 'next', 'jest': 'next', 'zone.js': '~0.11.4'
         }
     },
     'react/vanilla': {

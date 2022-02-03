@@ -38,10 +38,10 @@ describe('WebtrekkCampaignData', () => {
             expect(spyOnError).toHaveBeenCalled();
             expect(spyOnError.mock.calls.length).toBe(4);
 
-            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `id` of type `number` supplied to `WebtrekkCampaignData`, expected `string`.');
-            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `mediaCode` of type `string` supplied to `WebtrekkCampaignData`, expected an array.');
-            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `oncePerSession` of type `number` supplied to `WebtrekkCampaignData`, expected `boolean`.');
-            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkCampaignData`, expected `string`.');
+            expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `id` of type `number` supplied to `WebtrekkCampaignData`, expected `string`');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `mediaCode` of type `string` supplied to `WebtrekkCampaignData`, expected an array');
+            expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `oncePerSession` of type `number` supplied to `WebtrekkCampaignData`, expected `boolean`');
+            expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `parameter.2` of type `number` supplied to `WebtrekkCampaignData`, expected `string`');
         });
 
         test('don\'t returns children', () => {
