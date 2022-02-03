@@ -1,5 +1,5 @@
 <a name="1.3.1"></a>
-# 1.3.1 (2022-01-xx)
+# 1.3.1 (2022-02-03)
 
 ## Features
 - Create option for Mapp user matching
