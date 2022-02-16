@@ -566,7 +566,7 @@ interface SmartPixelUtils {
  *                  EXTENSION                   *
  ********************************************** */
 type SmartPixelExtensionsTriggerConfigMode = 'page' | 'form' | 'media' | 'action';
-type SmartPixelExtensionsTriggerConfigType = 'before' | 'after'
+type SmartPixelExtensionsTriggerConfigType = 'before' | 'after' | 'ready';
 
 interface SmartPixelExtensionsList {
     [i: string]: any;

@@ -1,3 +1,9 @@
+<a name="1.3.2"></a>
+# 1.3.2 (2022-02-16)
+
+## Bug Fixes
+- Unexpected parameters in teaser tracking requests
+
 <a name="1.3.1"></a>
 # 1.3.1 (2022-02-03)
 
