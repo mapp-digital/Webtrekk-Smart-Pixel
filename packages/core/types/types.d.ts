@@ -106,6 +106,7 @@ interface SmartPixelAdvancedUserIdentification {
 }
 
 interface SmartPixelAdvancedSetProps {
+    forceOldEverId?: boolean;
     secureCookie?: boolean;
     optOutName?: string;
     requestObfuscation?: boolean;
@@ -123,6 +124,7 @@ interface SmartPixelAdvancedSetProps {
 interface SmartPixelAdvancedAddProps extends SmartPixelAdvancedSetProps {}
 
 interface SmartPixelAdvancedGetProps {
+    forceOldEverId: boolean;
     secureCookie: boolean;
     optOutName: string;
     requestObfuscation: boolean;
@@ -913,6 +915,7 @@ interface SmartPixelExtensionTeaserTrackingSetConfig {
     attribution?: SmartPixelExtensionMarketingAutomationAttribution;
     maxSendTeasers?: SmartPixelExtensionTeaserTrackingConfigMaxSendTeasers;
     maxCookieSize?: NumberOrString;
+    extendClickSelector?: string;
     clearConversions?: boolean;
     autoEngagements?: boolean;
 }
@@ -923,6 +926,7 @@ interface SmartPixelExtensionTeaserTrackingGetConfig {
     attribution: SmartPixelExtensionMarketingAutomationAttribution;
     maxSendTeasers: SmartPixelExtensionTeaserTrackingConfigMaxSendTeasers;
     maxCookieSize: number;
+    extendClickSelector: string;
     clearConversions: boolean;
     autoEngagements: boolean;
 }

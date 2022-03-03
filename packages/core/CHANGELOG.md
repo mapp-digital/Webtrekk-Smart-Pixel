@@ -1,3 +1,10 @@
+<a name="1.3.3"></a>
+# 1.3.3 (2022-03-03)
+
+## Features
+- With `maxCookieSize = -1` in the teaser tracking configuration, no more teaser cookies are set. However, this deactivates the teaser conversion and page engagement tracking ([maxCookieSize](https://documentation.mapp.com/1.0/en/teaser-tracking-15741363.html#id-.SMPTeaserTrackingv1.0-config))
+- Include additional HTML elements in teaser tracking that support click tracking ([extendClickSelector](https://documentation.mapp.com/1.0/en/teaser-tracking-15741363.html#id-.SMPTeaserTrackingv1.0-config) and [extend](https://documentation.mapp.com/1.0/en/teaser-tracking-15741363.html#id-.SMPTeaserTrackingv1.0-Initialisationoftheteaserelements))
+
 <a name="1.3.2"></a>
 # 1.3.2 (2022-02-16)
 
