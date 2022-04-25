@@ -1,17 +1,17 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import {NgModule, ModuleWithProviders} from '@angular/core';
 
-import { DataDirective } from './Directives/DataDirective';
-import { TeaserDirective } from './Directives/TeaserDirective';
-import { ProductListDirective } from './Directives/ProductListDirective';
-import { ContentEngagementDirective } from './Directives/ContentEngagementDirective';
-import { ExtensionDirective } from './Directives/ExtensionDirective';
+import {DataDirective} from './Directives/DataDirective';
+import {TeaserDirective} from './Directives/TeaserDirective';
+import {ProductListDirective} from './Directives/ProductListDirective';
+import {ContentEngagementDirective} from './Directives/ContentEngagementDirective';
+import {ExtensionDirective} from './Directives/ExtensionDirective';
 
-import { WebtrekkSmartPixelAngular } from './WebtrekkSmartPixelAngular';
-import { WebtrekkSmartPixelAutoTracking } from './WebtrekkSmartPixelAutoTracking';
-import { WebtrekkSmartPixelConfig, DefaultConfig } from './WebtrekkSmartPixelConfig';
-import { WEBTREKK_SMART_PIXEL_TOKEN } from './WebtrekkSmartPixelToken';
+import {WebtrekkSmartPixelAngular} from './WebtrekkSmartPixelAngular';
+import {WebtrekkSmartPixelAutoTracking} from './WebtrekkSmartPixelAutoTracking';
+import {WebtrekkSmartPixelConfig, DefaultConfig} from './WebtrekkSmartPixelConfig';
+import {WEBTREKK_SMART_PIXEL_TOKEN} from './WebtrekkSmartPixelToken';
 
-import { webtrekkSmartPixelAngular } from './index';
+import {webtrekkSmartPixelAngular} from '../public-api';
 
 const defaultConfig = new DefaultConfig();
 
@@ -45,7 +45,7 @@ export class WebtrekkSmartPixelModule {
             providers: [
                 {
                     provide: WEBTREKK_SMART_PIXEL_TOKEN,
-                    useValue: { ...defaultConfig, ...conf }
+                    useValue: {...defaultConfig, ...conf}
                 },
                 {
                     provide: WebtrekkSmartPixelAngular,

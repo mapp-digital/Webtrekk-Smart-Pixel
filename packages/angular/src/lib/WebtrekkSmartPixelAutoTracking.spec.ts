@@ -1,19 +1,20 @@
-import { Location } from '@angular/common';
-import { Router } from '@angular/router';
-import { SpyLocation } from '@angular/common/testing';
-import { fakeAsync, tick, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import {Location} from '@angular/common';
+import {Router} from '@angular/router';
+import {SpyLocation} from '@angular/common/testing';
+import {fakeAsync, tick, TestBed} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
 
-import { WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular } from './index';
-import { expectInCallback } from './_helper/expectInCallback';
-import { HomeComponent, SearchComponent, AppComponent, routes } from "./_helper/components"
+import {WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular} from '../public-api';
+import {expectInCallback} from './_helper/expectInCallback';
+import {HomeComponent, SearchComponent, AppComponent, routes} from './_helper/components';
 
 describe('WebtrekkSmartPixelAutoTracking', () => {
     let service: WebtrekkSmartPixelAngular;
-    let location: SpyLocation;
     let router: Router;
     let spyOnTrackPage;
     let spyOnActionReload;
+    // @ts-ignore
+    const testBedInject = typeof TestBed.inject !== 'undefined' ? TestBed.inject : TestBed.get;
 
     afterEach((done) => {
         service.call((wtSmart) => {
@@ -34,12 +35,12 @@ describe('WebtrekkSmartPixelAutoTracking', () => {
                 WebtrekkSmartPixelModule.forRoot({
                     activateAutoTracking: false,
                     activateActions: true
-                }),
+                })
             ],
-            providers: [{ provide: Location, useClass: SpyLocation }]
+            providers: [{provide: Location, useClass: SpyLocation}]
         });
 
-        service = TestBed.get(WebtrekkSmartPixelAngular);
+        service = testBedInject(WebtrekkSmartPixelAngular);
 
         service.call((wtSmart) => {
             expectInCallback(() => {
@@ -55,12 +56,12 @@ describe('WebtrekkSmartPixelAutoTracking', () => {
                 WebtrekkSmartPixelModule.forRoot({
                     activateAutoTracking: false,
                     activateTeaser: true
-                }),
+                })
             ],
-            providers: [{ provide: Location, useClass: SpyLocation }]
+            providers: [{provide: Location, useClass: SpyLocation}]
         });
 
-        service = TestBed.get(WebtrekkSmartPixelAngular);
+        service = testBedInject(WebtrekkSmartPixelAngular);
 
         service.call((wtSmart) => {
             expectInCallback(() => {
@@ -76,12 +77,12 @@ describe('WebtrekkSmartPixelAutoTracking', () => {
                 WebtrekkSmartPixelModule.forRoot({
                     activateAutoTracking: false,
                     activateProductList: true
-                }),
+                })
             ],
-            providers: [{ provide: Location, useClass: SpyLocation }]
+            providers: [{provide: Location, useClass: SpyLocation}]
         });
 
-        service = TestBed.get(WebtrekkSmartPixelAngular);
+        service = testBedInject(WebtrekkSmartPixelAngular);
 
         service.call((wtSmart) => {
             expectInCallback(() => {
@@ -97,12 +98,12 @@ describe('WebtrekkSmartPixelAutoTracking', () => {
                 WebtrekkSmartPixelModule.forRoot({
                     activateAutoTracking: false,
                     activateContentEngagement: true
-                }),
+                })
             ],
-            providers: [{ provide: Location, useClass: SpyLocation }]
+            providers: [{provide: Location, useClass: SpyLocation}]
         });
 
-        service = TestBed.get(WebtrekkSmartPixelAngular);
+        service = testBedInject(WebtrekkSmartPixelAngular);
 
         service.call((wtSmart) => {
             expectInCallback(() => {
@@ -121,18 +122,19 @@ describe('WebtrekkSmartPixelAutoTracking', () => {
                         activateActions: true
                     })
                 ],
-                declarations: [ HomeComponent, SearchComponent, AppComponent ]
+                declarations: [HomeComponent, SearchComponent, AppComponent]
             }).createComponent(AppComponent);
 
-            router = TestBed.get(Router);
-            location = TestBed.get(Location);
-            service = TestBed.get(WebtrekkSmartPixelAngular);
+            router = testBedInject(Router);
+            service = testBedInject(WebtrekkSmartPixelAngular);
 
             router.initialNavigation();
 
             service.call((wtSmart) => {
-                spyOnTrackPage = jest.spyOn(wtSmart, 'trackPage').mockImplementation(() => {});
-                spyOnActionReload = jest.spyOn(wtSmart.extension.action, 'reload').mockImplementation(() => {});
+                spyOnTrackPage = jest.spyOn(wtSmart, 'trackPage').mockImplementation(() => {
+                });
+                spyOnActionReload = jest.spyOn(wtSmart.extension.action, 'reload').mockImplementation(() => {
+                });
                 done();
             });
         });
@@ -187,18 +189,19 @@ describe('WebtrekkSmartPixelAutoTracking', () => {
                         activateActions: false
                     })
                 ],
-                declarations: [ HomeComponent, SearchComponent, AppComponent ]
+                declarations: [HomeComponent, SearchComponent, AppComponent]
             }).createComponent(AppComponent);
 
-            router = TestBed.get(Router);
-            location = TestBed.get(Location);
-            service = TestBed.get(WebtrekkSmartPixelAngular);
+            router = testBedInject(Router);
+            service = testBedInject(WebtrekkSmartPixelAngular);
 
             router.initialNavigation();
 
             service.call((wtSmart) => {
-                spyOnTrackPage = jest.spyOn(wtSmart, 'trackPage').mockImplementation(() => {});
-                spyOnActionReload = jest.spyOn(wtSmart.extension.action, 'reload').mockImplementation(() => {});
+                spyOnTrackPage = jest.spyOn(wtSmart, 'trackPage').mockImplementation(() => {
+                });
+                spyOnActionReload = jest.spyOn(wtSmart.extension.action, 'reload').mockImplementation(() => {
+                });
                 done();
             });
         });
@@ -253,18 +256,19 @@ describe('WebtrekkSmartPixelAutoTracking', () => {
                         activateActions: true
                     })
                 ],
-                declarations: [ HomeComponent, SearchComponent, AppComponent ]
+                declarations: [HomeComponent, SearchComponent, AppComponent]
             }).createComponent(AppComponent);
 
-            router = TestBed.get(Router);
-            location = TestBed.get(Location);
-            service = TestBed.get(WebtrekkSmartPixelAngular);
+            router = testBedInject(Router);
+            service = testBedInject(WebtrekkSmartPixelAngular);
 
             router.initialNavigation();
 
             service.call((wtSmart) => {
-                spyOnTrackPage = jest.spyOn(wtSmart, 'trackPage').mockImplementation(() => {});
-                spyOnActionReload = jest.spyOn(wtSmart.extension.action, 'reload').mockImplementation(() => {});
+                spyOnTrackPage = jest.spyOn(wtSmart, 'trackPage').mockImplementation(() => {
+                });
+                spyOnActionReload = jest.spyOn(wtSmart.extension.action, 'reload').mockImplementation(() => {
+                });
                 done();
             });
         });

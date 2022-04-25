@@ -1,14 +1,14 @@
-const expectInCallback = (call, done, timeout = 0) => {
+const expectInCallback = (call: () => void, done: (...args: any) => void, timeout = 0) => {
     window.setTimeout(() => {
         try {
             call();
-            done();
+            return done();
         }
-        catch(e) {
+        catch (e) {
             // istanbul ignore next
-            done(e);
+            return done(e);
         }
     }, timeout);
 };
 
-export { expectInCallback };
+export {expectInCallback};

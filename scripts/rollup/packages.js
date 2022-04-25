@@ -1,5 +1,6 @@
 const babel = require('rollup-plugin-babel');
 const typescript = require('rollup-plugin-typescript');
+const ngc = require('rollup-plugin-ngc').ngcPlugin;
 
 const PACKAGES_PATH = './packages';
 
@@ -73,7 +74,45 @@ module.exports = {
                 'typescript': 'ts',
                 '@webtrekk-smart-pixel/core': 'wtSmart'
             },
-            format: [FORMAT.UMD]
+            format: [FORMAT.UMD, FORMAT.ESM, FORMAT.ESM2]
+        }
+    ],
+
+    angular_ivy: [
+        {
+            packagePath: `${PACKAGES_PATH}/angular`,
+            packageName: '@webtrekk-smart-pixel/angular',
+            outputPath: 'dist',
+            outputName: 'smart-pixel-angular.ivy',
+            input: 'src/lib/index.ts',
+            plugins: [
+                typescript({
+                    tsconfig: `${PACKAGES_PATH}/angular/src/tsconfig.build.json`
+                }),
+                babel({
+                    exclude: 'node_modules/**'
+                }),
+                ngc({
+                    target: 'es2015',
+                    rootDir: 'packages/angular',
+                    sourceMap: false
+                })
+            ],
+            external: [
+                '@angular/core',
+                '@angular/common',
+                '@angular/router',
+                'rxjs/operators',
+                '@webtrekk-smart-pixel/core'
+            ],
+            global: {
+                '@angular/core': 'ng.core',
+                '@angular/router': 'ng.router',
+                'rxjs/operators': 'Rx.operators',
+                'typescript': 'ts',
+                '@webtrekk-smart-pixel/core': 'wtSmart'
+            },
+            format: [FORMAT.ESM]
         }
     ],
 

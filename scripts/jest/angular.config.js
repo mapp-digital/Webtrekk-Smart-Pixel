@@ -14,13 +14,10 @@ module.exports = {
     coverageDirectory: `<rootDir>/reports/coverage/${process.env.ANGULAR_VERSION}`,
     coverageThreshold: {
         'global': {
-            branches: 100,
+            branches: 90,
             functions: 100,
             lines: 100,
             statements: 100
-        },
-        [`${rootDir}/src/lib/WebtrekkSmartPixelAngular.ts`]: {
-            branches: 85
         }
     }
 };

@@ -20,6 +20,11 @@ packages/*/dist/*
 
 ## angular
 !packages/angular/src
+!packages/angular/ng-package.json
+!packages/angular/tsconfig.lib.json
+!packages/angular/tsconfig.lib.old.json
+!packages/angular/tsconfig.lib.prod.json
+packages/angular/dist
 
 ## react / next
 !packages/react/

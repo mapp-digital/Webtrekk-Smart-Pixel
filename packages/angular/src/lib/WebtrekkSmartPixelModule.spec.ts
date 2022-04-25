@@ -1,13 +1,15 @@
-import { Location } from '@angular/common';
-import { SpyLocation } from '@angular/common/testing';
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import {Location} from '@angular/common';
+import {SpyLocation} from '@angular/common/testing';
+import {TestBed} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
 
-import { WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular } from './index';
-import { expectInCallback } from './_helper/expectInCallback';
+import {WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular} from '../public-api';
+import {expectInCallback} from './_helper/expectInCallback';
 
 describe('WebtrekkSmartPixelModule', () => {
     let service: WebtrekkSmartPixelAngular;
+    // @ts-ignore
+    const testBedInject = typeof TestBed.inject !== 'undefined' ? TestBed.inject : TestBed.get;
 
     afterEach((done) => {
         service.call((wtSmart) => {
@@ -23,10 +25,10 @@ describe('WebtrekkSmartPixelModule', () => {
                 RouterTestingModule,
                 WebtrekkSmartPixelModule.forRoot()
             ],
-            providers: [{ provide: Location, useClass: SpyLocation }]
+            providers: [{provide: Location, useClass: SpyLocation}]
         });
 
-        service = TestBed.get(WebtrekkSmartPixelAngular);
+        service = testBedInject(WebtrekkSmartPixelAngular);
 
         service.call((wtSmart) => {
             expectInCallback(() => {
@@ -48,10 +50,10 @@ describe('WebtrekkSmartPixelModule', () => {
                     activateAutoTracking: false
                 })
             ],
-            providers: [{ provide: Location, useClass: SpyLocation }]
+            providers: [{provide: Location, useClass: SpyLocation}]
         });
 
-        service = TestBed.get(WebtrekkSmartPixelAngular);
+        service = testBedInject(WebtrekkSmartPixelAngular);
 
         service.call((wtSmart) => {
             expectInCallback(() => {
@@ -75,10 +77,10 @@ describe('WebtrekkSmartPixelModule', () => {
                     activateAutoTracking: false
                 })
             ],
-            providers: [{ provide: Location, useClass: SpyLocation }]
+            providers: [{provide: Location, useClass: SpyLocation}]
         });
 
-        service = TestBed.get(WebtrekkSmartPixelAngular);
+        service = testBedInject(WebtrekkSmartPixelAngular);
 
         service.call((wtSmart) => {
             expectInCallback(() => {

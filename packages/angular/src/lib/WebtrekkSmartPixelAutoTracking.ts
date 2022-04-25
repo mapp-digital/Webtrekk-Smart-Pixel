@@ -1,10 +1,10 @@
-import { NgModule, Inject } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter, delay } from 'rxjs/operators';
+import {NgModule, Inject} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
+import {filter, delay} from 'rxjs/operators';
 
-import { WebtrekkSmartPixelAngular } from './WebtrekkSmartPixelAngular';
-import { WebtrekkSmartPixelConfig } from './WebtrekkSmartPixelConfig';
-import { WEBTREKK_SMART_PIXEL_TOKEN } from './WebtrekkSmartPixelToken';
+import {WebtrekkSmartPixelAngular} from './WebtrekkSmartPixelAngular';
+import {WebtrekkSmartPixelConfig} from './WebtrekkSmartPixelConfig';
+import {WEBTREKK_SMART_PIXEL_TOKEN} from './WebtrekkSmartPixelToken';
 
 @NgModule()
 export class WebtrekkSmartPixelAutoTracking {

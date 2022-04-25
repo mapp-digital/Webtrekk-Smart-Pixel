@@ -7,6 +7,7 @@
     "target": "es5",
     "baseUrl": ".",
     "declaration": true,
+    "declarationDir": ".",
     "stripInternal": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,

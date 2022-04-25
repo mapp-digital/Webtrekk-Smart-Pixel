@@ -1,16 +1,16 @@
-import { Location } from '@angular/common';
-import { SpyLocation } from '@angular/common/testing';
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import {TestBed} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
 
-import { WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular } from './../index';
-import { expectInCallback } from './../_helper/expectInCallback';
-import { TeaserWithoutSelector, TeaserWithSelector } from "./../_helper/components"
+import {WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular} from '../../public-api';
+import {expectInCallback} from '../_helper/expectInCallback';
+import {TeaserWithoutSelector, TeaserWithSelector} from '../_helper/components';
 
 describe('TeaserDirective', () => {
     let service: WebtrekkSmartPixelAngular;
     let spyOnAddTeaserElement;
     let fixture;
+    // @ts-ignore
+    const testBedInject = typeof TestBed.inject !== 'undefined' ? TestBed.inject : TestBed.get;
 
     beforeEach((done) => {
         TestBed.configureTestingModule({
@@ -20,13 +20,14 @@ describe('TeaserDirective', () => {
                     activateAutoTracking: false
                 })
             ],
-            declarations: [ TeaserWithoutSelector, TeaserWithSelector ]
+            declarations: [TeaserWithoutSelector, TeaserWithSelector]
         });
 
-        service = TestBed.get(WebtrekkSmartPixelAngular);
+        service = testBedInject(WebtrekkSmartPixelAngular);
 
         service.call((wtSmart) => {
-            spyOnAddTeaserElement = jest.spyOn(wtSmart.extension.teaser_tracking, 'add').mockImplementation(() => {});
+            spyOnAddTeaserElement = jest.spyOn(wtSmart.extension.teaser_tracking, 'add').mockImplementation(() => {
+            });
 
             done();
         });

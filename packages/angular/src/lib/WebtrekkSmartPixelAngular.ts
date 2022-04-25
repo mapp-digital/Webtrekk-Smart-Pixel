@@ -7,22 +7,23 @@ import {
 } from './Directives/DataTypes';
 import wtSmart, {SmartPixel} from '@webtrekk-smart-pixel/core';
 
-var pixel_: SmartPixel = null;
+let pixel_: SmartPixel;
 
-const getWindow_ = (): Window => {
+const getWindow_ = (): Window | null => {
     return ((typeof window !== 'undefined') ? window : null);
 };
 
-const getDocument_ = (): Document => {
+const getDocument_ = (): Document | null => {
     return ((typeof window !== 'undefined' && typeof window.document !== 'undefined') ? window.document : null);
 };
 
 const init_ = (): void => {
-    var window_: Window = getWindow_();
-    var document_: Document = getDocument_();
+    const window_: Window | null = getWindow_();
+    const document_: Document | null = getDocument_();
 
     if (window_ !== null && document_ !== null) {
         pixel_ = wtSmart.use(window_, document_);
+        // @ts-ignore
         window_['wtSmart'] = pixel_;
     }
 };
@@ -30,11 +31,11 @@ const init_ = (): void => {
 @Injectable()
 export class WebtrekkSmartPixelAngular {
     call(call: (wtSmart: SmartPixel) => void): void {
-        if (pixel_ === null) {
+        if (!pixel_) {
             init_();
         }
 
-        if (pixel_ !== null) {
+        if (pixel_) {
             pixel_.push(call);
         }
     }
@@ -98,14 +99,16 @@ export class WebtrekkSmartPixelAngular {
 
     product(action: WebtrekkProductStatus, data: WebtrekkProductProps): void {
         this.call((pix) => {
-            var method = (action === 'view' || action === 'basket') ? 'set' : 'add';
+            const method = (action === 'view' || action === 'basket') ? 'set' : 'add';
+            // @ts-ignore
             pix.product[action].data[method]([data]);
         });
     }
 
     products(action: WebtrekkProductStatus, data: WebtrekkProductProps[]): void {
         this.call((pix) => {
-            var method = (action === 'view' || action === 'basket') ? 'set' : 'add';
+            const method = (action === 'view' || action === 'basket') ? 'set' : 'add';
+            // @ts-ignore
             pix.product[action].data[method](data);
         });
     }
@@ -126,6 +129,7 @@ export class WebtrekkSmartPixelAngular {
         }
 
         this.call((pix) => {
+            // @ts-ignore
             pix.extension[extension][action](config);
         });
     }

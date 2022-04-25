@@ -3,22 +3,25 @@ import {SpyLocation} from '@angular/common/testing';
 import {TestBed} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 
-import {WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular} from './../index';
-import {expectInCallback} from './../_helper/expectInCallback';
+import {WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular} from '../../public-api';
+import {expectInCallback} from '../_helper/expectInCallback';
 
-import {AdvancedData} from './../_helper/components';
-import {CampaignData, CampaignDataTrack} from './../_helper/components';
-import {CustomerData, CustomerDataTrack} from './../_helper/components';
-import {InitData} from './../_helper/components';
-import {OrderData, OrderDataTrack} from './../_helper/components';
-import {PageData, PageDataTrack} from './../_helper/components';
+import {AdvancedData} from '../_helper/components';
+import {CampaignData, CampaignDataTrack} from '../_helper/components';
+import {CustomerData, CustomerDataTrack} from '../_helper/components';
+import {InitData} from '../_helper/components';
+import {OrderData, OrderDataTrack} from '../_helper/components';
+import {PageData, PageDataTrack} from '../_helper/components';
 import {
     ProductViewData, ProductBasketData, ProductConfirmationData,
     ProductViewDataTrack, ProductBasketDataTrack, ProductConfirmationDataTrack
-} from './../_helper/components';
-import {SessionData, SessionDataTrack} from './../_helper/components';
+} from '../_helper/components';
+import {SessionData, SessionDataTrack} from '../_helper/components';
 
 describe('DataDirective', () => {
+    // @ts-ignore
+    const testBedInject = typeof TestBed.inject !== 'undefined' ? TestBed.inject : TestBed.get;
+
     describe('Advanced', () => {
         let service: WebtrekkSmartPixelAngular;
         let fixture;
@@ -34,7 +37,7 @@ describe('DataDirective', () => {
                 declarations: [AdvancedData]
             });
 
-            service = TestBed.get(WebtrekkSmartPixelAngular);
+            service = testBedInject(WebtrekkSmartPixelAngular);
         });
 
         afterEach((done) => {
@@ -84,7 +87,7 @@ describe('DataDirective', () => {
                 declarations: [CampaignData, CampaignDataTrack]
             });
 
-            service = TestBed.get(WebtrekkSmartPixelAngular);
+            service = testBedInject(WebtrekkSmartPixelAngular);
 
             service.call((wtSmart) => {
                 spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {});
@@ -150,7 +153,7 @@ describe('DataDirective', () => {
                 declarations: [CustomerData, CustomerDataTrack]
             });
 
-            service = TestBed.get(WebtrekkSmartPixelAngular);
+            service = testBedInject(WebtrekkSmartPixelAngular);
 
             service.call((wtSmart) => {
                 spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {});
@@ -227,7 +230,7 @@ describe('DataDirective', () => {
                 declarations: [InitData]
             });
 
-            service = TestBed.get(WebtrekkSmartPixelAngular);
+            service = testBedInject(WebtrekkSmartPixelAngular);
         });
 
         afterEach((done) => {
@@ -270,7 +273,7 @@ describe('DataDirective', () => {
                 declarations: [OrderData, OrderDataTrack]
             });
 
-            service = TestBed.get(WebtrekkSmartPixelAngular);
+            service = testBedInject(WebtrekkSmartPixelAngular);
 
             service.call((wtSmart) => {
                 spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {});
@@ -343,7 +346,7 @@ describe('DataDirective', () => {
                 declarations: [PageData, PageDataTrack]
             });
 
-            service = TestBed.get(WebtrekkSmartPixelAngular);
+            service = testBedInject(WebtrekkSmartPixelAngular);
 
             service.call((wtSmart) => {
                 spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {});
@@ -423,7 +426,7 @@ describe('DataDirective', () => {
                 ]
             });
 
-            service = TestBed.get(WebtrekkSmartPixelAngular);
+            service = testBedInject(WebtrekkSmartPixelAngular);
 
             service.call((wtSmart) => {
                 spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {});
@@ -555,7 +558,7 @@ describe('DataDirective', () => {
                 declarations: [SessionData, SessionDataTrack]
             });
 
-            service = TestBed.get(WebtrekkSmartPixelAngular);
+            service = testBedInject(WebtrekkSmartPixelAngular);
 
             service.call((wtSmart) => {
                 spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {});

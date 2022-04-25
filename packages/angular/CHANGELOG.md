@@ -1,3 +1,17 @@
+<a name="2.1.2"></a>
+## 2.1.2 (2022-04-25)
+
+### Features
+
+* Support Angular ivy
+
+<a name="1.1.2"></a>
+## 1.1.2 (2022-04-25)
+
+### Features
+
+* Support Angular ivy
+
 <a name="1.1.1"></a>
 ## 1.1.1 (2021-12-20)
 

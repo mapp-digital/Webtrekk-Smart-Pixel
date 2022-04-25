@@ -1,10 +1,10 @@
-import { Directive, Input, AfterContentInit } from '@angular/core';
+import {Directive, Input, AfterContentInit} from '@angular/core';
 import {
     WebtrekkAdvancedProps, WebtrekkCampaignProps, WebtrekkCustomerProps,
     WebtrekkInitProps, WebtrekkOrderProps, WebtrekkPageProps,
     WebtrekkProductProps, WebtrekkSessionProps
 } from './DataTypes';
-import { WebtrekkSmartPixelAngular } from './../WebtrekkSmartPixelAngular';
+import {WebtrekkSmartPixelAngular} from '../WebtrekkSmartPixelAngular';
 
 const directiveSelector = '[wt-advanced-data],'
     + '[wt-campaign-data],'
@@ -19,17 +19,18 @@ const directiveSelector = '[wt-advanced-data],'
     selector: directiveSelector
 })
 export class DataDirective implements AfterContentInit {
-    @Input('wt-advanced-data') wtAdvancedData: WebtrekkAdvancedProps;
-    @Input('wt-campaign-data') wtCampaignData: WebtrekkCampaignProps;
-    @Input('wt-customer-data') wtCustomerData: WebtrekkCustomerProps;
-    @Input('wt-init-data') wtInitData: WebtrekkInitProps;
-    @Input('wt-order-data') wtOrderData: WebtrekkOrderProps;
-    @Input('wt-page-data') wtPageData: WebtrekkPageProps;
-    @Input('wt-product-data') wtProductData: WebtrekkProductProps;
-    @Input('wt-session-data') wtSessionData: WebtrekkSessionProps;
-    @Input('wt-track') wtTrack: boolean;
+    @Input('wt-advanced-data') wtAdvancedData: WebtrekkAdvancedProps | undefined;
+    @Input('wt-campaign-data') wtCampaignData: WebtrekkCampaignProps | undefined;
+    @Input('wt-customer-data') wtCustomerData: WebtrekkCustomerProps | undefined;
+    @Input('wt-init-data') wtInitData: WebtrekkInitProps | undefined;
+    @Input('wt-order-data') wtOrderData: WebtrekkOrderProps | undefined;
+    @Input('wt-page-data') wtPageData: WebtrekkPageProps | undefined;
+    @Input('wt-product-data') wtProductData: WebtrekkProductProps | undefined;
+    @Input('wt-session-data') wtSessionData: WebtrekkSessionProps | undefined;
+    @Input('wt-track') wtTrack: boolean | undefined;
 
-    constructor(private pixel: WebtrekkSmartPixelAngular) {}
+    constructor(private pixel: WebtrekkSmartPixelAngular) {
+    }
 
     ngAfterContentInit() {
         if (this.wtAdvancedData) {
@@ -41,7 +42,10 @@ export class DataDirective implements AfterContentInit {
         }
 
         if (this.wtCustomerData) {
-            this.pixel.customer(this.wtCustomerData.id, this.wtCustomerData, this.wtCustomerData.validation);
+            this.pixel.customer(
+                this.wtCustomerData && this.wtCustomerData.id ? this.wtCustomerData.id : this.wtCustomerData,
+                this.wtCustomerData,
+                this.wtCustomerData.validation);
         }
 
         if (this.wtInitData) {
@@ -53,11 +57,17 @@ export class DataDirective implements AfterContentInit {
         }
 
         if (this.wtPageData) {
-            this.pixel.page(this.wtPageData.name, this.wtPageData);
+            this.pixel.page(
+                this.wtPageData && this.wtPageData.name ? this.wtPageData.name : this.wtPageData,
+                this.wtPageData
+            );
         }
 
         if (this.wtProductData) {
-            this.pixel.product(this.wtProductData.action, this.wtProductData);
+            this.pixel.product(
+                this.wtProductData && this.wtProductData.action ? this.wtProductData.action : 'view',
+                this.wtProductData
+            );
         }
 
         if (this.wtSessionData) {

@@ -3,11 +3,13 @@ import {SpyLocation} from '@angular/common/testing';
 import {TestBed} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 
-import {WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular} from './index';
+import {WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular} from '../public-api';
 import {expectInCallback} from './_helper/expectInCallback';
 
 describe('WebtrekkSmartPixelAngular', () => {
     let service: WebtrekkSmartPixelAngular;
+    // @ts-ignore
+    const testBedInject = typeof TestBed.inject !== 'undefined' ? TestBed.inject : TestBed.get;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
@@ -20,7 +22,7 @@ describe('WebtrekkSmartPixelAngular', () => {
             providers: [{provide: Location, useClass: SpyLocation}]
         });
 
-        service = TestBed.get(WebtrekkSmartPixelAngular);
+        service = testBedInject(WebtrekkSmartPixelAngular);
     });
 
     afterEach((done) => {

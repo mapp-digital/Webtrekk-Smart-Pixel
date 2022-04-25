@@ -4,20 +4,25 @@ import {Routes} from "@angular/router";
 @Component({
     template: 'Search'
 })
-export class SearchComponent {}
+export class SearchComponent {
+}
 
 @Component({
     template: 'Home'
 })
-export class HomeComponent {}
+export class HomeComponent {
+}
 
 @Component({
-    template: `<router-outlet></router-outlet>`
+    template: `
+        <router-outlet></router-outlet>`
 })
-export class AppComponent {}
+export class AppComponent {
+}
 
 @Component({
-    template: `<div [wt-content-engagement]="mockData"></div>`,
+    template: `
+        <div [wt-content-engagement]="mockData"></div>`,
     styles: [
         'div { height: 100px; width: 100px; border: solid 1px black; }'
     ]
@@ -39,7 +44,8 @@ export class ContentEngagementWithoutSelector {
 }
 
 @Component({
-    template: `<div id="ce1" [wt-content-engagement]="mockData"></div>`,
+    template: `
+        <div id="ce1" [wt-content-engagement]="mockData"></div>`,
     styles: [
         'div { height: 100px; width: 100px; border: solid 1px black; }'
     ]
@@ -62,7 +68,8 @@ export class ContentEngagementWithSelector {
 }
 
 @Component({
-    template: `<div [wt-product-list]="mockData"></div>`,
+    template: `
+        <div [wt-product-list]="mockData"></div>`,
     styles: [
         'div { height: 100px; width: 100px; border: solid 1px black; }'
     ]
@@ -81,7 +88,8 @@ export class ProductListWithoutSelector {
 }
 
 @Component({
-    template: `<div id="ce1" [wt-product-list]="mockData"></div>`,
+    template: `
+        <div id="ce1" [wt-product-list]="mockData"></div>`,
     styles: [
         'div { height: 100px; width: 100px; border: solid 1px black; }'
     ]
@@ -101,7 +109,8 @@ export class ProductListWithSelector {
 }
 
 @Component({
-    template: `<div [wt-teaser]="mockData"></div>`,
+    template: `
+        <div [wt-teaser]="mockData"></div>`,
     styles: [
         'div { height: 100px; width: 100px; border: solid 1px black; }'
     ]
@@ -120,7 +129,8 @@ export class TeaserWithoutSelector {
 }
 
 @Component({
-    template: `<div id="ce1" [wt-teaser]="mockData"></div>`,
+    template: `
+        <div id="ce1" [wt-teaser]="mockData"></div>`,
     styles: [
         'div { height: 100px; width: 100px; border: solid 1px black; }'
     ]
@@ -140,7 +150,8 @@ export class TeaserWithSelector {
 }
 
 @Component({
-    template: `<div [wt-extension]="mockData"></div>`,
+    template: `
+        <div [wt-extension]="mockData"></div>`,
     styles: [
         'div { height: 100px; width: 100px; border: solid 1px black; }'
     ]
@@ -153,7 +164,8 @@ export class ExtensionScrollPositionWithoutData {
 }
 
 @Component({
-    template: `<div id="ce1" [wt-extension]="mockData"></div>`,
+    template: `
+        <div id="ce1" [wt-extension]="mockData"></div>`,
     styles: [
         'div { height: 100px; width: 100px; border: solid 1px black; }'
     ]
@@ -171,7 +183,8 @@ export class ExtensionScrollPositionWithData {
 }
 
 @Component({
-    template: `<div [wt-advanced-data]="mockData"></div>`
+    template: `
+        <div [wt-advanced-data]="mockData"></div>`
 })
 export class AdvancedData {
     mockData = {
@@ -192,7 +205,8 @@ export class AdvancedData {
 }
 
 @Component({
-    template: `<div [wt-campaign-data]="mockData"></div>`
+    template: `
+        <div [wt-campaign-data]="mockData"></div>`
 })
 export class CampaignData {
     mockData = {
@@ -204,7 +218,8 @@ export class CampaignData {
 }
 
 @Component({
-    template: `<div [wt-campaign-data]="mockData" [wt-track]="1"></div>`
+    template: `
+        <div [wt-campaign-data]="mockData" [wt-track]="1"></div>`
 })
 export class CampaignDataTrack {
     mockData = {
@@ -216,7 +231,8 @@ export class CampaignDataTrack {
 }
 
 @Component({
-    template: `<div [wt-customer-data]="mockData"></div>`
+    template: `
+        <div [wt-customer-data]="mockData"></div>`
 })
 export class CustomerData {
     mockData = {
@@ -240,7 +256,8 @@ export class CustomerData {
 }
 
 @Component({
-    template: `<div [wt-customer-data]="mockData" [wt-track]="1"></div>`
+    template: `
+        <div [wt-customer-data]="mockData" [wt-track]="1"></div>`
 })
 export class CustomerDataTrack {
     mockData = {
@@ -264,7 +281,8 @@ export class CustomerDataTrack {
 }
 
 @Component({
-    template: `<div [wt-init-data]="mockData"></div>`
+    template: `
+        <div [wt-init-data]="mockData"></div>`
 })
 export class InitData {
     mockData = {
@@ -276,7 +294,8 @@ export class InitData {
 }
 
 @Component({
-    template: `<div [wt-order-data]="mockData"></div>`
+    template: `
+        <div [wt-order-data]="mockData"></div>`
 })
 export class OrderData {
     mockData = {
@@ -295,7 +314,8 @@ export class OrderData {
 }
 
 @Component({
-    template: `<div [wt-order-data]="mockData" [wt-track]="1"></div>`
+    template: `
+        <div [wt-order-data]="mockData" [wt-track]="1"></div>`
 })
 export class OrderDataTrack {
     mockData = {
@@ -314,7 +334,8 @@ export class OrderDataTrack {
 }
 
 @Component({
-    template: `<div [wt-page-data]="mockData"></div>`
+    template: `
+        <div [wt-page-data]="mockData"></div>`
 })
 export class PageData {
     mockData = {
@@ -338,7 +359,8 @@ export class PageData {
 }
 
 @Component({
-    template: `<div [wt-page-data]="mockData" [wt-track]="1"></div>`
+    template: `
+        <div [wt-page-data]="mockData" [wt-track]="1"></div>`
 })
 export class PageDataTrack {
     mockData = {
@@ -362,7 +384,8 @@ export class PageDataTrack {
 }
 
 @Component({
-    template: `<div [wt-session-data]="mockData"></div>`
+    template: `
+        <div [wt-session-data]="mockData"></div>`
 })
 export class SessionData {
     mockData = {
@@ -372,7 +395,8 @@ export class SessionData {
 }
 
 @Component({
-    template: `<div [wt-session-data]="mockData" [wt-track]="1"></div>`
+    template: `
+        <div [wt-session-data]="mockData" [wt-track]="1"></div>`
 })
 export class SessionDataTrack {
     mockData = {
@@ -382,7 +406,8 @@ export class SessionDataTrack {
 }
 
 @Component({
-    template: `<div [wt-product-data]="mockData"></div>`
+    template: `
+        <div [wt-product-data]="mockData"></div>`
 })
 export class ProductViewData {
     mockData = {
@@ -398,7 +423,8 @@ export class ProductViewData {
 }
 
 @Component({
-    template: `<div [wt-product-data]="mockData" [wt-track]="1"></div>`
+    template: `
+        <div [wt-product-data]="mockData" [wt-track]="1"></div>`
 })
 export class ProductViewDataTrack {
     mockData = {
@@ -414,7 +440,8 @@ export class ProductViewDataTrack {
 }
 
 @Component({
-    template: `<div [wt-product-data]="mockData"></div>`
+    template: `
+        <div [wt-product-data]="mockData"></div>`
 })
 export class ProductBasketData {
     mockData = {
@@ -430,7 +457,8 @@ export class ProductBasketData {
 }
 
 @Component({
-    template: `<div [wt-product-data]="mockData" [wt-track]="1"></div>`
+    template: `
+        <div [wt-product-data]="mockData" [wt-track]="1"></div>`
 })
 export class ProductBasketDataTrack {
     mockData = {
@@ -446,7 +474,8 @@ export class ProductBasketDataTrack {
 }
 
 @Component({
-    template: `<div [wt-product-data]="mockData"></div>`
+    template: `
+        <div [wt-product-data]="mockData"></div>`
 })
 export class ProductConfirmationData {
     mockData = {
@@ -462,7 +491,8 @@ export class ProductConfirmationData {
 }
 
 @Component({
-    template: `<div [wt-product-data]="mockData" [wt-track]="1"></div>`
+    template: `
+        <div [wt-product-data]="mockData" [wt-track]="1"></div>`
 })
 export class ProductConfirmationDataTrack {
     mockData = {

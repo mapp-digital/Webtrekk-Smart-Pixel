@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 
-import { WebtrekkSmartPixelModule } from './../../lib/index';
+import { WebtrekkSmartPixelModule } from '@webtrekk-smart-pixel/angular';
 
 @NgModule({
   imports: [

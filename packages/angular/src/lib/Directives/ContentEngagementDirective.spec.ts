@@ -1,16 +1,18 @@
-import { Location } from '@angular/common';
-import { SpyLocation } from '@angular/common/testing';
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import {Location} from '@angular/common';
+import {SpyLocation} from '@angular/common/testing';
+import {TestBed} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
 
-import { WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular } from './../index';
-import { expectInCallback } from './../_helper/expectInCallback';
-import { ContentEngagementWithoutSelector, ContentEngagementWithSelector } from "./../_helper/components"
+import {WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular} from '../../public-api';
+import {expectInCallback} from '../_helper/expectInCallback';
+import {ContentEngagementWithoutSelector, ContentEngagementWithSelector} from '../_helper/components';
 
 describe('ContentEngagementDirective', () => {
     let service: WebtrekkSmartPixelAngular;
     let spyOnAddContentEngagementElement;
     let fixture;
+    // @ts-ignore
+    const testBedInject = typeof TestBed.inject !== 'undefined' ? TestBed.inject : TestBed.get;
 
     beforeEach((done) => {
         TestBed.configureTestingModule({
@@ -20,13 +22,14 @@ describe('ContentEngagementDirective', () => {
                     activateAutoTracking: false
                 })
             ],
-            declarations: [ ContentEngagementWithoutSelector, ContentEngagementWithSelector ]
+            declarations: [ContentEngagementWithoutSelector, ContentEngagementWithSelector]
         });
 
-        service = TestBed.get(WebtrekkSmartPixelAngular);
+        service = testBedInject(WebtrekkSmartPixelAngular);
 
         service.call((wtSmart) => {
-            spyOnAddContentEngagementElement = jest.spyOn(wtSmart.extension.content_engagement, 'add').mockImplementation(() => {});
+            spyOnAddContentEngagementElement = jest.spyOn(wtSmart.extension.content_engagement, 'add').mockImplementation(() => {
+            });
 
             done();
         });

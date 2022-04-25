@@ -1,10 +1,8 @@
 {
     "name": "@webtrekk-smart-pixel/angular",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "title": "Webtrekk Smart Pixel for Angular",
     "description": "A Angular implementation of the Webtrekk Smart Pixel.",
-    "main": "./index.js",
-    "types": "./types/index.d.ts",
     "author": "Webtrekk GmbH",
     "license": "MIT",
     "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/tree/master/packages/angular#readme",
@@ -23,8 +21,15 @@
         "rxjs": "^5.0.0 || ^6.0.0",
         "zone.js": "^0.8.4"
     },
+    "ng-update": {
+        "packageGroup": [
+            "@angular/core",
+            "@webtrekk-smart-pixel/angular"
+        ]
+    },
     "dependencies": {
-        "@webtrekk-smart-pixel/core": "^1"
+        "@webtrekk-smart-pixel/core": "^1",
+        "tslib": "^2.3.0"
     },
     "devDependencies": {
         "@babel/core": "^7.4.3",
@@ -37,6 +42,7 @@
         "jest": "^24.8.0",
         "rollup": "^1.10.0",
         "rollup-plugin-babel": "^4.3.2",
+        "rollup-plugin-ngc": "^0.1.2",
         "rollup-plugin-typescript": "^1.0.1",
         "rxjs": "^6.0.0",
         "rxjs-compat": "^6.3.3",

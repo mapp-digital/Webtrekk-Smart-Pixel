@@ -42,7 +42,7 @@ module.exports = {
             '@angular/compiler-cli': '^9', '@angular/platform-browser-dynamic': '^9',
             '@angular-builders/jest': '^9', '@angular-devkit/build-angular': 'v9-lts',
             'typescript': '^4', '@angular/platform-server': '^9', '@angular/animations': '^9',
-            '@nguniversal/express-engine': '^9', 'jest': '^26'
+            '@nguniversal/express-engine': '^9', 'jest': '^26', 'ng-packagr': '^9'
         },
         '10': {
             '@angular/core': '^10', '@angular/router': '^10', '@angular/common': '^10',
@@ -50,7 +50,7 @@ module.exports = {
             '@angular/compiler-cli': '^10', '@angular/platform-browser-dynamic': '^10',
             '@angular-builders/jest': '^10', '@angular-devkit/build-angular': 'v10-lts',
             'typescript': '^4', '@angular/platform-server': '^10', '@angular/animations': '^10',
-            '@nguniversal/express-engine': '^10', 'jest': '^26'
+            '@nguniversal/express-engine': '^10', 'jest': '^26', 'ng-packagr': '^10'
         },
         '11': {
             '@angular/core': '^11', '@angular/router': '^11', '@angular/common': '^11',
@@ -58,15 +58,15 @@ module.exports = {
             '@angular/compiler-cli': '^11', '@angular/platform-browser-dynamic': '^11',
             '@angular-builders/jest': '^11', '@angular-devkit/build-angular': 'v11-lts',
             'typescript': '~4.1.0', '@angular/platform-server': '^11', '@angular/animations': '^11',
-            '@nguniversal/express-engine': '^11', 'jest': '^26'
+            '@nguniversal/express-engine': '^11', 'jest': '^26', 'ng-packagr': '^11'
         },
         '12': {
             '@angular/core': '^12', '@angular/router': '^12', '@angular/common': '^12',
             '@angular/cli': '^12', '@angular/platform-browser': '^12', '@angular/compiler': '^12',
             '@angular/compiler-cli': '^12', '@angular/platform-browser-dynamic': '^12',
             '@angular-builders/jest': '12.1.0', '@angular-devkit/build-angular': 'v12-lts',
-            'typescript': '~4.1.0', '@angular/platform-server': '^12', '@angular/animations': '^12',
-            '@nguniversal/express-engine': '^12', 'jest': '^27'
+            'typescript': '~4.3.5', '@angular/platform-server': '^12', '@angular/animations': '^12',
+            '@nguniversal/express-engine': '^12', 'jest': '^27', 'zone.js': '0.11.4', 'ng-packagr': '^12'
         },
         'latest': {
             '@angular/core': 'latest', '@angular/router': 'latest', '@angular/common': 'latest',

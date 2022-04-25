@@ -1,15 +1,17 @@
-import { Location } from '@angular/common';
-import { SpyLocation } from '@angular/common/testing';
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import {Location} from '@angular/common';
+import {SpyLocation} from '@angular/common/testing';
+import {TestBed} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
 
-import { WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular } from './../index';
-import { expectInCallback } from './../_helper/expectInCallback';
-import { ExtensionScrollPositionWithoutData, ExtensionScrollPositionWithData } from "./../_helper/components"
+import {WebtrekkSmartPixelModule, WebtrekkSmartPixelAngular} from '../../public-api';
+import {expectInCallback} from '../_helper/expectInCallback';
+import {ExtensionScrollPositionWithoutData, ExtensionScrollPositionWithData} from '../_helper/components'
 
 describe('ExtensionDirective', () => {
     let service: WebtrekkSmartPixelAngular;
     let fixture;
+    // @ts-ignore
+    const testBedInject = typeof TestBed.inject !== 'undefined' ? TestBed.inject : TestBed.get;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
@@ -19,10 +21,10 @@ describe('ExtensionDirective', () => {
                     activateAutoTracking: false
                 })
             ],
-            declarations: [ ExtensionScrollPositionWithoutData, ExtensionScrollPositionWithData ]
+            declarations: [ExtensionScrollPositionWithoutData, ExtensionScrollPositionWithData]
         });
 
-        service = TestBed.get(WebtrekkSmartPixelAngular);
+        service = testBedInject(WebtrekkSmartPixelAngular);
     });
 
     afterEach((done) => {
