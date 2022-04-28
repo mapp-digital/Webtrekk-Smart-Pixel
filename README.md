@@ -3,7 +3,7 @@
 [Site](https://mapp.com) |
 [Docs](https://documentation.mapp.com/latest/en/smart-pixel-15741230.html) |
 [Support](https://github.com/Webtrekk/Webtrekk-Smart-Pixel/issues) |
-[Changelog](./CHANGELOG.md)
+[Changelog](./packages/core/CHANGELOG.md)
 
 Webtrekk provides a high-end analytical tool to analyze the traffic on your website, identify success factors
 and optimize it on the basis of actual key indicators.
