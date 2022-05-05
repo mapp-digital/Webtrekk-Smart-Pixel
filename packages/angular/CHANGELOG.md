@@ -1,9 +1,26 @@
+<a name="2.1.3"></a>
+## 2.1.3(2022-05-04)
+
+### Features
+
+* Limit number of retries to send requests in request queue ([requestQueue](https://documentation.mapp.com/latest/en/angular-15741405.html#id-.SMPAngularv1.0-wt-advanced-data))
+
+
 <a name="2.1.2"></a>
 ## 2.1.2 (2022-04-25)
 
 ### Features
 
 * Support Angular ivy
+
+---
+
+<a name="1.1.3"></a>
+## 1.1.3(2022-05-04)
+
+### Features
+
+* Limit number of retries to send requests in request queue ([requestQueue](https://documentation.mapp.com/latest/en/angular-15741405.html#id-.SMPAngularv1.0-wt-advanced-data))
 
 <a name="1.1.2"></a>
 ## 1.1.2 (2022-04-25)

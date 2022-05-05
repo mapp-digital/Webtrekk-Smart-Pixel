@@ -1,3 +1,10 @@
+<a name="1.3.4"></a>
+# 1.3.4 (2022-05-04)
+
+## Features
+- With `maxCookieSize = -1` in the product list tracking configuration, no more product list cookies are set. However, this deactivates the product list position tracking for product views, adds and confirmations ([maxCookieSize](https://documentation.mapp.com/1.0/en/product-list-tracking-15741357.html#id-.SMPProductListTrackingv1.0-config))
+- Limit number of retries to send requests in request queue ([requestQueue](https://documentation.mapp.com/latest/en/advanced-15741253.html))
+
 <a name="1.3.3"></a>
 # 1.3.3 (2022-03-03)
 

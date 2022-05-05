@@ -32,7 +32,9 @@ WebtrekkAdvancedData.propTypes = {
         activated: PropTypes.bool,
         ttl: PropTypesOfTypesNumberOrString,
         resendInterval: PropTypesOfTypesNumberOrString,
-        size: PropTypesOfTypesNumberOrString
+        size: PropTypesOfTypesNumberOrString,
+        retries: PropTypesOfTypesNumberOrString,
+        retriesOption: PropTypesOfTypesNumberOrString
     }),
     requestLimit: PropTypes.shape({
         activated: PropTypes.bool,

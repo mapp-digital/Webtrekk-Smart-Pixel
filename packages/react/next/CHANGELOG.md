@@ -1,3 +1,10 @@
+<a name="1.2.2"></a>
+## 1.2.2 (2022-05-04)
+
+### Features
+
+* Limit number of retries to send requests in request queue ([WebtrekkAdvancedData](https://documentation.mapp.com/latest/en/next-15741408.html#id-.SMPNextv1.0-%3CWebtrekkAdvancedData%3E) and [advanced](https://documentation.mapp.com/latest/en/next-15741408.html#id-.SMPNextv1.0-advanced))
+
 <a name="1.2.1"></a>
 ## 1.2.1 (2021-12-20)
 

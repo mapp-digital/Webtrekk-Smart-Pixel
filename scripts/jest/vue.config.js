@@ -18,13 +18,10 @@ module.exports = {
     coverageDirectory: `<rootDir>/reports/coverage/${process.env.VUE_VERSION}`,
     coverageThreshold: {
         'global': {
-            branches: 100,
-            functions: 100,
-            lines: 100,
-            statements: 100
-        },
-        [`${rootDir}/src/lib/WebtrekkSmartPixelVue.js`]: {
-            branches: 90
+            branches: 70,
+            functions: 70,
+            lines: 70,
+            statements: 70
         }
     }
 };

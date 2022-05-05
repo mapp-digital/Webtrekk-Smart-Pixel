@@ -24,6 +24,8 @@ type WebtrekkAdvancedPropRequestQueue = {
     ttl?: NumberOrString;
     resendInterval?: NumberOrString;
     size?: NumberOrString;
+    retries?: NumberOrString;
+    retriesOption?: NumberOrString;
 }
 
 type WebtrekkAdvancedPropRequestLimit = {
