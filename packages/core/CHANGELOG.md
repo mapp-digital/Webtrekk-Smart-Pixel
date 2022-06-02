@@ -1,3 +1,13 @@
+<a name="1.3.5"></a>
+# 1.3.5 (2022-06-01)
+
+## Features
+- New pre-defined parameters for ScrollDepth extension ([ScrollDepth](https://documentation.mapp.com/latest/en/scroll-depth-31200618.html))
+- The scroll position extension is deprecated, please use the scroll depth extension instead
+
+## Bug Fixes
+- TabBrowsing does not refresh the counter when the location for SPAs is changed
+
 <a name="1.3.4"></a>
 # 1.3.4 (2022-05-04)
 

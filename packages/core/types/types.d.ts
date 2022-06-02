@@ -808,22 +808,64 @@ interface SmartPixelExtension {
 }
 
 /* **********************************************
+ *           EXTENSION:SCROLL_DEPTH             *
+ ********************************************** */
+type SmartPixelExtensionScrollDepthEventName = 'scroll' | 'unload';
+
+interface SmartPixelExtensionScrollDepthSetConfig {
+    roundResult?: boolean;
+    pageHeight?: string;
+    sendAsFigure?: string;
+}
+
+interface SmartPixelExtensionScrollDepthGetConfig {
+    roundResult: boolean;
+    pageHeight: string;
+    sendAsFigure: string;
+}
+
+interface SmartPixelExtensionScrollDepth extends SmartPixelExtensionProps {
+    config(): SmartPixelExtensionScrollDepthGetConfig;
+    config(config: SmartPixelExtensionScrollDepthSetConfig): void;
+    isActivated(): boolean;
+    activate(): void;
+    deactivate(): void;
+    simulate(eventName: SmartPixelExtensionScrollDepthEventName): void;
+}
+
+interface SmartPixelExtension {
+    scroll_depth: SmartPixelExtensionScrollDepth;
+}
+
+/* **********************************************
  *          EXTENSION:SCROLL_POSITION           *
  ********************************************** */
+/**
+ * @deprecated use SmartPixelExtensionScrollDepthEventName
+ */
 type SmartPixelExtensionScrollPositionEventName = 'scroll' | 'unload';
 
+/**
+ * @deprecated use SmartPixelExtensionScrollDepthSetConfig
+ */
 interface SmartPixelExtensionScrollPositionSetConfig {
     roundResult?: boolean;
     pageHeight?: string;
     sendAsFigure?: string;
 }
 
+/**
+ * @deprecated use SmartPixelExtensionScrollDepthGetConfig
+ */
 interface SmartPixelExtensionScrollPositionGetConfig {
     roundResult: boolean;
     pageHeight: string;
     sendAsFigure: string;
 }
 
+/**
+ * @deprecated use SmartPixelExtensionScrollDepth
+ */
 interface SmartPixelExtensionScrollPosition extends SmartPixelExtensionProps {
     config(): SmartPixelExtensionScrollPositionGetConfig;
     config(config: SmartPixelExtensionScrollPositionSetConfig): void;
@@ -834,6 +876,9 @@ interface SmartPixelExtensionScrollPosition extends SmartPixelExtensionProps {
 }
 
 interface SmartPixelExtension {
+    /**
+     * @deprecated use scroll_depth
+     */
     scroll_position: SmartPixelExtensionScrollPosition;
 }
 
