@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('prop-types'), require('react-router-dom'), require('react'), require('@webtrekk-smart-pixel/core')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'prop-types', 'react-router-dom', 'react', '@webtrekk-smart-pixel/core'], factory) :
-  (global = global || self, factory(global['@webtrekk-smart-pixel/react'] = {}, global.PropTypes, global.reactRouterDom, global.React, global.wtSmart));
-}(this, (function (exports, PropTypes, reactRouterDom, React, wtSmart) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('prop-types'), require('react'), require('react-router-dom'), require('@webtrekk-smart-pixel/core')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'prop-types', 'react', 'react-router-dom', '@webtrekk-smart-pixel/core'], factory) :
+  (global = global || self, factory(global['@webtrekk-smart-pixel/react'] = {}, global.PropTypes, global.React, global.reactRouterDom, global.wtSmart));
+}(this, (function (exports, PropTypes, React, reactRouterDom, wtSmart) { 'use strict';
 
   PropTypes = PropTypes && Object.prototype.hasOwnProperty.call(PropTypes, 'default') ? PropTypes['default'] : PropTypes;
   var React__default = 'default' in React ? React['default'] : React;
@@ -33,6 +33,23 @@
     return Constructor;
   }
 
+  function _extends() {
+    _extends = Object.assign ? Object.assign.bind() : function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+
+      return target;
+    };
+    return _extends.apply(this, arguments);
+  }
+
   function _inherits(subClass, superClass) {
     if (typeof superClass !== "function" && superClass !== null) {
       throw new TypeError("Super expression must either be null or a function");
@@ -52,18 +69,17 @@
   }
 
   function _getPrototypeOf(o) {
-    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
       return o.__proto__ || Object.getPrototypeOf(o);
     };
     return _getPrototypeOf(o);
   }
 
   function _setPrototypeOf(o, p) {
-    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
       o.__proto__ = p;
       return o;
     };
-
     return _setPrototypeOf(o, p);
   }
 
@@ -116,6 +132,30 @@
       return _possibleConstructorReturn(this, result);
     };
   }
+
+  var polyfillWithRouter = reactRouterDom.withRouter || function (Component) {
+    var ComponentWithRouterProp = function ComponentWithRouterProp(props) {
+      var location = reactRouterDom.useLocation();
+      var navigate = reactRouterDom.useNavigate();
+      var params = reactRouterDom.useParams();
+      var history = reactRouterDom.useNavigationType();
+      return /*#__PURE__*/React__default.createElement(Component, _extends({
+        history: {
+          action: history
+        },
+        router: {
+          location: location,
+          navigate: navigate,
+          params: params
+        }
+      }, props));
+    };
+
+    ComponentWithRouterProp.WrappedComponent = Component;
+    return ComponentWithRouterProp;
+  };
+
+  var withRouter = polyfillWithRouter;
 
   /**
    * @type {SmartPixel|null}
@@ -661,7 +701,7 @@
     activateProductList: false,
     activateContentEngagement: false
   };
-  var AutoTracking = reactRouterDom.withRouter(WebtrekkAutoTracking);
+  var AutoTracking = withRouter(WebtrekkAutoTracking);
 
   var WebtrekkInitData = /*#__PURE__*/function (_WebtrekkReactCompone) {
     _inherits(WebtrekkInitData, _WebtrekkReactCompone);

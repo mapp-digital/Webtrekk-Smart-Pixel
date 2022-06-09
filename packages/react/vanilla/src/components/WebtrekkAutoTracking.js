@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {withRouter} from 'react-router-dom';
+import {withRouter} from './withRouter';
 import WebtrekkReactComponent from './../../../shared/src/components/data/WebtrekkReactComponent';
 
 class WebtrekkAutoTracking extends WebtrekkReactComponent {

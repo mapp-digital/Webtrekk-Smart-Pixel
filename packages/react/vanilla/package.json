@@ -1,6 +1,6 @@
 {
     "name": "@webtrekk-smart-pixel/react",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "title": "Webtrekk Smart Pixel for React",
     "description": "A React implementation of the Webtrekk Smart Pixel.",
     "main": "index.js",
@@ -19,7 +19,7 @@
         "node": ">=8.2.1"
     },
     "peerDependencies": {
-        "react": "^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0",
+        "react": "^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0",
         "react-router-dom": "^5.0.0 || ^6.0.0",
         "prop-types": "^15.0.0"
     },

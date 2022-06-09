@@ -8,6 +8,12 @@ const coverageThreshold = {
         lines: 100,
         statements: 100
     },
+    [`${rootDir}/vanilla/src/components/withRouter.js`]: {
+        branches: 0,
+        functions: 0,
+        lines: 0,
+        statements: 0
+    },
     [`${rootDir}/shared/src/WebtrekkSmartPixelReact.js`]: {
         branches: 90
     },

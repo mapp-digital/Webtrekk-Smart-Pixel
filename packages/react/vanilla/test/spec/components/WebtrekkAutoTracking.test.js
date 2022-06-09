@@ -64,7 +64,9 @@ describe('WebtrekkAutoTracking', () => {
         });
 
         test('don\'t returns children', () => {
-            const renderedWebtrekkAutoTracking = shallow(<WebtrekkAutoTracking/>);
+            const renderedWebtrekkAutoTracking = shallow(
+                <WebtrekkAutoTracking.WrappedComponent/>
+            );
             expect(renderedWebtrekkAutoTracking).toEqual({});
         });
     });
@@ -345,7 +347,13 @@ describe('WebtrekkAutoTracking', () => {
         });
 
         test('track new page view / pop', (done) => {
-            history.goBack();
+            if (history.goBack) {
+                history.goBack();
+            }
+            else {
+                history.back();
+            }
+
             renderedWebtrekkAutoTracking.setProps();
 
             WebtrekkSmartPixelReact.call((wtSmart) => {
@@ -370,7 +378,13 @@ describe('WebtrekkAutoTracking', () => {
             spyOnTrackPage.mockClear();
             spyOnActionReload.mockClear();
 
-            history.goBack();
+            if (history.goBack) {
+                history.goBack();
+            }
+            else {
+                history.back();
+            }
+
             renderedWebtrekkAutoTracking.setProps();
 
             WebtrekkSmartPixelReact.call((wtSmart) => {

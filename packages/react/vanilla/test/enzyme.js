@@ -11,8 +11,11 @@ else if (process.env.REACT_VERSION === '15') {
 else if (process.env.REACT_VERSION === '16') {
     Adapter = require('enzyme-adapter-react-16');
 }
-else {
+else if (process.env.REACT_VERSION === '17') {
     Adapter = require('@wojtekmaj/enzyme-adapter-react-17');
+}
+else {
+    Adapter = require('@cfaester/enzyme-adapter-react-18').default;
 }
 
 configure({adapter: new Adapter()});
