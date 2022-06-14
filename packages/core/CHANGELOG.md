@@ -1,3 +1,10 @@
+<a name="1.3.6"></a>
+# 1.3.6 (2022-06-09)
+
+## Optimization
+- Optimized Marketing Automation extension for SPAs
+
+
 <a name="1.3.5"></a>
 # 1.3.5 (2022-06-01)
 
@@ -170,7 +177,7 @@
 
 ## Optimization
 
-- optimized automatic page tracking for SPAs
+- Optimized automatic page tracking for SPAs
 
 <a name="1.0.8"></a>
 # 1.0.8 (2019-07-18)
