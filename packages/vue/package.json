@@ -1,6 +1,6 @@
 {
     "name": "@webtrekk-smart-pixel/vue",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "title": "Webtrekk Smart Pixel for Vue",
     "description": "A Vue implementation of the Webtrekk Smart Pixel.",
     "main": "./index.js",

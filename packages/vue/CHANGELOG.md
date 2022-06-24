@@ -1,3 +1,10 @@
+<a name="1.2.3"></a>
+## 1.2.3 (2022-06-24)
+
+### Bugfix
+
+* Fix uncaught ReferenceError: regeneratorRuntime is not defined
+
 <a name="1.2.2"></a>
 ## 1.2.2 (2022-05-04)
 
