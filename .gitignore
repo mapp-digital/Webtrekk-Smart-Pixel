@@ -1,54 +1,69 @@
-# Node
-**/node_modules/*
-node_modules/*
-.npm-*
-*lock*
-*.log
-*.lock
+# ignore everything files
+*/*
 
-# Coverage
-**/reports/*
-**/coverage/*
-!scripts/**
+# packages
+!packages/
+!packages/*
+packages/*/*
 
-# JetBrains
-.idea
-.project
-.settings
-.idea/*
-**/.idea/*
-*.iml
+## general
+!packages/*/dist
+packages/*/dist/*
+!packages/*/dist/*.min.js
+!packages/*/dist/*.debug.js
+!packages/*/dist/*.umd.js
+!packages/*/types
+!packages/*/index.js
+!packages/*/package.json
+!packages/*/README.md
+!packages/*/CHANGELOG.md
 
-# VS Code
-.vscode/*
-**/.vscode/*
-.elixir_ls/*
+## angular
+!packages/angular/src
+!packages/angular/ng-package.json
+!packages/angular/tsconfig.lib.json
+!packages/angular/tsconfig.lib.old.json
+!packages/angular/tsconfig.lib.prod.json
+packages/angular/dist
 
+## react / next
+!packages/react/
+!packages/react/next/
+!packages/react/shared/
+!packages/react/vanilla/
 
-# Windows
-Thumbs.db
-Desktop.ini
+## vue
+!packages/vue/demo
+!packages/vue/src
+!packages/vue/test
 
-# Mac
-.DS_Store
-**/.DS_Store
+# packages
+!scripts/
+!scripts/install/
+!scripts/jest/
+!scripts/rollup/
+!scripts/server/
+!scripts/webpack/
+!scripts/color.js
 
-# Ngc generated files
-**/*.ngfactory.ts
+# tests
+!tests/
+!tests/admin/
+!tests/apps/
+!tests/E2E/
+!tests/fixture/
+!tests/pseudo_db/
+!tests/request_logger/
+!tests/server/
+!tests/Makefile
+!tests/README.md
 
-# Playground tmp files
-.playground
-
-# Temp files
+# temp files
 **/.tmp/*
 **/.next/*
 **/.nuxt/*
 **/.release/*
-**/demo/dist/*
-**/tests/results/*
-**/tests/instrumented/*
-**/tests/apps/react-ts/src/instrumented/*
-packages/angular/dist/*
+**/reports/*
 
 # E2E apps
 tests/E2E/sources-for-coverage/*
