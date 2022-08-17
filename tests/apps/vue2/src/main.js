@@ -2,8 +2,9 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import WebtrekkSmartpixelVue from "../../../instrumented/vue/index";
-import "../../styles.css";
+// import WebtrekkSmartpixelVue from "../../../instrumented/vue/index";
+import WebtrekkSmartpixelVue from "@webtrekk-smart-pixel/vue";
+import "./styles.css";
 
 Vue.config.productionTip = false;
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Autofill form</title>
+</head>
+<body>
+<h1>Test Autofill form</h1>
+
+<form id="form" method="GET" action="https://localhost:4001/user/login/">
+ 
+    <div class="container" >
+      <label for="name"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="name" id="name" required  autocomplete='on'>
+  
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" id="password" required  autocomplete='on'>
+  
+      <button type="submit">Login</button>
+    </div>
+    <div id="info">Not logged in!</div>
+  
+  </form>
+  <script>
+      setTimeout(()=>{
+        var style = window.getComputedStyle(document.getElementById('password'))
+        if (style && style.backgroundImage === "linear-gradient(rgba(255, 249, 145, 0.5), rgba(255, 249, 145, 0.5))") {
+            console.log("Autofill is there")
+        } else {
+            console.log("There is no autofill")}
+            
+        },200)
+  </script>
+</body>
+</html>

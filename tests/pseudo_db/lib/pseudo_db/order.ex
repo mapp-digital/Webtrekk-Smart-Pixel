@@ -1,8 +1,6 @@
 defmodule PseudoDb.Order do
   @me __MODULE__
 
-  alias PseudoDb.Order
-
   def start_link() do
     Agent.start_link(
       fn ->

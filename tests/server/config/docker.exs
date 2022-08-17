@@ -1,32 +1,30 @@
-use Mix.Config
+import Config
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
-# with webpack to recompile .js and .css sources.
+# with esbuild to bundle .js and .css sources.
 config :server, ServerWeb.Endpoint,
-       url: [host: "phoenix"],
-       http: [port: 4000],
-       https: [
-           port: 4001,
-           cipher_suite: :strong,
-           certfile: "priv/cert/selfsigned.pem",
-           keyfile: "priv/cert/selfsigned_key.pem"
-       ],
-       debug_errors: true,
-       code_reloader: false,
-       check_origin: false,
-       watchers: [
-           node: [
-#               "node_modules/webpack/bin/webpack.js",
-#               "--mode",
-#               "development",
-#               "--watch-stdin",
-#               cd: Path.expand("../assets", __DIR__)
-           ]
-       ]
+  # Binding to loopback ipv4 address prevents access from other machines.
+  # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
+  url: [host: "phoenix"],
+  http: [ip: {127, 0, 0, 1}, port: 4000],
+  https: [
+  port: 4001,
+  cipher_suite: :strong,
+  keyfile: "priv/cert/selfsigned_key.pem",
+  certfile: "priv/cert/selfsigned.pem"
+  ],
+  check_origin: false,
+  code_reloader: true,
+  debug_errors: true,
+  secret_key_base: "4lNvHCeeOrkfIuyh64MZJEPnbHJXQmdMnbQ+SvkQR8uRi4njEuKYAWC5AzKcq8Ms",
+  watchers: [
+    # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+  ]
 
 # ## SSL Support
 #
@@ -54,14 +52,14 @@ config :server, ServerWeb.Endpoint,
 
 # Watch static and templates for browser reloading.
 config :server, ServerWeb.Endpoint,
-       live_reload: [
-           patterns: [
-               ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
-               ~r"priv/gettext/.*(po)$",
-               ~r"lib/server_web/(live|views)/.*(ex)$",
-               ~r"lib/server_web/templates/.*(eex)$"
-           ]
-       ]
+  live_reload: [
+    patterns: [
+      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
+      ~r"priv/gettext/.*(po)$",
+      ~r"lib/server_web/(live|views)/.*(ex)$",
+      ~r"lib/server_web/templates/.*(eex)$"
+    ]
+  ]
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

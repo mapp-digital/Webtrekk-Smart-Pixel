@@ -27,6 +27,15 @@ defmodule ServerWeb.UserController do
         json(conn, PseudoDb.User.getDataByToken(token))
     end
 
+    def checkLoginStatus(conn, _ ) do
+        token = fetch_cookies(conn) |> Map.from_struct() |> get_in([:cookies, "mapp_e2e_token"])
+        IO.inspect(token)
+        case token do
+          nil -> json(conn, %{"status" => "unauthenticated" })
+          _ -> json(conn, %{"status" => "logged in" })
+        end
+    end
+
     def logout(conn, _) do
         conn |> delete_resp_cookie("mapp_e2e_token", same_site: "None") |> json(%{message: "logged out"})
     end

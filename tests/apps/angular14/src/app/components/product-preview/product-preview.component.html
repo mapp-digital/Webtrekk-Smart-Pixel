@@ -1,0 +1,18 @@
+<div class="card" [id]="'product_' + product.id" [wt-product-list]="{
+  id: product.id.toString(),
+  position: position,
+  cost: product.price,
+  quantity: 1
+}">
+  <a [routerLink]="[product.id]" routerLinkActive="active">
+    <img [src]="product.imageUrl" [alt]="product.name" style="width: 100%" />
+  </a>
+  <a [routerLink]="[product.id]" routerLinkActive="active">
+    <h1>{{ product.name }}</h1>
+  </a>
+  <p class="price">{{ product.price }}</p>
+  <p>{{ product.description }}</p>
+  <p>
+    <button (click)="onAddToCart()">Add to Cart</button>
+  </p>
+</div>

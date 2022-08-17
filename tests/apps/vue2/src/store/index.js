@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import {get, post} from "../../../vue2/src/helpers/request";
-import router from "../../../vue2/src/router";
+import {get, post} from "../helpers/request";
+import router from "../router";
 
 Vue.use(Vuex);
 

@@ -1,7 +1,7 @@
 <template>
-    <div class="about">
-        <h1>Thanks for your order</h1>
-    </div>
+  <div class="about">
+    <h1>Thanks for your order</h1>
+  </div>
 </template>
 <!--<script lang="ts">-->
 <!--import { defineComponent } from "vue";-->

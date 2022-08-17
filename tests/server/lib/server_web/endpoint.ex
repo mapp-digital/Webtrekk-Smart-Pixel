@@ -7,12 +7,12 @@ defmodule ServerWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_server_key",
-    signing_salt: "DYTFneHf"
+    signing_salt: "6QWIx1WA"
   ]
 
   socket "/socket", ServerWeb.UserSocket,
-    websocket: true,
-    longpoll: false
+  websocket: true,
+  longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
@@ -24,7 +24,7 @@ defmodule ServerWeb.Endpoint do
     at: "/",
     from: :server,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(assets fonts images favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

@@ -1,0 +1,14 @@
+<header>
+  <nav>
+    <ul>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+      <li><a routerLink="/shop" routerLinkActive="active">Shop</a></li>
+      <li><a routerLink="/teaser" routerLinkActive="active">Teaser</a></li>
+      <li><a routerLink="/content-engagement" routerLinkActive="active">Content Engagement</a></li>
+      <li><a routerLink="/directives" routerLinkActive="active">Directive</a></li>
+      <li class="header right"><app-cart></app-cart></li>
+      <app-account-menu ></app-account-menu>
+      <li class="header right"><a routerLink="/about" routerLinkActive="active">About</a></li>
+    </ul>
+  </nav>
+</header>

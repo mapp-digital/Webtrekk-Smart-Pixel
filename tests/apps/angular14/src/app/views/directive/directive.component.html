@@ -1,0 +1,67 @@
+<div>
+  <h1>Directive tests</h1>
+  <p>Current directive: {{ activeDirective }}</p>
+
+  <button
+    class="button"
+    *ngFor="let directive of directiveList"
+    [id]="directive"
+    (click)="onClick(directive)"
+  >
+    {{ directive }}
+  </button>
+
+  <div *ngIf="activeDirective === 'init'" [wt-init-data]="init">
+    Init directive
+  </div>
+  <div *ngIf="activeDirective === 'advanced'" [wt-advanced-data]="advanced">
+    Advanced directive
+  </div>
+  <div *ngIf="activeDirective === 'page'" [wt-page-data]="page">
+    Page directive
+  </div>
+  <div *ngIf="activeDirective === 'campaign'" [wt-campaign-data]="campaign">
+    Campaign directive
+  </div>
+  <div *ngIf="activeDirective === 'customer'" [wt-customer-data]="customer">
+    Customer directive
+  </div>
+  <div *ngIf="activeDirective === 'product'" [wt-product-data]="product">
+    Product directive
+  </div>
+  <div *ngIf="activeDirective === 'order'" [wt-order-data]="order">
+    Order directive
+  </div>
+  <div *ngIf="activeDirective === 'session'" [wt-session-data]="session">
+    Session directive
+  </div>
+  <div
+    *ngIf="activeDirective === 'product-list'"
+    [wt-product-list]="productList"
+    id="product-list-element"
+  >
+    Product-list directive with selector
+  </div>
+  <div
+    *ngIf="activeDirective === 'teaser'"
+    [wt-teaser]="teaser"
+    id="teaser-element"
+  >
+    Teaser directive with selector
+  </div>
+  <div
+    *ngIf="activeDirective === 'content-engagement'"
+    [wt-content-engagement]="contentEngagement"
+    id="content-engagement-element"
+  >
+    Content-engagement directive with selector
+  </div>
+  <div
+    *ngIf="activeDirective === 'track'"
+    [wt-page-data]="{ name: 'directiveTracktest' }"
+    [wt-track]="true"
+  >
+    Track directive
+  </div>
+  <!-- TODO: Wrong in documentation wt-track can't have 1 -->
+</div>

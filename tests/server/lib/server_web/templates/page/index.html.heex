@@ -1,0 +1,48 @@
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= csrf_meta_tag() %>
+    <%= live_title_tag assigns[:page_title] || "Server", suffix: " · Phoenix Framework" %>
+    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
+    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
+</head>
+<header>
+
+    <section class="container">
+        <a href="https://mapp.com/">
+            <img src={Routes.static_path(@conn, "/images/mapp.png")} alt="Mapp logo"/>
+        </a>
+    </section>
+</header>
+<main role="main" class="container">
+    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+<section class="phx-hero">
+  <h1>End 2 End Test Suite</h1>
+</section>
+
+<section class="row">
+  <article class="column">
+    <h2>Service</h2>
+    <ul>
+      <li>
+        <a href="./requests">Trackrequest logger</a>
+      </li>
+      <li>
+          <%= link "Server LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %>
+      </li>
+    </ul>
+  </article>
+  <article class="column">
+    <h2>Apps</h2>
+    <ul>
+        <li><a href="./apps/html/index">HTML</a></li>
+        <li><a href="./apps/vue2">VueJS 2</a></li>
+        <li><a href="./apps/vue3">VueJS 3</a></li>
+        <li><a href="./apps/react">React</a></li>
+        <li><a href="./apps/angular14">Angular14</a></li>
+    </ul>
+  </article>
+</section>
+</main>
