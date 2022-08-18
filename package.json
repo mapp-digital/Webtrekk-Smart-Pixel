@@ -2,7 +2,7 @@
     "homepage": "https://www.webtrekk.com",
     "repository": {
         "type": "git",
-        "url": "http://stash.webtrekk.com/scm/pixel/webtrekk-smart-pixel.git"
+        "url": "http://github.com/Webtrekk/Webtrekk-Smart-Pixel.git"
     },
     "scripts": {
         "// @webtrekk-smart-pixel/core": "",
