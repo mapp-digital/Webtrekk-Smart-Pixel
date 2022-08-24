@@ -64,3 +64,22 @@ packages/angular/dist
 **/.nuxt/*
 **/.release/*
 **/reports/*
+
+# E2E apps
+tests/E2E/sources-for-coverage/*
+tests/E2E/results
+tests/E2E/coverage
+!tests/E2E/sources-for-coverage/.gitkeep
+tests/E2E/.nyc_output
+tests/apps/angular14/*
+!tests/apps/angular14/src
+tests/apps/vue2/*
+!tests/apps/vue2/src
+!tests/apps/vue2/vue.config.js
+tests/apps/vue3/*
+!tests/apps/vue3/src
+!tests/apps/vue3/vue.config.js
+tests/apps/react-ts/*
+!tests/apps/react-ts/src
+!tests/apps/react-ts/.env
+!tests/apps/vue3/.env

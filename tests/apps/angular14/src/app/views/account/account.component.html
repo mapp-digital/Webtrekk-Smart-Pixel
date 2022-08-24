@@ -1,0 +1,14 @@
+<div *ngIf="userData">
+    <h1>Account</h1>
+    <p>Hello<span *ngIf="userData.firstName && userData.lastName"> {{ userData.firstName }} {{ userData.lastName }}</span>!</p>
+    <p>Your username is: {{ userData.name }}</p>
+    <h2>Your orders</h2>
+    <hr />
+    <div *ngFor="let order of userData.orders">
+        <h3>Order ID: {{ order.orderId }}</h3>
+        <!-- <OrderProductList :products="order.products" /> -->
+        <app-order-product-list [products]="order.data.products"></app-order-product-list>
+        <strong>Order Value: $ {{ order.data.orderValue }}</strong>
+        <hr />
+    </div>
+</div>

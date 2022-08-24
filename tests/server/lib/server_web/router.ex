@@ -27,10 +27,10 @@ defmodule ServerWeb.Router do
     plug Plug.Static,
       at: "/apps",
       from: {:server, "priv/apps"},
-      gzip: false,
-      only:
-        ~w(vue3 vue2 react angular requests index.html manifest.json service-worker.js css fonts img js favicon.ico robots.txt),
-      only_matching: ["precache-manifest"]
+      gzip: true
+      # only:
+      #   ~w(vue3 vue2 react angular14 requests index.html manifest.json service-worker.js css fonts img js favicon.ico robots.txt),
+      # only_matching: ["precache-manifest"]
   end
 
   scope "/", ServerWeb do
@@ -46,6 +46,10 @@ defmodule ServerWeb.Router do
     get "/fixture/:key", FixtureController, :show
     get "/fixture/:key/:index", FixtureController, :show
     get "/fixture/:key/:prop/:value", FixtureController, :show
+    options "/fixture/", FixtureController, :index
+    options "/fixture/:key", FixtureController, :show
+    options "/fixture/:key/:index", FixtureController, :show
+    options "/fixture/:key/:prop/:value", FixtureController, :show
   end
 
   scope "/user", ServerWeb do
@@ -56,6 +60,8 @@ defmodule ServerWeb.Router do
       post "/login", UserController, :login
       get "/login", UserController, :login
       options "/login", UserController, :login
+      get "/check", UserController, :checkLoginStatus
+      options "/check", UserController, :checkLoginStatus
   end
 
   scope "/user", ServerWeb do
@@ -125,7 +131,20 @@ defmodule ServerWeb.Router do
 
     scope "/" do
       pipe_through :browser
+
       live_dashboard "/dashboard", metrics: ServerWeb.Telemetry
+    end
+  end
+
+  # Enables the Swoosh mailbox preview in development.
+  #
+  # Note that preview only shows emails that were sent by the same
+  # node running the Phoenix server.
+  if Mix.env() == :dev do
+    scope "/dev" do
+      pipe_through :browser
+
+      forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
   end
 end

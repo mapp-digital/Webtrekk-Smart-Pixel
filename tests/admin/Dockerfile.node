@@ -1,0 +1,18 @@
+FROM node:18.4-bullseye
+
+ARG GROUP_ID
+ARG USER_ID
+ENV USER_NAME="abc123def456ghi789"
+ENV NG_CLI_ANALYTICS="false"
+
+RUN if ! id -gn "${GROUP_ID}" > /dev/null 2>&1; then echo "create new group: ${USER_NAME} with id *${GROUP_ID}*"; addgroup --gid "${GROUP_ID}" "${USER_NAME}"; fi
+RUN if ! id -un "${USER_ID}" > /dev/null 2>&1; then echo "create new user: ${USER_NAME} with id *${USER_ID}* for group id *${GROUP_ID}*"; useradd "${USER_NAME}" -m -l -u "${USER_ID}" -g "${GROUP_ID}"; fi
+WORKDIR /var/apps
+RUN chown -R "${USER_ID}":"${GROUP_ID}" /var/apps
+RUN npm install -g nyc
+USER "${USER_ID}":"${GROUP_ID}"
+
+RUN mkdir angular14 && cd angular14 && npm init -y && npm i @angular/cli@14
+RUN mkdir angular13 && cd angular13 && npm init -y && npm i @angular/cli@13
+
+

@@ -4,7 +4,7 @@ services:
   phoenix:
       build:
           context: ..
-          dockerfile: ./admin/Dockerfile
+          dockerfile: ./admin/Dockerfile.elixir
           args:
               USER_ID: ${USER_ID}
               GROUP_ID: ${GROUP_ID}
@@ -22,7 +22,12 @@ services:
   cypress:
       container_name: mapp_e2e_cypress
       # the Docker image to use from https://github.com/cypress-io/cypress-docker-images
-      image: "cypress/included:8.3.0"
+      build:
+          context: ..
+          dockerfile: ./admin/Dockerfile.cypress
+          args:
+              USER_ID: ${USER_ID}
+              GROUP_ID: ${GROUP_ID}  
       depends_on:
           - phoenix
       entrypoint: ["/bin/bash", "./cypress_entrypoint.sh"]
@@ -35,6 +40,31 @@ services:
       volumes:
           - ./../E2E:/E2E
           - ./cypress_entrypoint.sh:/cypress_entrypoint.sh
+          - ./testrunner.sh:/testrunner.sh
+          - ./../../packages:/packages
+      networks:
+          - mapp
+  node:
+      container_name: mapp_app_builder
+      build:
+          context: ..
+          dockerfile: ./admin/Dockerfile.node
+          args:
+              USER_ID: ${USER_ID}
+              GROUP_ID: ${GROUP_ID}  
+      ports:
+          - "4200:4200"
+          - "8080:8080"
+          - "3000:3000"
+      volumes:
+          - ./../apps:/apps
+          - ./../admin/builder.sh:/builder.sh
+          - ./../server/priv/apps:/server
+          - ./../E2E:/E2E
+          - ./../../packages:/packages
+      environment:
+          - NG_CLI_ANALYTICS=false
+      command: sh -c "tail -f /dev/null"
       networks:
           - mapp
 networks:

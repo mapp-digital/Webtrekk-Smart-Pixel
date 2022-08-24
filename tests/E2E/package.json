@@ -8,8 +8,8 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
-    "@cypress/code-coverage": "^3.9.7"
+    "@cypress/code-coverage": "^3.10.0",
+    "cypress": "^10.3.0"
   }
 }

@@ -1,0 +1,3 @@
+<div class="productlist" *ngFor="let product of products; let i = index">
+  <app-product-preview [product]="product" [position]="i + 1"></app-product-preview>
+</div>

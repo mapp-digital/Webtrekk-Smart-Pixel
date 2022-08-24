@@ -13,7 +13,7 @@
 
 <script>
 import Vue from "vue";
-import lorem from "./../../../lorem.js";
+import lorem from "../lorem";
 
 export default {
     name: "ContentEngagement",
