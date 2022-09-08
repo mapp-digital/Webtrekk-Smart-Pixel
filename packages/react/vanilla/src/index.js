@@ -35,6 +35,10 @@ export const webtrekkReducer = reducer;
 // compatibility for v0
 export const webtrekkSmartPixelReact = SmartPixelReact;
 
+webtrekkSmartPixelReact.call(wtSmart => {
+    wtSmart._ps(2, '###VERSION###');
+});
+
 export default {
     WebtrekkAutoTracking,
     WebtrekkInitData,

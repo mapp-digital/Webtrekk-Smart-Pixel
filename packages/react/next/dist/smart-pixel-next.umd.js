@@ -52,18 +52,17 @@
   }
 
   function _getPrototypeOf(o) {
-    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
       return o.__proto__ || Object.getPrototypeOf(o);
     };
     return _getPrototypeOf(o);
   }
 
   function _setPrototypeOf(o, p) {
-    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
       o.__proto__ = p;
       return o;
     };
-
     return _setPrototypeOf(o, p);
   }
 
@@ -1339,12 +1338,21 @@
             return nextValue;
           }
 
-          if (!action.webtrekk) {
+          if (!action.webtrekk && action.payload && !action.payload.webtrekk) {
             return nextValue;
           }
 
           var isWebtrekkAction = true;
-          var webtrekk = action.webtrekk;
+          var webtrekk;
+
+          if (action.webtrekk) {
+            webtrekk = action.webtrekk;
+          } else if (action.payload && action.payload.webtrekk) {
+            webtrekk = action.payload.webtrekk;
+          } else {
+            webtrekk = {};
+          }
+
           var type = webtrekk.type || '';
           var data = webtrekk.data || {};
           var sendInstantly = webtrekk.sendInstantly || false;
@@ -1434,12 +1442,21 @@
           return customReducerValue;
         }
 
-        if (!action.webtrekk) {
+        if (!action.webtrekk && action.payload && !action.payload.webtrekk) {
           return customReducerValue;
         }
 
         var isWebtrekkAction = true;
-        var webtrekk = action.webtrekk;
+        var webtrekk;
+
+        if (action.webtrekk) {
+          webtrekk = action.webtrekk;
+        } else if (action.payload && action.payload.webtrekk) {
+          webtrekk = action.payload.webtrekk;
+        } else {
+          webtrekk = {};
+        }
+
         var type = webtrekk.type || '';
         var data = webtrekk.data || {};
         var sendInstantly = webtrekk.sendInstantly || false;
@@ -1533,6 +1550,9 @@
   var webtrekkReducer$1 = webtrekkReducer; // compatibility for v0
 
   var webtrekkSmartPixelReact = WebtrekkSmartPixelReact$1;
+  webtrekkSmartPixelReact.call(function (wtSmart) {
+    wtSmart._ps(4, '1.2.3');
+  });
   var index = {
     WebtrekkAutoTracking: WebtrekkAutoTracking$1,
     WebtrekkInitData: WebtrekkInitData$1,

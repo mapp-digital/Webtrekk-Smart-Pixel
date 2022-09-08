@@ -1,6 +1,6 @@
 {
     "name": "@webtrekk-smart-pixel/react",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "title": "Webtrekk Smart Pixel for React",
     "description": "A React implementation of the Webtrekk Smart Pixel.",
     "main": "index.js",

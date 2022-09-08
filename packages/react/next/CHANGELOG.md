@@ -1,3 +1,10 @@
+<a name="1.2.3"></a>
+## 1.2.3 (2022-09-08)
+
+## Optimization
+- Add tracking parameter (pf, cs801 and cs802) for pixel feature usage
+
+
 <a name="1.2.2"></a>
 ## 1.2.2 (2022-05-04)
 

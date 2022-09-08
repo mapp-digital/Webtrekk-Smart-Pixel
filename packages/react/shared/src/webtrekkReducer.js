@@ -11,12 +11,23 @@ const webtrekkReducer = (actions = {}) => (customReducer = () => {
         return customReducerValue;
     }
 
-    if (!action.webtrekk) {
+    if (!action.webtrekk && action.payload && !action.payload.webtrekk) {
         return customReducerValue;
     }
 
     var isWebtrekkAction = true;
-    var webtrekk = action.webtrekk;
+
+    var webtrekk;
+    if (action.webtrekk) {
+        webtrekk = action.webtrekk;
+    }
+    else if (action.payload && action.payload.webtrekk) {
+        webtrekk = action.payload.webtrekk;
+    }
+    else {
+        webtrekk = {};
+    }
+
     var type = webtrekk.type || '';
     var data = webtrekk.data || {};
     var sendInstantly = webtrekk.sendInstantly || false;

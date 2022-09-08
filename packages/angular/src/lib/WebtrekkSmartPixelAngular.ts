@@ -25,6 +25,7 @@ const init_ = (): void => {
         pixel_ = wtSmart.use(window_, document_);
         // @ts-ignore
         window_['wtSmart'] = pixel_;
+        window_['wtSmart']['_ps'](1, '###VERSION###');
     }
 };
 

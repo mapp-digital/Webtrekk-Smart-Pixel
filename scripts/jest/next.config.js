@@ -3,13 +3,10 @@ const reactVersion = process.env.REACT_VERSION;
 
 const coverageThreshold = {
     'global': {
-        branches: 95,
-        functions: 95,
-        lines: 95,
-        statements: 95
-    },
-    [`${rootDir}/shared/src/WebtrekkSmartPixelReact.js`]: {
-        branches: 90
+        branches: 90,
+        functions: 90,
+        lines: 90,
+        statements: 90
     },
     [`${rootDir}/shared/src/polyfillCreateRef.js`]: {
         branches: 0,

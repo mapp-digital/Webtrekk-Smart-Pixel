@@ -252,7 +252,7 @@ export const WebtrekkSmartPixelReact: WebtrekkReact;
 
 export function webtrekkMiddleware(custom?: {
     [i: string]: (state: any, action: any, value: any) => void;
-}): (store: any) => (next: () => any) => (action: any) => void;
+}): (store: any) => (next: (action?: any) => any) => (action: any) => void;
 
 export function webtrekkReducer(custom?: {
     [i: string]: (state: any, action: any, value: any) => void;

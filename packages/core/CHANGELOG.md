@@ -1,9 +1,14 @@
+<a name="1.3.7"></a>
+# 1.3.7 (2022-08-31)
+
+## Optimization
+- Add tracking parameter (pf, cs801 and cs802) for pixel feature usage
+
 <a name="1.3.6"></a>
 # 1.3.6 (2022-06-09)
 
 ## Optimization
 - Optimized Marketing Automation extension for SPAs
-
 
 <a name="1.3.5"></a>
 # 1.3.5 (2022-06-01)

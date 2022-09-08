@@ -1162,6 +1162,7 @@ export interface SmartPixel {
     session: SmartPixelSession;
     utils: SmartPixelUtils;
     extension: SmartPixelExtension;
+    _ps(id: number, version: string): void;
 }
 
 export function use(window: any, document: any): SmartPixel;

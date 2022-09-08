@@ -45,6 +45,7 @@ packages/angular/dist
 !scripts/server/
 !scripts/webpack/
 !scripts/color.js
+!scripts/set-version.js
 
 # tests
 !tests/

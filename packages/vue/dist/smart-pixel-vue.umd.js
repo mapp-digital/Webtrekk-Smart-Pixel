@@ -529,6 +529,7 @@
     if (window_ !== null && document_ !== null) {
       pixel_ = wtSmart.use(window_, document_);
       window_['wtSmart'] = pixel_;
+      window_['wtSmart']['_ps'](8, '1.2.4');
     }
   };
   /**

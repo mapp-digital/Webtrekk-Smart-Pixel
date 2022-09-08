@@ -1338,12 +1338,21 @@
             return nextValue;
           }
 
-          if (!action.webtrekk) {
+          if (!action.webtrekk && action.payload && !action.payload.webtrekk) {
             return nextValue;
           }
 
           var isWebtrekkAction = true;
-          var webtrekk = action.webtrekk;
+          var webtrekk;
+
+          if (action.webtrekk) {
+            webtrekk = action.webtrekk;
+          } else if (action.payload && action.payload.webtrekk) {
+            webtrekk = action.payload.webtrekk;
+          } else {
+            webtrekk = {};
+          }
+
           var type = webtrekk.type || '';
           var data = webtrekk.data || {};
           var sendInstantly = webtrekk.sendInstantly || false;
@@ -1433,12 +1442,21 @@
           return customReducerValue;
         }
 
-        if (!action.webtrekk) {
+        if (!action.webtrekk && action.payload && !action.payload.webtrekk) {
           return customReducerValue;
         }
 
         var isWebtrekkAction = true;
-        var webtrekk = action.webtrekk;
+        var webtrekk;
+
+        if (action.webtrekk) {
+          webtrekk = action.webtrekk;
+        } else if (action.payload && action.payload.webtrekk) {
+          webtrekk = action.payload.webtrekk;
+        } else {
+          webtrekk = {};
+        }
+
         var type = webtrekk.type || '';
         var data = webtrekk.data || {};
         var sendInstantly = webtrekk.sendInstantly || false;
@@ -1532,6 +1550,9 @@
   var webtrekkReducer$1 = webtrekkReducer; // compatibility for v0
 
   var webtrekkSmartPixelReact = SmartPixelReact;
+  webtrekkSmartPixelReact.call(function (wtSmart) {
+    wtSmart._ps(2, '1.2.4');
+  });
   var index = {
     WebtrekkAutoTracking: WebtrekkAutoTracking$1,
     WebtrekkInitData: WebtrekkInitData$1,
