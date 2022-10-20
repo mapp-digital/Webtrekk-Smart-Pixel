@@ -1,3 +1,9 @@
+<a name="1.3.8"></a>
+# 1.3.8 (2022-10-20)
+
+## Bug Fixes
+- 3rd party cookies cannot be set within an iframe
+
 <a name="1.3.7"></a>
 # 1.3.7 (2022-08-31)
 
