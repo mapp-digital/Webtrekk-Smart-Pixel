@@ -1,0 +1,25 @@
+{
+    "name": "@webtrekk-smart-pixel/youtube",
+    "version": "1.0.0",
+    "title": "Mapp Smart Pixel Youtube Tracking",
+    "description": "Auto-tracking of embedded Youtube videos",
+    "main": "./index.js",
+    "typings": "./type/namespace.js",
+    "author": "Webtrekk GmbH",
+    "license": "MIT",
+    "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/packages/youtube#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel"
+    },
+    "bugs": {
+        "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/issues"
+    },
+    "peerDependencies": {
+        "@webtrekk-smart-pixel/core": "^1.1.0"
+    },
+    "devDependencies": {
+        "glob": "^7.1.4",
+        "google-closure-compiler": "^20180506.0.0"
+    }
+}

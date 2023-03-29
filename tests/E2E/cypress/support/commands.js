@@ -1,3 +1,4 @@
+import { parseTrackrequest } from "./e2e";
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -24,14 +25,20 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('smartIntercept', () => {
-    cy.intercept('GET', '**/123123123123123/wt?**').as('trackRequest');
+Cypress.Commands.add("smartIntercept", () => {
+    cy.intercept("GET", "**/123123123123123/wt?**").as("trackRequest");
 });
 
-Cypress.Commands.add('requestsCountByUrl', url =>
+Cypress.Commands.add("requestsCountByUrl", (url) =>
     cy.wrap().then(() => {
-        const requests = cy.state('requests') || [];
+        const requests = cy.state("requests") || [];
         console.log("A", requests);
-        return requests.filter(req => req.xhr.url === url).length;
+        return requests.filter((req) => req.xhr.url === url).length;
     })
 );
+
+Cypress.Commands.add("waitForParsedRequest", (alias = "@trackRequest") => {
+    return cy.wait(alias).then((inception) => {
+        return parseTrackrequest(inception);
+    });
+});

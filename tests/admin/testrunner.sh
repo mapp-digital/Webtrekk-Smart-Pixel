@@ -43,6 +43,24 @@ function test_angular14 {
     cd /E2E && export MAPP_REPORT_PATH=/packages/angular && cypress run --spec "/E2E/cypress/e2e/angular14/**/*" --browser chrome
 }
 
+function test_angular15 {
+    echo "Providing Code Coverage plugin for Cypress"
+    [ ! -d "/E2E/node_modules" ] && ln -s /coverage-plugin/node_modules/ /E2E/node_modules
+    echo "Patching covergage module"
+    sed -i 's/getSource(filePath) {/getSource(filePath){if(process.env.MAPP_REPORT_PATH){filePath=process.env.MAPP_REPORT_PATH+filePath}/'  /E2E/node_modules/istanbul-lib-report/lib/context.js
+    echo "Starting tests"
+    cd /E2E && export MAPP_REPORT_PATH=/packages/angular && cypress run --spec "/E2E/cypress/e2e/angular15/**/*" --browser chrome
+}
+
+function test_youtube {
+    echo "Providing Code Coverage plugin for Cypress"
+    [ ! -d "/E2E/node_modules" ] && ln -s /coverage-plugin/node_modules/ /E2E/node_modules
+    echo "Patching covergage module"
+    sed -i 's/getSource(filePath) {/getSource(filePath){if(process.env.MAPP_REPORT_PATH){filePath=process.env.MAPP_REPORT_PATH+filePath}/'  /E2E/node_modules/istanbul-lib-report/lib/context.js
+    echo "Starting tests"
+    cd /E2E && export MAPP_REPORT_PATH=/ && /usr/local/bin/cypress run --spec "/E2E/cypress/e2e/youtube/**/*" --browser chrome
+}
+
 for arg; do
     tput setaf 2; echo "Invoking function $arg..."
     tput sgr0

@@ -33,7 +33,7 @@ services:
       entrypoint: ["/bin/bash", "./cypress_entrypoint.sh"]
       environment:
           # pass base url to test pointing at the web application
-          - CYPRESS_baseUrl=http://phoenix:4000
+          - CYPRESS_baseUrl=https://phoenix:4001
           - DISPLAY=:99
       # share the current folder as volume to avoid copying
       working_dir: /
@@ -64,6 +64,7 @@ services:
           - ./../../packages:/packages
       environment:
           - NG_CLI_ANALYTICS=false
+          - CI=true
       command: sh -c "tail -f /dev/null"
       networks:
           - mapp

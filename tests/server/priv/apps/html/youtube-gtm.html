@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Smartpixel Youtube E2E Test page</title>
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    "gtm.start": new Date().getTime(),
+                    event: "gtm.js",
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-M4Q9K3V");
+        </script>
+        <!-- End Google Tag Manager -->
+        <script src="/packages/core/dist/smart-pixel.min.js"></script>
+        <script src="/packages/youtube/dist/instrumented/smart-pixel-youtube.source.js"></script>
+    </head>
+    <body>
+        <script>
+            wtSmart.init.set({
+                trackId: "123123123123123",
+                trackDomain: "phoenix:4001",
+            });
+            wtSmart.track();
+        </script>
+        <h1>Smartpixel Youtube Test page</h1>
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/zZZLfd-9shk"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+        ></iframe>
+
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/zZZLfd-9shk?start=2"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            data-title="Test mi attribute title"
+            data-category1="test media category 1"
+            data-category55="test media category 55"
+        ></iframe>
+
+        <iframe width="560" height="315" src="https://example.com"></iframe>
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/0Og7oA8DGPQ?enablejsapi=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+        ></iframe>
+        <h2>Test controls</h2>
+        <button id="activate">activate</button>
+        <button id="activate_with_static_config">
+            activate with static config
+        </button>
+        <button id="activate_with_dynamic_config">
+            activate with dynamic config
+        </button>
+        <button id="install">install</button>
+        <button id="deactivate">deactivate</button>
+        <button id="remove_iframe_2">remove iframe 2</button>
+        <button id="update">update config for Player 1 (add ck1)</button>
+        <h3>Player controls (after plugin activation)</h3>
+        <button id="play0">Player 1 play</button>
+        <button id="pause0">Player 1 pause</button>
+        <button id="lowvolume0">Player 1 low volume</button>
+        <button id="highvolume0">Player 1 high volume</button>
+        <button id="mute0">Player 1 mute</button>
+        <button id="unmute0">Player 1 unmute</button>
+        <button id="search0">Player 1 go to 0.45 (seek)</button>
+        <button id="end0">Player 1 go to 1.24 (seek)</button>
+        <br /><br />
+        <button id="play1">Player 2 play</button>
+        <button id="pause1">Player 2 pause</button>
+        <button id="lowvolume1">Player 2 low volume</button>
+        <button id="highvolume1">Player 2 high volume</button>
+        <button id="mute1">Player 2 mute</button>
+        <button id="unmute1">Player 2 unmute</button>
+        <button id="search1">Player 2 go to 0.45 (seek)</button>
+        <br /><br />
+        <button id="play2">Player 3 play</button>
+        <button id="pause2">Player 3 pause</button>
+        <button id="lowvolume2">Player 3 low volume</button>
+        <button id="highvolume2">Player 3 high volume</button>
+        <button id="mute2">Player 3 mute</button>
+        <button id="unmute2">Player 3 unmute</button>
+        <button id="search2">Player 3 go to 0.45 (seek)</button>
+        <br /><br />
+        <script>
+            const add = (id, func) => {
+                document.getElementById(id).addEventListener("click", func);
+            };
+
+            const addPlayer = () => {
+                window.wtSmart.extension.youtube.__v.forEach(
+                    (player, index) => {
+                        const playId = "play" + index;
+                        const pauseId = "pause" + index;
+                        const searchId = "search" + index;
+                        const lowVolumeId = "lowvolume" + index;
+                        const highVolumeId = "highvolume" + index;
+                        const muteId = "mute" + index;
+                        const unmuteId = "unmute" + index;
+
+                        add(playId, () => {
+                            player.player.playVideo();
+                        });
+
+                        add(pauseId, () => {
+                            player.player.pauseVideo();
+                        });
+
+                        add(lowVolumeId, () => {
+                            player.player.setVolume(20);
+                        });
+
+                        add(highVolumeId, () => {
+                            player.player.setVolume(100);
+                        });
+
+                        add(muteId, () => {
+                            player.player.mute();
+                        });
+
+                        add(unmuteId, () => {
+                            player.player.unMute();
+                        });
+
+                        add(searchId, () => {
+                            player.player.seekTo(45);
+                        });
+                    }
+                );
+                add("end0", () => {
+                    window.wtSmart.extension.youtube.__v[0].player.seekTo(84);
+                });
+            };
+
+            add("activate", () => {
+                window.wtSmart.extension.youtube.activate();
+                addPlayer();
+            });
+
+            add("activate_with_static_config", () => {
+                wtSmart.extension.youtube.activate();
+                wtSmart.extension.youtube.config({
+                    title: "static test title title",
+                    categories: {
+                        1: "static test",
+                        22: "value of media category 22",
+                    },
+                    action: {
+                        3: "ck3 value",
+                    },
+                });
+                addPlayer();
+            });
+
+            add("update", () => {
+                wtSmart.extension.youtube.config({
+                    action: {
+                        1: "added via update method",
+                    },
+                });
+            });
+
+            add("activate_with_dynamic_config", () => {
+                wtSmart.extension.youtube.activate({
+                    title: function (player) {
+                        switch (player.getVideoData().video_id) {
+                            case "zZZLfd-9shk":
+                                return "Mapp video 1 dynamic title";
+                        }
+                    },
+                    categories: function (player) {
+                        if (player.getDuration() < 90) {
+                            return {
+                                1: "Short videos",
+                            };
+                        } else {
+                            return {
+                                1: "Long videos",
+                            };
+                        }
+                    },
+                    action: function (player, mediaEvent) {
+                        if (
+                            mediaEvent === "pause" &&
+                            player.getCurrentTime() > 3
+                        ) {
+                            return {
+                                1: "Paused later than 3 seconds",
+                            };
+                        }
+                    },
+                });
+                addPlayer();
+            });
+
+            add("install", () => {
+                window.wtSmart.extension.youtube.install();
+            });
+
+            add("deactivate", () => {
+                window.wtSmart.extension.youtube.deactivate();
+            });
+
+            add("remove_iframe_2", () => {
+                document.getElementsByTagName("iframe")[1].remove();
+            });
+        </script>
+    </body>
+</html>

@@ -114,6 +114,11 @@ defmodule ServerWeb.Router do
     get "/:app/*path", AppController, :index
   end
 
+  scope "/packages", ServerWeb do
+    pipe_through :static
+    get "/*path", PackageController, :index
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", ServerWeb do
   #   pipe_through :api
