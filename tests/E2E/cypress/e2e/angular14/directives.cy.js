@@ -18,7 +18,7 @@ context("Angular14 Directives", () => {
             const normalPageRequest = trackData[0];
             const directivePageRequest = trackData[1];
             expect(normalPageRequest.pageName).to.equal(
-                "phoenix:4000/apps/angular14/directives"
+                "phoenix:4001/apps/angular14/directives"
             );
             expect(directivePageRequest.pageName).to.equal(
                 "directiveTracktest"

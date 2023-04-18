@@ -108,7 +108,7 @@ context('React Teaser Tracking', () => {
             expect(clickTracking.p[1]).to.match(/.*apps\/react\/teaser$/);
             expect(clickTracking.pageName).to.match(/.*apps\/react\/teaser$/);
             expect(clickTracking.pu).to.match(/.*apps\/react\/teaser$/);
-            expect(clickTracking.ct).to.match(/.*apps\/react\/$/);
+            expect(clickTracking.ct).to.match(/.*apps\/react$/);
 
             // Teaser Click
             expect(teaserClick.eid).to.match(/^\d{19}$/);
@@ -123,15 +123,15 @@ context('React Teaser Tracking', () => {
 
             // Pageview of teaser target page (homepage)
             expect(pageViewTarget.eid).to.match(/^\d{19}$/);
-            expect(pageViewTarget.p[1]).to.match(/.*apps\/react\/$/);
-            expect(pageViewTarget.pageName).to.match(/.*apps\/react\/$/);
-            expect(pageViewTarget.pu).to.match(/.*apps\/react\/$/);
+            expect(pageViewTarget.p[1]).to.match(/.*apps\/react$/);
+            expect(pageViewTarget.pageName).to.match(/.*apps\/react$/);
+            expect(pageViewTarget.pu).to.match(/.*apps\/react$/);
 
             // Teaser Engagement
             expect(teaserEngagement.eid).to.match(/^\d{19}$/);
-            expect(teaserEngagement.p[1]).to.match(/.*apps\/react\/$/);
-            expect(teaserEngagement.pageName).to.match(/.*apps\/react\/$/);
-            expect(teaserEngagement.pu).to.match(/.*apps\/react\/$/);
+            expect(teaserEngagement.p[1]).to.match(/.*apps\/react$/);
+            expect(teaserEngagement.pageName).to.match(/.*apps\/react$/);
+            expect(teaserEngagement.pu).to.match(/.*apps\/react$/);
             expect(teaserEngagement.ck520).to.equal('header');
             expect(teaserEngagement.ck521).to.equal('Teaser 0');
             expect(teaserEngagement.ck525).to.equal('1');

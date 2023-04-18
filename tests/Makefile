@@ -21,7 +21,7 @@ docker_start:
 	cd ./admin && docker-compose up -d && cd ..
 
 docker_build:
-	cd ./admin && docker-compose build && cd ..
+	cd ./admin && docker-compose build --no-cache && cd ..
 
 docker_stop:
 	cd ./admin && docker-compose down
@@ -34,3 +34,6 @@ docker_iex:
 
 docker_cypress:
 	docker exec -it mapp_e2e_cypress bash -c "cd /E2E && cypress run"
+
+docker_compile_phoenix:
+	cd ./admin && export ACTION=build_phoenix && docker-compose up --build

@@ -129,13 +129,13 @@ context("React TS Content Engagement", () => {
                 /.*apps\/react\/content-engagement$/
             );
             expect(linkClick.pu).to.match(/.*apps\/react\/content-engagement$/);
-            expect(linkClick.ct).to.match(/.*apps\/react\/$/);
+            expect(linkClick.ct).to.match(/.*apps\/react$/);
 
             // homepagePI
             expect(homepagePI.eid).to.match(/^\d{19}$/);
-            expect(homepagePI.p[1]).to.match(/.*apps\/react\/$/);
-            expect(homepagePI.pageName).to.match(/.*apps\/react\/$/);
-            expect(homepagePI.pu).to.match(/.*apps\/react\/$/);
+            expect(homepagePI.p[1]).to.match(/.*apps\/react$/);
+            expect(homepagePI.pageName).to.match(/.*apps\/react$/);
+            expect(homepagePI.pu).to.match(/.*apps\/react$/);
         });
         cy.get('@trackRequest.all').then((interceptions) => {
             expect(interceptions).to.have.length(4);

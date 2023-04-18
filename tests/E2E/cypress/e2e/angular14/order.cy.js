@@ -245,8 +245,8 @@ context("Angular14 complete order process", () => {
             expect(openCartEvent.ct).to.equal("Open cart");
 
             expect(orderRequest.eid).to.match(/^\d{19}$/);
-            expect(orderRequest.p[1]).to.equal("phoenix:4000/apps/angular14/thankyou");
-            expect(orderRequest.pageName).to.equal("phoenix:4000/apps/angular14/thankyou");
+            expect(orderRequest.p[1]).to.equal("phoenix:4001/apps/angular14/thankyou");
+            expect(orderRequest.pageName).to.equal("phoenix:4001/apps/angular14/thankyou");
             expect(orderRequest.ba).to.equal("6;2;1");
             expect(orderRequest.cb760).to.equal("0;0;0");
             expect(orderRequest.cd).to.equal("Mapp");

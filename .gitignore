@@ -17,6 +17,7 @@ packages/*/dist/*
 !packages/*/package.json
 !packages/*/README.md
 !packages/*/CHANGELOG.md
+!packages/*/documentation.md
 
 ## angular
 !packages/angular/src
@@ -74,6 +75,8 @@ tests/E2E/coverage
 tests/E2E/.nyc_output
 tests/apps/angular14/*
 !tests/apps/angular14/src
+tests/apps/angular15/*
+!tests/apps/angular15/src
 tests/apps/vue2/*
 !tests/apps/vue2/src
 !tests/apps/vue2/vue.config.js
