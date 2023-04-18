@@ -1,13 +1,11 @@
-# Smart Tracking Pixel - Mapp Acquire
+# Smart Tracking Pixel - Youtube Tracking
 
-[Site](https://www.webtrekk.com/) |
-[Docs](https://docs.webtrekk.com/display/WSPD/Acquire) |
-[Support](https://support.webtrekk.com/) |
-[Changelog](https://docs.webtrekk.com/display/WSPD/Changelog)
+[Site](https://mapp.com/) |
+[Docs](https://documentation.mapp.com/1.0/en/implementation-44468088.html) |
+[Support](https://support.mapp.com/) |
+[Changelog](https://documentation.mapp.com/1.0/en/changelog-44468063.html)
 
-Mapp Acquire allows you to target and convert your ideal customers online while enriching your retention data and 
-helping you optimize spend. Use the data you own (first-party data) to the fullest and fine-tune your advertising 
-strategies.
+This Mapp plugin allows you to track play, pause, seek, position, and end media requests of embedded YouTube videos. The plugin provides a zero-configuration implementation but can also be customized. You can add event parameters to the media request, add media categories, and customize the video's title.
 
-For a detailed description of the Mapp Acquire system, visit the company’s website at
+For a detailed description of the Mapp Youtube Plugin system, visit the company’s website at
 [www.mapp.com](https://mapp.com).

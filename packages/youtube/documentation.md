@@ -163,6 +163,7 @@ For that reason, you can define functions, that need to return the configuration
 | action     | YouTube player, Media event name |
 
 Here are some of the YouTube player values that might be interesting for you:
+
 | Method | Info |
 | ----------- | ----------- |
 | player.getVideoData().video_id | YouTube id |
@@ -171,6 +172,7 @@ Here are some of the YouTube player values that might be interesting for you:
 | player.getDuration() | duration of video |
 | player.getVolume() | current volume |
 | player.isMuted() | mute state |
+
 You can find more information about the YouTube API here: https://developers.google.com/youtube/iframe_api_reference
 
 The second argument of the action function will be one of the strings `play`, `pause`, `seek`, `position`, `end`.
