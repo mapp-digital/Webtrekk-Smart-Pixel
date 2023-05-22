@@ -105,6 +105,8 @@ interface SmartPixelAdvancedUserIdentification {
     anonymousOptIn?: boolean;
     anonymousCookieName?: string;
     suppressParameter?: string[];
+    temporarySessionId?: string;
+    saveTemporarySessionId?: boolean;
 }
 
 interface SmartPixelAdvancedSetProps {
@@ -620,6 +622,7 @@ interface SmartPixelExtensionActionConfigReplace {
 interface SmartPixelExtensionActionSetConfig {
     type: SmartPixelExtensionActionConfigType;
     attribute?: string;
+    shadowRoot?: string[];
     parameter?: DataObject;
     extend?: string[];
     replace?: SmartPixelExtensionActionConfigReplace[];
@@ -633,6 +636,7 @@ interface SmartPixelExtensionActionSetConfig {
 interface SmartPixelExtensionActionGetConfig {
     type: SmartPixelExtensionActionConfigType;
     attribute: string;
+    shadowRoot: string[];
     parameter: DataObject;
     extend: string[];
     replace: SmartPixelExtensionActionConfigReplace[];
@@ -1074,6 +1078,16 @@ interface SmartPixelExtensionFormConfigDefaults {
     [i: string]: string;
 }
 
+interface SmartPixelExtensionFormShadowRoot {
+    selector: string;
+    attribute?: string;
+    automatic?: string|boolean;
+    fullContent?: string[];
+    anonymous?: boolean;
+    pathAnalysis?: boolean;
+    field?: SmartPixelExtensionFormConfigField;
+}
+
 interface SmartPixelExtensionFormConfigField {
     attribute?: string;
     value?: string;
@@ -1082,7 +1096,8 @@ interface SmartPixelExtensionFormConfigField {
 
 interface SmartPixelExtensionFormSetConfig {
     attribute?: string;
-    automatic?: boolean;
+    automatic?: string|boolean;
+    shadowRoot?: string[]|SmartPixelExtensionFormShadowRoot[];
     fullContent?: string[];
     anonymous?: boolean;
     pathAnalysis?: boolean;
@@ -1091,7 +1106,8 @@ interface SmartPixelExtensionFormSetConfig {
 
 interface SmartPixelExtensionFormGetConfig {
     attribute: string;
-    automatic: boolean;
+    automatic: string|boolean;
+    shadowRoot: SmartPixelExtensionFormShadowRoot[];
     fullContent: string[];
     anonymous: boolean;
     pathAnalysis: boolean;

@@ -1,6 +1,6 @@
 {
     "name": "@webtrekk-smart-pixel/core",
-    "version": "1.3.8",
+    "version": "1.3.9",
     "title": "Webtrekk Smart Pixel",
     "description": "Webtrekk provides a high-end analytical tool to analyze the traffic on your website, identify success factors and optimize it on the basis of actual key indicators.",
     "main": "./index.js",
@@ -35,6 +35,7 @@
         "karma-jasmine": "^2.0.1",
         "karma-phantomjs-launcher": "^0.2.3",
         "karma-script-launcher": "^1.0.0",
+        "karma-stacktrace": "^2.1.0",
         "phantomjs": "^1.9.19"
     }
 }

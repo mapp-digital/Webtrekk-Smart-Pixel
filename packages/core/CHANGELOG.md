@@ -1,4 +1,18 @@
 <a name="1.3.8"></a>
+# 1.3.9 (2023-05-22)
+
+## Features
+- Support temporary session ID for anonymous tracking (see [Advanced](https://documentation.mapp.com/latest/en/advanced-15741253.html)).
+- Option to disable the debug mode when using NodeJS (see [Download and Integration](https://documentation.mapp.com/latest/en/download-and-integration-15741234.html)).
+- Support tracking of shadow DOM elements (see [Event tracking](https://documentation.mapp.com/latest/en/event-tracking-15741311.html), [Form tracking](https://documentation.mapp.com/latest/en/form-tracking-15741328.html), [Content Engagement](https://documentation.mapp.com/latest/en/content-engagement-15741314.html), [Product List Tracking](https://documentation.mapp.com/latest/en/product-list-tracking-15741357.html) and [Teaser Tracking](https://documentation.mapp.com/latest/en/teaser-tracking-15741363.html)).
+- The CDB is deactivated by default.
+- Cookie Control allow multiple track IDs on the same domain.
+
+## Bug Fixes
+- If the URL contains a fragment / hash at the end this value is also tracked as part of the value of the campaign and campaign parameters.
+- Form requests are not tracked when the page is hidden.
+
+<a name="1.3.8"></a>
 # 1.3.8 (2022-10-20)
 
 ## Bug Fixes
