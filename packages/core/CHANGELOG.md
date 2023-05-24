@@ -1,4 +1,10 @@
-<a name="1.3.8"></a>
+<a name="1.4.0"></a>
+# 1.4.0 (2023-05-24)
+
+## Bug Fixes
+- Duplicate build (debug and min) with webpack
+
+<a name="1.3.9"></a>
 # 1.3.9 (2023-05-22)
 
 ## Features

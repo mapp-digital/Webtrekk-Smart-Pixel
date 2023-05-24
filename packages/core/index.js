@@ -1,7 +1,7 @@
 /**
  * @type {exports|module.exports}
  */
-if (process.env.MAPP_DEBUG) {
+if (process.env.NODE_ENV === 'development') {
     module.exports = require('./dist/smart-pixel.debug');
 }
 else {
