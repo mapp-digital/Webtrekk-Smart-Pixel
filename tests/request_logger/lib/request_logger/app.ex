@@ -8,12 +8,12 @@ defmodule RequestLogger.App do
         Agent.get(@me, & &1)
     end
     defp getJS() do
-        "../../requestLogFrontend/public/build/bundle.js"
+        "../../requestLogFrontend/dist/assets//index.js"
         |> Path.expand(__DIR__)
         |> File.read!
     end
     defp getCSS() do
-        "../../requestLogFrontend/public/build/bundle.css"
+        "../../requestLogFrontend/dist/assets/index.css"
         |> Path.expand(__DIR__)
         |> File.read!
     end

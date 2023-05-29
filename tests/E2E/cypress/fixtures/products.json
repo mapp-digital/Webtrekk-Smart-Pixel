@@ -6,7 +6,7 @@
         "category": "Jackets",
         "price": 129.99,
         "description": "approx. 75 cm long (size L): cool canvas with a washed finish, unlined",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/7/075ee2g002_361_5.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": true,
         "feature": true,
         "latest": true
@@ -18,7 +18,7 @@
         "category": "Jackets",
         "price": 99.99,
         "description": "in a casual parka design",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/8/085cc2g007_400_5.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": false
@@ -30,7 +30,7 @@
         "category": "Jackets",
         "price": 79.99,
         "description": "and a metal zip",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/8/085cc2g016_001_5.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": false
@@ -42,7 +42,7 @@
         "category": "Jackets",
         "price": 169.99,
         "description": "length approx. 75 cm (size L), robust cotton fabric, lightly padded, zip-off gilet",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/8/085ee2g020_400_6.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": true,
         "latest": false
@@ -54,7 +54,7 @@
         "category": "Jackets",
         "price": 99.99,
         "description": "and genuine leather details",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/9/095cc2g009_600_4.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": false
@@ -66,7 +66,7 @@
         "category": "Jeans",
         "price": 49.99,
         "description": "in non-stretch fabric with a vintage wash and highlight coin pocket",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/5/055cc2c019_959_5.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": true,
         "latest": false
@@ -78,7 +78,7 @@
         "category": "Jeans",
         "price": 59.99,
         "description": "bleached five-pocket stretch denim jeans with a zip fly",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/6/065ee2b001_904_6.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": true,
         "feature": false,
         "latest": false
@@ -90,7 +90,7 @@
         "category": "Jeans",
         "price": 39.99,
         "description": "denim Bermudas in a dark garment wash, button fly",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/6/065ee2c008_900_5.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": true,
         "latest": false
@@ -102,7 +102,7 @@
         "category": "Jeans",
         "price": 39.99,
         "description": "non-stretch denim bermudas with a dark wash and a button fly",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/6/065ee2c025_903_5.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": false
@@ -114,7 +114,7 @@
         "category": "Jeans",
         "price": 59.99,
         "description": "lightweight with cool destroyed effects and creasing",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/7/075cc2b004_010_6.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": false
@@ -126,7 +126,7 @@
         "category": "Jeans",
         "price": 59.99,
         "description": "in a dark wash: 5 pocket jeans made of stretch denim, button fly",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/7/075ee2b004_901_6.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": true,
         "latest": false
@@ -138,7 +138,7 @@
         "category": "Jeans",
         "price": 79.99,
         "description": "with five pockets",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/7/075eo2b003_901_6.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": false
@@ -150,7 +150,7 @@
         "category": "Shirts",
         "price": 39.99,
         "description": "with a patterned collar lining and concealed button down collar",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/6/065eo2f017_425_3.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": true,
         "latest": true
@@ -162,7 +162,7 @@
         "category": "Shirts",
         "price": 49.99,
         "description": "button-down design",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/7/075eo2f002_441_5.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": true,
         "feature": false,
         "latest": false
@@ -174,7 +174,7 @@
         "category": "Shirts",
         "price": 49.99,
         "description": "premium cotton shirt made of Oxford fabric with a fine, grainy texture",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/7/075eo2f003_440_4.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": true
@@ -186,7 +186,7 @@
         "category": "Shirts",
         "price": 49.99,
         "description": "pure cotton premium shirt with a diamond print",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/8/085eo2f006_015_5.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": false
@@ -198,7 +198,7 @@
         "category": "Shirts",
         "price": 49.99,
         "description": "premium pure cotton check shirt",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/8/085eo2f008_030_5.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": true
@@ -210,7 +210,7 @@
         "category": "Shirts",
         "price": 49.99,
         "description": "pure cotton premium shirt with a fine texture",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/8/085eo2f017_100_4.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": true,
         "latest": false
@@ -222,7 +222,7 @@
         "category": "Shirts",
         "price": 49.99,
         "description": "check shirt with a concealed button-down collar, made of soft, flannel-like cotton",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/8/085eo2f009_010_5.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": true
@@ -234,7 +234,7 @@
         "category": "Shirts",
         "price": 49.99,
         "description": "premium shirt with an all-over print and an under button-down collar, made from pure cotton",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/8/085eo2f011_400_4.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": false
@@ -246,7 +246,7 @@
         "category": "Shirts",
         "price": 49.99,
         "description": "premium shirt with a small, grainy textured check pattern, pure cotton",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/8/085eo2f014_100_5.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": true
@@ -258,7 +258,7 @@
         "category": "Shoes",
         "price": 79.99,
         "description": "made of wonderfully soft suede combined with a lightweight textile",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/3/035ek2w007_035_1.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": true,
         "latest": false
@@ -270,7 +270,7 @@
         "category": "Shoes",
         "price": 119.99,
         "description": "genuine leather and faux leather combined with smart perforated details",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/7/075ek2w003_600_1.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": true
@@ -282,7 +282,7 @@
         "category": "Shoes",
         "price": 99.99,
         "description": "in soft suede with a zip and typical contrasting trainer outsole",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/7/075ek2w007_020_1.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": false
@@ -294,7 +294,7 @@
         "category": "Shoes",
         "price": 119.99,
         "description": "in genuine leather with a smart brogue pattern",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/8/085ek2w003_001_1.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": true
@@ -306,7 +306,7 @@
         "category": "Shoes",
         "price": 79.99,
         "description": "in a clean style with a trainer outsole",
-        "imageUrl": "https://demoshop.webtrekk.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/0/8/085ek2w008_255_1.jpg",
+        "imageUrl": "https://zdext.webtrekk.com/examples/images/testimage.jpg",
         "bestSeller": false,
         "feature": false,
         "latest": true

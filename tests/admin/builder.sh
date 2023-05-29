@@ -119,8 +119,8 @@ function init_react-ts {
     cp -rf /apps/react-ts_src/.env /apps/react-ts
     log "Delete backup"
     rm -rf /apps/react-ts_src
-    log "Install router and redux"
-    cd /apps/react-ts && npm install react-router-dom react-redux @reduxjs/toolkit typesafe-actions
+    log "Install router, redux and babel"
+    cd /apps/react-ts && npm install react-router-dom react-redux @reduxjs/toolkit typesafe-actions @babel/plugin-proposal-private-property-in-object
 }
 
 function install_react-ts {

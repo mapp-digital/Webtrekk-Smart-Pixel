@@ -18,7 +18,7 @@ https: [
     certfile: "priv/cert/selfsigned.pem",
     keyfile: "priv/cert/selfsigned_key.pem"
 ],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
 config :logger, level: :info
