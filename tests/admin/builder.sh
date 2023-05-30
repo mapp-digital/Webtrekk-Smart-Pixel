@@ -287,6 +287,70 @@ function cleanup_angular15 {
     cd /apps/angular15 && ls -A | grep -xv "src" | xargs rm -rf
 }
 
+
+#####################
+# Angular 16
+#####################
+
+function init_angular16 {
+    log "Update Angular16 CLI"
+    cd /var/apps/angular16 && npm update
+    log "Initialize new Angular 16 app"
+    rm -rf /var/apps/angular16/angular16
+    npx ng new angular16 --defaults=true --commit=false --routing=true --skip-git=true --skip-tests=true --style=css --commit=false --routing=true --skip-git=true --skip-install
+    log "Cleanup old builds"
+    cd /apps/angular16 && ls -A | grep -xv "src" | xargs rm -rf
+    log "Merge new app with E2E-app src"
+    rm -rf /var/apps/angular16/angular16/src
+    cp -rf /var/apps/angular16/angular16 /apps
+    log "Install dependencies"
+    cd /apps/angular16 && npm i && npm install --save @webtrekk-smart-pixel/angular@2 --force
+    log "Angular16 E2E app is ready to be served and built"
+}
+
+function install_angular16 {
+    if [ -d /apps/angular16/node_modules/@webtrekk-smart-pixel ]; then
+      log "Plugin found - deleting existing version"
+      rm -rf /apps/angular16/node_modules/@webtrekk-smart-pixel
+    fi
+    if [[ -z "${MAPP_REGRESSION}" ]]; then
+        log "Preparing tests with public version of plugin - installing from npm..."
+        cd /apps/angular16 && npm install --save @webtrekk-smart-pixel/angular@2 --force
+        log "Instrument plugin code"
+        cd /apps/angular16/node_modules/@webtrekk-smart-pixel && nyc instrument ./angular --in-place=true --exclude-node-modules=false
+
+    else
+        log "Preparing for regression tests - getting plugin from source code of local package"
+        mkdir -p /apps/angular16/node_modules/@webtrekk-smart-pixel
+        if [ ! -d /packages/angular/.release ]; then
+            log "No build found - you need to build SmartpixelAngular@2 first"
+            exit 1
+        fi
+        log "Instrumenting source"
+        cd /packages/angular && nyc instrument ./.release /apps/angular16/node_modules/@webtrekk-smart-pixel/angular
+        log "Getting other other files from release dir"
+        cd /packages/angular/.release && cp -v *.* /apps/angular16/node_modules/@webtrekk-smart-pixel/angular && cp -rv ./lib /apps/angular16/node_modules/@webtrekk-smart-pixel/angular/lib
+        log "Getting core"
+        cp -rf /packages/core /apps/angular16/node_modules/@webtrekk-smart-pixel/core
+    fi
+}
+
+function serve_angular16 {
+    cd /apps/angular16 && npx ng serve --host 0.0.0.0
+}
+
+function build_angular16 {
+    rm -rf /server/angular16
+    cd /apps/angular16 && npx ng build --base-href /apps/angular16/
+    cp -rf /apps/angular16/dist/angular16/ /server
+}
+
+function cleanup_angular16 {
+    log "Delete all except src in Angular16 E2E app folder"
+    cd /apps/angular16 && ls -A | grep -xv "src" | xargs rm -rf
+}
+
+
 #####################
 # YouTube
 #####################

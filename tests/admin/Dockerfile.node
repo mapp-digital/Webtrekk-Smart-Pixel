@@ -12,6 +12,7 @@ RUN chown -R "${USER_ID}":"${GROUP_ID}" /var/apps
 RUN npm install -g nyc
 USER "${USER_ID}":"${GROUP_ID}"
 
+RUN mkdir angular16 && cd angular16 && npm init -y && npm i @angular/cli@16
 RUN mkdir angular15 && cd angular15 && npm init -y && npm i @angular/cli@15
 RUN mkdir angular14 && cd angular14 && npm init -y && npm i @angular/cli@14
 RUN mkdir angular13 && cd angular13 && npm init -y && npm i @angular/cli@13
