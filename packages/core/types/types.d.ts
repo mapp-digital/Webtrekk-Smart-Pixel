@@ -1,4 +1,5 @@
 type NumberOrString = number | string;
+type StringOrRegex = string | RegExp;
 type DataObject = {
     [i in NumberOrString]: string;
 };
@@ -82,7 +83,7 @@ interface SmartPixelAdvancedSendViaServer {
     serverDomain?: string;
     serverPath?: string;
     droppedRequests?: NumberOrString;
-    blacklist?: string[];
+    blacklist?: StringOrRegex[];
 }
 
 interface SmartPixelAdvancedRequestQueue {

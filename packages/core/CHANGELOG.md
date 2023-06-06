@@ -1,3 +1,9 @@
+<a name="1.4.1"></a>
+# 1.4.1 (2023-06-05)
+
+## Bug Fixes
+- Content Engagement fired requests when element is removed (React and VueJS)
+
 <a name="1.4.0"></a>
 # 1.4.0 (2023-05-24)
 
