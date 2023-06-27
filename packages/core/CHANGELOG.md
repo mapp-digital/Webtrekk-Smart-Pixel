@@ -1,3 +1,10 @@
+<a name="1.4.2"></a>
+# 1.4.2 (2023-06-27)
+
+## Bug Fixes
+
+- Requests are not sent when the user leaves the site (iOS 15+)
+
 <a name="1.4.1"></a>
 # 1.4.1 (2023-06-05)
 
