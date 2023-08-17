@@ -1,8 +1,23 @@
+<a name="1.4.3"></a>
+# 1.4.3 (2023-xx-xx)
+
+## Features
+- New product status added (see [addToCart](https://documentation.mapp.com/latest/en/addtocart-50302651.html), [deleteFromCart](https://documentation.mapp.com/latest/en/deletefromcart-50302661.html), [checkout](https://documentation.mapp.com/latest/en/checkout-50302670.html), [addToWishlist](https://documentation.mapp.com/latest/en/addtowishlist-50302679.html) and [deleteFromWishlist](https://documentation.mapp.com/latest/en/deletefromwishlist-50302689.html))
+- Support product status in Product-List-Tracking and Marketing Automation extension
+- Support order value of 0
+
+## Optimization
+- Smart Pixel file size reduction
+- Removing the CDB functionality
+
+## Bug Fixes
+- When a conversion is sent by events, teaser and product list data is now added as well
+- If click tracking via exclude is disabled in teaser tracking, all found elements are excluded
+
 <a name="1.4.2"></a>
 # 1.4.2 (2023-06-27)
 
 ## Bug Fixes
-
 - Requests are not sent when the user leaves the site (iOS 15+)
 
 <a name="1.4.1"></a>

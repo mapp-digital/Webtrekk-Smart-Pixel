@@ -68,12 +68,36 @@ module.exports = {
             'typescript': '~4.3.5', '@angular/platform-server': '^12', '@angular/animations': '^12',
             '@nguniversal/express-engine': '^12', 'jest': '^27', 'zone.js': '0.11.4', 'ng-packagr': '^12'
         },
+        '13': {
+            '@angular/core': '^13', '@angular/router': '^13', '@angular/common': '^13',
+            '@angular/cli': '^13', '@angular/platform-browser': '^13', '@angular/compiler': '^13',
+            '@angular/compiler-cli': '^13', '@angular/platform-browser-dynamic': '^13',
+            '@angular-builders/jest': '^13', '@angular-devkit/build-angular': 'v13-lts',
+            'typescript': '~4.3.5', '@angular/platform-server': '^13', '@angular/animations': '^13',
+            '@nguniversal/express-engine': '^13', 'jest': '^27', 'zone.js': '0.11.4', 'ng-packagr': '^13'
+        },
+        '14': {
+            '@angular/core': '^14', '@angular/router': '^14', '@angular/common': '^14',
+            '@angular/cli': '^14', '@angular/platform-browser': '^14', '@angular/compiler': '^14',
+            '@angular/compiler-cli': '^14', '@angular/platform-browser-dynamic': '^14',
+            '@angular-builders/jest': '^14', '@angular-devkit/build-angular': 'v14-lts',
+            'typescript': '~4.3.5', '@angular/platform-server': '^14', '@angular/animations': '^14',
+            '@nguniversal/express-engine': '^14', 'jest': '^29', 'zone.js': '0.11.4', 'ng-packagr': '^14'
+        },
+        '15': {
+            '@angular/core': '^15', '@angular/router': '^15', '@angular/common': '^15',
+            '@angular/cli': '^15', '@angular/platform-browser': '^15', '@angular/compiler': '^15',
+            '@angular/compiler-cli': '^15', '@angular/platform-browser-dynamic': '^15',
+            '@angular-builders/jest': '^15', '@angular-devkit/build-angular': 'v15-lts',
+            'typescript': '~4.3.5', '@angular/platform-server': '^15', '@angular/animations': '^15',
+            '@nguniversal/express-engine': '^15', 'jest': '^29', 'zone.js': '0.11.4', 'ng-packagr': '^15'
+        },
         'latest': {
             '@angular/core': 'latest', '@angular/router': 'latest', '@angular/common': 'latest',
             '@angular/cli': 'latest', '@angular/platform-browser': 'latest', '@angular/compiler': 'latest',
             '@angular/compiler-cli': 'latest', '@angular/platform-browser-dynamic': 'latest',
-            '@angular-builders/jest': 'latest', '@angular-devkit/build-angular': '^13',
-            'typescript': '~3.5.0', '@angular/platform-server': 'latest', '@angular/animations': 'latest',
+            '@angular-builders/jest': 'latest', '@angular-devkit/build-angular': 'latest',
+            'typescript': '~4.3.5', '@angular/platform-server': 'latest', '@angular/animations': 'latest',
             '@nguniversal/express-engine': 'latest', 'jest': 'latest', 'zone.js': '~0.11.4'
         },
         'next': {
@@ -81,7 +105,7 @@ module.exports = {
             '@angular/cli': 'next', '@angular/platform-browser': 'next', '@angular/compiler': 'next',
             '@angular/compiler-cli': 'next', '@angular/platform-browser-dynamic': 'next',
             '@angular-builders/jest': 'next', '@angular-devkit/build-angular': 'next',
-            'typescript': '~3.5.0', '@angular/platform-server': 'next', '@angular/animations': 'next',
+            'typescript': '~4.3.5', '@angular/platform-server': 'next', '@angular/animations': 'next',
             '@nguniversal/express-engine': 'next', 'jest': 'next', 'zone.js': '~0.11.4'
         }
     },

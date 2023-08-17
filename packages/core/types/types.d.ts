@@ -470,8 +470,16 @@ interface SmartPixelProduct {
 interface SmartPixelProductActions {
     list: SmartPixelProduct;
     view: SmartPixelProduct;
+    /**
+     * @deprecated please use addToCart
+     */
     basket: SmartPixelProduct;
+    addToCart: SmartPixelProduct;
+    deleteFromCart: SmartPixelProduct;
+    checkout: SmartPixelProduct;
     confirmation: SmartPixelProduct;
+    addToWishlist: SmartPixelProduct;
+    deleteFromWishlist: SmartPixelProduct;
 }
 
 /* **********************************************
@@ -510,6 +518,9 @@ interface SmartPixelUtilsCrypto {
 
 interface SmartPixelUtilsIdentifier {
     everId(newEverId?: string): string;
+    /**
+     * @deprecated
+     */
     cdbeid(): string;
 }
 
@@ -664,6 +675,9 @@ interface SmartPixelExtension {
 /* **********************************************
  *                EXTENSION:CDB                 *
  ********************************************** */
+/**
+ * @deprecated
+ */
 interface SmartPixelExtensionCDB extends SmartPixelExtensionProps {
     setEmail(email: string): void;
     setPhone(phone: string): void;
@@ -682,6 +696,9 @@ interface SmartPixelExtensionCDB extends SmartPixelExtensionProps {
 }
 
 interface SmartPixelExtension {
+    /**
+     * @deprecated
+     */
     cdb: SmartPixelExtensionCDB;
 }
 
