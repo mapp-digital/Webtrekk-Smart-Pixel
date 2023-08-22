@@ -105,7 +105,6 @@ context("Angular15 Directives", () => {
         cy.get("#advanced").click();
         cy.window().then((win) => {
             const advanced = win.wtSmart.advanced.get();
-            expect(advanced.execCDB).to.equal(false);
             expect(advanced.forceOldEverId).to.equal(false);
             expect(advanced.optOutName).to.equal("webtrekkTestOptOut");
             expect(advanced.requestLimit.activated).to.equal(true);
@@ -121,8 +120,9 @@ context("Angular15 Directives", () => {
             expect(advanced.secureCookie).to.equal(true);
             expect(advanced.sendViaSDK).to.equal(false);
             expect(advanced.sendViaServer.activated).to.equal(false);
-            expect(advanced.sendViaServer.blacklist.length).to.equal(1);
+            expect(advanced.sendViaServer.blacklist.length).to.equal(2);
             expect(advanced.sendViaServer.blacklist[0]).to.equal("abc");
+            expect(advanced.sendViaServer.blacklist[1].toString()).to.equal("/^abc$/");
             expect(advanced.sendViaServer.droppedRequests).to.equal(0);
             expect(advanced.sendViaServer.serverDomain).to.equal(
                 "testserver.test"
@@ -130,7 +130,6 @@ context("Angular15 Directives", () => {
             expect(advanced.sendViaServer.serverPath).to.equal(
                 "testserverpath"
             );
-            expect(advanced.useCDBCache).to.equal(true);
             expect(advanced.useHashForDefaultPageName).to.equal(true);
             expect(advanced.useParamsForDefaultPageName.length).to.equal(2);
             expect(advanced.useParamsForDefaultPageName[0]).to.equal("param1");
@@ -142,9 +141,9 @@ context("Angular15 Directives", () => {
             expect(
                 advanced.userIdentification.enableAnonymousFunction
             ).to.equal(true);
-            // expect(advanced.userIdentification.suppressParameter.length).to.equal(2); //TODO needs fix
-            // expect(advanced.userIdentification.suppressParameter[0]).to.equal('ab');
-            // expect(advanced.userIdentification.suppressParameter[1]).to.equal('xy');
+            expect(advanced.userIdentification.suppressParameter.length).to.equal(2);
+            expect(advanced.userIdentification.suppressParameter[0]).to.equal('ab');
+            expect(advanced.userIdentification.suppressParameter[1]).to.equal('xy');
         });
     });
 

@@ -41,6 +41,7 @@ Hint: consider starting with `docker_start_debug` the first time, because then y
 #### **ACTION** env for docker-compose up
 The starting behavior of the Phoenix app can be controlled with the environment variable `ACTION`.  
 The value defines, which function in ./admin/docker_runner.sh will be executed.
+
 | ACTION      | Description |
 | ----------- | ----------- |
 | start_phoenix      | Default value if nothing else is set. Phoenix server will be compiled and started, or just started in case it was compiled before.       |
@@ -48,6 +49,7 @@ The value defines, which function in ./admin/docker_runner.sh will be executed.
 | build_phoenix_release   | Build the server via Elixir release.        |
 | start_phoenix_release   | Starts an Elixir release, or builds it first in case no build is found.    |
 | just_wait   | Does nothing, use this is you want to mess around in the container yourself.        |
+
 #### Cypress
 Run the tests with `make docker_cypress` - docker containers have to be running of course
 #### Build Vue 2 / Vue 3 apps

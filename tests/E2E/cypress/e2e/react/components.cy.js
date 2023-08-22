@@ -209,7 +209,6 @@ context("Test React Components", () => {
             expect(initData.trackDomain).to.equal("test-abc.net");
             expect(initData.trackId).to.equal("111111111111111");
 
-            expect(advancedData.execCDB).to.equal(false);
             expect(advancedData.forceOldEverId).to.equal(false);
             expect(advancedData.optOutName).to.equal("testOptOut");
             expect(advancedData.requestObfuscation).to.equal(false);
@@ -224,7 +223,6 @@ context("Test React Components", () => {
             expect(advancedData.sendViaServer.droppedRequests).to.equal(0);
             expect(advancedData.sendViaServer.serverDomain).to.equal("");
             expect(advancedData.sendViaServer.serverPath).to.equal("");
-            expect(advancedData.useCDBCache).to.equal(false);
             expect(advancedData.useHashForDefaultPageName).to.equal(false);
             expect(advancedData.useParamsForDefaultPageName).to.be.empty;
             expect(advancedData.userIdentification.anonymousCookieName).to.equal("miCookieOptOut");

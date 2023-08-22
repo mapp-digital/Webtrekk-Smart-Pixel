@@ -1,5 +1,11 @@
+<a name="1.4.4"></a>
+# 1.4.4 (2023-08-22)
+
+## Bug Fixes
+- The order value is only sent if it is set active
+
 <a name="1.4.3"></a>
-# 1.4.3 (2023-xx-xx)
+# 1.4.3 (2023-08-17)
 
 ## Features
 - New product status added (see [addToCart](https://documentation.mapp.com/latest/en/addtocart-50302651.html), [deleteFromCart](https://documentation.mapp.com/latest/en/deletefromcart-50302661.html), [checkout](https://documentation.mapp.com/latest/en/checkout-50302670.html), [addToWishlist](https://documentation.mapp.com/latest/en/addtowishlist-50302679.html) and [deleteFromWishlist](https://documentation.mapp.com/latest/en/deletefromwishlist-50302689.html))

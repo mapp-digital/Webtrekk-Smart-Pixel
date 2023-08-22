@@ -8,7 +8,7 @@ function init_vue2 {
     log "Backup Vue2 src"
     mv /apps/vue2 /apps/vue2_src
     log "Scaffold new Vue2 project via Vue CLI"
-    cd /apps/ && npx --yes @vue/cli create vue2 -n -i '{"useConfigFiles":true,"plugins":{"@vue/cli-plugin-babel":{},"@vue/cli-plugin-pwa":{},"@vue/cli-plugin-router":{"historyMode":true},"@vue/cli-plugin-vuex":{},"@vue/cli-plugin-eslint":{"config":"prettier","lintOn":["save"]}},"vueVersion":"2"}'
+    cd /apps/ && npx --yes @vue/cli create vue2 --packageManager npm --registry https://registry.npmjs.org -n -i '{"useConfigFiles":true,"plugins":{"@vue/cli-plugin-babel":{},"@vue/cli-plugin-pwa":{},"@vue/cli-plugin-router":{"historyMode":true},"@vue/cli-plugin-vuex":{},"@vue/cli-plugin-eslint":{"config":"prettier","lintOn":["save"]}},"vueVersion":"2"}'
     log "Merge E2E app src with new app"
     cp -rf /apps/vue2_src/src /apps/vue2/
     cp -rf /apps/vue2_src/vue.config.js /apps/vue2
@@ -59,7 +59,7 @@ function init_vue3 {
     log "Backup Vue3 src"
     mv /apps/vue3 /apps/vue3_src
     log "Scaffold new Vue3 project via Vue CLI"
-    cd /apps/ && npx --yes @vue/cli create vue3 -n -i '{"useConfigFiles":true,"plugins":{"@vue/cli-plugin-babel":{},"@vue/cli-plugin-typescript":{"classComponent":false,"useTsWithBabel":true},"@vue/cli-plugin-pwa":{},"@vue/cli-plugin-router":{"historyMode":true},"@vue/cli-plugin-vuex":{},"@vue/cli-plugin-eslint":{"config":"prettier","lintOn":["save"]}},"vueVersion":"3"}'
+    cd /apps/ && npx --yes @vue/cli create vue3 --packageManager npm --registry https://registry.npmjs.org -n -i '{"useConfigFiles":true,"plugins":{"@vue/cli-plugin-babel":{},"@vue/cli-plugin-typescript":{"classComponent":false,"useTsWithBabel":true},"@vue/cli-plugin-pwa":{},"@vue/cli-plugin-router":{"historyMode":true},"@vue/cli-plugin-vuex":{},"@vue/cli-plugin-eslint":{"config":"prettier","lintOn":["save"]}},"vueVersion":"3"}'
     log "Merge E2E app src with new app"
     cp -rf /apps/vue3_src/src /apps/vue3/
     cp -rf /apps/vue3_src/vue.config.js /apps/vue3

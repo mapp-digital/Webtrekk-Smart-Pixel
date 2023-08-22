@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import { StoreProvider } from "./store/Store";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes, createBrowserRouter, RouterProvider} from "react-router-dom";
 import About from "./views/About";
 import ContentEngagement from "./views/ContentEngagement";
 import Home from "./views/Home";
@@ -18,9 +18,17 @@ import Redux from "./views/Redux";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 
-function App() {
+const router = createBrowserRouter([
+    { path: "*", Component: Root },
+  ], {basename: '/apps/react'});
+
+export default function App() {
+    return <RouterProvider router={router}/>;
+  }
+
+function Root() {
     return (
-        <Router basename={'/apps/react'}>
+        // <Router basename={'/apps/react'}>
             <Provider store={store}>
             <StoreProvider>
                 <div id="app">
@@ -50,8 +58,6 @@ function App() {
                 <Snackbar />
             </StoreProvider>
             </Provider>
-        </Router>
+        // </Router>
     );
 }
-
-export default App;

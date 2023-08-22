@@ -41,7 +41,7 @@ export class DirectiveComponent implements OnInit {
   };
 
   advanced: WebtrekkAdvancedProps = {
-    // TODO: forceOldEverId missing in type
+    forceOldEverId: false,
     secureCookie: true,
     optOutName: 'webtrekkTestOptOut',
     requestObfuscation: true,
@@ -53,7 +53,7 @@ export class DirectiveComponent implements OnInit {
       serverDomain: 'testserver.test',
       serverPath: 'testserverpath',
       droppedRequests: 0,
-      blacklist: ['abc'], // TODO: type needs to allow regex
+      blacklist: ['abc', /^abc$/],
     },
     useHashForDefaultPageName: true,
     useParamsForDefaultPageName: ['param1', 'param2'],
@@ -74,7 +74,7 @@ export class DirectiveComponent implements OnInit {
       enableAnonymousFunction: true,
       anonymousCookieName: 'miCookieTestOptOut',
       anonymousOptIn: true,
-      suppressParameter: ['ab,xy'], // TODO: doesnt work
+      suppressParameter: ['ab', 'xy'],
     },
   };
 
