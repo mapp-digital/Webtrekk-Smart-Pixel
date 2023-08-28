@@ -14,7 +14,10 @@ const PropTypesOfTypesNumberOrString = PropTypes.oneOfType([
 
 WebtrekkProductData.propTypes = {
     id: PropTypes.string.isRequired,
-    action: PropTypes.oneOf(['list', 'view', 'basket', 'confirmation']).isRequired,
+    action: PropTypes.oneOf([
+        'list', 'view', 'basket', 'addToCart', 'deleteFromCart',
+        'checkout', 'confirmation', 'addToWishlist', 'deleteFromWishlist'
+    ]).isRequired,
     cost: PropTypesOfTypesNumberOrString,
     quantity: PropTypesOfTypesNumberOrString,
     variant: PropTypes.string,

@@ -205,10 +205,15 @@ class WebtrekkSmartPixelVue {
     clear() {
         this.call(function(pix) {
             pix.page.data.remove();
-            pix.product.view.data.remove();
             pix.product.list.data.remove();
-            pix.product.confirmation.data.remove();
+            pix.product.view.data.remove();
             pix.product.basket.data.remove();
+            pix.product.addToCart.data.remove();
+            pix.product.deleteFromCart.data.remove();
+            pix.product.checkout.data.remove();
+            pix.product.confirmation.data.remove();
+            pix.product.addToWishlist.data.remove();
+            pix.product.deleteFromWishlist.data.remove();
             pix.order.data.remove();
         });
     }

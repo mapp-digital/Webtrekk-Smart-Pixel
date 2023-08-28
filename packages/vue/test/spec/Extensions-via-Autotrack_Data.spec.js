@@ -192,6 +192,7 @@ describe('ProductListTracking via autotrack and data property', () => {
         });
     });
 });
+
 describe('TeaserTracking via autotrack and data property', () => {
     let spyOnAddTeaserElement;
 

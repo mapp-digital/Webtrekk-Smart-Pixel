@@ -124,7 +124,7 @@ class WebtrekkSmartPixelReact {
      */
     product(action = 'view', data = emptyObject) {
         this.call(function(pix) {
-            var method = (action === 'view' || action === 'basket') ? 'set' : 'add';
+            var method = (action === 'list' || action === 'checkout' || action === 'confirmation') ? 'add' : 'set';
             pix.product[action].data[method]([data]);
         });
     }
@@ -135,7 +135,7 @@ class WebtrekkSmartPixelReact {
      */
     products(action = 'view', data = []) {
         this.call(function(pix) {
-            var method = (action === 'view' || action === 'basket') ? 'set' : 'add';
+            var method = (action === 'list' || action === 'checkout' || action === 'confirmation') ? 'add' : 'set';
             pix.product[action].data[method](data);
         });
     }

@@ -11,7 +11,7 @@ type DataObject = {
 };
 
 type WebtrekkInitCookie = '1' | '3';
-type WebtrekkProductStatus = 'view' | 'list' | 'basket' | 'confirmation';
+type WebtrekkProductStatus = 'list' | 'view' | 'basket' | 'addToCart' | 'deleteFromCart' | 'checkout' | 'confirmation' | 'addToWishlist' | 'deleteFromWishlist';
 type WebtrekkTeaserType = 'view' | 'click' | 'product';
 type WebtrekkTeaserGoal = 'order' | 'goal' | 'both';
 type WebtrekkContentEngagementSendContentEngagement = 0 | 1 | 2;

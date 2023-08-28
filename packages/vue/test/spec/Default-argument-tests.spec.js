@@ -47,7 +47,7 @@ describe('Default values as arguments', () => {
                     expect(wtSmart.product.confirmation.data.get()).toEqual([]);
                     expect(wtSmart.product.basket.data.get()).toEqual([]);
                     expect(wtSmart.order.data.get().id).toBe('');
-                    expect(wtSmart.order.data.get().value).toBe(0);
+                    expect(wtSmart.order.data.get().value).toBe('');
                     expect(wtSmart.order.data.get().parameter).toEqual({});
                     expect(wtSmart.order.data.get().paymentMethod).toBe('');
 

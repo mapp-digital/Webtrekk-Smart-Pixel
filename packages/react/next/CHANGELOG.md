@@ -1,3 +1,19 @@
+# 1.3.0 (2023-08-28)
+
+## Features
+
+- New product status added (see [addToCart](https://documentation.mapp.com/latest/en/product-43287896.html), [deleteFromCart](https://documentation.mapp.com/latest/en/product-43287896.html), [checkout](https://documentation.mapp.com/latest/en/product-43287896.html), [addToWishlist](https://documentation.mapp.com/latest/en/product-43287896.html) and [deleteFromWishlist](https://documentation.mapp.com/latest/en/product-43287896.html))
+
+
+<a name="1.2.4"></a>
+# 1.2.4 (2023-06-06)
+
+## Features
+
+- Support temporary session ID for anonymous tracking (see [Advanced](https://documentation.mapp.com/latest/en/advanced-43287825.html)).
+- Support tracking of shadow DOM elements (see [Content Engagement](https://documentation.mapp.com/latest/en/content-engagement-43287761.html), [Product List Tracking](https://documentation.mapp.com/latest/en/product-list-tracking-43287770.html) and [Teaser Tracking](https://documentation.mapp.com/latest/en/teaser-tracking-43287776.html)).
+
+
 <a name="1.2.3"></a>
 ## 1.2.3 (2022-09-08)
 

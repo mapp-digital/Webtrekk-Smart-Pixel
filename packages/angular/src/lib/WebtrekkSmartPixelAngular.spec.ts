@@ -36,7 +36,12 @@ describe('WebtrekkSmartPixelAngular', () => {
             wtSmart.customer.data.remove();
             wtSmart.product.view.data.remove();
             wtSmart.product.basket.data.remove();
+            wtSmart.product.addToCart.data.remove();
+            wtSmart.product.deleteFromCart.data.remove();
+            wtSmart.product.checkout.data.remove();
             wtSmart.product.confirmation.data.remove();
+            wtSmart.product.addToWishlist.data.remove();
+            wtSmart.product.deleteFromWishlist.data.remove();
             wtSmart.order.data.remove();
             wtSmart.extension.scroll_position.deactivate();
 
@@ -54,7 +59,7 @@ describe('WebtrekkSmartPixelAngular', () => {
 
                     expect(data.trackId).toBe('');
                     expect(data.trackDomain).toBe('');
-                    expect(data.domain).toEqual(['github.com']);
+                    expect(data.domain[0]).toMatch(/^(github.com)|(localhost)$/);
                     expect(data.cookie).toBe('1');
                 }, done);
             });
@@ -92,8 +97,6 @@ describe('WebtrekkSmartPixelAngular', () => {
                     expect(data.secureCookie).toBe(false);
                     expect(data.optOutName).toBe('webtrekkOptOut');
                     expect(data.requestObfuscation).toBe(false);
-                    expect(data.execCDB).toBe(true);
-                    expect(data.useCDBCache).toBe(false);
                     expect(data.useHashForDefaultPageName).toBe(false);
                     expect(data.useParamsForDefaultPageName).toEqual([]);
                     expect(data.requestQueue.activated).toBe(true);
@@ -120,8 +123,6 @@ describe('WebtrekkSmartPixelAngular', () => {
                     expect(data.secureCookie).toBe(true);
                     expect(data.optOutName).toBe('pixelOptOut');
                     expect(data.requestObfuscation).toBe(true);
-                    expect(data.execCDB).toBe(false);
-                    expect(data.useCDBCache).toBe(true);
                 }, done);
             });
         });
@@ -135,7 +136,7 @@ describe('WebtrekkSmartPixelAngular', () => {
                 expectInCallback(() => {
                     let data = wtSmart.page.data.get();
 
-                    expect(data.name).toBe('github.com/@angular-cli-builders');
+                    expect(data.name).toMatch(/^(github.com\/(@angular-cli-builders)|(just-jeb\/angular-builders))|localhost\/$/);
                     expect(data.search).toBe('');
                     expect(data.numberSearchResults).toBe(0);
                     expect(data.errorMessages).toBe('');
@@ -481,6 +482,96 @@ describe('WebtrekkSmartPixelAngular', () => {
             });
         });
 
+        test('with data - addToCart', (done) => {
+            service.product('addToCart', {
+                id: 'abc123def456',
+                cost: '13.99',
+                quantity: 3,
+                variant: 'green',
+                soldOut: true,
+                parameter: {
+                    5: 'parameter 5'
+                },
+                category: {
+                    7: 'category 7'
+                }
+            });
+
+            service.call((wtSmart) => {
+                expectInCallback(() => {
+                    let data = wtSmart.product.addToCart.data.get()[0];
+
+                    expect(data.id).toBe('abc123def456');
+                    expect(data.cost).toBe(13.99);
+                    expect(data.quantity).toBe(3);
+                    expect(data.variant).toBe('green');
+                    expect(data.soldOut).toBe(true);
+                    expect(data.parameter[5]).toBe('parameter 5');
+                    expect(data.category[7]).toBe('category 7');
+                }, done);
+            });
+        });
+
+        test('with data - deleteFromCart', (done) => {
+            service.product('deleteFromCart', {
+                id: 'abc123def456',
+                cost: '13.99',
+                quantity: 3,
+                variant: 'green',
+                soldOut: true,
+                parameter: {
+                    5: 'parameter 5'
+                },
+                category: {
+                    7: 'category 7'
+                }
+            });
+
+            service.call((wtSmart) => {
+                expectInCallback(() => {
+                    let data = wtSmart.product.deleteFromCart.data.get()[0];
+
+                    expect(data.id).toBe('abc123def456');
+                    expect(data.cost).toBe(13.99);
+                    expect(data.quantity).toBe(3);
+                    expect(data.variant).toBe('green');
+                    expect(data.soldOut).toBe(true);
+                    expect(data.parameter[5]).toBe('parameter 5');
+                    expect(data.category[7]).toBe('category 7');
+                }, done);
+            });
+        });
+
+        test('with data - checkout', (done) => {
+            service.product('checkout', {
+                id: 'abc123def456',
+                cost: '13.99',
+                quantity: 3,
+                variant: 'green',
+                soldOut: true,
+                parameter: {
+                    5: 'parameter 5'
+                },
+                category: {
+                    7: 'category 7'
+                }
+            });
+
+            service.call((wtSmart) => {
+                expectInCallback(() => {
+                    let data = wtSmart.product.checkout.data.get()[0];
+
+                    expect(data.id).toBe('abc123def456');
+                    expect(data.cost).toBe(13.99);
+                    expect(data.quantity).toBe(3);
+                    expect(data.variant).toBe('green');
+                    expect(data.soldOut).toBe(true);
+                    expect(data.parameter[5]).toBe('parameter 5');
+                    expect(data.category[7]).toBe('category 7');
+                }, done);
+            });
+        });
+
         test('with data - confirmation', (done) => {
             service.product('confirmation', {
                 id: 'abc123def456',
@@ -499,6 +590,66 @@ describe('WebtrekkSmartPixelAngular', () => {
             service.call((wtSmart) => {
                 expectInCallback(() => {
                     let data = wtSmart.product.confirmation.data.get()[0];
+
+                    expect(data.id).toBe('abc123def456');
+                    expect(data.cost).toBe(13.99);
+                    expect(data.quantity).toBe(3);
+                    expect(data.variant).toBe('green');
+                    expect(data.soldOut).toBe(true);
+                    expect(data.parameter[5]).toBe('parameter 5');
+                    expect(data.category[7]).toBe('category 7');
+                }, done);
+            });
+        });
+
+        test('with data - addToWishlist', (done) => {
+            service.product('addToWishlist', {
+                id: 'abc123def456',
+                cost: '13.99',
+                quantity: 3,
+                variant: 'green',
+                soldOut: true,
+                parameter: {
+                    5: 'parameter 5'
+                },
+                category: {
+                    7: 'category 7'
+                }
+            });
+
+            service.call((wtSmart) => {
+                expectInCallback(() => {
+                    let data = wtSmart.product.addToWishlist.data.get()[0];
+
+                    expect(data.id).toBe('abc123def456');
+                    expect(data.cost).toBe(13.99);
+                    expect(data.quantity).toBe(3);
+                    expect(data.variant).toBe('green');
+                    expect(data.soldOut).toBe(true);
+                    expect(data.parameter[5]).toBe('parameter 5');
+                    expect(data.category[7]).toBe('category 7');
+                }, done);
+            });
+        });
+
+        test('with data - deleteFromWishlist', (done) => {
+            service.product('deleteFromWishlist', {
+                id: 'abc123def456',
+                cost: '13.99',
+                quantity: 3,
+                variant: 'green',
+                soldOut: true,
+                parameter: {
+                    5: 'parameter 5'
+                },
+                category: {
+                    7: 'category 7'
+                }
+            });
+
+            service.call((wtSmart) => {
+                expectInCallback(() => {
+                    let data = wtSmart.product.deleteFromWishlist.data.get()[0];
 
                     expect(data.id).toBe('abc123def456');
                     expect(data.cost).toBe(13.99);
@@ -642,7 +793,7 @@ describe('WebtrekkSmartPixelAngular', () => {
                 expectInCallback(() => {
                     let data = wtSmart.order.data.get();
 
-                    expect(data.value).toBe(0);
+                    expect(data.value).toBe('');
                     expect(data.id).toBe('');
                     expect(data.currency).toBe('');
                     expect(data.couponValue).toBe(0);

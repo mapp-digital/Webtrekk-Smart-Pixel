@@ -1,9 +1,25 @@
+<a name="2.2.0"></a>
+# 2.2.0 (2023-08-28)
+
+## Features
+
+- New product status added (see [addToCart](https://documentation.mapp.com/latest/en/product-36148660.html), [deleteFromCart](https://documentation.mapp.com/latest/en/product-36148660.html), [checkout](https://documentation.mapp.com/latest/en/product-36148660.html), [addToWishlist](https://documentation.mapp.com/latest/en/product-36148660.html) and [deleteFromWishlist](https://documentation.mapp.com/latest/en/product-36148660.html))
+
+
+<a name="2.1.5"></a>
+# 2.1.5 (2023-06-06)
+
+## Features
+
+- Support temporary session ID for anonymous tracking (see [Advanced](https://documentation.mapp.com/latest/en/advanced-36148381.html)).
+- Support tracking of shadow DOM elements (see [Content Engagement](https://documentation.mapp.com/latest/en/content-engagement-43286592.html), [Product List Tracking](https://documentation.mapp.com/latest/en/product-list-tracking-43286598.html) and [Teaser Tracking](https://documentation.mapp.com/latest/en/teaser-tracking-36148568.html)).
+
+
 <a name="2.1.4"></a>
 ## 2.1.4 (2022-09-08)
 
 ## Optimization
-- Add tracking parameter (pf, cs801 and cs802) for pixel feature usage
-
+* Add tracking parameter (pf, cs801 and cs802) for pixel feature usage
 
 <a name="2.1.3"></a>
 ## 2.1.3 (2022-05-04)
@@ -11,7 +27,6 @@
 ### Features
 
 * Limit number of retries to send requests in request queue ([requestQueue](https://documentation.mapp.com/latest/en/angular-15741405.html#id-.SMPAngularv1.0-wt-advanced-data))
-
 
 <a name="2.1.2"></a>
 ## 2.1.2 (2022-04-25)
@@ -22,12 +37,28 @@
 
 ---
 
+<a name="1.2.0"></a>
+# 1.2.0 (2023-08-28)
+
+## Features
+
+- New product status added (see [addToCart](https://documentation.mapp.com/latest/en/product-36148660.html), [deleteFromCart](https://documentation.mapp.com/latest/en/product-36148660.html), [checkout](https://documentation.mapp.com/latest/en/product-36148660.html), [addToWishlist](https://documentation.mapp.com/latest/en/product-36148660.html) and [deleteFromWishlist](https://documentation.mapp.com/latest/en/product-36148660.html))
+
+
+<a name="1.1.5"></a>
+# 1.1.5 (2023-06-06)
+
+## Features
+
+- Support temporary session ID for anonymous tracking (see [Advanced](https://documentation.mapp.com/latest/en/advanced-36148381.html)).
+- Support tracking of shadow DOM elements (see [Content Engagement](https://documentation.mapp.com/latest/en/content-engagement-43286592.html), [Product List Tracking](https://documentation.mapp.com/latest/en/product-list-tracking-43286598.html) and [Teaser Tracking](https://documentation.mapp.com/latest/en/teaser-tracking-36148568.html)).
+
+
 <a name="1.1.4"></a>
 ## 1.1.4 (2022-09-08)
 
 ## Optimization
-- Add tracking parameter (pf, cs801 and cs802) for pixel feature usage
-
+* Add tracking parameter (pf, cs801 and cs802) for pixel feature usage
 
 <a name="1.1.3"></a>
 ## 1.1.3(2022-05-04)

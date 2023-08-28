@@ -129,8 +129,6 @@ describe('WebtrekkAdvancedData', () => {
                     expect(advancedData.secureCookie).toBe(true);
                     expect(advancedData.optOutName).toBe('webtrekkTestOptOut');
                     expect(advancedData.requestObfuscation).toBe(true);
-                    expect(advancedData.execCDB).toBe(false);
-                    expect(advancedData.useCDBCache).toBe(true);
                     expect(advancedData.sendViaSDK).toBe(true);
                     expect(advancedData.sendViaServer.activated).toBe(true);
                     expect(advancedData.sendViaServer.serverDomain).toBe('sub.domain.tld');
@@ -184,8 +182,6 @@ describe('WebtrekkAdvancedData', () => {
                     expect(advancedData.secureCookie).toBe(true);
                     expect(advancedData.optOutName).toBe('webtrekkTestOptOut-2');
                     expect(advancedData.requestObfuscation).toBe(true);
-                    expect(advancedData.execCDB).toBe(true);
-                    expect(advancedData.useCDBCache).toBe(false);
                     expect(advancedData.sendViaSDK).toBe(true);
                     expect(advancedData.sendViaServer.activated).toBe(true);
                     expect(advancedData.sendViaServer.serverDomain).toBe('sub.domain.tld');

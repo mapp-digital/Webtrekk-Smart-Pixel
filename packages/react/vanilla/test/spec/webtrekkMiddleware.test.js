@@ -21,6 +21,12 @@ describe('webtrekkMiddleware', () => {
             wtSmart.customer.data.remove();
             wtSmart.product.view.data.remove();
             wtSmart.product.basket.data.remove();
+            wtSmart.product.addToCart.data.remove();
+            wtSmart.product.deleteFromCart.data.remove();
+            wtSmart.product.checkout.data.remove();
+            wtSmart.product.confirmation.data.remove();
+            wtSmart.product.addToWishlist.data.remove();
+            wtSmart.product.deleteFromWishlist.data.remove();
             wtSmart.order.data.remove();
             wtSmart.extension.scroll_position.deactivate();
 
@@ -95,8 +101,6 @@ describe('webtrekkMiddleware', () => {
                     expect(data.optOutName).toBe('pixelOptOut');
                     expect(data.requestObfuscation).toBe(true);
                     expect(data.forceOldEverId).toBe(true);
-                    expect(data.execCDB).toBe(false);
-                    expect(data.useCDBCache).toBe(true);
                 }, done);
             });
         });

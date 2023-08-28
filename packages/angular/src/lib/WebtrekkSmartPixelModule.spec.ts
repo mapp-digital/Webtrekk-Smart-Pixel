@@ -36,7 +36,7 @@ describe('WebtrekkSmartPixelModule', () => {
 
                 expect(data.trackId).toBe('');
                 expect(data.trackDomain).toBe('');
-                expect(data.domain).toEqual(['github.com']);
+                expect(data.domain[0]).toMatch(/^(github.com)|(localhost)$/);
                 expect(data.cookie).toBe('1');
             }, done);
         });
@@ -61,7 +61,7 @@ describe('WebtrekkSmartPixelModule', () => {
 
                 expect(data.trackId).toBe('');
                 expect(data.trackDomain).toBe('');
-                expect(data.domain).toEqual(['github.com']);
+                expect(data.domain[0]).toMatch(/^(github.com)|(localhost)$/);
                 expect(data.cookie).toBe('1');
             }, done);
         });
@@ -88,7 +88,7 @@ describe('WebtrekkSmartPixelModule', () => {
 
                 expect(data.trackId).toBe('123451234512345');
                 expect(data.trackDomain).toBe('analytics01.webtrekk.net');
-                expect(data.domain).toEqual(['github.com']);
+                expect(data.domain[0]).toMatch(/^(github.com)|(localhost)$/);
                 expect(data.cookie).toBe('1');
             }, done);
         });

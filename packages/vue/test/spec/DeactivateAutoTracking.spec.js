@@ -82,7 +82,7 @@ describe('Route entered and left', () => {
                     expect(wtSmart.product.basket.data.get()).toStrictEqual([]);
                     expect(wtSmart.product.list.data.get()).toStrictEqual([]);
                     expect(wtSmart.order.data.get().id).toBe('');
-                    expect(wtSmart.order.data.get().value).toBe(0);
+                    expect(wtSmart.order.data.get().value).toBe('');
                 },
                 done,
                 1000

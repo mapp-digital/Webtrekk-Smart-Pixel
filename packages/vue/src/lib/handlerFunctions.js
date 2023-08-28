@@ -1,5 +1,7 @@
 import wt from './WebtrekkSmartPixelVue';
 
+const PRODUCT_STATUS_FILTER = /^(?:list|view|basket|addToCart|deleteFromCart|checkout|confirmation|addToWishlist|deleteFromWishlist)$/;
+
 /**
  * @param {Object} data
  */
@@ -28,7 +30,7 @@ const customerHandler = data => {
  * @param {Object} data
  */
 const productHandler = data => {
-    const productStatusFilter = /^(?:view|basket|list|confirmation)$/;
+    const productStatusFilter = PRODUCT_STATUS_FILTER;
     const productStatusList = Object.keys(data).filter(key => productStatusFilter.test(key));
     if (productStatusList.length === 0) {
         const status = data.product.status || 'view';
@@ -45,7 +47,7 @@ const productHandler = data => {
  * @param {Object} data
  */
 const productsHandler = data => {
-    const productStatusFilter = /^(?:view|basket|list|confirmation)$/;
+    const productStatusFilter = PRODUCT_STATUS_FILTER;
     const productStatusList = Object.keys(data).filter(key => productStatusFilter.test(key));
     if (productStatusList.length === 0) {
         const addProducts = productArray => {
@@ -63,37 +65,21 @@ const productsHandler = data => {
     }
 };
 
-const extensionHelper = (extension, data, selector) => {
-    wt.call(wtSmart => {
-        wtSmart.extension[extension].add({
-            ...data[extension],
-            selector
-        });
-    });
-};
-
-const callWhenAvailable = (selector, extension, data) => {
-    if (document.querySelector(selector)) {
-        extensionHelper('teaser_tracking', data, selector);
-    }
-    else {
-        setTimeout(()=>{
-            callWhenAvailable(selector, extension, data);
-        }, 1000);
-    }
-};
-
 /**
  * @param {Object} data
  * @param {HTMLElement} element
  */
 const teaserTrackingHandler = (data, element) => {
-    if (data.teaser_tracking.selector) {
-        callWhenAvailable(data.teaser_tracking.selector, 'teaser_tracking', data);
-    }
-    else {
-        extensionHelper('teaser_tracking', data, element);
-    }
+    const selector = data.teaser_tracking.selector
+        ? data.teaser_tracking.selector
+        : element;
+
+    wt.call(wtSmart => {
+        wtSmart.extension.teaser_tracking.add({
+            ...data.teaser_tracking,
+            selector
+        });
+    });
 };
 
 /**
@@ -136,7 +122,7 @@ const contentEngagementHandler = (data, element) => {
  */
 const generalHandler = (data, keys, element = null) => {
     // setTimeout(() => {
-    const productStatusFilter = /^(?:view|basket|list|confirmation)$/;
+    const productStatusFilter = PRODUCT_STATUS_FILTER;
     const trackFilter = /^(?:track|trackAction|trackPage)$/;
 
     keys

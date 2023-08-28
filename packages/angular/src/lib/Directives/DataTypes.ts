@@ -1,10 +1,11 @@
 type NumberOrString = number | string;
+type StringOrRegex = string | RegExp;
 type DataObject = {
     [i in NumberOrString]: string;
 };
 
 type WebtrekkInitCookie = '1' | '3';
-export type WebtrekkProductStatus = 'view' | 'list' | 'basket' | 'confirmation';
+export type WebtrekkProductStatus = 'list' | 'view' | 'basket' | 'addToCart' | 'deleteFromCart' | 'checkout' | 'confirmation' | 'addToWishlist' | 'deleteFromWishlist';
 type WebtrekkTeaserType = 'view' | 'click' | 'product';
 type WebtrekkTeaserGoal = 'order' | 'goal' | 'both';
 type WebtrekkContentEngagementSendContentEngagement = 0 | 1 | 2;
@@ -16,7 +17,7 @@ type WebtrekkAdvancedPropSendViaServer = {
     serverDomain?: string;
     serverPath?: string;
     droppedRequests?: NumberOrString;
-    blacklist?: string[];
+    blacklist?: StringOrRegex[];
 }
 
 type WebtrekkAdvancedPropRequestQueue = {
@@ -41,6 +42,8 @@ type WebtrekkAdvancedPropUserIdentification = {
     optOutCookieName?: string;
     anonymousCookieName?: string;
     suppressParameter?: string[];
+    temporarySessionId?: string;
+    saveTemporarySessionId?: boolean;
 }
 
 export interface WebtrekkActionProps {
@@ -57,6 +60,7 @@ export interface WebtrekkInitProps {
 }
 
 export interface WebtrekkAdvancedProps {
+    forceOldEverId?: boolean;
     secureCookie?: boolean;
     optOutName?: string;
     requestObfuscation?: boolean;
@@ -149,6 +153,7 @@ export interface WebtrekkSessionProps {
 
 export interface WebtrekkTeaserProps {
     selector?: string | HTMLElement,
+    shadowRoot?: string;
     name: string,
     rank?: string,
     content?: string,
@@ -161,6 +166,7 @@ export interface WebtrekkTeaserProps {
 
 export interface WebtrekkProductListProps {
     selector?: string | HTMLElement,
+    shadowRoot?: string;
     id: string,
     position: NumberOrString,
     cost?: NumberOrString,
@@ -173,6 +179,7 @@ export interface WebtrekkProductListProps {
 
 export interface WebtrekkContentEngagementProps {
     selector?: string | HTMLElement;
+    shadowRoot?: string;
     name: string;
     percentageStepsInAnalytics?: NumberOrString;
     sendContentEngagement?: WebtrekkContentEngagementSendContentEngagement;

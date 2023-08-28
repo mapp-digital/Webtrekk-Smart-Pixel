@@ -13,8 +13,14 @@ import {InitData} from '../_helper/components';
 import {OrderData, OrderDataTrack} from '../_helper/components';
 import {PageData, PageDataTrack} from '../_helper/components';
 import {
-    ProductViewData, ProductBasketData, ProductConfirmationData,
-    ProductViewDataTrack, ProductBasketDataTrack, ProductConfirmationDataTrack
+    ProductViewData, ProductViewDataTrack,
+    ProductBasketData, ProductBasketDataTrack,
+    ProductConfirmationData, ProductConfirmationDataTrack,
+    ProductAddToCartData, ProductAddToCartDataTrack,
+    ProductDeleteFromCartData, ProductDeleteFromCartDataTrack,
+    ProductCheckoutData, ProductCheckoutDataTrack,
+    ProductAddToWishlistData, ProductAddToWishlistDataTrack,
+    ProductDeleteFromWishlistData, ProductDeleteFromWishlistDataTrack
 } from '../_helper/components';
 import {SessionData, SessionDataTrack} from '../_helper/components';
 
@@ -58,8 +64,6 @@ describe('DataDirective', () => {
                     expect(advancedData.secureCookie).toBe(true);
                     expect(advancedData.optOutName).toBe('webtrekkTestOptOut');
                     expect(advancedData.requestObfuscation).toBe(true);
-                    expect(advancedData.execCDB).toBe(false);
-                    expect(advancedData.useCDBCache).toBe(true);
                     expect(advancedData.useHashForDefaultPageName).toBe(true);
                     expect(advancedData.useParamsForDefaultPageName.join(',')).toBe('param1,param2');
                     expect(advancedData.requestQueue.activated).toBe(true);
@@ -90,7 +94,9 @@ describe('DataDirective', () => {
             service = testBedInject(WebtrekkSmartPixelAngular);
 
             service.call((wtSmart) => {
-                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {});
+                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {
+                    // do nothing
+                });
 
                 done();
             });
@@ -156,7 +162,9 @@ describe('DataDirective', () => {
             service = testBedInject(WebtrekkSmartPixelAngular);
 
             service.call((wtSmart) => {
-                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {});
+                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {
+                    // do nothing
+                });
 
                 done();
             });
@@ -276,7 +284,9 @@ describe('DataDirective', () => {
             service = testBedInject(WebtrekkSmartPixelAngular);
 
             service.call((wtSmart) => {
-                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {});
+                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {
+                    // do nothing
+                });
 
                 done();
             });
@@ -349,7 +359,9 @@ describe('DataDirective', () => {
             service = testBedInject(WebtrekkSmartPixelAngular);
 
             service.call((wtSmart) => {
-                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {});
+                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {
+                    // do nothing
+                });
 
                 done();
             });
@@ -421,15 +433,23 @@ describe('DataDirective', () => {
                     })
                 ],
                 declarations: [
-                    ProductViewData, ProductBasketData, ProductConfirmationData,
-                    ProductViewDataTrack, ProductBasketDataTrack, ProductConfirmationDataTrack
+                    ProductViewData, ProductViewDataTrack,
+                    ProductBasketData, ProductBasketDataTrack,
+                    ProductConfirmationData, ProductConfirmationDataTrack,
+                    ProductAddToCartData, ProductAddToCartDataTrack,
+                    ProductDeleteFromCartData, ProductDeleteFromCartDataTrack,
+                    ProductCheckoutData, ProductCheckoutDataTrack,
+                    ProductAddToWishlistData, ProductAddToWishlistDataTrack,
+                    ProductDeleteFromWishlistData, ProductDeleteFromWishlistDataTrack
                 ]
             });
 
             service = testBedInject(WebtrekkSmartPixelAngular);
 
             service.call((wtSmart) => {
-                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {});
+                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {
+                    // do nothing
+                });
 
                 done();
             });
@@ -442,7 +462,12 @@ describe('DataDirective', () => {
             service.call((wtSmart) => {
                 wtSmart.product.view.data.remove();
                 wtSmart.product.basket.data.remove();
+                wtSmart.product.addToCart.data.remove();
+                wtSmart.product.deleteFromCart.data.remove();
+                wtSmart.product.checkout.data.remove();
                 wtSmart.product.confirmation.data.remove();
+                wtSmart.product.addToWishlist.data.remove();
+                wtSmart.product.deleteFromWishlist.data.remove();
 
                 done();
             });
@@ -488,6 +513,66 @@ describe('DataDirective', () => {
             });
         });
 
+        test('mount product addToCart', (done) => {
+            fixture = TestBed.createComponent(ProductAddToCartData);
+            fixture.detectChanges();
+
+            service.call((wtSmart) => {
+                expectInCallback(() => {
+                    expect(spyOnTrack).not.toHaveBeenCalled();
+
+                    const orderData = wtSmart.product.addToCart.data.get()[0];
+                    expect(orderData.id).toBe('product id 1');
+                    expect(orderData.cost).toBe(19.95);
+                    expect(orderData.quantity).toBe(1);
+                    expect(orderData.variant).toBe('product variant');
+                    expect(orderData.soldOut).toBe(false);
+                    expect(orderData.category).toEqual({1: 'category-1', 5: 'category-5'});
+                    expect(orderData.parameter).toEqual({1: 'parameter-1', 7: 'parameter-7'});
+                }, done);
+            });
+        });
+
+        test('mount product deleteFromCart', (done) => {
+            fixture = TestBed.createComponent(ProductDeleteFromCartData);
+            fixture.detectChanges();
+
+            service.call((wtSmart) => {
+                expectInCallback(() => {
+                    expect(spyOnTrack).not.toHaveBeenCalled();
+
+                    const orderData = wtSmart.product.deleteFromCart.data.get()[0];
+                    expect(orderData.id).toBe('product id 1');
+                    expect(orderData.cost).toBe(19.95);
+                    expect(orderData.quantity).toBe(1);
+                    expect(orderData.variant).toBe('product variant');
+                    expect(orderData.soldOut).toBe(false);
+                    expect(orderData.category).toEqual({1: 'category-1', 5: 'category-5'});
+                    expect(orderData.parameter).toEqual({1: 'parameter-1', 7: 'parameter-7'});
+                }, done);
+            });
+        });
+
+        test('mount product checkout', (done) => {
+            fixture = TestBed.createComponent(ProductCheckoutData);
+            fixture.detectChanges();
+
+            service.call((wtSmart) => {
+                expectInCallback(() => {
+                    expect(spyOnTrack).not.toHaveBeenCalled();
+
+                    const orderData = wtSmart.product.checkout.data.get()[0];
+                    expect(orderData.id).toBe('product id 1');
+                    expect(orderData.cost).toBe(19.95);
+                    expect(orderData.quantity).toBe(1);
+                    expect(orderData.variant).toBe('product variant');
+                    expect(orderData.soldOut).toBe(false);
+                    expect(orderData.category).toEqual({1: 'category-1', 5: 'category-5'});
+                    expect(orderData.parameter).toEqual({1: 'parameter-1', 7: 'parameter-7'});
+                }, done);
+            });
+        });
+
         test('mount product confirmation', (done) => {
             fixture = TestBed.createComponent(ProductConfirmationData);
             fixture.detectChanges();
@@ -497,6 +582,46 @@ describe('DataDirective', () => {
                     expect(spyOnTrack).not.toHaveBeenCalled();
 
                     const orderData = wtSmart.product.confirmation.data.get()[0];
+                    expect(orderData.id).toBe('product id 1');
+                    expect(orderData.cost).toBe(19.95);
+                    expect(orderData.quantity).toBe(1);
+                    expect(orderData.variant).toBe('product variant');
+                    expect(orderData.soldOut).toBe(false);
+                    expect(orderData.category).toEqual({1: 'category-1', 5: 'category-5'});
+                    expect(orderData.parameter).toEqual({1: 'parameter-1', 7: 'parameter-7'});
+                }, done);
+            });
+        });
+
+        test('mount product addToWishlist', (done) => {
+            fixture = TestBed.createComponent(ProductAddToWishlistData);
+            fixture.detectChanges();
+
+            service.call((wtSmart) => {
+                expectInCallback(() => {
+                    expect(spyOnTrack).not.toHaveBeenCalled();
+
+                    const orderData = wtSmart.product.addToWishlist.data.get()[0];
+                    expect(orderData.id).toBe('product id 1');
+                    expect(orderData.cost).toBe(19.95);
+                    expect(orderData.quantity).toBe(1);
+                    expect(orderData.variant).toBe('product variant');
+                    expect(orderData.soldOut).toBe(false);
+                    expect(orderData.category).toEqual({1: 'category-1', 5: 'category-5'});
+                    expect(orderData.parameter).toEqual({1: 'parameter-1', 7: 'parameter-7'});
+                }, done);
+            });
+        });
+
+        test('mount product deleteFromWishlist', (done) => {
+            fixture = TestBed.createComponent(ProductDeleteFromWishlistData);
+            fixture.detectChanges();
+
+            service.call((wtSmart) => {
+                expectInCallback(() => {
+                    expect(spyOnTrack).not.toHaveBeenCalled();
+
+                    const orderData = wtSmart.product.deleteFromWishlist.data.get()[0];
                     expect(orderData.id).toBe('product id 1');
                     expect(orderData.cost).toBe(19.95);
                     expect(orderData.quantity).toBe(1);
@@ -530,8 +655,63 @@ describe('DataDirective', () => {
             });
         });
 
+        test('mount product addToCart with track', (done) => {
+            fixture = TestBed.createComponent(ProductAddToCartDataTrack);
+            fixture.detectChanges();
+
+            service.call(() => {
+                expectInCallback(() => {
+                    expect(spyOnTrack).toHaveBeenCalled();
+                }, done);
+            });
+        });
+
+        test('mount product deleteFromCart with track', (done) => {
+            fixture = TestBed.createComponent(ProductDeleteFromCartDataTrack);
+            fixture.detectChanges();
+
+            service.call(() => {
+                expectInCallback(() => {
+                    expect(spyOnTrack).toHaveBeenCalled();
+                }, done);
+            });
+        });
+
+        test('mount product checkout with track', (done) => {
+            fixture = TestBed.createComponent(ProductCheckoutDataTrack);
+            fixture.detectChanges();
+
+            service.call(() => {
+                expectInCallback(() => {
+                    expect(spyOnTrack).toHaveBeenCalled();
+                }, done);
+            });
+        });
+
         test('mount product confirmation with track', (done) => {
             fixture = TestBed.createComponent(ProductConfirmationDataTrack);
+            fixture.detectChanges();
+
+            service.call(() => {
+                expectInCallback(() => {
+                    expect(spyOnTrack).toHaveBeenCalled();
+                }, done);
+            });
+        });
+
+        test('mount product addToWishlist with track', (done) => {
+            fixture = TestBed.createComponent(ProductAddToWishlistDataTrack);
+            fixture.detectChanges();
+
+            service.call(() => {
+                expectInCallback(() => {
+                    expect(spyOnTrack).toHaveBeenCalled();
+                }, done);
+            });
+        });
+
+        test('mount product deleteFromWishlist with track', (done) => {
+            fixture = TestBed.createComponent(ProductDeleteFromWishlistDataTrack);
             fixture.detectChanges();
 
             service.call(() => {
@@ -561,7 +741,9 @@ describe('DataDirective', () => {
             service = testBedInject(WebtrekkSmartPixelAngular);
 
             service.call((wtSmart) => {
-                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {});
+                spyOnTrack = jest.spyOn(wtSmart, 'track').mockImplementation(() => {
+                    // do nothing
+                });
 
                 done();
             });

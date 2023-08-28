@@ -35,6 +35,7 @@ const PropTypesOfTypesNumberOrString = PropTypes.oneOfType([
 
 WebtrekkContentEngagement.propTypes = {
     selector: PropTypes.string,
+    shadowRoot: PropTypes.string,
     name: PropTypes.string.isRequired,
     percentageStepsInAnalytics: PropTypesOfTypesNumberOrString,
     sendContentEngagement: PropTypes.oneOf([0, 1, 2, '0', '1', '2']),
@@ -50,6 +51,7 @@ WebtrekkContentEngagement.propTypes = {
 
 WebtrekkContentEngagement.defaultProps = {
     selector: null,
+    shadowRoot: null,
     name: null,
     percentageStepsInAnalytics: null,
     sendContentEngagement: null,

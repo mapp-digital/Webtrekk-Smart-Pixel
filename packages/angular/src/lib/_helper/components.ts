@@ -458,6 +458,91 @@ export class ProductBasketData {
 
 @Component({
     template: `
+        <div [wt-product-data]="mockData"></div>`
+})
+export class ProductAddToCartData {
+    mockData = {
+        id: 'product id 1',
+        action: 'addToCart',
+        cost: 19.95,
+        quantity: 1,
+        variant: 'product variant',
+        soldOut: false,
+        category: {1: 'category-1', 5: 'category-5'},
+        parameter: {1: 'parameter-1', 7: 'parameter-7'}
+    }
+}
+
+@Component({
+    template: `
+        <div [wt-product-data]="mockData"></div>`
+})
+export class ProductDeleteFromCartData {
+    mockData = {
+        id: 'product id 1',
+        action: 'deleteFromCart',
+        cost: 19.95,
+        quantity: 1,
+        variant: 'product variant',
+        soldOut: false,
+        category: {1: 'category-1', 5: 'category-5'},
+        parameter: {1: 'parameter-1', 7: 'parameter-7'}
+    }
+}
+
+@Component({
+    template: `
+        <div [wt-product-data]="mockData"></div>`
+})
+export class ProductCheckoutData {
+    mockData = {
+        id: 'product id 1',
+        action: 'checkout',
+        cost: 19.95,
+        quantity: 1,
+        variant: 'product variant',
+        soldOut: false,
+        category: {1: 'category-1', 5: 'category-5'},
+        parameter: {1: 'parameter-1', 7: 'parameter-7'}
+    }
+}
+
+@Component({
+    template: `
+        <div [wt-product-data]="mockData"></div>`
+})
+export class ProductAddToWishlistData {
+    mockData = {
+        id: 'product id 1',
+        action: 'addToWishlist',
+        cost: 19.95,
+        quantity: 1,
+        variant: 'product variant',
+        soldOut: false,
+        category: {1: 'category-1', 5: 'category-5'},
+        parameter: {1: 'parameter-1', 7: 'parameter-7'}
+    }
+}
+
+@Component({
+    template: `
+        <div [wt-product-data]="mockData"></div>`
+})
+export class ProductDeleteFromWishlistData {
+    mockData = {
+        id: 'product id 1',
+        action: 'deleteFromWishlist',
+        cost: 19.95,
+        quantity: 1,
+        variant: 'product variant',
+        soldOut: false,
+        category: {1: 'category-1', 5: 'category-5'},
+        parameter: {1: 'parameter-1', 7: 'parameter-7'}
+    }
+}
+
+@Component({
+    template: `
         <div [wt-product-data]="mockData" [wt-track]="1"></div>`
 })
 export class ProductBasketDataTrack {
@@ -498,6 +583,91 @@ export class ProductConfirmationDataTrack {
     mockData = {
         id: 'product id 1',
         action: 'confirmation',
+        cost: 19.95,
+        quantity: 1,
+        variant: 'product variant',
+        soldOut: false,
+        category: {1: 'category-1', 5: 'category-5'},
+        parameter: {1: 'parameter-1', 7: 'parameter-7'}
+    }
+}
+
+@Component({
+    template: `
+        <div [wt-product-data]="mockData" [wt-track]="1"></div>`
+})
+export class ProductAddToCartDataTrack {
+    mockData = {
+        id: 'product id 1',
+        action: 'addToCartData',
+        cost: 19.95,
+        quantity: 1,
+        variant: 'product variant',
+        soldOut: false,
+        category: {1: 'category-1', 5: 'category-5'},
+        parameter: {1: 'parameter-1', 7: 'parameter-7'}
+    }
+}
+
+@Component({
+    template: `
+        <div [wt-product-data]="mockData" [wt-track]="1"></div>`
+})
+export class ProductDeleteFromCartDataTrack {
+    mockData = {
+        id: 'product id 1',
+        action: 'deleteFromCart',
+        cost: 19.95,
+        quantity: 1,
+        variant: 'product variant',
+        soldOut: false,
+        category: {1: 'category-1', 5: 'category-5'},
+        parameter: {1: 'parameter-1', 7: 'parameter-7'}
+    }
+}
+
+@Component({
+    template: `
+        <div [wt-product-data]="mockData" [wt-track]="1"></div>`
+})
+export class ProductCheckoutDataTrack {
+    mockData = {
+        id: 'product id 1',
+        action: 'checkout',
+        cost: 19.95,
+        quantity: 1,
+        variant: 'product variant',
+        soldOut: false,
+        category: {1: 'category-1', 5: 'category-5'},
+        parameter: {1: 'parameter-1', 7: 'parameter-7'}
+    }
+}
+
+@Component({
+    template: `
+        <div [wt-product-data]="mockData" [wt-track]="1"></div>`
+})
+export class ProductAddToWishlistDataTrack {
+    mockData = {
+        id: 'product id 1',
+        action: 'addToWishlist',
+        cost: 19.95,
+        quantity: 1,
+        variant: 'product variant',
+        soldOut: false,
+        category: {1: 'category-1', 5: 'category-5'},
+        parameter: {1: 'parameter-1', 7: 'parameter-7'}
+    }
+}
+
+@Component({
+    template: `
+        <div [wt-product-data]="mockData" [wt-track]="1"></div>`
+})
+export class ProductDeleteFromWishlistDataTrack {
+    mockData = {
+        id: 'product id 1',
+        action: 'deleteFromWishlist',
         cost: 19.95,
         quantity: 1,
         variant: 'product variant',

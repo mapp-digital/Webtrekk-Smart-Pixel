@@ -41,7 +41,7 @@ describe('WebtrekkAutoTracking', () => {
             );
 
             expect(spyOnError).toHaveBeenCalled();
-            expect(spyOnError.mock.calls.length).toBe(7);
+            expect(spyOnError.mock.calls.length).toBe(6);
 
             expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `trackId` of type `number` supplied to `WebtrekkAutoTracking`, expected `string`');
             expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `trackDomain` of type `number` supplied to `WebtrekkAutoTracking`, expected `string`');
@@ -57,7 +57,7 @@ describe('WebtrekkAutoTracking', () => {
             );
 
             expect(spyOnError).toHaveBeenCalled();
-            expect(spyOnError.mock.calls.length).toBe(3);
+            expect(spyOnError.mock.calls.length).toBe(2);
 
             expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('The prop `trackId` is marked as required in `WebtrekkAutoTracking`, but its value is `null`');
             expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('The prop `trackDomain` is marked as required in `WebtrekkAutoTracking`, but its value is `null`');

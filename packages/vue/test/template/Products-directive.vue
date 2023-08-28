@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ul v-webtrekk.products.view.basket.list.confirmation="productData">
+        <ul v-webtrekk.products.list.view.basket.addToCart.deleteFromCart.checkout.confirmation.addToWishlist.deleteFromWishlist="productData">
             <li v-for="product in productData"
                 :key="product.id">
                 {{product.id}} - {{product.cost}}

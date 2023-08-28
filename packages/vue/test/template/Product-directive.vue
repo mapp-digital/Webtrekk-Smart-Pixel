@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p v-webtrekk.product.basket.view.list.confirmation="{
+        <p v-webtrekk.product.list.view.basket.addToCart.deleteFromCart.checkout.confirmation.addToWishlist.deleteFromWishlist="{
             id: '1st product',
             cost: 99.90,
             quantity: 2,

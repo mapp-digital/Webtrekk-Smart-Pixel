@@ -13,6 +13,7 @@ const PropTypesOfTypesNumberOrString = PropTypes.oneOfType([
 ]);
 
 WebtrekkAdvancedData.propTypes = {
+    forceOldEverId: PropTypes.bool,
     secureCookie: PropTypes.bool,
     optOutName: PropTypes.string,
     requestObfuscation: PropTypes.bool,
@@ -47,11 +48,14 @@ WebtrekkAdvancedData.propTypes = {
         anonymousOptIn: PropTypes.bool,
         optOutCookieName: PropTypes.string,
         anonymousCookieName: PropTypes.string,
-        suppressParameter: PropTypes.arrayOf(PropTypes.string)
+        suppressParameter: PropTypes.arrayOf(PropTypes.string),
+        temporarySessionId: PropTypes.string,
+        saveTemporarySessionId: PropTypes.bool
     })
 };
 
 WebtrekkAdvancedData.defaultProps = {
+    forceOldEverId: null,
     secureCookie: null,
     optOutName: null,
     requestObfuscation: null,
@@ -84,7 +88,9 @@ WebtrekkAdvancedData.defaultProps = {
         anonymousOptIn: null,
         optOutCookieName: null,
         anonymousCookieName: null,
-        suppressParameter: null
+        suppressParameter: null,
+        temporarySessionId: null,
+        saveTemporarySessionId: null
     }
 };
 

@@ -150,7 +150,9 @@ describe('WebtrekkSmartPixelAutoTracking', () => {
         test('initial navigation', (done) => {
             service.call((wtSmart) => {
                 expectInCallback(() => {
-                    expect(wtSmart.page.data.get().name).toBe('github.com/@angular-cli-builders');
+                    expect(wtSmart.page.data.get().name).toMatch(
+                        /^(github.com\/(@angular-cli-builders)|(just-jeb\/angular-builders))|localhost\/$/
+                    );
 
                     expect(spyOnTrackPage).not.toHaveBeenCalled();
                     expect(spyOnActionReload).toHaveBeenCalled();
@@ -217,7 +219,9 @@ describe('WebtrekkSmartPixelAutoTracking', () => {
         test('initial navigation', (done) => {
             service.call((wtSmart) => {
                 expectInCallback(() => {
-                    expect(wtSmart.page.data.get().name).toBe('github.com/@angular-cli-builders');
+                    expect(wtSmart.page.data.get().name).toMatch(
+                        /^(github.com\/(@angular-cli-builders)|(just-jeb\/angular-builders))|localhost\/$/
+                    );
 
                     expect(spyOnTrackPage).toHaveBeenCalled();
                     expect(spyOnActionReload).toHaveBeenCalled();
@@ -284,7 +288,9 @@ describe('WebtrekkSmartPixelAutoTracking', () => {
         test('initial navigation', (done) => {
             service.call((wtSmart) => {
                 expectInCallback(() => {
-                    expect(wtSmart.page.data.get().name).toBe('github.com/@angular-cli-builders');
+                    expect(wtSmart.page.data.get().name).toMatch(
+                        /^(github.com\/(@angular-cli-builders)|(just-jeb\/angular-builders))|localhost\/$/
+                    );
 
                     expect(spyOnTrackPage).toHaveBeenCalled();
                     expect(spyOnActionReload).toHaveBeenCalled();

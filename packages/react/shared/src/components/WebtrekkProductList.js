@@ -35,6 +35,7 @@ const PropTypesOfTypesNumberOrString = PropTypes.oneOfType([
 
 WebtrekkProductList.propTypes = {
     selector: PropTypes.string,
+    shadowRoot: PropTypes.string,
     id: PropTypes.string.isRequired,
     position: PropTypesOfTypesNumberOrString.isRequired,
     cost: PropTypesOfTypesNumberOrString,
@@ -47,6 +48,7 @@ WebtrekkProductList.propTypes = {
 
 WebtrekkProductList.defaultProps = {
     selector: null,
+    shadowRoot: null,
     id: null,
     position: null,
     cost: null,

@@ -30,6 +30,7 @@ class WebtrekkTeaser extends WebtrekkReactComponent {
 
 WebtrekkTeaser.propTypes = {
     selector: PropTypes.string,
+    shadowRoot: PropTypes.string,
     name: PropTypes.string.isRequired,
     rank: PropTypes.string,
     content: PropTypes.string,
@@ -42,6 +43,7 @@ WebtrekkTeaser.propTypes = {
 
 WebtrekkTeaser.defaultProps = {
     selector: null,
+    shadowRoot: null,
     name: null,
     rank: null,
     content: null,

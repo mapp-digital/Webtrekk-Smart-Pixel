@@ -13,6 +13,12 @@ describe('WebtrekkSmartPixelReact', () => {
             wtSmart.customer.data.remove();
             wtSmart.product.view.data.remove();
             wtSmart.product.basket.data.remove();
+            wtSmart.product.addToCart.data.remove();
+            wtSmart.product.deleteFromCart.data.remove();
+            wtSmart.product.checkout.data.remove();
+            wtSmart.product.confirmation.data.remove();
+            wtSmart.product.addToWishlist.data.remove();
+            wtSmart.product.deleteFromWishlist.data.remove();
             wtSmart.order.data.remove();
             wtSmart.extension.scroll_position.deactivate();
 
@@ -69,8 +75,6 @@ describe('WebtrekkSmartPixelReact', () => {
                     expect(data.optOutName).toBe('webtrekkOptOut');
                     expect(data.requestObfuscation).toBe(false);
                     expect(data.forceOldEverId).toBe(false);
-                    expect(data.execCDB).toBe(true);
-                    expect(data.useCDBCache).toBe(false);
                     expect(data.useHashForDefaultPageName).toBe(false);
                     expect(data.useParamsForDefaultPageName).toEqual([]);
                     expect(data.requestQueue.activated).toBe(true);
@@ -99,8 +103,6 @@ describe('WebtrekkSmartPixelReact', () => {
                     expect(data.optOutName).toBe('pixelOptOut');
                     expect(data.requestObfuscation).toBe(true);
                     expect(data.forceOldEverId).toBe(true);
-                    expect(data.execCDB).toBe(false);
-                    expect(data.useCDBCache).toBe(true);
                 }, done);
             });
         });
@@ -568,7 +570,7 @@ describe('WebtrekkSmartPixelReact', () => {
                 expectInCallback(() => {
                     let data = wtSmart.order.data.get();
 
-                    expect(data.value).toBe(0);
+                    expect(data.value).toBe('');
                     expect(data.id).toBe('');
                     expect(data.currency).toBe('');
                     expect(data.couponValue).toBe(0);

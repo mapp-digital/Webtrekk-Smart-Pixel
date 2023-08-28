@@ -2,12 +2,13 @@ import WebtrekkSmartpixelVue from '../src/index';
 import {SmartPixel} from '@webtrekk-smart-pixel/core';
 
 type NumberOrString = number | string;
+type StringOrRegex = string | RegExp;
 type DataObject = {
     [i in NumberOrString]: string;
 };
 
 type WebtrekkInitCookie = '1' | '3';
-type WebtrekkProductStatus = 'view' | 'list' | 'basket' | 'confirmation';
+type WebtrekkProductStatus = 'list' | 'view' | 'basket' | 'addToCart' | 'deleteFromCart' | 'checkout' | 'confirmation' | 'addToWishlist' | 'deleteFromWishlist';
 type WebtrekkTeaserType = 'view' | 'click' | 'product';
 type WebtrekkTeaserGoal = 'order' | 'goal' | 'both';
 type WebtrekkContentEngagementSendContentEngagement = 0 | 1 | 2;
@@ -19,7 +20,7 @@ type WebtrekkAdvancedPropSendViaServer = {
     serverDomain?: string;
     serverPath?: string;
     droppedRequests?: NumberOrString;
-    blacklist?: string[];
+    blacklist?: StringOrRegex[];
 }
 
 type WebtrekkAdvancedPropRequestQueue = {
@@ -44,6 +45,8 @@ type WebtrekkAdvancedPropUserIdentification = {
     optOutCookieName?: string;
     anonymousCookieName?: string;
     suppressParameter?: string[];
+    temporarySessionId?: string;
+    saveTemporarySessionId?: boolean;
 }
 
 interface WebtrekkInitProps {
@@ -54,6 +57,7 @@ interface WebtrekkInitProps {
 }
 
 interface WebtrekkAdvancedProps {
+    forceOldEverId?: boolean;
     secureCookie?: boolean;
     optOutName?: string;
     requestObfuscation?: boolean;
@@ -151,6 +155,7 @@ interface WebtrekkSessionProps {
 
 interface WebtrekkTeaserProps {
     selector?: string | HTMLElement;
+    shadowRoot?: string;
     name: string;
     rank?: string;
     content?: string;
@@ -186,6 +191,7 @@ interface WebtrekkProductListConfig {
 
 interface WebtrekkContentEngagementConfig {
     selector?: string | HTMLElement;
+    shadowRoot?: string;
     name: string;
     percentageStepsInAnalytics?: NumberOrString;
     sendContentEngagement?: WebtrekkContentEngagementSendContentEngagement;
@@ -201,6 +207,7 @@ interface WebtrekkContentEngagementConfig {
 
 interface WebtrekkProductListProps {
     selector?: string | HTMLElement;
+    shadowRoot?: string;
     id: string;
     position: NumberOrString;
     cost?: NumberOrString;
@@ -213,6 +220,7 @@ interface WebtrekkProductListProps {
 
 interface WebtrekkContentEngagementProps {
     selector: string | HTMLElement;
+    shadowRoot?: string;
     name: string;
     percentageStepsInAnalytics: number;
     sendContentEngagement: WebtrekkContentEngagementSendContentEngagement;
