@@ -1,10 +1,10 @@
 {
     "name": "@webtrekk-smart-pixel/kameleoon",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "title": "Webtrekk Smart Pixel Kameleoon",
     "description": "The Webtrekk Kameleoon extension makes it easier for you to analyse the displayed A/B test and variants. Using the extension, the information from Kameleoon tests are sent directly to Webtrekk.",
     "main": "./index.js",
-    "typings": "./types/namespace.js",
+    "typings": "./types/types.d.ts",
     "author": "Webtrekk GmbH",
     "license": "MIT",
     "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/packages/kameleoon#readme",
