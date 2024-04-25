@@ -1,3 +1,13 @@
+<a name="1.4.5"></a>
+# 1.4.5 (2024-04-25)
+
+## Features
+- The merging of products can be deactivated (see [Advanced](https://documentation.mapp.com/latest/en/advanced-15741253.html))
+- Possibility to force a new session (see [forceNewSession](https://documentation.mapp.com/latest/en/utils-15741396.html#id-.SMPUtilsv1.0-Identifier))
+
+## Optimization
+- Replacement of the deprecated event 'unload' by 'pagehide'
+
 <a name="1.4.4"></a>
 # 1.4.4 (2023-08-22)
 

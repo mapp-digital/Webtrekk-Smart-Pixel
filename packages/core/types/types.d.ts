@@ -118,6 +118,7 @@ interface SmartPixelAdvancedSetProps {
     execCDB?: boolean;
     useCDBCache?: boolean;
     sendViaSDK?: boolean;
+    productMerge?: boolean;
     sendViaServer?: SmartPixelAdvancedSendViaServer;
     useHashForDefaultPageName?: boolean;
     useParamsForDefaultPageName?: string[];
@@ -136,6 +137,7 @@ interface SmartPixelAdvancedGetProps {
     execCDB: boolean;
     useCDBCache: boolean;
     sendViaSDK: boolean;
+    productMerge: boolean;
     sendViaServer: SmartPixelAdvancedSendViaServer;
     useHashForDefaultPageName: boolean;
     useParamsForDefaultPageName: string[];
@@ -235,6 +237,14 @@ interface SmartPixelCustomerAddProps {
     street?: string;
     streetNumber?: string;
     validation?: boolean;
+    registrationEmail?: string;
+    registrationGroupId?: string;
+    registrationMode?: string;
+    registrationFirstName?: string;
+    registrationLastName?: string;
+    registrationGender?: string;
+    registrationTitle?: string;
+    registrationOptin?: boolean;
     category?: DataObject;
 }
 
@@ -258,6 +268,14 @@ interface SmartPixelCustomerGetProps {
     street: string;
     streetNumber: string;
     validation: boolean;
+    registrationEmail: string;
+    registrationGroupId: string;
+    registrationMode: string;
+    registrationFirstName: string;
+    registrationLastName: string;
+    registrationGender: string;
+    registrationTitle: string;
+    registrationOptin: boolean;
     category: DataObject;
 }
 
@@ -518,6 +536,7 @@ interface SmartPixelUtilsCrypto {
 
 interface SmartPixelUtilsIdentifier {
     everId(newEverId?: string): string;
+    forceNewSession(): void;
     /**
      * @deprecated
      */
