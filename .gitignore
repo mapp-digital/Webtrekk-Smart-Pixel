@@ -89,3 +89,6 @@ tests/apps/react-ts/*
 !tests/apps/react-ts/src
 !tests/apps/react-ts/.env
 !tests/apps/vue3/.env
+
+.DS_Store
+**/.DS_Store

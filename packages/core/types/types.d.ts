@@ -294,6 +294,40 @@ interface SmartPixelCustomer {
 }
 
 /* **********************************************
+ *                   ENGAGE                     *
+ ********************************************** */
+interface SmartPixelEngageAddProps {
+    attributes?: {
+        [i in NumberOrString]: NumberOrString;
+    };
+    eventName?: string;
+    eventId?: number;
+    eventSegmentation?: string;
+}
+
+interface SmartPixelEngageSetProps extends SmartPixelEngageAddProps {}
+
+interface SmartPixelEngageGetProps {
+    attributes: {
+        [i in string]: string;
+    };
+    eventName: string;
+    eventId: number;
+    eventSegmentation: string;
+}
+
+interface SmartPixelEngageData {
+    set(data: SmartPixelEngageSetProps): SmartPixelEngageData;
+    add(data: SmartPixelEngageAddProps): SmartPixelEngageData;
+    get(): SmartPixelEngageGetProps;
+    remove(removeList?: string[]): SmartPixelEngageData;
+}
+
+interface SmartPixelEngage {
+    data: SmartPixelEngageData;
+}
+
+/* **********************************************
  *                    ORDER                     *
  ********************************************** */
 interface SmartPixelOrderAddProps {
@@ -1209,6 +1243,7 @@ export interface SmartPixel {
     action: SmartPixelAction;
     campaign: SmartPixelCampaign;
     customer: SmartPixelCustomer;
+    engage: SmartPixelEngage;
     order: SmartPixelOrder;
     page: SmartPixelPage;
     product: SmartPixelProductActions;

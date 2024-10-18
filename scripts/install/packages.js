@@ -152,6 +152,13 @@ module.exports = {
             'react': '^17', 'react-dom': '^17', 'react-router-dom': '^5',
             'react-test-renderer': '^17', '@wojtekmaj/enzyme-adapter-react-17': 'latest'
         },
+
+        '14': {
+            'next': '^14',
+            'react': '^18', 'react-dom': '^18', 'react-router-dom': '^6',
+            'react-test-renderer': '^18', '@cfaester/enzyme-adapter-react-18': 'latest'
+        },
+
         'latest': {
             'next': 'latest',
             'react': '^17', 'react-dom': '^17', 'react-router-dom': '^5',

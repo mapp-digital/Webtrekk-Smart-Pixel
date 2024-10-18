@@ -1,3 +1,9 @@
+<a name="1.4.6"></a>
+# 1.4.6 (2024-10-17)
+
+## Features
+- Possibility to send Mapp Engage Custom Profile Attributes (see [Engage](https://docs.mapp.com/docs/engage-intelligence-smart-pixel))
+
 <a name="1.4.5"></a>
 # 1.4.5 (2024-04-25)
 
