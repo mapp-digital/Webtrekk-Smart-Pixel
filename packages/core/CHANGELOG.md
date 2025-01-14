@@ -1,3 +1,13 @@
+<a name="1.4.7"></a>
+# 1.4.7 (2025-01-14)
+
+## Features
+- Customers can check if a page request has already been sent. This can be useful for custom plugins that rely on a page request.
+- SystemJs is supported
+
+## Bug Fixes
+- Campaigns can be tracked once per session
+
 <a name="1.4.6"></a>
 # 1.4.6 (2024-10-17)
 

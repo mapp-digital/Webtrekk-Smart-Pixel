@@ -1,7 +1,7 @@
 # Webtrekk Smart Pixel - Core
 
 [Site](https://mapp.com) |
-[Docs](https://documentation.mapp.com/latest/en/smart-pixel-15741230.html) |
+[Docs](https://docs.mapp.com/v1/docs/smart-pixel) |
 [Support](https://github.com/Webtrekk/Webtrekk-Smart-Pixel/issues) |
 [Changelog](./CHANGELOG.md)
 

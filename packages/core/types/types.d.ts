@@ -115,6 +115,7 @@ interface SmartPixelAdvancedSetProps {
     secureCookie?: boolean;
     optOutName?: string;
     requestObfuscation?: boolean;
+    registerObfuscation?: boolean;
     execCDB?: boolean;
     useCDBCache?: boolean;
     sendViaSDK?: boolean;
@@ -134,6 +135,7 @@ interface SmartPixelAdvancedGetProps {
     secureCookie: boolean;
     optOutName: string;
     requestObfuscation: boolean;
+    registerObfuscation: boolean;
     execCDB: boolean;
     useCDBCache: boolean;
     sendViaSDK: boolean;
@@ -562,10 +564,15 @@ interface SmartPixelUtilsCryptoMD5 {
     encode(str: string): string;
 }
 
+interface SmartPixelUtilsCryptoXOR {
+    encode(str: string, key: string): string;
+}
+
 interface SmartPixelUtilsCrypto {
     URL: SmartPixelUtilsCryptoURL;
     SHA256: SmartPixelUtilsCryptoSHA256;
     MD5: SmartPixelUtilsCryptoMD5;
+    XOR: SmartPixelUtilsCryptoXOR;
 }
 
 interface SmartPixelUtilsIdentifier {
@@ -1237,6 +1244,7 @@ export interface SmartPixel {
     track(keepData?: boolean): void;
     trackPage(keepData?: boolean): void;
     trackAction(keepData?: boolean): void;
+    hasPageAlreadySent(): boolean;
     debug: SmartPixelDebug;
     init: SmartPixelInit;
     advanced: SmartPixelAdvanced;
@@ -1250,7 +1258,10 @@ export interface SmartPixel {
     session: SmartPixelSession;
     utils: SmartPixelUtils;
     extension: SmartPixelExtension;
+
     _ps(id: number, version: string): void;
+    isFirstRequestOnPage_: boolean;
+    isPageAlreadySent_: boolean;
 }
 
 export function use(window: any, document: any): SmartPixel;
