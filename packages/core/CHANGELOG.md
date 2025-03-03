@@ -1,3 +1,11 @@
+<a name="1.5.0"></a>
+# 1.5.0 (2025-03-03)
+
+## Features
+- Tab browsing can be deactivated
+- Pre-rendering and tracking of tabs that are not in focus is now possible
+- Automatic tracking of clicks on any html element can be configured
+
 <a name="1.4.7"></a>
 # 1.4.7 (2025-01-14)
 

@@ -116,10 +116,18 @@ interface SmartPixelAdvancedSetProps {
     optOutName?: string;
     requestObfuscation?: boolean;
     registerObfuscation?: boolean;
+    /**
+     * @deprecated
+     */
     execCDB?: boolean;
+    /**
+     * @deprecated
+     */
     useCDBCache?: boolean;
     sendViaSDK?: boolean;
     productMerge?: boolean;
+    tabBrowsing?: boolean;
+    preRendering?: boolean;
     sendViaServer?: SmartPixelAdvancedSendViaServer;
     useHashForDefaultPageName?: boolean;
     useParamsForDefaultPageName?: string[];
@@ -136,10 +144,18 @@ interface SmartPixelAdvancedGetProps {
     optOutName: string;
     requestObfuscation: boolean;
     registerObfuscation: boolean;
+    /**
+     * @deprecated
+     */
     execCDB: boolean;
+    /**
+     * @deprecated
+     */
     useCDBCache: boolean;
     sendViaSDK: boolean;
     productMerge: boolean;
+    tabBrowsing: boolean;
+    preRendering: boolean;
     sendViaServer: SmartPixelAdvancedSendViaServer;
     useHashForDefaultPageName: boolean;
     useParamsForDefaultPageName: string[];
@@ -684,38 +700,63 @@ interface SmartPixelExtension {
 /* **********************************************
  *               EXTENSION:ACTION               *
  ********************************************** */
-type SmartPixelExtensionActionConfigType = 'link' | 'standard';
+type SmartPixelExtensionActionConfigType = 'link' | 'standard' | 'advanced';
 
 interface SmartPixelExtensionActionConfigReplace {
     pattern: RegExp;
     replacement: string;
 }
 
+interface SmartPixelExtensionActionConfigAdvanced {
+    selector: string;
+    eventName?: string;
+}
+
 interface SmartPixelExtensionActionSetConfig {
     type: SmartPixelExtensionActionConfigType;
     attribute?: string;
+    advanced?: SmartPixelExtensionActionConfigAdvanced[];
     shadowRoot?: string[];
     parameter?: DataObject;
     extend?: string[];
     replace?: SmartPixelExtensionActionConfigReplace[];
     ignore?: RegExp;
     withHash?: boolean;
+    /**
+     * @deprecated
+     */
     delay?: boolean;
+    /**
+     * @deprecated
+     */
     delayDuration?: number;
+    /**
+     * @deprecated
+     */
     noDelayAttribute?: string;
 }
 
 interface SmartPixelExtensionActionGetConfig {
     type: SmartPixelExtensionActionConfigType;
     attribute: string;
+    advanced: SmartPixelExtensionActionConfigAdvanced[];
     shadowRoot: string[];
     parameter: DataObject;
     extend: string[];
     replace: SmartPixelExtensionActionConfigReplace[];
     ignore: RegExp;
     withHash: boolean;
+    /**
+     * @deprecated
+     */
     delay: boolean;
+    /**
+     * @deprecated
+     */
     delayDuration: number;
+    /**
+     * @deprecated
+     */
     noDelayAttribute: string;
 }
 
