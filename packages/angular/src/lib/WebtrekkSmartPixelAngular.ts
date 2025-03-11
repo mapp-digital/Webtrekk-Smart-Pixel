@@ -3,7 +3,7 @@ import {
     WebtrekkActionProps, WebtrekkAdvancedProps, WebtrekkCampaignProps,
     WebtrekkCustomerProps, WebtrekkInitProps, WebtrekkOrderProps,
     WebtrekkPageProps, WebtrekkProductProps, WebtrekkSessionProps,
-    WebtrekkProductStatus
+    WebtrekkEngageProps, WebtrekkProductStatus
 } from './Directives/DataTypes';
 import wtSmart, {SmartPixel} from '@webtrekk-smart-pixel/core';
 
@@ -84,6 +84,12 @@ export class WebtrekkSmartPixelAngular {
     campaign(data: WebtrekkCampaignProps): void {
         this.call((pix) => {
             pix.campaign.data.add(data);
+        });
+    }
+
+    engage(data: WebtrekkEngageProps): void {
+        this.call((pix) => {
+            pix.engage.data.add(data);
         });
     }
 

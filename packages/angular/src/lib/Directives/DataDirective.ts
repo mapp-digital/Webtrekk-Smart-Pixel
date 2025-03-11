@@ -2,13 +2,14 @@ import {Directive, Input, AfterContentInit} from '@angular/core';
 import {
     WebtrekkAdvancedProps, WebtrekkCampaignProps, WebtrekkCustomerProps,
     WebtrekkInitProps, WebtrekkOrderProps, WebtrekkPageProps,
-    WebtrekkProductProps, WebtrekkSessionProps
+    WebtrekkProductProps, WebtrekkSessionProps, WebtrekkEngageProps
 } from './DataTypes';
 import {WebtrekkSmartPixelAngular} from '../WebtrekkSmartPixelAngular';
 
 const directiveSelector = '[wt-advanced-data],'
     + '[wt-campaign-data],'
     + '[wt-customer-data],'
+    + '[wt-engage-data],'
     + '[wt-init-data],'
     + '[wt-order-data],'
     + '[wt-page-data],'
@@ -21,6 +22,7 @@ const directiveSelector = '[wt-advanced-data],'
 export class DataDirective implements AfterContentInit {
     @Input('wt-advanced-data') wtAdvancedData: WebtrekkAdvancedProps | undefined;
     @Input('wt-campaign-data') wtCampaignData: WebtrekkCampaignProps | undefined;
+    @Input('wt-engage-data') wtEngageData: WebtrekkEngageProps | undefined;
     @Input('wt-customer-data') wtCustomerData: WebtrekkCustomerProps | undefined;
     @Input('wt-init-data') wtInitData: WebtrekkInitProps | undefined;
     @Input('wt-order-data') wtOrderData: WebtrekkOrderProps | undefined;
@@ -39,6 +41,10 @@ export class DataDirective implements AfterContentInit {
 
         if (this.wtCampaignData) {
             this.pixel.campaign(this.wtCampaignData);
+        }
+
+        if (this.wtEngageData) {
+            this.pixel.engage(this.wtEngageData);
         }
 
         if (this.wtCustomerData) {

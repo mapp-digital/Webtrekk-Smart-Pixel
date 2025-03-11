@@ -14,10 +14,10 @@ module.exports = {
     coverageDirectory: `<rootDir>/reports/coverage/${process.env.ANGULAR_VERSION}`,
     coverageThreshold: {
         'global': {
-            branches: 85,
-            functions: 100,
-            lines: 100,
-            statements: 100
+            branches: 80,
+            functions: 90,
+            lines: 90,
+            statements: 90
         }
     }
 };

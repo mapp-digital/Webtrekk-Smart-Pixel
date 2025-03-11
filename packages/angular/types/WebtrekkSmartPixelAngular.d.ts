@@ -1,4 +1,4 @@
-import { WebtrekkActionProps, WebtrekkAdvancedProps, WebtrekkCampaignProps, WebtrekkCustomerProps, WebtrekkInitProps, WebtrekkOrderProps, WebtrekkPageProps, WebtrekkProductProps, WebtrekkSessionProps, WebtrekkProductStatus } from './Directives/DataTypes';
+import { WebtrekkActionProps, WebtrekkAdvancedProps, WebtrekkCampaignProps, WebtrekkCustomerProps, WebtrekkInitProps, WebtrekkOrderProps, WebtrekkPageProps, WebtrekkProductProps, WebtrekkSessionProps, WebtrekkEngageProps, WebtrekkProductStatus } from './Directives/DataTypes';
 import { SmartPixel } from '@webtrekk-smart-pixel/core';
 export declare class WebtrekkSmartPixelAngular {
     call(call: (wtSmart: SmartPixel) => void): void;
@@ -8,6 +8,7 @@ export declare class WebtrekkSmartPixelAngular {
     action(name: string | WebtrekkActionProps, data?: WebtrekkActionProps): void;
     session(data: WebtrekkSessionProps): void;
     campaign(data: WebtrekkCampaignProps): void;
+    engage(data: WebtrekkEngageProps): void;
     customer(id: string | WebtrekkCustomerProps, data?: WebtrekkCustomerProps, validation?: boolean): void;
     product(action: WebtrekkProductStatus, data: WebtrekkProductProps): void;
     products(action: WebtrekkProductStatus, data: WebtrekkProductProps[]): void;

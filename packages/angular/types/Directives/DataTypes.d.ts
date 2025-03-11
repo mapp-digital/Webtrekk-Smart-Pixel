@@ -50,9 +50,19 @@ export interface WebtrekkAdvancedProps {
     secureCookie?: boolean;
     optOutName?: string;
     requestObfuscation?: boolean;
+    registerObfuscation?: boolean;
+    /**
+     * @deprecated
+     */
     execCDB?: boolean;
+    /**
+     * @deprecated
+     */
     useCDBCache?: boolean;
     sendViaSDK?: boolean;
+    productMerge?: boolean;
+    tabBrowsing?: boolean;
+    preRendering?: boolean;
     sendViaServer?: WebtrekkAdvancedPropSendViaServer;
     useHashForDefaultPageName?: boolean;
     useParamsForDefaultPageName?: string[];
@@ -82,7 +92,23 @@ export interface WebtrekkCustomerProps {
     street?: string;
     streetNumber?: string;
     validation?: boolean;
+    registrationEmail?: string;
+    registrationGroupId?: string;
+    registrationMode?: string;
+    registrationFirstName?: string;
+    registrationLastName?: string;
+    registrationGender?: string;
+    registrationTitle?: string;
+    registrationOptin?: boolean;
     category?: DataObject;
+}
+export interface WebtrekkEngageProps {
+    attributes?: {
+        [i in NumberOrString]: NumberOrString;
+    };
+    eventName?: string;
+    eventId?: number;
+    eventSegmentation?: string;
 }
 export interface WebtrekkOrderProps {
     value?: NumberOrString;
