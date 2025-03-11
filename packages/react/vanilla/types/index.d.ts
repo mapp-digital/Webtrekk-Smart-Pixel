@@ -71,9 +71,19 @@ interface WebtrekkAdvancedProps {
     secureCookie?: boolean;
     optOutName?: string;
     requestObfuscation?: boolean;
+    registerObfuscation?: boolean;
+    /**
+     * @deprecated
+     */
     execCDB?: boolean;
+    /**
+     * @deprecated
+     */
     useCDBCache?: boolean;
     sendViaSDK?: boolean;
+    productMerge?: boolean;
+    tabBrowsing?: boolean;
+    preRendering?: boolean;
     sendViaServer?: WebtrekkAdvancedPropSendViaServer;
     useHashForDefaultPageName?: boolean;
     useParamsForDefaultPageName?: string[];
@@ -106,8 +116,25 @@ interface WebtrekkCustomerProps {
     street?: string;
     streetNumber?: string;
     validation?: boolean;
+    registrationEmail?: string;
+    registrationGroupId?: string;
+    registrationMode?: string;
+    registrationFirstName?: string;
+    registrationLastName?: string;
+    registrationGender?: string;
+    registrationTitle?: string;
+    registrationOptin?: boolean;
     category?: DataObject;
     sendInstantly?: boolean;
+}
+
+export interface WebtrekkEngageProps {
+    attributes?: {
+        [i in NumberOrString]: NumberOrString;
+    };
+    eventName?: string;
+    eventId?: number;
+    eventSegmentation?: string;
 }
 
 interface WebtrekkOrderProps {
@@ -224,6 +251,7 @@ interface WebtrekkReact {
     action(name: string, data?: WebtrekkActionProps): void;
     session(data: WebtrekkSessionProps): void;
     campaign(data: WebtrekkCampaignProps): void;
+    engage(data: WebtrekkEngageProps): void;
     customer(data: WebtrekkCustomerProps): void;
     customer(id: string, data?: WebtrekkCustomerProps, validation?: boolean): void;
     product(action: WebtrekkProductStatus, data: WebtrekkProductProps): void;
@@ -239,6 +267,7 @@ export const WebtrekkAutoTracking: React.ComponentClass<WebtrekkAutoTrackingProp
 export const WebtrekkInitData: React.ComponentClass<WebtrekkInitProps>;
 export const WebtrekkAdvancedData: React.ComponentClass<WebtrekkAdvancedProps>;
 export const WebtrekkCampaignData: React.ComponentClass<WebtrekkCampaignProps>;
+export const WebtrekkEngageData: React.ComponentClass<WebtrekkEngageProps>;
 export const WebtrekkCustomerData: React.ComponentClass<WebtrekkCustomerProps>;
 export const WebtrekkOrderData: React.ComponentClass<WebtrekkOrderProps>;
 export const WebtrekkPageData: React.ComponentClass<WebtrekkPageProps>;

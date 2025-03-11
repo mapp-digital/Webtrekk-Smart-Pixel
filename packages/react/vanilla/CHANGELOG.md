@@ -1,3 +1,26 @@
+<a name="1.4.0"></a>
+# 1.4.0 (2025-03-11)
+
+## Features
+
+- Add missing types for:
+    - **advanced**
+        - registerObfuscation: [Personally Identifiable Information](https://docs.mapp.com/v1/docs/customer) data sent to Engage for the registration process can be obfuscated (see [Advanced](https://docs.mapp.com/v1/docs/tracking-configuration-advanced)).
+        - productMerge: The merging of products can be deactivated (see [Advanced](https://docs.mapp.com/v1/docs/tracking-configuration-advanced))
+        - tabBrowsing: Tab browsing can be deactivated (see [Advanced](https://docs.mapp.com/v1/docs/tracking-configuration-advanced))
+        - preRendering: Pre-rendering and tracking of tabs that are not in focus is now possible (see [Advanced](https://docs.mapp.com/v1/docs/tracking-configuration-advanced))
+    - **customer**: To improve user identification, you can use customer IDs in addition to Mapp's long-term cookies. This allows cross-device and cross-browser user identification (see [Customer](https://docs.mapp.com/v1/docs/customer)).
+        - registrationEmail: The Email address used to identify the user in Mapp Engage
+        - registrationGroupId: Provide the group ID in case of a new registration for the user in Mapp Engage
+        - registrationMode: Provide the registration method used to register for marketing activities
+        - registrationFirstName: First name of the user to be used in Mapp Engage
+        - registrationLastName: Last name of the user to be used in Mapp Engage
+        - registrationGender: Gender of the user
+        - registrationTitle: The title of the user to be used in Mapp Engage
+        - registrationOptin: Provide information that the user consented to use their data
+    - **engage**: It is now possible to send Mapp Engage Custom Attributes (see [Engage](https://docs.mapp.com/v1/docs/engage-intelligence-smart-pixel))
+
+
 <a name="1.3.0"></a>
 # 1.3.0 (2023-08-28)
 

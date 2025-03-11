@@ -8,123 +8,84 @@
   var React__default = 'default' in React ? React['default'] : React;
   wtSmart = wtSmart && Object.prototype.hasOwnProperty.call(wtSmart, 'default') ? wtSmart['default'] : wtSmart;
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
+  function _assertThisInitialized(e) {
+    if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    return e;
+  }
+  function _callSuper(t, o, e) {
+    return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
+  }
+  function _classCallCheck(a, n) {
+    if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function");
+  }
+  function _defineProperties(e, r) {
+    for (var t = 0; t < r.length; t++) {
+      var o = r[t];
+      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
     }
   }
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
-    }
-  }
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    Object.defineProperty(Constructor, "prototype", {
-      writable: false
-    });
-    return Constructor;
+  function _createClass(e, r, t) {
+    return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+      writable: !1
+    }), e;
   }
   function _extends() {
-    _extends = Object.assign ? Object.assign.bind() : function (target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
+    return _extends = Object.assign ? Object.assign.bind() : function (n) {
+      for (var e = 1; e < arguments.length; e++) {
+        var t = arguments[e];
+        for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
       }
-      return target;
-    };
-    return _extends.apply(this, arguments);
+      return n;
+    }, _extends.apply(null, arguments);
   }
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function");
-    }
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
+  function _getPrototypeOf(t) {
+    return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) {
+      return t.__proto__ || Object.getPrototypeOf(t);
+    }, _getPrototypeOf(t);
+  }
+  function _inherits(t, e) {
+    if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
+    t.prototype = Object.create(e && e.prototype, {
       constructor: {
-        value: subClass,
-        writable: true,
-        configurable: true
+        value: t,
+        writable: !0,
+        configurable: !0
       }
-    });
-    Object.defineProperty(subClass, "prototype", {
-      writable: false
-    });
-    if (superClass) _setPrototypeOf(subClass, superClass);
-  }
-  function _getPrototypeOf(o) {
-    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
-      return o.__proto__ || Object.getPrototypeOf(o);
-    };
-    return _getPrototypeOf(o);
-  }
-  function _setPrototypeOf(o, p) {
-    _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
-      o.__proto__ = p;
-      return o;
-    };
-    return _setPrototypeOf(o, p);
+    }), Object.defineProperty(t, "prototype", {
+      writable: !1
+    }), e && _setPrototypeOf(t, e);
   }
   function _isNativeReflectConstruct() {
-    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-    if (Reflect.construct.sham) return false;
-    if (typeof Proxy === "function") return true;
     try {
-      Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-      return true;
-    } catch (e) {
-      return false;
-    }
+      var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+    } catch (t) {}
+    return (_isNativeReflectConstruct = function () {
+      return !!t;
+    })();
   }
-  function _assertThisInitialized(self) {
-    if (self === void 0) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-    return self;
+  function _possibleConstructorReturn(t, e) {
+    if (e && ("object" == typeof e || "function" == typeof e)) return e;
+    if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined");
+    return _assertThisInitialized(t);
   }
-  function _possibleConstructorReturn(self, call) {
-    if (call && (typeof call === "object" || typeof call === "function")) {
-      return call;
-    } else if (call !== void 0) {
-      throw new TypeError("Derived constructors may only return object or undefined");
-    }
-    return _assertThisInitialized(self);
+  function _setPrototypeOf(t, e) {
+    return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) {
+      return t.__proto__ = e, t;
+    }, _setPrototypeOf(t, e);
   }
-  function _createSuper(Derived) {
-    var hasNativeReflectConstruct = _isNativeReflectConstruct();
-    return function _createSuperInternal() {
-      var Super = _getPrototypeOf(Derived),
-        result;
-      if (hasNativeReflectConstruct) {
-        var NewTarget = _getPrototypeOf(this).constructor;
-        result = Reflect.construct(Super, arguments, NewTarget);
-      } else {
-        result = Super.apply(this, arguments);
-      }
-      return _possibleConstructorReturn(this, result);
-    };
-  }
-  function _toPrimitive(input, hint) {
-    if (typeof input !== "object" || input === null) return input;
-    var prim = input[Symbol.toPrimitive];
-    if (prim !== undefined) {
-      var res = prim.call(input, hint || "default");
-      if (typeof res !== "object") return res;
+  function _toPrimitive(t, r) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+      var i = e.call(t, r || "default");
+      if ("object" != typeof i) return i;
       throw new TypeError("@@toPrimitive must return a primitive value.");
     }
-    return (hint === "string" ? String : Number)(input);
+    return ("string" === r ? String : Number)(t);
   }
-  function _toPropertyKey(arg) {
-    var key = _toPrimitive(arg, "string");
-    return typeof key === "symbol" ? key : String(key);
+  function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == typeof i ? i : i + "";
   }
 
   var polyfillWithRouter = reactRouterDom.withRouter || function (Component) {
@@ -188,7 +149,7 @@
     function WebtrekkSmartPixelReact() {
       _classCallCheck(this, WebtrekkSmartPixelReact);
     }
-    _createClass(WebtrekkSmartPixelReact, [{
+    return _createClass(WebtrekkSmartPixelReact, [{
       key: "call",
       value:
       /**
@@ -276,6 +237,18 @@
         var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : emptyObject;
         this.call(function (pix) {
           pix.campaign.data.add(data);
+        });
+      }
+
+      /**
+       * @param {object} data
+       */
+    }, {
+      key: "engage",
+      value: function engage() {
+        var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : emptyObject;
+        this.call(function (pix) {
+          pix.engage.data.add(data);
         });
       }
 
@@ -392,20 +365,17 @@
         });
       }
     }]);
-    return WebtrekkSmartPixelReact;
   }();
   var SmartPixelReact = new WebtrekkSmartPixelReact();
 
   var WebtrekkReactComponent = /*#__PURE__*/function (_React$Component) {
-    _inherits(WebtrekkReactComponent, _React$Component);
-    var _super = _createSuper(WebtrekkReactComponent);
     /**
      * @param {string} type
      */
     function WebtrekkReactComponent(type) {
       var _this;
       _classCallCheck(this, WebtrekkReactComponent);
-      _this = _super.call(this);
+      _this = _callSuper(this, WebtrekkReactComponent);
       _this.type = type;
       return _this;
     }
@@ -414,7 +384,8 @@
      * @param {string} type
      * @param {object} props
      */
-    _createClass(WebtrekkReactComponent, [{
+    _inherits(WebtrekkReactComponent, _React$Component);
+    return _createClass(WebtrekkReactComponent, [{
       key: "addConfigurationData",
       value: function addConfigurationData() {
         var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.type;
@@ -590,17 +561,15 @@
         return null;
       }
     }]);
-    return WebtrekkReactComponent;
   }(React__default.Component);
 
   var WebtrekkAutoTracking = /*#__PURE__*/function (_WebtrekkReactCompone) {
-    _inherits(WebtrekkAutoTracking, _WebtrekkReactCompone);
-    var _super = _createSuper(WebtrekkAutoTracking);
     function WebtrekkAutoTracking() {
       _classCallCheck(this, WebtrekkAutoTracking);
-      return _super.call(this, 'auto');
+      return _callSuper(this, WebtrekkAutoTracking, ['auto']);
     }
-    _createClass(WebtrekkAutoTracking, [{
+    _inherits(WebtrekkAutoTracking, _WebtrekkReactCompone);
+    return _createClass(WebtrekkAutoTracking, [{
       key: "componentDidMount",
       value: function componentDidMount() {
         this.addConfigurationData('init');
@@ -639,7 +608,6 @@
         }
       }
     }]);
-    return WebtrekkAutoTracking;
   }(WebtrekkReactComponent);
   WebtrekkAutoTracking.propTypes = {
     trackId: PropTypes.string.isRequired,
@@ -662,12 +630,11 @@
   var AutoTracking = withRouter(WebtrekkAutoTracking);
 
   var WebtrekkInitData = /*#__PURE__*/function (_WebtrekkReactCompone) {
-    _inherits(WebtrekkInitData, _WebtrekkReactCompone);
-    var _super = _createSuper(WebtrekkInitData);
     function WebtrekkInitData() {
       _classCallCheck(this, WebtrekkInitData);
-      return _super.call(this, 'init');
+      return _callSuper(this, WebtrekkInitData, ['init']);
     }
+    _inherits(WebtrekkInitData, _WebtrekkReactCompone);
     return _createClass(WebtrekkInitData);
   }(WebtrekkReactComponent);
   WebtrekkInitData.propTypes = {
@@ -684,12 +651,11 @@
   };
 
   var WebtrekkAdvancedData = /*#__PURE__*/function (_WebtrekkReactCompone) {
-    _inherits(WebtrekkAdvancedData, _WebtrekkReactCompone);
-    var _super = _createSuper(WebtrekkAdvancedData);
     function WebtrekkAdvancedData() {
       _classCallCheck(this, WebtrekkAdvancedData);
-      return _super.call(this, 'advanced');
+      return _callSuper(this, WebtrekkAdvancedData, ['advanced']);
     }
+    _inherits(WebtrekkAdvancedData, _WebtrekkReactCompone);
     return _createClass(WebtrekkAdvancedData);
   }(WebtrekkReactComponent);
   var PropTypesOfTypesNumberOrString = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
@@ -698,9 +664,13 @@
     secureCookie: PropTypes.bool,
     optOutName: PropTypes.string,
     requestObfuscation: PropTypes.bool,
+    registerObfuscation: PropTypes.bool,
     execCDB: PropTypes.bool,
     useCDBCache: PropTypes.bool,
     sendViaSDK: PropTypes.bool,
+    productMerge: PropTypes.bool,
+    tabBrowsing: PropTypes.bool,
+    preRendering: PropTypes.bool,
     sendViaServer: PropTypes.shape({
       activated: PropTypes.bool,
       serverDomain: PropTypes.string,
@@ -739,9 +709,13 @@
     secureCookie: null,
     optOutName: null,
     requestObfuscation: null,
+    registerObfuscation: null,
     execCDB: null,
     useCDBCache: null,
     sendViaSDK: null,
+    productMerge: null,
+    tabBrowsing: null,
+    preRendering: null,
     sendViaServer: {
       activated: null,
       serverDomain: null,
@@ -775,12 +749,11 @@
   };
 
   var WebtrekkCampaignData = /*#__PURE__*/function (_WebtrekkReactCompone) {
-    _inherits(WebtrekkCampaignData, _WebtrekkReactCompone);
-    var _super = _createSuper(WebtrekkCampaignData);
     function WebtrekkCampaignData() {
       _classCallCheck(this, WebtrekkCampaignData);
-      return _super.call(this, 'campaign');
+      return _callSuper(this, WebtrekkCampaignData, ['campaign']);
     }
+    _inherits(WebtrekkCampaignData, _WebtrekkReactCompone);
     return _createClass(WebtrekkCampaignData);
   }(WebtrekkReactComponent);
   WebtrekkCampaignData.propTypes = {
@@ -799,12 +772,11 @@
   };
 
   var WebtrekkCustomerData = /*#__PURE__*/function (_WebtrekkReactCompone) {
-    _inherits(WebtrekkCustomerData, _WebtrekkReactCompone);
-    var _super = _createSuper(WebtrekkCustomerData);
     function WebtrekkCustomerData() {
       _classCallCheck(this, WebtrekkCustomerData);
-      return _super.call(this, 'customer');
+      return _callSuper(this, WebtrekkCustomerData, ['customer']);
     }
+    _inherits(WebtrekkCustomerData, _WebtrekkReactCompone);
     return _createClass(WebtrekkCustomerData);
   }(WebtrekkReactComponent);
   WebtrekkCustomerData.propTypes = {
@@ -823,6 +795,14 @@
     street: PropTypes.string,
     streetNumber: PropTypes.string,
     validation: PropTypes.bool,
+    registrationEmail: PropTypes.string,
+    registrationGroupId: PropTypes.string,
+    registrationMode: PropTypes.string,
+    registrationFirstName: PropTypes.string,
+    registrationLastName: PropTypes.string,
+    registrationGender: PropTypes.string,
+    registrationTitle: PropTypes.string,
+    registrationOptin: PropTypes.bool,
     category: PropTypes.objectOf(PropTypes.string),
     sendInstantly: PropTypes.bool
   };
@@ -842,17 +822,24 @@
     street: null,
     streetNumber: null,
     validation: null,
+    registrationEmail: null,
+    registrationGroupId: null,
+    registrationMode: null,
+    registrationFirstName: null,
+    registrationLastName: null,
+    registrationGender: null,
+    registrationTitle: null,
+    registrationOptin: null,
     category: null,
     sendInstantly: false
   };
 
   var WebtrekkOrderData = /*#__PURE__*/function (_WebtrekkReactCompone) {
-    _inherits(WebtrekkOrderData, _WebtrekkReactCompone);
-    var _super = _createSuper(WebtrekkOrderData);
     function WebtrekkOrderData() {
       _classCallCheck(this, WebtrekkOrderData);
-      return _super.call(this, 'order');
+      return _callSuper(this, WebtrekkOrderData, ['order']);
     }
+    _inherits(WebtrekkOrderData, _WebtrekkReactCompone);
     return _createClass(WebtrekkOrderData);
   }(WebtrekkReactComponent);
   var PropTypesOfTypesNumberOrString$1 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
@@ -886,12 +873,11 @@
   };
 
   var WebtrekkPageData = /*#__PURE__*/function (_WebtrekkReactCompone) {
-    _inherits(WebtrekkPageData, _WebtrekkReactCompone);
-    var _super = _createSuper(WebtrekkPageData);
     function WebtrekkPageData() {
       _classCallCheck(this, WebtrekkPageData);
-      return _super.call(this, 'page');
+      return _callSuper(this, WebtrekkPageData, ['page']);
     }
+    _inherits(WebtrekkPageData, _WebtrekkReactCompone);
     return _createClass(WebtrekkPageData);
   }(WebtrekkReactComponent);
   var PropTypesOfTypesNumberOrString$2 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
@@ -935,12 +921,11 @@
   };
 
   var WebtrekkProductData = /*#__PURE__*/function (_WebtrekkReactCompone) {
-    _inherits(WebtrekkProductData, _WebtrekkReactCompone);
-    var _super = _createSuper(WebtrekkProductData);
     function WebtrekkProductData() {
       _classCallCheck(this, WebtrekkProductData);
-      return _super.call(this, 'product');
+      return _callSuper(this, WebtrekkProductData, ['product']);
     }
+    _inherits(WebtrekkProductData, _WebtrekkReactCompone);
     return _createClass(WebtrekkProductData);
   }(WebtrekkReactComponent);
   var PropTypesOfTypesNumberOrString$3 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
@@ -968,12 +953,11 @@
   };
 
   var WebtrekkSessionData = /*#__PURE__*/function (_WebtrekkReactCompone) {
-    _inherits(WebtrekkSessionData, _WebtrekkReactCompone);
-    var _super = _createSuper(WebtrekkSessionData);
     function WebtrekkSessionData() {
       _classCallCheck(this, WebtrekkSessionData);
-      return _super.call(this, 'session');
+      return _callSuper(this, WebtrekkSessionData, ['session']);
     }
+    _inherits(WebtrekkSessionData, _WebtrekkReactCompone);
     return _createClass(WebtrekkSessionData);
   }(WebtrekkReactComponent);
   WebtrekkSessionData.propTypes = {
@@ -984,6 +968,28 @@
   WebtrekkSessionData.defaultProps = {
     loginStatus: null,
     parameter: null,
+    sendInstantly: false
+  };
+
+  var WebtrekkEngageData = /*#__PURE__*/function (_WebtrekkReactCompone) {
+    function WebtrekkEngageData() {
+      _classCallCheck(this, WebtrekkEngageData);
+      return _callSuper(this, WebtrekkEngageData, ['engage']);
+    }
+    _inherits(WebtrekkEngageData, _WebtrekkReactCompone);
+    return _createClass(WebtrekkEngageData);
+  }(WebtrekkReactComponent);
+  var PropTypesOfTypesNumberOrString$4 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
+  WebtrekkEngageData.propTypes = {
+    attributes: PropTypes.objectOf(PropTypes.string),
+    eventName: PropTypes.string,
+    eventId: PropTypesOfTypesNumberOrString$4,
+    sendInstantly: PropTypes.bool
+  };
+  WebtrekkEngageData.defaultProps = {
+    attributes: null,
+    eventName: null,
+    eventId: null,
     sendInstantly: false
   };
 
@@ -1011,16 +1017,15 @@
   };
 
   var WebtrekkTeaser = /*#__PURE__*/function (_WebtrekkReactCompone) {
-    _inherits(WebtrekkTeaser, _WebtrekkReactCompone);
-    var _super = _createSuper(WebtrekkTeaser);
     function WebtrekkTeaser() {
       var _this;
       _classCallCheck(this, WebtrekkTeaser);
-      _this = _super.call(this, 'teaser_tracking');
+      _this = _callSuper(this, WebtrekkTeaser, ['teaser_tracking']);
       _this.elementRef = createRef();
       return _this;
     }
-    _createClass(WebtrekkTeaser, [{
+    _inherits(WebtrekkTeaser, _WebtrekkReactCompone);
+    return _createClass(WebtrekkTeaser, [{
       key: "componentDidMount",
       value: function componentDidMount() {
         this.addTeaserElement();
@@ -1042,7 +1047,6 @@
         return children[0];
       }
     }]);
-    return WebtrekkTeaser;
   }(WebtrekkReactComponent);
   WebtrekkTeaser.propTypes = {
     selector: PropTypes.string,
@@ -1070,16 +1074,15 @@
   };
 
   var WebtrekkProductList = /*#__PURE__*/function (_WebtrekkReactCompone) {
-    _inherits(WebtrekkProductList, _WebtrekkReactCompone);
-    var _super = _createSuper(WebtrekkProductList);
     function WebtrekkProductList() {
       var _this;
       _classCallCheck(this, WebtrekkProductList);
-      _this = _super.call(this, 'product_list_tracking');
+      _this = _callSuper(this, WebtrekkProductList, ['product_list_tracking']);
       _this.elementRef = createRef();
       return _this;
     }
-    _createClass(WebtrekkProductList, [{
+    _inherits(WebtrekkProductList, _WebtrekkReactCompone);
+    return _createClass(WebtrekkProductList, [{
       key: "componentDidMount",
       value: function componentDidMount() {
         this.addProductListElement();
@@ -1101,16 +1104,15 @@
         return children[0];
       }
     }]);
-    return WebtrekkProductList;
   }(WebtrekkReactComponent);
-  var PropTypesOfTypesNumberOrString$4 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
+  var PropTypesOfTypesNumberOrString$5 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
   WebtrekkProductList.propTypes = {
     selector: PropTypes.string,
     shadowRoot: PropTypes.string,
     id: PropTypes.string.isRequired,
-    position: PropTypesOfTypesNumberOrString$4.isRequired,
-    cost: PropTypesOfTypesNumberOrString$4,
-    quantity: PropTypesOfTypesNumberOrString$4,
+    position: PropTypesOfTypesNumberOrString$5.isRequired,
+    cost: PropTypesOfTypesNumberOrString$5,
+    quantity: PropTypesOfTypesNumberOrString$5,
     variant: PropTypes.string,
     soldOut: PropTypes.bool,
     category: PropTypes.objectOf(PropTypes.string),
@@ -1130,16 +1132,15 @@
   };
 
   var WebtrekkContentEngagement = /*#__PURE__*/function (_WebtrekkReactCompone) {
-    _inherits(WebtrekkContentEngagement, _WebtrekkReactCompone);
-    var _super = _createSuper(WebtrekkContentEngagement);
     function WebtrekkContentEngagement() {
       var _this;
       _classCallCheck(this, WebtrekkContentEngagement);
-      _this = _super.call(this, 'content_engagement');
+      _this = _callSuper(this, WebtrekkContentEngagement, ['content_engagement']);
       _this.elementRef = createRef();
       return _this;
     }
-    _createClass(WebtrekkContentEngagement, [{
+    _inherits(WebtrekkContentEngagement, _WebtrekkReactCompone);
+    return _createClass(WebtrekkContentEngagement, [{
       key: "componentDidMount",
       value: function componentDidMount() {
         this.addContentEngagementElement();
@@ -1161,23 +1162,22 @@
         return children[0];
       }
     }]);
-    return WebtrekkContentEngagement;
   }(WebtrekkReactComponent);
-  var PropTypesOfTypesNumberOrString$5 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
+  var PropTypesOfTypesNumberOrString$6 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
   WebtrekkContentEngagement.propTypes = {
     selector: PropTypes.string,
     shadowRoot: PropTypes.string,
     name: PropTypes.string.isRequired,
-    percentageStepsInAnalytics: PropTypesOfTypesNumberOrString$5,
+    percentageStepsInAnalytics: PropTypesOfTypesNumberOrString$6,
     sendContentEngagement: PropTypes.oneOf([0, 1, 2, '0', '1', '2']),
-    percentageReached: PropTypesOfTypesNumberOrString$5,
-    secondsReached: PropTypesOfTypesNumberOrString$5,
-    largeBrowserResolution: PropTypesOfTypesNumberOrString$5,
-    largeBrowserSeconds: PropTypesOfTypesNumberOrString$5,
-    mediumBrowserResolution: PropTypesOfTypesNumberOrString$5,
-    mediumBrowserSeconds: PropTypesOfTypesNumberOrString$5,
-    smallBrowserResolution: PropTypesOfTypesNumberOrString$5,
-    smallBrowserSeconds: PropTypesOfTypesNumberOrString$5
+    percentageReached: PropTypesOfTypesNumberOrString$6,
+    secondsReached: PropTypesOfTypesNumberOrString$6,
+    largeBrowserResolution: PropTypesOfTypesNumberOrString$6,
+    largeBrowserSeconds: PropTypesOfTypesNumberOrString$6,
+    mediumBrowserResolution: PropTypesOfTypesNumberOrString$6,
+    mediumBrowserSeconds: PropTypesOfTypesNumberOrString$6,
+    smallBrowserResolution: PropTypesOfTypesNumberOrString$6,
+    smallBrowserSeconds: PropTypesOfTypesNumberOrString$6
   };
   WebtrekkContentEngagement.defaultProps = {
     selector: null,
@@ -1196,19 +1196,17 @@
   };
 
   var WebtrekkExtension = /*#__PURE__*/function (_WebtrekkReactCompone) {
-    _inherits(WebtrekkExtension, _WebtrekkReactCompone);
-    var _super = _createSuper(WebtrekkExtension);
     function WebtrekkExtension() {
       _classCallCheck(this, WebtrekkExtension);
-      return _super.call(this, 'extension');
+      return _callSuper(this, WebtrekkExtension, ['extension']);
     }
-    _createClass(WebtrekkExtension, [{
+    _inherits(WebtrekkExtension, _WebtrekkReactCompone);
+    return _createClass(WebtrekkExtension, [{
       key: "componentDidMount",
       value: function componentDidMount() {
         this.addExtension(this.props.name, this.props.action, this.props.config);
       }
     }]);
-    return WebtrekkExtension;
   }(WebtrekkReactComponent);
   WebtrekkExtension.propTypes = {
     name: PropTypes.string.isRequired,
@@ -1394,6 +1392,7 @@
   var WebtrekkPageData$1 = WebtrekkPageData;
   var WebtrekkProductData$1 = WebtrekkProductData;
   var WebtrekkSessionData$1 = WebtrekkSessionData;
+  var WebtrekkEngageData$1 = WebtrekkEngageData;
   var WebtrekkTeaser$1 = WebtrekkTeaser;
   var WebtrekkProductList$1 = WebtrekkProductList;
   var WebtrekkContentEngagement$1 = WebtrekkContentEngagement;
@@ -1405,7 +1404,7 @@
   // compatibility for v0
   var webtrekkSmartPixelReact = SmartPixelReact;
   webtrekkSmartPixelReact.call(function (wtSmart) {
-    wtSmart._ps(2, '1.3.0');
+    wtSmart._ps(2, '1.4.0');
   });
   var index = {
     WebtrekkAutoTracking: WebtrekkAutoTracking$1,
@@ -1417,6 +1416,7 @@
     WebtrekkPageData: WebtrekkPageData$1,
     WebtrekkProductData: WebtrekkProductData$1,
     WebtrekkSessionData: WebtrekkSessionData$1,
+    WebtrekkEngageData: WebtrekkEngageData$1,
     WebtrekkTeaser: WebtrekkTeaser$1,
     WebtrekkProductList: WebtrekkProductList$1,
     WebtrekkContentEngagement: WebtrekkContentEngagement$1,
@@ -1433,6 +1433,7 @@
   exports.WebtrekkCampaignData = WebtrekkCampaignData$1;
   exports.WebtrekkContentEngagement = WebtrekkContentEngagement$1;
   exports.WebtrekkCustomerData = WebtrekkCustomerData$1;
+  exports.WebtrekkEngageData = WebtrekkEngageData$1;
   exports.WebtrekkExtension = WebtrekkExtension$1;
   exports.WebtrekkInitData = WebtrekkInitData$1;
   exports.WebtrekkOrderData = WebtrekkOrderData$1;

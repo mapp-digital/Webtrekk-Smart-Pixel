@@ -7,6 +7,7 @@ import OrderData from '../../shared/src/components/data/WebtrekkOrderData';
 import PageData from '../../shared/src/components/data/WebtrekkPageData';
 import ProductData from '../../shared/src/components/data/WebtrekkProductData';
 import SessionData from '../../shared/src/components/data/WebtrekkSessionData';
+import EngageData from './../../shared/src/components/data/WebtrekkEngageData';
 import Teaser from '../../shared/src/components/WebtrekkTeaser';
 import ProductList from '../../shared/src/components/WebtrekkProductList';
 import ContentEngagement from '../../shared/src/components/WebtrekkContentEngagement';
@@ -24,6 +25,7 @@ export const WebtrekkOrderData = OrderData;
 export const WebtrekkPageData = PageData;
 export const WebtrekkProductData = ProductData;
 export const WebtrekkSessionData = SessionData;
+export const WebtrekkEngageData = EngageData;
 export const WebtrekkTeaser = Teaser;
 export const WebtrekkProductList = ProductList;
 export const WebtrekkContentEngagement = ContentEngagement;
@@ -49,6 +51,7 @@ export default {
     WebtrekkPageData,
     WebtrekkProductData,
     WebtrekkSessionData,
+    WebtrekkEngageData,
     WebtrekkTeaser,
     WebtrekkProductList,
     WebtrekkContentEngagement,
