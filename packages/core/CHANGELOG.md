@@ -1,3 +1,9 @@
+<a name="1.5.1"></a>
+# 1.5.1 (2025-03-24)
+
+## Bug Fixes
+- Due to architectural changes in automatic link tracking, it was possible that standard and link tracking configurations did not track clicks consistently. A decrease in event tracking was possible. We fixed this with the current version.
+
 <a name="1.5.0"></a>
 # 1.5.0 (2025-03-03)
 
