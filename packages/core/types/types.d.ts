@@ -110,12 +110,18 @@ interface SmartPixelAdvancedUserIdentification {
     saveTemporarySessionId?: boolean;
 }
 
+interface SmartPixelAdvancedAdvancedPermission {
+    activated?: boolean;
+    permissionCategory?: NumberOrString
+}
+
 interface SmartPixelAdvancedSetProps {
     forceOldEverId?: boolean;
     secureCookie?: boolean;
     optOutName?: string;
     requestObfuscation?: boolean;
     registerObfuscation?: boolean;
+    parameterObfuscation?: string[];
     /**
      * @deprecated
      */
@@ -134,6 +140,7 @@ interface SmartPixelAdvancedSetProps {
     requestQueue?: SmartPixelAdvancedRequestQueue;
     requestLimit?: WebtrekkAdvancedPropRequestLimit;
     userIdentification?: SmartPixelAdvancedUserIdentification;
+    advancedPermission?: SmartPixelAdvancedAdvancedPermission;
 }
 
 interface SmartPixelAdvancedAddProps extends SmartPixelAdvancedSetProps {}
@@ -144,6 +151,7 @@ interface SmartPixelAdvancedGetProps {
     optOutName: string;
     requestObfuscation: boolean;
     registerObfuscation: boolean;
+    parameterObfuscation: string[];
     /**
      * @deprecated
      */
@@ -162,6 +170,7 @@ interface SmartPixelAdvancedGetProps {
     requestQueue: SmartPixelAdvancedRequestQueue;
     requestLimit: WebtrekkAdvancedPropRequestLimit;
     userIdentification: SmartPixelAdvancedUserIdentification;
+    advancedPermission?: SmartPixelAdvancedAdvancedPermission;
 }
 
 interface SmartPixelAdvanced {

@@ -1,13 +1,14 @@
 {
     "name": "@webtrekk-smart-pixel/core",
-    "version": "1.5.1",
+    "version": "1.6.0",
     "title": "Webtrekk Smart Pixel",
     "description": "Webtrekk provides a high-end analytical tool to analyze the traffic on your website, identify success factors and optimize it on the basis of actual key indicators.",
+    "project": "SDK Pixel SDKs",
     "main": "./index.js",
     "typings": "./types/types.d.ts",
     "author": "Webtrekk GmbH",
     "license": "MIT",
-    "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixe/packages/core#readme",
+    "homepage": "https://mapp.com",
     "repository": {
         "type": "git",
         "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel"
@@ -33,10 +34,8 @@
         "karma-firefox-launcher": "^1.2.0",
         "karma-generic-preprocessor": "^1.1.1",
         "karma-jasmine": "^2.0.1",
-        "karma-phantomjs-launcher": "^0.2.3",
         "karma-script-launcher": "^1.0.0",
         "karma-stacktrace": "^2.1.0",
-        "node-build-utils": "git+ssh://stash.webtrekk.com:7999/pixlib/node-build-utils.git",
-        "phantomjs": "^1.9.19"
+        "sdk-pixel-node-build-utils-library": "^2.0.3"
     }
 }

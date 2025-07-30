@@ -1,3 +1,14 @@
+<a name="1.6.0"></a>
+# 1.6.0 (2025-07-xx)
+
+## Features
+- We offer a new advanced option, with which you can define any tracking parameters for obfuscation.
+- Given that we send the version in a dedicated parameter now, it is possible to change the value in the parameter to a static one.
+- We want to enable customers to distinguish between forwarding data to Intelligence only or to Intelligence and Engage.
+
+## Bug Fixes
+- When using **sendViaSDK** in the pixel and anonymous tracking including setting the temporary session ID is enabled, the parameters are filtered out when sending the request to the mobile SDKs.
+
 <a name="1.5.1"></a>
 # 1.5.1 (2025-03-24)
 
