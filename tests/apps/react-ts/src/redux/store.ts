@@ -1,8 +1,4 @@
-import {
-    configureStore,
-    MiddlewareArray,
-    combineReducers,
-} from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import countersReducer from "./counterReducer";
 import {
     webtrekkMiddleware,
@@ -12,7 +8,7 @@ import {
 const middleware = [
     webtrekkMiddleware({
         "counter/ADD": (state, action) => {
-            const count: number = state.rootReducer.counter.reduxCounter;
+            const count: number = state.rootReducer.counter;
             const amount: number = action.payload;
             WebtrekkSmartPixelReact.action({
                 name: action.type,
@@ -21,7 +17,7 @@ const middleware = [
             WebtrekkSmartPixelReact.trackAction();
         },
         "counter/INCREMENT": (state, action) => {
-            const count: number = state.rootReducer.counter.reduxCounter;
+            const count: number = state.rootReducer.counter;
             WebtrekkSmartPixelReact.action({
                 name: action.type,
                 parameter: { 1: count.toString() },
@@ -39,7 +35,8 @@ export const store = configureStore({
     reducer: {
         rootReducer: rootReducer,
     },
-    middleware: new MiddlewareArray().concat(middleware),
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

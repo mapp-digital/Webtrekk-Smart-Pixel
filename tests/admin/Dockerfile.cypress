@@ -14,6 +14,6 @@ RUN mkdir /apps && chown -R "${USER_ID}":"${GROUP_ID}" /apps
 RUN mkdir /coverage-plugin && chown -R "${USER_ID}":"${GROUP_ID}" /coverage-plugin
 USER "${USER_ID}":"${GROUP_ID}"
 WORKDIR /coverage-plugin
-RUN npm init -y && npm install -D @cypress/code-coverage
+RUN npm init -y && npm install -D @cypress/code-coverage@3.10.6
 # Patch reporter
 RUN sed -i 's/getSource(filePath) {/getSource(filePath){if(process.env.MAPP_REPORT_PATH){filePath=process.env.MAPP_REPORT_PATH+filePath}/'  /coverage-plugin/node_modules/istanbul-lib-report/lib/context.js

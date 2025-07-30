@@ -26,7 +26,7 @@ const Redux: React.FC<{}> = () => {
     return (
         <div className="about">
             <h1>Redux</h1>
-            <p>Count: <span id="count">{count.reduxCounter}</span></p>
+            <p>Count: <span id="count">{count}</span></p>
             <h2>Custom Actions</h2>
             <button
                 id="increment"

@@ -2,7 +2,7 @@
   <div v-if="cartIsOpen" id="myModal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
-        <span class="close" v-on:click="closeCart">&times;</span>
+        <span class="close" @click="closeCart">&times;</span>
         <h2>You have {{ cartAmount }} items in your cart</h2>
       </div>
       <div v-if="cartAmount > 0">
@@ -31,12 +31,7 @@
         <button
           v-if="isLoggedOut"
           type="submit"
-          v-on:click.prevent="
-            () => {
-              this.closeCart();
-              this.$router.push('login');
-            }
-          "
+          @click.prevent="goToLogin"
         >
           Login or register to checkout
         </button>
@@ -44,7 +39,7 @@
           id="addOrder"
           v-else
           type="submit"
-          v-on:click.prevent="addOrder"
+          @click.prevent="addOrder"
         >
           Order Items
         </button>
@@ -54,28 +49,49 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import CartItem from "@/components/CartItem.vue";
-import { mapGetters, mapActions } from "vuex";
+import { defineComponent, computed } from "vue";
+import store from "../store";
+import CartItem from "/src/components/CartItem.vue";
+import router from "../router";
+
 export default defineComponent({
   name: "CartMenu",
   components: {
     CartItem,
   },
-  data() {
-    return {};
-  },
-  computed: {
-    ...mapGetters([
-      "cartAmount",
-      "cartIsOpen",
-      "cart",
-      "cartSum",
-      "isLoggedOut",
-    ]),
-  },
-  methods: {
-    ...mapActions(["closeCart", "getCart", "addToCart", "addOrder"]),
+  setup() {
+    // Computed properties from Vuex store
+    const cartAmount = computed(() => store.getters.cartAmount);
+    const cartIsOpen = computed(() => store.getters.cartIsOpen);
+    const cart = computed(() => store.getters.cart);
+    const cartSum = computed(() => store.getters.cartSum);
+    const isLoggedOut = computed(() => store.getters.isLoggedOut);
+
+    // Methods to dispatch Vuex actions
+    const closeCart = () => {
+      store.dispatch("closeCart");
+    };
+
+    const addOrder = () => {
+      store.dispatch("addOrder");
+    };
+
+    const goToLogin = () => {
+      closeCart();
+      store.dispatch("closeCart"); 
+      router.push("login");
+    };
+
+    return {
+      cartAmount,
+      cartIsOpen,
+      cart,
+      cartSum,
+      isLoggedOut,
+      closeCart,
+      addOrder,
+      goToLogin,
+    };
   },
 });
 </script>

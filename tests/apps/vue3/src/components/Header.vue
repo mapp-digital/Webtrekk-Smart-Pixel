@@ -27,8 +27,8 @@ nav a.router-link-exact-active {
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import AccountMenu from "@/components/AccountMenu.vue";
-import Cart from "@/components/Cart.vue";
+import AccountMenu from "/src/components/AccountMenu.vue";
+import Cart from "/src/components/Cart.vue";
 
 export default defineComponent({
   name: "Header",

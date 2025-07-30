@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Smart Pixel Youtube E2E Test page</title>
+        <script src="/packages/core/dist/smart-pixel.min.js"></script>
+        <style>
+            h1 {
+                margin-bottom: 50px;
+            }
+
+            #teaser {
+                background-color:chocolate;
+                padding: 30px;
+            }
+
+            #frame {
+                margin-top:40px;
+                background-color: lightblue;
+                padding: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            wtSmart.init.set({
+                trackId: "123123123123123",
+                trackDomain: "phoenix:4001",
+            });
+            wtSmart.extension.action.activate();
+            window.wtstp_ttv2 = [];
+            window.wtstp_ttv2.push(
+                {
+                    selector: "#teaser",
+                    data: {
+                        name: "link as teaser",
+                    }
+                },
+                {
+                    selector: "#frame",
+                    data: {
+                        name: "link as teaser",
+                    }
+                }
+            );
+            wtSmart.extension.teaser_tracking.activate();
+            wtSmart.track();
+            wtSmart.extension.teaser_tracking.update();
+            
+        </script>
+        <h1>Smart Pixel teaser is a Link test page</h1>
+        <a id="teaser" href="../..">Teaserlink</a>
+        <div id="frame">
+            <a id="embedded-teaser" href="../.."><h1>Teaserlink embedded in div</h1></a>
+        </div>
+    </body>
+</html>

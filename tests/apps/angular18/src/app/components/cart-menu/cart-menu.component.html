@@ -1,0 +1,28 @@
+<div *ngIf="cartIsOpen" id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" (click)="close()">&times;</span>
+      <h2>You have {{ cartService.computedQuantity }} items in your cart</h2>
+    </div>
+    <app-cart-item *ngIf="cart.length > 0" [cart]="cart"></app-cart-item>
+    <p *ngIf="cart.length === 0">Your cart is empty</p>
+    <div class="modal-footer" *ngIf="cart.length > 0">
+      <p>${{ cartService.computedSum }}</p>
+      <button
+        *ngIf="user === null"
+        type="submit"
+        (click)="close();toLogin();"
+      >
+        Login or register to checkout
+      </button>
+      <button
+        id="addOrder"
+        *ngIf="cartService.computedQuantity !== '0' && user !== null"
+        type="submit"
+        (click)="order()"
+      >
+        Order Items
+      </button>
+    </div>
+  </div>
+</div>

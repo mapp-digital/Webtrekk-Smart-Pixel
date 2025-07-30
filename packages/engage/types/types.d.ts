@@ -1,7 +1,7 @@
 import {SmartPixel, SmartPixelExtension, SmartPixelExtensionProps, SmartPixelExtensionsTriggerConfig} from '../../core';
 
 /* **********************************************
- *             EXTENSION:KAMELEOON              *
+ *               EXTENSION:ENGAGE               *
  ********************************************** */
 interface SmartPixelExtensionEngageSetConfig {
 
@@ -24,6 +24,6 @@ export function use(): (wtSmart: SmartPixel) => void;
 
 declare global {
     interface SmartPixelExtension {
-        Engage: SmartPixelExtensionEngage
+        engage: SmartPixelExtensionEngage
     }
 }

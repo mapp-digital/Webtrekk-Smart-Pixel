@@ -22,40 +22,40 @@ const ProductPreview: React.FC<{ product: IProduct; position: number }> = (
     //     });
     // }, []);
     return (
-        <div className="card" id={"product_" + props.product.id}>
-            <WebtrekkProductList
-                id={props.product.id.toString()}
-                position={props.position + 1}
-                cost={props.product.price}
-                quantity={1}
-                parameter={{
-                    1: props.product.sku,
-                }}
-                category={{
-                    1: props.product.name,
-                }}
-            >
-                <Link to={"/shop/" + props.product.id}>
-                    <img
-                        src={props.product.imageUrl}
-                        alt={props.product.name + "title"}
-                    />
-                    <h1>{props.product.name}</h1>
-                </Link>
-            </WebtrekkProductList>
-
-            <p className="price">${props.product.price}</p>
-            <p>{props.product.description}</p>
-            <p>
-                <button
-                    onClick={() => {
-                        ctx.cartHandler(props.product, "add");
+            <div className="card" id={"product_" + props.product.id}>
+                <WebtrekkProductList
+                    id={props.product.id.toString()}
+                    position={props.position + 1}
+                    cost={props.product.price}
+                    quantity={1}
+                    parameter={{
+                        1: props.product.sku,
+                    }}
+                    category={{
+                        1: props.product.name,
                     }}
                 >
-                    Add to Cart
-                </button>
-            </p>
-        </div>
+                    <Link to={"/shop/" + props.product.id}>
+                        <img
+                            src={props.product.imageUrl}
+                            alt={props.product.name + "title"}
+                        />
+                        <h1>{props.product.name}</h1>
+                    </Link>
+                </WebtrekkProductList>
+
+                <p className="price">${props.product.price}</p>
+                <p>{props.product.description}</p>
+                <p>
+                    <button
+                        onClick={() => {
+                            ctx.cartHandler(props.product, "add");
+                        }}
+                    >
+                        Add to Cart
+                    </button>
+                </p>
+            </div>
     );
 };
 

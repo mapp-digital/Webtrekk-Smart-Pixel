@@ -1,0 +1,62 @@
+<div class="login-wrapper">
+    <div>
+        <h2>Register</h2>
+        <p>Register if you are a new user.</p>
+        <form id="register" [formGroup]="registerForm" (ngSubmit)="register()">
+            <p>
+                First name:
+                <input
+                    name="firstName"
+                    formControlName="firstName"
+                    type="text"
+                />
+            </p>
+            <p>
+                Last name:
+                <input name="lastName" formControlName="lastName" type="text" />
+            </p>
+            <p>
+                Username:
+                <input name="name" formControlName="name" type="text" />
+            </p>
+            <p>
+                Password:
+                <input
+                    name="password"
+                    formControlName="password"
+                    type="password"
+                />
+            </p>
+            <p>
+                <button
+                    type="submit"
+                >
+                    Register
+                </button>
+            </p>
+        </form>
+    </div>
+    <div>
+        <h2>Login</h2>
+        <p>Login with your existing credentials.</p>
+        <form id="login" (ngSubmit)="login(loginForm)" #loginForm="ngForm">
+            <p>
+                Name:
+                <input name="name" type="text" ngModel />
+                Password:
+                <input
+                    name="password"
+                    type="password"
+                    ngModel
+                />
+            </p>
+            <p>
+                <button
+                    type="submit"
+                >
+                    Login
+                </button>
+            </p>
+        </form>
+    </div>
+</div>

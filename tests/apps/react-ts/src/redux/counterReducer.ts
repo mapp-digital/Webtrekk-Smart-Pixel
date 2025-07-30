@@ -1,5 +1,4 @@
-import { combineReducers } from "@reduxjs/toolkit";
-import { ActionType } from "typesafe-actions";
+import type { ActionType } from "typesafe-actions";
 import * as counters from "./actions";
 import {
     ADD,
@@ -25,30 +24,29 @@ export type CountersState = {
     readonly reduxCounter: number;
 };
 
-export default combineReducers<CountersState, CountersAction>({
-    reduxCounter: (state = 0, action) => {
-        switch (action.type) {
-            case INCREMENT:
-                return state + 1;
+const reduxCounter = (state = 0, action: any) => {
+    switch (action.type) {
+        case INCREMENT:
+            return state + 1;
 
-            case ADD:
-            case TESTACTION:
-            case TESTPAGE:
-            case TESTSESSION:
-            case TESTCAMPAIGN:
-            case TESTCUSTOMER:
-            case TESTPRODUCT:
-            case TESTPRODUCTS:
-            case TESTORDER:
-            case TESTTRACK:
-            case TESTTRACKPAGE:
-            case TESTTRACKACTION:
-            case TESTINIT:
-            case TESTADVANCED:
-                return state + action.payload;
+        case ADD:
+        case TESTACTION:
+        case TESTPAGE:
+        case TESTSESSION:
+        case TESTCAMPAIGN:
+        case TESTCUSTOMER:
+        case TESTPRODUCT:
+        case TESTPRODUCTS:
+        case TESTORDER:
+        case TESTTRACK:
+        case TESTTRACKPAGE:
+        case TESTTRACKACTION:
+        case TESTINIT:
+        case TESTADVANCED:
+            return state + action.payload;
 
-            default:
-                return state;
-        }
-    },
-});
+        default:
+            return state;
+    }
+};
+export default reduxCounter;

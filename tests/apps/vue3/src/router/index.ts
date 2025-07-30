@@ -1,76 +1,75 @@
 import {
   createRouter,
-  createWebHistory,
-  Router,
-  RouteRecordRaw,
+  createWebHistory
 } from "vue-router";
-import Home from "../views/Home.vue";
+import type {   Router, RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: () =>
+      import("../views/Home.vue"),
   },
   {
     path: "/about",
     name: "About",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+      import("../views/About.vue"),
   },
   {
     path: "/shop",
     name: "Shop",
-    component: () => import(/* webpackChunkName: "shop" */ "../views/Shop.vue"),
+    component: () => import("../views/Shop.vue"),
   },
   {
     path: "/account",
     name: "Account",
     component: () =>
-      import(/* webpackChunkName: "account" */ "../views/Account.vue"),
+      import("../views/Account.vue"),
   },
   {
     path: "/login",
     name: "Login",
     component: () =>
-      import(/* webpackChunkName: "login" */ "../views/Login.vue"),
+      import("../views/Login.vue"),
   },
   {
     path: "/thankyou",
     name: "ThankYou",
     component: () =>
-      import(/* webpackChunkName: "thanks" */ "../views/ThankYou.vue"),
+      import("../views/ThankYou.vue"),
   },
   {
     path: "/teaser",
     name: "Teaser",
     component: () =>
-      import(/* webpackChunkName: "teaser" */ "../views/Teaser.vue"),
+      import("../views/Teaser.vue"),
   },
   {
     path: "/content-engagement",
     name: "ContentEngagement",
     component: () =>
       import(
-        /* webpackChunkName: "content_eng" */ "../views/ContentEngagement.vue"
+        "../views/ContentEngagement.vue"
       ),
   },
   {
     path: "/directive",
     name: "Directive",
     component: () =>
-      import(/* webpackChunkName: "directive" */ "../views/Directive.vue"),
+      import("../views/Directive.vue"),
   },
   {
     path: "/shop/:id",
     name: "SingleProduct",
     component: () =>
-      import(/* webpackChunkName: "singleProduct" */ "../views/Product.vue"),
+      import("../views/Product.vue"),
   },
 ];
 
 const router: Router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 });
 

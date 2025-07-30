@@ -29,8 +29,6 @@
         "karma-firefox-launcher": "^1.2.0",
         "karma-generic-preprocessor": "^1.1.1",
         "karma-jasmine": "^2.0.1",
-        "karma-phantomjs-launcher": "^0.2.3",
-        "karma-script-launcher": "^1.0.0",
-        "phantomjs": "^1.9.19"
+        "karma-script-launcher": "^1.0.0"
     }
 }

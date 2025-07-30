@@ -1,0 +1,9 @@
+<li class="header right logout" *ngIf="user !== null" (click)="logout()">
+    Logout
+</li>
+<li class="header right" *ngIf="user === null">
+    <a class="headerLink" routerLink="/login">Register / Login</a>
+</li>
+<li class="header right" *ngIf="user !== null">
+    <a class="headerLink" routerLink="/account">Account</a>
+</li>

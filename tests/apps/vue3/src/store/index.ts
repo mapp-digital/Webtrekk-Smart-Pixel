@@ -1,9 +1,9 @@
 import { createStore, Store } from "vuex";
-import { get, post } from "@/helpers/request";
-import Cart from "@/components/Cart.vue";
-import router from "@/router/index";
+import { get, post } from "../helpers/request";
+import Cart from "/src/components/Cart.vue";
+import router from "../router/index";
 import App from "../main";
-import { InjectionKey } from "vue";
+import type { InjectionKey } from "vue";
 
 interface Cart {
   id: number;

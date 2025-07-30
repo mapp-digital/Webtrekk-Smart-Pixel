@@ -1,0 +1,15 @@
+<div *ngIf="product; else loading">
+    <h1> {{ product.name }}</h1>
+    <img [src]="product.imageUrl" [alt]="product.name"/>
+    <p>{{ product.description }}</p>
+    <p><small>SKU: {{ product.sku }}</small></p>
+    <p><strong>Price: {{ product.price }}</strong></p>
+    <form [formGroup]="form" (ngSubmit)="addToCart()">
+        <input type="number" name="quantity" min="1" formControlName="quantity"/>
+        <button type="submit">Add to cart</button>
+    </form>
+</div>
+
+<ng-template #loading>
+    <p>Loading product...</p>
+</ng-template>

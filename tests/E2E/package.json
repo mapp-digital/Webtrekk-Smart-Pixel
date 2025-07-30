@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "open": "cypress open"
+    "open": "cypress open",
+    "install": "cypress install"
   },
   "author": "",
   "license": "ISC",

@@ -5,14 +5,14 @@ const webtrekkReducer = wtSmart.webtrekkReducer;
 const WebtrekkSmartPixelReact = wtSmart.WebtrekkSmartPixelReact;
 
 const webtrekkCustomReducer = webtrekkReducer({
-    increment: (state, action, reducerValue) => {
+    increment: (_state, action, reducerValue) => {
         WebtrekkSmartPixelReact.action({
             name: action.type,
             parameter: { 1: reducerValue.count + "" },
         });
         WebtrekkSmartPixelReact.trackAction();
     },
-    decrement: (state, action, reducerValue) => {
+    decrement: (_state, action, reducerValue) => {
         WebtrekkSmartPixelReact.action({
             name: action.type,
             parameter: { 1: reducerValue.count + "" },

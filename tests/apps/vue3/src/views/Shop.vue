@@ -7,10 +7,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { nextTick } from "vue";
-import ProductList from "@/components/ProductList.vue";
-import { getFixtureData } from "@/helpers/fixture";
+import { defineComponent, nextTick } from "vue";
+import ProductList from "/src/components/ProductList.vue";
+import { getFixtureData } from "../helpers/fixture";
 
 interface Product {
   id: number;
@@ -22,7 +21,7 @@ export default defineComponent({
   name: "Shop",
   data() {
     return {
-      content: {},
+      content: {} as Content,
       products: [],
     };
   },

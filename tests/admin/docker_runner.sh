@@ -28,6 +28,12 @@ function start_phoenix_prebuild {
 
 function start_phoenix {
   echo "Starting server..."
+  if [ ! -d "/mapp/tests/server/_build" ] && [ ! -d "/mapp/tests/server/deps" ]; then
+  echo "Both _build and deps directories are missing. Copying now..."
+  cp -r "/server/_build" "/mapp/tests/server/"
+  cp -r "/server/deps" "/mapp/tests/server/"
+  cp "/server/mix.lock" "/mapp/tests/server/mix.lock"
+  fi
   cd /mapp/tests/server &&
   elixir --sname mappe2e --cookie mappify -S mix phx.server
 }

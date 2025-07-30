@@ -10,9 +10,14 @@ const Shop: React.FC = () => {
         if (!products) {
             return <div>Loading data...</div>;
         }
-        return products.map((product, index) => {
-            return <ProductPreview product={product} position={index} key={product.id} />;
-        });
+    
+        return (
+            <div className="card-container">
+                {products.map((product, index) => (
+                    <ProductPreview product={product} position={index} key={product.id} />
+                ))}
+            </div>
+        );
     };
 
     useEffect(() => {

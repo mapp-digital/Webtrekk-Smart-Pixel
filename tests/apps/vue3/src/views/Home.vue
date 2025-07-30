@@ -8,8 +8,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { getFixtureData } from "@/helpers/fixture";
-import Child from "@/components/Child.vue";
+import { getFixtureData } from "../helpers/fixture";
+import Child from "/src/components/Child.vue";
 
 export default defineComponent({
   name: "Home",
@@ -18,7 +18,7 @@ export default defineComponent({
   },
   data() {
     return {
-      content: {},
+      content: {} as Content,
       webtrekk: {
         page: {
           parameter: {

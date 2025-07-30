@@ -1,11 +1,13 @@
 <template>
-  <div class="sticky">
+  <div>
+    <div class="sticky">
     <Header />
   </div>
   <div class="content">
     <router-view />
   </div>
   <Snackbar />
+  </div>
 </template>
 
 <style>
@@ -25,9 +27,9 @@ h2 {
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { useStore } from "vuex";
-import Header from "@/components/Header.vue";
-import Snackbar from "@/components/Snackbar.vue";
+import Header from "/src/components/Header.vue";
+import Snackbar from "/src/components/Snackbar.vue";
+import store from './store'
 
 export default defineComponent({
   name: "App",
@@ -42,7 +44,6 @@ export default defineComponent({
     Snackbar,
   },
   setup() {
-    const store = useStore();
     store.dispatch("getUserData");
   },
 });

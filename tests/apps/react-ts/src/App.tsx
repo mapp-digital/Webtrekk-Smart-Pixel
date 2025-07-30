@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "./components/Header";
 import { StoreProvider } from "./store/Store";
 import { Route, Routes, createBrowserRouter, RouterProvider} from "react-router-dom";
@@ -17,6 +16,7 @@ import Components from "./views/Components";
 import Redux from "./views/Redux";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import { trackInit } from "./helper/tracking";
 
 const router = createBrowserRouter([
     { path: "*", Component: Root },
@@ -27,6 +27,7 @@ export default function App() {
   }
 
 function Root() {
+    trackInit();
     return (
         // <Router basename={'/apps/react'}>
             <Provider store={store}>

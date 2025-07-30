@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useContext, FunctionComponent } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import type { FunctionComponent } from "react";
 import { useParams } from 'react-router-dom';
 import { get } from "../helper/requests";
 import { trackProductView } from "../helper/tracking";

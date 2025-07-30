@@ -17,14 +17,14 @@ const Store = React.createContext<IState>({
     refreshCart: () => {},
     userData: false,
     snackbar: false,
-    snackbarHandler: (message) => {},
-    cartHandler: (product, action) => {},
-    openCartHandler: (isOpen) => {},
+    snackbarHandler: (_message) => {},
+    cartHandler: (_product, _action) => {},
+    openCartHandler: (_isOpen) => {},
     logoutHandler: () => {},
     userDataHandler: () => {},
 });
 
-export const StoreProvider: React.FC<{children: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined}> = (props) => {
+export const StoreProvider: React.FC<{children: React.ReactNode}> = (props) => {
     const history = useNavigate();
     let location = useLocation();
 
@@ -108,7 +108,7 @@ export const StoreProvider: React.FC<{children: string | number | boolean | Reac
 
         const isProductPage = /^\/shop\/\d+$/.test(location.pathname);
         if (!isProductPage) {
-                wtSmart.WebtrekkSmartPixelReact.track();
+                wtSmart.WebtrekkSmartPixelReact.trackPage();
             }
 
         refreshCart();

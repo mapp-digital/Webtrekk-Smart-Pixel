@@ -22,16 +22,7 @@
         </p>
         <p>
           <button
-            v-on:click.prevent="
-              () => {
-                this.register({
-                  name: this.regName,
-                  password: this.regPassword,
-                  firstName: this.regFirstName,
-                  lastName: this.regLastname,
-                });
-              }
-            "
+            @click.prevent="handleRegister"
             type="submit"
           >
             Register
@@ -51,15 +42,8 @@
         </p>
         <p>
           <button
+            @click.prevent="handleLogin"
             type="submit"
-            v-on:click.prevent="
-              () => {
-                this.login({
-                  name: this.loginName,
-                  password: this.loginPassword,
-                });
-              }
-            "
           >
             Login
           </button>
@@ -70,34 +54,57 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { mapGetters, mapActions } from "vuex";
+import { computed, defineComponent, ref } from "vue";
+import store from "../store";
+import App from "./../main";
 
 export default defineComponent({
   name: "Login",
-  data() {
-    return {
-      loginName: "",
-      loginPassword: "",
-      regName: "",
-      regFirstName: "",
-      regLastname: "",
-      regPassword: "",
-      content: {},
-      webtrekk: {
-        page: {
-          parameter: {
-            1: "Login",
-          },
-        },
-      },
+  setup() {
+    App.$webtrekk.page({
+        parameter: {
+          1: "Login"
+        }
+      });
+    // Reactive state for registration and login
+    const loginName = ref("");
+    const loginPassword = ref("");
+    const regName = ref("");
+    const regFirstName = ref("");
+    const regLastname = ref("");
+    const regPassword = ref("");
+
+    // Actions for login and registration
+    const handleRegister = () => {
+      store.dispatch("register", {
+        name: regName.value,
+        password: regPassword.value,
+        firstName: regFirstName.value,
+        lastName: regLastname.value,
+      });
     };
-  },
-  computed: {
-    ...mapGetters(["isLoggedOut"]),
-  },
-  methods: {
-    ...mapActions(["login", "register"]),
+
+    const handleLogin = () => {
+      store.dispatch("login", {
+        name: loginName.value,
+        password: loginPassword.value,
+      });
+    };
+
+    // Computed properties from Vuex (optional)
+    const isLoggedOut = computed(() => store.getters.isLoggedOut);
+
+    return {
+      loginName,
+      loginPassword,
+      regName,
+      regFirstName,
+      regLastname,
+      regPassword,
+      handleRegister,
+      handleLogin,
+      isLoggedOut,
+    };
   },
 });
 </script>

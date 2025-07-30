@@ -28,7 +28,7 @@ export default defineComponent({
   name: "OrderProductList",
   props: {
     products: {
-      type: Array,
+      type: Array as () => Array<{ id: number; imageUrl: string; name: string; sku: string; quantity: number; price: number; sum: number }>,
       required: false,
     },
   },

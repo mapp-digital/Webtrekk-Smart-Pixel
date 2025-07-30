@@ -1,12 +1,12 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
-import WebtrekkSmartpixelVue, {
-  WebtrekkSmartpixelVueOptions,
+import WebtrekkSmartpixelVue from "@webtrekk-smart-pixel/vue";
+import type { 
+  WebtrekkSmartpixelVueOptions 
 } from "@webtrekk-smart-pixel/vue";
-import "./styles.css";
+import "./style.css";
 
 const webtrekkConfig: WebtrekkSmartpixelVueOptions = {
   trackId: "123123123123123",

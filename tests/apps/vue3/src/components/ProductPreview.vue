@@ -1,24 +1,19 @@
 <template>
   <div class="card" :id="'product_' + product.id">
-    <router-link :to="'/shop/' + product.id"
-      ><img
+    <router-link :to="'/shop/' + product.id">
+      <img
         :src="product.imageUrl"
         :alt="product.name + 'title'"
         style="width: 100%"
-    /></router-link>
-    <router-link :to="'/shop/' + product.id"
-      ><h1>{{ product.name }}</h1></router-link
-    >
+      />
+    </router-link>
+    <router-link :to="'/shop/' + product.id">
+      <h1>{{ product.name }}</h1>
+    </router-link>
     <p class="price">${{ product.price }}</p>
     <p>{{ product.description }}</p>
     <p>
-      <button
-        v-on:click="
-          () => {
-            this.addToCart(product);
-          }
-        "
-      >
+      <button @click="addToCart(product)">
         Add to Cart
       </button>
     </p>
@@ -26,8 +21,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { mapActions } from "vuex";
+import { defineComponent, toRefs } from "vue";
+import store from "../store";
+
 export default defineComponent({
   name: "ProductPreview",
   props: {
@@ -36,8 +32,18 @@ export default defineComponent({
       required: true,
     },
   },
-  methods: {
-    ...mapActions(["addToCart"]),
+  setup(props) {
+    const { product } = toRefs(props); // Access product prop reactively
+
+    // Action to add product to cart
+    const addToCart = (product: any) => {
+      store.dispatch("addToCart", product);
+    };
+
+    return {
+      product,
+      addToCart,
+    };
   },
 });
 </script>

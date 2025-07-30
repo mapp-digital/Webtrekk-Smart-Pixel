@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import OrderProductList from "@/components/OrderProductList.vue";
+import OrderProductList from "/src/components/OrderProductList.vue";
 import { mapGetters, useStore } from "vuex";
 
 export default defineComponent({
