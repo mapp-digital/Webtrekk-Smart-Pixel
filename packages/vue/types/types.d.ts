@@ -1,4 +1,4 @@
-import WebtrekkSmartpixelVue from '../src/index';
+import WebtrekkSmartpixelVue from '../index';
 import {SmartPixel} from '@webtrekk-smart-pixel/core';
 
 type NumberOrString = number | string;
@@ -49,6 +49,11 @@ type WebtrekkAdvancedPropUserIdentification = {
     saveTemporarySessionId?: boolean;
 }
 
+type WebtrekkAdvancedPropAdvancedPermission = {
+    activated?: boolean;
+    permissionCategory?: NumberOrString;
+}
+
 interface WebtrekkInitProps {
     trackId?: string;
     trackDomain?: string;
@@ -61,15 +66,27 @@ interface WebtrekkAdvancedProps {
     secureCookie?: boolean;
     optOutName?: string;
     requestObfuscation?: boolean;
+    registerObfuscation?: boolean;
+    parameterObfuscation?: string[];
+    /**
+     * @deprecated
+     */
     execCDB?: boolean;
+    /**
+     * @deprecated
+     */
     useCDBCache?: boolean;
     sendViaSDK?: boolean;
+    productMerge?: boolean;
+    tabBrowsing?: boolean;
+    preRendering?: boolean;
     sendViaServer?: WebtrekkAdvancedPropSendViaServer;
     useHashForDefaultPageName?: boolean;
     useParamsForDefaultPageName?: string[];
     requestQueue?: WebtrekkAdvancedPropRequestQueue;
     requestLimit?: WebtrekkAdvancedPropRequestLimit;
     userIdentification?: WebtrekkAdvancedPropUserIdentification;
+    advancedPermission?: WebtrekkAdvancedPropAdvancedPermission;
 }
 
 interface WebtrekkCampaignProps {
@@ -95,7 +112,24 @@ interface WebtrekkCustomerProps {
     street?: string;
     streetNumber?: string;
     validation?: boolean;
+    registrationEmail?: string;
+    registrationGroupId?: string;
+    registrationMode?: string;
+    registrationFirstName?: string;
+    registrationLastName?: string;
+    registrationGender?: string;
+    registrationTitle?: string;
+    registrationOptin?: boolean;
     category?: DataObject;
+}
+
+interface WebtrekkEngageProps {
+    attributes?: {
+        [i in NumberOrString]: NumberOrString;
+    };
+    eventName?: string;
+    eventId?: number;
+    eventSegmentation?: string;
 }
 
 interface WebtrekkOrderProps {
@@ -245,6 +279,7 @@ interface Webtrekk {
     action(name: string, data?: WebtrekkActionProps): void;
     session(data: WebtrekkSessionProps): void;
     campaign(data: WebtrekkCampaignProps): void;
+    engage(data: WebtrekkEngageProps): void;
     customer(data: WebtrekkCustomerProps): void;
     customer(id: string, data?: WebtrekkCustomerProps, validation?: boolean): void;
     product(action: WebtrekkProductStatus, data: WebtrekkProductProps): void;
@@ -274,6 +309,7 @@ export type WebtrekkSmartpixelVueOptions = WebtrekkInitProps &
 declare module "@vue/runtime-core" {
     interface ComponentCustomProperties {
         $webtrekk: Webtrekk;
+        $mapp: Webtrekk;
     }
 }
 

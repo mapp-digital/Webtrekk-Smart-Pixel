@@ -117,6 +117,15 @@ class WebtrekkSmartPixelVue {
     }
 
     /**
+     * @param {object} data
+     */
+    engage(data = emptyObject) {
+        this.call(function(pix) {
+            pix.engage.data.add(data);
+        });
+    }
+
+    /**
      * @param {string} id
      * @param {object} data
      * @param {boolean} validation

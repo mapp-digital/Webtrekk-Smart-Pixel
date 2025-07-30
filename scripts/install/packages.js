@@ -175,32 +175,6 @@ module.exports = {
         '2': {'nuxt': '^2', 'axios': 'latest'}
     },
     'vue': {
-        '2.2': {'vue': '~2.2', 'vue-template-compiler': '~2.2', 'vue-router': '^3.1.3', 'vuex': '3.0.1'},
-        '2.3': {'vue': '~2.3', 'vue-template-compiler': '~2.3', 'vue-router': '^3.1.3', 'vuex': '3.0.1'},
-        '2.4': {'vue': '~2.4', 'vue-template-compiler': '~2.4', 'vue-router': '^3.1.3', 'vuex': '3.0.1'},
-        '2.5': {'vue': '~2.5', 'vue-template-compiler': '~2.5', 'vue-router': '^3.1.3', 'vuex': '3.0.1'},
-        '2.6': {'vue': '~2.6', 'vue-template-compiler': '~2.6', 'vue-router': '^3.1.3', 'vuex': '3.0.1'},
-        'latest': {'vue': 'latest', 'vue-template-compiler': 'latest', 'vue-router': 'latest', 'vuex': 'latest'},
-        'next': {
-            'vue': 'next', '@vue/compiler-sfc': 'latest',
-            '@vue/eslint-config-prettier': 'latest',
-            'vue-router': 'next', 'vuex': 'next', '@vue/test-utils': 'next', 'vue-jest': 'next', '@vue/cli-plugin-pwa': 'next',
-            '@vue/cli-plugin-typescript': 'next', 'register-service-worker': '1.7.2',
-            'core-js': '^3.6.5',
-            '@typescript-eslint/eslint-plugin': '^4.18.0',
-            '@typescript-eslint/parser': '^4.18.0',
-            '@vue/cli-plugin-babel': '~4.5.0',
-            '@vue/cli-plugin-eslint': '~4.5.0',
-            '@vue/cli-plugin-router': '~4.5.0',
-            '@vue/cli-plugin-vuex': '~4.5.0',
-            '@vue/cli-service': '~4.5.0',
-            '@vue/eslint-config-typescript': '^7.0.0',
-            'eslint': '^6.7.2',
-            'eslint-plugin-prettier': '^3.3.1',
-            'eslint-plugin-vue': '^7.0.0',
-            'prettier': '^2.2.1',
-            'typescript': '~4.1.5'
-        },
-        'beta': {'vue': 'beta', 'vue-template-compiler': 'beta'}
+        '3': {}
     }
 };

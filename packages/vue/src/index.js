@@ -1,35 +1,18 @@
 import SmartPixelVue from './lib/WebtrekkSmartPixelVue';
 import WebtrekkDirective from './lib/WebtrekkDirective';
-import {wtBeforeRouteEnter, wtBeforeRouteLeave} from './lib/routerHookFunctions';
 import {mappBeforeResolve, autoTrack} from './lib/routerHookFunctionsV3';
 
 const webtrekk = {
     install(Vue, webtrekkConfig) {
-        const isVue3 = Vue?.hasOwnProperty('config') && Vue.config?.hasOwnProperty('globalProperties');
-        if (isVue3) {
-            Vue.config.globalProperties.$webtrekk = SmartPixelVue;
-            if (webtrekkConfig.activateAutoTracking && webtrekkConfig.activateAutoTracking.beforeResolve) {
-                webtrekkConfig.activateAutoTracking.beforeResolve(to => {
-                    mappBeforeResolve(to, webtrekkConfig);
-                });
-                webtrekkConfig.activateAutoTracking.afterEach(async() => {
-                    autoTrack(webtrekkConfig);
-                });
-            }
-        }
-        else {
-            Vue.prototype.$webtrekk = SmartPixelVue;
-            if (webtrekkConfig.activateAutoTracking) {
-                Vue.mixin({
-                    beforeRouteEnter(to, from, next) {
-                        wtBeforeRouteEnter(webtrekkConfig, next);
-                    },
-                    /* istanbul ignore next */
-                    beforeRouteLeave(to, from, next) {
-                        wtBeforeRouteLeave(next);
-                    }
-                });
-            }
+        Vue.config.globalProperties.$webtrekk = SmartPixelVue;
+        Vue.config.globalProperties.$mapp = SmartPixelVue;
+        if (webtrekkConfig.activateAutoTracking && webtrekkConfig.activateAutoTracking.beforeResolve) {
+            webtrekkConfig.activateAutoTracking.beforeResolve(to => {
+                mappBeforeResolve(to, webtrekkConfig);
+            });
+            webtrekkConfig.activateAutoTracking.afterEach(async() => {
+                autoTrack(webtrekkConfig);
+            });
         }
 
         // initialization of global Webtrekk configuration
