@@ -1,6 +1,6 @@
 {
     "name": "@webtrekk-smart-pixel/next",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "title": "Webtrekk Smart Pixel for Next",
     "description": "A Next implementation of the Webtrekk Smart Pixel.",
     "main": "index.js",

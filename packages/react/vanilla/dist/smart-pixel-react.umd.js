@@ -665,6 +665,7 @@
     optOutName: PropTypes.string,
     requestObfuscation: PropTypes.bool,
     registerObfuscation: PropTypes.bool,
+    parameterObfuscation: PropTypes.arrayOf(PropTypes.string),
     execCDB: PropTypes.bool,
     useCDBCache: PropTypes.bool,
     sendViaSDK: PropTypes.bool,
@@ -702,6 +703,10 @@
       suppressParameter: PropTypes.arrayOf(PropTypes.string),
       temporarySessionId: PropTypes.string,
       saveTemporarySessionId: PropTypes.bool
+    }),
+    advancedPermission: PropTypes.shape({
+      activated: PropTypes.bool,
+      permissionCategory: PropTypesOfTypesNumberOrString
     })
   };
   WebtrekkAdvancedData.defaultProps = {
@@ -710,6 +715,7 @@
     optOutName: null,
     requestObfuscation: null,
     registerObfuscation: null,
+    parameterObfuscation: null,
     execCDB: null,
     useCDBCache: null,
     sendViaSDK: null,
@@ -745,6 +751,10 @@
       suppressParameter: null,
       temporarySessionId: null,
       saveTemporarySessionId: null
+    },
+    advancedPermission: {
+      activated: null,
+      permissionCategory: null
     }
   };
 
@@ -1404,7 +1414,7 @@
   // compatibility for v0
   var webtrekkSmartPixelReact = SmartPixelReact;
   webtrekkSmartPixelReact.call(function (wtSmart) {
-    wtSmart._ps(2, '1.4.0');
+    wtSmart._ps(2, '1.5.0');
   });
   var index = {
     WebtrekkAutoTracking: WebtrekkAutoTracking$1,

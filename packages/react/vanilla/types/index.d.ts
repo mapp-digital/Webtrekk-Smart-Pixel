@@ -50,6 +50,11 @@ type WebtrekkAdvancedPropUserIdentification = {
     suppressParameter?: string[];
 }
 
+type WebtrekkAdvancedPropAdvancedPermission = {
+    activated?: boolean;
+    permissionCategory?: NumberOrString;
+}
+
 interface WebtrekkAutoTrackingProps {
     trackId: string;
     trackDomain: string;
@@ -72,6 +77,7 @@ interface WebtrekkAdvancedProps {
     optOutName?: string;
     requestObfuscation?: boolean;
     registerObfuscation?: boolean;
+    parameterObfuscation?: string[];
     /**
      * @deprecated
      */
@@ -90,6 +96,7 @@ interface WebtrekkAdvancedProps {
     requestQueue?: WebtrekkAdvancedPropRequestQueue;
     requestLimit?: WebtrekkAdvancedPropRequestLimit;
     userIdentification?: WebtrekkAdvancedPropUserIdentification;
+    advancedPermission?: WebtrekkAdvancedPropAdvancedPermission;
 }
 
 interface WebtrekkCampaignProps {

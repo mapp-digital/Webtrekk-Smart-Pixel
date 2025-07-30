@@ -1,4 +1,15 @@
-a name="1.4.0"></a>
+<a name="1.5.0"></a>
+# 1.5.0 (2025-07)
+
+## Features
+
+- Add missing types for:
+    - **advanced**
+        - parameterObfuscation: We offer a new advanced option, with which you can define any tracking parameters for obfuscation (see [Advanced](https://docs.mapp.com/v1/docs/tracking-configuration-advanced)).
+        - advancedPermission: Enable if you need to differentiate between additional useage option of the tracked data, e.g. marketing purposes (see [Advanced](https://docs.mapp.com/v1/docs/tracking-configuration-advanced)).
+
+
+<a name="1.4.0"></a>
 # 1.4.0 (2025-03-11)
 
 ## Features

@@ -18,6 +18,7 @@ WebtrekkAdvancedData.propTypes = {
     optOutName: PropTypes.string,
     requestObfuscation: PropTypes.bool,
     registerObfuscation: PropTypes.bool,
+    parameterObfuscation: PropTypes.arrayOf(PropTypes.string),
     execCDB: PropTypes.bool,
     useCDBCache: PropTypes.bool,
     sendViaSDK: PropTypes.bool,
@@ -55,6 +56,10 @@ WebtrekkAdvancedData.propTypes = {
         suppressParameter: PropTypes.arrayOf(PropTypes.string),
         temporarySessionId: PropTypes.string,
         saveTemporarySessionId: PropTypes.bool
+    }),
+    advancedPermission: PropTypes.shape({
+        activated: PropTypes.bool,
+        permissionCategory: PropTypesOfTypesNumberOrString
     })
 };
 
@@ -64,6 +69,7 @@ WebtrekkAdvancedData.defaultProps = {
     optOutName: null,
     requestObfuscation: null,
     registerObfuscation: null,
+    parameterObfuscation: null,
     execCDB: null,
     useCDBCache: null,
     sendViaSDK: null,
@@ -99,6 +105,10 @@ WebtrekkAdvancedData.defaultProps = {
         suppressParameter: null,
         temporarySessionId: null,
         saveTemporarySessionId: null
+    },
+    advancedPermission: {
+        activated: null,
+        permissionCategory: null
     }
 };
 
