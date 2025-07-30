@@ -35,6 +35,10 @@ declare type WebtrekkAdvancedPropUserIdentification = {
     anonymousCookieName?: string;
     suppressParameter?: string[];
 };
+type WebtrekkAdvancedPropAdvancedPermission = {
+    activated?: boolean;
+    permissionCategory?: NumberOrString;
+}
 export interface WebtrekkActionProps {
     name?: string;
     parameter?: DataObject;
@@ -51,6 +55,7 @@ export interface WebtrekkAdvancedProps {
     optOutName?: string;
     requestObfuscation?: boolean;
     registerObfuscation?: boolean;
+    parameterObfuscation?: string[];
     /**
      * @deprecated
      */
@@ -69,6 +74,7 @@ export interface WebtrekkAdvancedProps {
     requestQueue?: WebtrekkAdvancedPropRequestQueue;
     requestLimit?: WebtrekkAdvancedPropRequestLimit;
     userIdentification?: WebtrekkAdvancedPropUserIdentification;
+    advancedPermission?: WebtrekkAdvancedPropAdvancedPermission;
 }
 export interface WebtrekkCampaignProps {
     id?: string;
