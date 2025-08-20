@@ -11,6 +11,7 @@ packages/*/*
 packages/*/dist/*
 !packages/*/dist/*.min.js
 !packages/*/dist/*.debug.js
+!packages/*/dist/*.debugger.js
 !packages/*/dist/*.umd.js
 !packages/*/types
 !packages/*/index.js

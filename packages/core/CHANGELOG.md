@@ -1,3 +1,9 @@
+<a name="1.6.1"></a>
+# 1.6.1 (2025-08-19)
+
+## Bug Fixes
+- Cookies cannot be deleted for double TLDs (e.g. co.uk).
+
 <a name="1.6.0"></a>
 # 1.6.0 (2025-07-xx)
 
