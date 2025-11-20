@@ -1,3 +1,10 @@
+<a name="1.8.0"></a>
+# 1.8.0 (2025-11-19)
+
+## Features
+- **Recommendation tracking for Mapp Fashion**: It is now possible to track if an item was displayed within a Mapp Fashion recommendation before being purchased, directly within the Mapp Cloud recommendation widget.
+- **Unified User ID**: It is possible to share the Mapp Fashion user ID with our other Mapp Cloud products. We highly recommend to use our advanced permission option when sharing user information in Mapp Cloud. **_Please note_**: This is currently limited to our Mapp Fashion recommendation widget when used together with Mapp Intelligence Tracking.
+
 <a name="1.6.1"></a>
 # 1.6.1 (2025-08-19)
 

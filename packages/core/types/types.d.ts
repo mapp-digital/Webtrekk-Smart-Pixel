@@ -559,6 +559,8 @@ interface SmartPixelProductActions {
     confirmation: SmartPixelProduct;
     addToWishlist: SmartPixelProduct;
     deleteFromWishlist: SmartPixelProduct;
+    displayReco: SmartPixelProduct;
+    clickReco: SmartPixelProduct;
 }
 
 /* **********************************************
@@ -1121,6 +1123,37 @@ interface SmartPixelExtensionTeaserTracking extends SmartPixelExtensionProps {
 
 interface SmartPixelExtension {
     teaser_tracking: SmartPixelExtensionTeaserTracking;
+}
+
+/* **********************************************
+ *       EXTENSION:RECOMMENDATION_TRACKING      *
+ ********************************************** */
+interface SmartPixelExtensionRecommendationTrackingConfigMaxSendProducts {
+    session?: number;
+    page?: number;
+}
+
+interface SmartPixelExtensionRecommendationTrackingSetConfig {
+    maxSendProducts?: SmartPixelExtensionRecommendationTrackingConfigMaxSendProducts;
+    maxCookieSize?: NumberOrString;
+}
+
+interface SmartPixelExtensionRecommendationTrackingGetConfig {
+    maxSendProducts: SmartPixelExtensionRecommendationTrackingConfigMaxSendProducts;
+    maxCookieSize: NumberOrString;
+}
+
+interface SmartPixelExtensionRecommendationTracking extends SmartPixelExtensionProps {
+    config(): SmartPixelExtensionRecommendationTrackingGetConfig;
+    config(config: SmartPixelExtensionRecommendationTrackingSetConfig): void;
+    isActivated(): boolean;
+    activate(): void;
+    deactivate(): void;
+    update(): void;
+}
+
+interface SmartPixelExtension {
+    recommendation_tracking: SmartPixelExtensionRecommendationTracking;
 }
 
 /* **********************************************
