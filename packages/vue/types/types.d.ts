@@ -8,7 +8,7 @@ type DataObject = {
 };
 
 type WebtrekkInitCookie = '1' | '3';
-type WebtrekkProductStatus = 'list' | 'view' | 'basket' | 'addToCart' | 'deleteFromCart' | 'checkout' | 'confirmation' | 'addToWishlist' | 'deleteFromWishlist';
+type WebtrekkProductStatus = 'list' | 'view' | 'basket' | 'addToCart' | 'deleteFromCart' | 'checkout' | 'confirmation' | 'addToWishlist' | 'deleteFromWishlist' | 'displayReco' | 'clickReco';
 type WebtrekkTeaserType = 'view' | 'click' | 'product';
 type WebtrekkTeaserGoal = 'order' | 'goal' | 'both';
 type WebtrekkContentEngagementSendContentEngagement = 0 | 1 | 2;

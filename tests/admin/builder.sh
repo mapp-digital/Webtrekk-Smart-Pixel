@@ -8,7 +8,7 @@ function init_vue3 {
     log "Backup Vue3 src"
     mv /apps/vue3 /apps/vue3_src
     log "Scaffold new Vue3 project via Vite"
-    cd /apps/ && npm create vite@latest vue3 -- --template vue-ts --force
+    cd /apps/ && npm create vite@latest vue3 -- --template vue-ts --force --rolldown false --interactive false
     log "Merge E2E app src with new app"
     cp -rf /apps/vue3_src/src /apps/vue3/
     cp -rf /apps/vue3_src/vite.config.ts /apps/vue3
@@ -25,7 +25,7 @@ function install_vue3 {
     fi
     if [[ -z "${MAPP_REGRESSION}" ]]; then
         log "Preparing tests with public version of plugin - installing from npm..."
-        cd /apps/vue3 && npm install --save @webtrekk-smart-pixel/vue
+        cd /apps/vue3 && npm install --save @webtrekk-smart-pixel/vue && npm install --save @webtrekk-smart-pixel/core
         log "Backup original plugin files for Code Coverage"
         rm -rf /E2E/sources-for-coverage/vue3 && cp -rf /apps/vue3/node_modules/@webtrekk-smart-pixel/vue /E2E/sources-for-coverage/vue3
         log "Instrument plugin code"
@@ -66,7 +66,7 @@ function init_react-ts {
     log "Backup React-TS src"
     mv /apps/react-ts /apps/react-ts_src
     log "Scaffold new React Typescript project with vite"
-    cd /apps/ && npm create vite@latest react-ts -- --template react-ts --force
+    cd /apps/ && npm create vite@latest react-ts -- --template react-ts --force --rolldown false --interactive false
     log "Merge E2E app src with new app"
     cp -rf /apps/react-ts_src/src /apps/react-ts/
     cp -rf /apps/react-ts_src/vite.config.ts /apps/react-ts
@@ -83,7 +83,7 @@ function install_react-ts {
     fi
     if [[ -z "${MAPP_REGRESSION}" ]]; then
         log "Preparing tests with public version of plugin - installing from npm..."
-        cd /apps/react-ts && npm install --save @webtrekk-smart-pixel/react
+        cd /apps/react-ts && npm install --save @webtrekk-smart-pixel/react && npm install --save @webtrekk-smart-pixel/core
         log "Backup original plugin files for Code Coverage"
         rm -rf /E2E/sources-for-coverage/react-ts && cp -rf /apps/react-ts/node_modules/@webtrekk-smart-pixel/react /E2E/sources-for-coverage/react-ts
         log "Instrument plugin code"
@@ -97,7 +97,6 @@ function install_react-ts {
         cd /packages/react && nyc instrument ./vanilla /apps/react-ts/node_modules/@webtrekk-smart-pixel/react
         log "Getting core and types"
         cp -rf /packages/core /apps/react-ts/node_modules/@webtrekk-smart-pixel/core
-        cp -f /packages/react/vanilla/package.json /apps/react-ts/node_modules/@webtrekk-smart-pixel/react/package.json
         cp -rf /packages/react/vanilla/types /apps/react-ts/node_modules/@webtrekk-smart-pixel/react/
     fi
 }
@@ -394,7 +393,7 @@ function install_angular18 {
     fi
     if [[ -z "${MAPP_REGRESSION}" ]]; then
         log "Preparing tests with public version of plugin - installing from npm..."
-        cd /apps/angular18 && npm install --save @webtrekk-smart-pixel/angular@2 --force
+        cd /apps/angular18 && npm install --save @webtrekk-smart-pixel/angular@2 --force && npm install --save @webtrekk-smart-pixel/core
         log "Instrument plugin code"
         cd /apps/angular18/node_modules/@webtrekk-smart-pixel && nyc instrument ./angular --in-place=true --exclude-node-modules=false
 

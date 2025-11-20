@@ -1,0 +1,1 @@
+import{_ as e,c as r,o as s,a as t}from"./index-UXRI3_pq.js";const a={},n={class:"about"};function c(_,o){return s(),r("div",n,[...o[0]||(o[0]=[t("h1",null,"Thanks for your order",-1)])])}const f=e(a,[["render",c]]);export{f as default};

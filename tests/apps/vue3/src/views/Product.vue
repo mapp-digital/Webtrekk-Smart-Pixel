@@ -3,14 +3,14 @@
     <p>Loading product data...</p>
   </div>
   <div v-else>
-    <h1>{{ product[0].name }}</h1>
-    <img :src="product[0].imageUrl" :alt="product[0].name" />
-    <p>{{ product[0].description }}</p>
+    <h1>{{ product[0]!.name }}</h1>
+    <img :src="product[0]!.imageUrl" :alt="product[0]!.name" />
+    <p>{{ product[0]!.description }}</p>
     <p>
-      <small>SKU: {{ product[0].sku }}</small>
+      <small>SKU: {{ product[0]!.sku }}</small>
     </p>
     <p>
-      <strong>Price: ${{ product[0].price }}</strong>
+      <strong>Price: ${{ product[0]!.price }}</strong>
     </p>
     <form>
       <input type="number" name="quantity" min="1" v-model="quantity" />
@@ -22,10 +22,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed, onMounted } from "vue";
+import { computed, defineComponent, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
-import store from "../store";
 import { getFixtureData } from "../helpers/fixture";
+import store from "../store";
 import App from "./../main";
 
 interface ProductData {
@@ -63,8 +63,8 @@ export default defineComponent({
         }
       });
       App.$webtrekk.product("view", {
-        id: String(product.value[0].id),
-        cost: product.value[0].price,
+        id: String(product.value[0]!.id),
+        cost: product.value[0]!.price,
         quantity: 1,
       });
       App.$webtrekk.track();
