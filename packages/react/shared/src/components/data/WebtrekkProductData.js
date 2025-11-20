@@ -16,7 +16,8 @@ WebtrekkProductData.propTypes = {
     id: PropTypes.string.isRequired,
     action: PropTypes.oneOf([
         'list', 'view', 'basket', 'addToCart', 'deleteFromCart',
-        'checkout', 'confirmation', 'addToWishlist', 'deleteFromWishlist'
+        'checkout', 'confirmation', 'addToWishlist', 'deleteFromWishlist',
+        'displayReco', 'clickReco'
     ]).isRequired,
     cost: PropTypesOfTypesNumberOrString,
     quantity: PropTypesOfTypesNumberOrString,

@@ -43,7 +43,7 @@ describe('WebtrekkProductData', () => {
             expect(spyOnError.mock.calls.length).toBe(8);
 
             expect(spyOnError.mock.calls[0][invalidPropIndex]).toContain('Invalid prop `id` of type `number` supplied to `WebtrekkProductData`, expected `string`');
-            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `action` of value `0` supplied to `WebtrekkProductData`, expected one of ["list","view","basket","addToCart","deleteFromCart","checkout","confirmation","addToWishlist","deleteFromWishlist"]');
+            expect(spyOnError.mock.calls[1][invalidPropIndex]).toContain('Invalid prop `action` of value `0` supplied to `WebtrekkProductData`, expected one of ["list","view","basket","addToCart","deleteFromCart","checkout","confirmation","addToWishlist","deleteFromWishlist","displayReco","clickReco"]');
             expect(spyOnError.mock.calls[2][invalidPropIndex]).toContain('Invalid prop `cost` supplied to `WebtrekkProductData`');
             expect(spyOnError.mock.calls[3][invalidPropIndex]).toContain('Invalid prop `quantity` supplied to `WebtrekkProductData`');
             expect(spyOnError.mock.calls[4][invalidPropIndex]).toContain('Invalid prop `variant` of type `number` supplied to `WebtrekkProductData`, expected `string`');

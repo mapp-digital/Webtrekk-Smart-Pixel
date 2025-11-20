@@ -1,6 +1,6 @@
 {
     "name": "@webtrekk-smart-pixel/react",
-    "version": "1.5.0",
+    "version": "1.5.1",
     "title": "Webtrekk Smart Pixel for React",
     "description": "A React implementation of the Webtrekk Smart Pixel.",
     "main": "index.js",
@@ -10,7 +10,7 @@
     "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/packages/react#readme",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel"
+        "url": "git+https://github.com/Webtrekk/Webtrekk-Smart-Pixel.git"
     },
     "bugs": {
         "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/issues"

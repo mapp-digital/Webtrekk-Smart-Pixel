@@ -941,7 +941,7 @@
   var PropTypesOfTypesNumberOrString$3 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
   WebtrekkProductData.propTypes = {
     id: PropTypes.string.isRequired,
-    action: PropTypes.oneOf(['list', 'view', 'basket', 'addToCart', 'deleteFromCart', 'checkout', 'confirmation', 'addToWishlist', 'deleteFromWishlist']).isRequired,
+    action: PropTypes.oneOf(['list', 'view', 'basket', 'addToCart', 'deleteFromCart', 'checkout', 'confirmation', 'addToWishlist', 'deleteFromWishlist', 'displayReco', 'clickReco']).isRequired,
     cost: PropTypesOfTypesNumberOrString$3,
     quantity: PropTypesOfTypesNumberOrString$3,
     variant: PropTypes.string,
@@ -1414,7 +1414,7 @@
   // compatibility for v0
   var webtrekkSmartPixelReact = SmartPixelReact;
   webtrekkSmartPixelReact.call(function (wtSmart) {
-    wtSmart._ps(2, '1.5.0');
+    wtSmart._ps(2, '1.5.1');
   });
   var index = {
     WebtrekkAutoTracking: WebtrekkAutoTracking$1,
