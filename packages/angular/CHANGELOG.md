@@ -1,3 +1,11 @@
+<a name="2.4.1"></a>
+# 2.4.1 (2025-11)
+
+## Features
+
+- **Recommendation tracking for Mapp Fashion**: It is now possible to track if an item was displayed within a Mapp Fashion recommendation before being purchased, directly within the Mapp Cloud recommendation widget.
+
+
 <a name="2.4.0"></a>
 # 2.4.0 (2025-07)
 
@@ -70,6 +78,13 @@
 * Support Angular ivy
 
 ---
+<a name="1.4.1"></a>
+# 1.4.1 (2025-11)
+
+## Features
+
+- **Recommendation tracking for Mapp Fashion**: It is now possible to track if an item was displayed within a Mapp Fashion recommendation before being purchased, directly within the Mapp Cloud recommendation widget.
+
 
 <a name="1.4.0"></a>
 # 1.4.0 (2025-07)

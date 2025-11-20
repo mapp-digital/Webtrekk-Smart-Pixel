@@ -3,7 +3,7 @@ declare type DataObject = {
     [i in NumberOrString]: string;
 };
 declare type WebtrekkInitCookie = '1' | '3';
-export declare type WebtrekkProductStatus = 'view' | 'list' | 'basket' | 'confirmation';
+export declare type WebtrekkProductStatus = 'list' | 'view' | 'basket' | 'addToCart' | 'deleteFromCart' | 'checkout' | 'confirmation' | 'addToWishlist' | 'deleteFromWishlist' | 'displayReco' | 'clickReco';
 declare type WebtrekkTeaserType = 'view' | 'click' | 'product';
 declare type WebtrekkTeaserGoal = 'order' | 'goal' | 'both';
 declare type WebtrekkContentEngagementSendContentEngagement = 0 | 1 | 2;
