@@ -1,4 +1,10 @@
 <a name="1.8.0"></a>
+# 1.8.1 (2025-11-24)
+
+## Bug Fixes
+- Fix 'convert a symbol value to a string' for React teaser tracking
+
+<a name="1.8.0"></a>
 # 1.8.0 (2025-11-19)
 
 ## Features
