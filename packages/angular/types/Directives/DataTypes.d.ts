@@ -127,6 +127,7 @@ export interface WebtrekkOrderProps {
     shippingCosts?: NumberOrString;
     grossMargin?: NumberOrString;
     orderStatus?: string;
+    tax?: NumberOrString;
     parameter?: DataObject;
 }
 export interface WebtrekkPageProps {
@@ -154,6 +155,9 @@ export interface WebtrekkProductProps {
     quantity?: NumberOrString;
     variant?: string;
     soldOut?: boolean;
+    fashionStyleId?: string;
+    fashionItemTitle?: string;
+    fashionItemCategory?: string;
     parameter?: DataObject;
     category?: DataObject;
     sendInstantly?: boolean;

@@ -1,11 +1,14 @@
 {
     "name": "@webtrekk-smart-pixel/angular",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "title": "Webtrekk Smart Pixel for Angular",
     "description": "A Angular implementation of the Webtrekk Smart Pixel.",
     "author": "Webtrekk GmbH",
     "license": "MIT",
     "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/tree/master/packages/angular#readme",
+    "publishConfig": {
+        "registry": "https://nexus-npm-prod.nbg.webtrekk.com/repository/npm-internal/"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel"
