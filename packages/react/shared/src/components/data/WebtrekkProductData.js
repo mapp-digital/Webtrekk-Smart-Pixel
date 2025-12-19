@@ -23,6 +23,9 @@ WebtrekkProductData.propTypes = {
     quantity: PropTypesOfTypesNumberOrString,
     variant: PropTypes.string,
     soldOut: PropTypes.bool,
+    fashionStyleId: PropTypes.string,
+    fashionItemTitle: PropTypes.string,
+    fashionItemCategory: PropTypes.string,
     parameter: PropTypes.objectOf(PropTypes.string),
     category: PropTypes.objectOf(PropTypes.string),
     sendInstantly: PropTypes.bool
@@ -35,6 +38,9 @@ WebtrekkProductData.defaultProps = {
     quantity: null,
     variant: null,
     soldOut: null,
+    fashionStyleId: null,
+    fashionItemTitle: null,
+    fashionItemCategory: null,
     parameter: null,
     category: null,
     sendInstantly: false

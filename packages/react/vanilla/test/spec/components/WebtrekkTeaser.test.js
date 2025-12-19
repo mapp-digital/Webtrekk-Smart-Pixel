@@ -1,4 +1,5 @@
 import React from 'react';
+import {render} from '@testing-library/react';
 import {shallow, mount} from './../../enzyme';
 import {expectInCallback} from './../../helper';
 import {WebtrekkTeaser, WebtrekkSmartPixelReact} from './../../../src/index';
@@ -262,6 +263,81 @@ describe('WebtrekkTeaser', () => {
                     expect(data.conversion.goal).toBe('both');
                     expect(data.conversion.value).toBe('%');
                 }, done);
+            });
+        });
+    });
+
+    describe('check real element property', () => {
+        beforeEach((done) => {
+            WebtrekkSmartPixelReact.call((wtSmart) => {
+                spyOnError = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+                wtSmart.extension.teaser_tracking.activate();
+
+                renderedWebtrekkTeaser = mount(
+                    <WebtrekkTeaser>
+                        <div style={{height: '100px', width: '100px', border: 'solid 1px black'}}></div>
+                    </WebtrekkTeaser>,
+                    {
+                        wrappingComponent: WebtrekkTeaser
+                    }
+                );
+
+                done();
+            });
+        });
+
+        afterEach((done) => {
+            WebtrekkSmartPixelReact.call((wtSmart) => {
+                wtSmart.extension.teaser_tracking.deactivate();
+
+                spyOnError.mockRestore();
+
+                spyOnError = null;
+                renderedWebtrekkTeaser = null;
+
+                done();
+            });
+        });
+
+        test('add element with config', (done) => {
+            const {container} = render(
+                <WebtrekkTeaser
+                    name="name of the teaser element"
+                    rank="rank of the teaser element"
+                    content="content of the teaser element"
+                    variant="variant of the teaser element"
+                    seen={false}
+                    type="view"
+                    goal="both"
+                    value="%"
+                >
+                    <div id="test-teaser" style={{height: '100px', width: '100px', border: 'solid 1px black'}}></div>
+                </WebtrekkTeaser>
+            );
+
+            WebtrekkSmartPixelReact.call(() => {
+                expectInCallback(() => {
+                    const teaserData = container.firstChild['wtstp_ttv2'];
+
+                    expect(teaserData.data.name).toBe('name of the teaser element');
+                    expect(teaserData.data.rank).toBe('rank of the teaser element');
+                    expect(teaserData.data.content).toBe('content of the teaser element');
+                    expect(teaserData.data.variant).toBe('variant of the teaser element');
+                    expect(teaserData.data.seen).toBe(false);
+                    expect(teaserData.data.type).toBe('view');
+                    expect(teaserData.data.goal).toBe('both');
+                    expect(teaserData.data.value).toBe('%');
+
+                    expect(teaserData.click.name).toBe('name of the teaser element');
+                    expect(teaserData.click.rank).toBe('rank of the teaser element');
+                    expect(teaserData.click.content).toBe('content of the teaser element');
+                    expect(teaserData.click.variant).toBe('variant of the teaser element');
+                    expect(teaserData.click.seen).toBe(false);
+                    expect(teaserData.click.type).toBe('view');
+                    expect(teaserData.click.goal).toBe('both');
+                    expect(teaserData.click.value).toBe('%');
+                }, done, 5 * 1000);
             });
         });
     });

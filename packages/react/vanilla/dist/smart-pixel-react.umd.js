@@ -864,6 +864,7 @@
     shippingCosts: PropTypesOfTypesNumberOrString$1,
     grossMargin: PropTypesOfTypesNumberOrString$1,
     orderStatus: PropTypes.string,
+    tax: PropTypesOfTypesNumberOrString$1,
     parameter: PropTypes.objectOf(PropTypes.string),
     sendInstantly: PropTypes.bool
   };
@@ -878,6 +879,7 @@
     shippingCosts: null,
     grossMargin: null,
     orderStatus: null,
+    tax: null,
     parameter: null,
     sendInstantly: false
   };
@@ -946,6 +948,9 @@
     quantity: PropTypesOfTypesNumberOrString$3,
     variant: PropTypes.string,
     soldOut: PropTypes.bool,
+    fashionStyleId: PropTypes.string,
+    fashionItemTitle: PropTypes.string,
+    fashionItemCategory: PropTypes.string,
     parameter: PropTypes.objectOf(PropTypes.string),
     category: PropTypes.objectOf(PropTypes.string),
     sendInstantly: PropTypes.bool
@@ -957,6 +962,9 @@
     quantity: null,
     variant: null,
     soldOut: null,
+    fashionStyleId: null,
+    fashionItemTitle: null,
+    fashionItemCategory: null,
     parameter: null,
     category: null,
     sendInstantly: false
@@ -1414,7 +1422,7 @@
   // compatibility for v0
   var webtrekkSmartPixelReact = SmartPixelReact;
   webtrekkSmartPixelReact.call(function (wtSmart) {
-    wtSmart._ps(2, '1.5.1');
+    wtSmart._ps(2, '1.5.2');
   });
   var index = {
     WebtrekkAutoTracking: WebtrekkAutoTracking$1,

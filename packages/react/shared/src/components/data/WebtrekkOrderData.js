@@ -23,6 +23,7 @@ WebtrekkOrderData.propTypes = {
     shippingCosts: PropTypesOfTypesNumberOrString,
     grossMargin: PropTypesOfTypesNumberOrString,
     orderStatus: PropTypes.string,
+    tax: PropTypesOfTypesNumberOrString,
     parameter: PropTypes.objectOf(PropTypes.string),
     sendInstantly: PropTypes.bool
 };
@@ -38,6 +39,7 @@ WebtrekkOrderData.defaultProps = {
     shippingCosts: null,
     grossMargin: null,
     orderStatus: null,
+    tax: null,
     parameter: null,
     sendInstantly: false
 };

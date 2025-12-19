@@ -1,6 +1,6 @@
 {
     "name": "@webtrekk-smart-pixel/react",
-    "version": "1.5.1",
+    "version": "1.5.2",
     "title": "Webtrekk Smart Pixel for React",
     "description": "A React implementation of the Webtrekk Smart Pixel.",
     "main": "index.js",
@@ -8,6 +8,9 @@
     "author": "Webtrekk GmbH",
     "license": "MIT",
     "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/packages/react#readme",
+    "publishConfig": {
+        "registry": "https://nexus-npm-prod.nbg.webtrekk.com/repository/npm-internal/"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Webtrekk/Webtrekk-Smart-Pixel.git"
@@ -26,6 +29,7 @@
         "@types/jest": "^24.0.18",
         "@babel/preset-env": "^7.4.3",
         "@babel/preset-react": "^7.0.0",
+        "@testing-library/react": "release-12.x",
         "@testing-library/react-hooks": "^1.1.0",
         "cheerio": "1.0.0-rc.12",
         "enzyme": "^3.10.0",
