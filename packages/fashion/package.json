@@ -1,0 +1,34 @@
+{
+    "name": "@webtrekk-smart-pixel/fashion",
+    "version": "1.0.0",
+    "title": "Webtrekk Smart Pixel Fashion",
+    "description": "Mapp Fashion for Smart Pixel",
+    "main": "./index.js",
+    "typings": "./types/types.d.ts",
+    "author": "Webtrekk GmbH",
+    "license": "MIT",
+    "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/packages/fashion#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel"
+    },
+    "bugs": {
+        "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/issues"
+    },
+    "peerDependencies": {
+        "@webtrekk-smart-pixel/core": "^1.1.0"
+    },
+    "devDependencies": {
+        "glob": "^7.1.4",
+        "google-closure-compiler": "^20180506.0.0",
+        "jasmine-core": "^3.5.0",
+        "jasmine-spec-reporter": "~4.1.0",
+        "karma": "^4.3.0",
+        "karma-chrome-launcher": "^3.1.0",
+        "karma-coverage": "^2.0.1",
+        "karma-firefox-launcher": "^1.2.0",
+        "karma-generic-preprocessor": "^1.1.1",
+        "karma-jasmine": "^2.0.1",
+        "karma-script-launcher": "^1.0.0"
+    }
+}
