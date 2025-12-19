@@ -1,6 +1,6 @@
 {
     "name": "@webtrekk-smart-pixel/vue",
-    "version": "2.1.1",
+    "version": "2.1.2",
     "title": "Webtrekk Smart Pixel for Vue",
     "description": "A Vue implementation of the Webtrekk Smart Pixel.",
     "main": "./index.js",
@@ -8,6 +8,9 @@
     "author": "Webtrekk GmbH",
     "license": "MIT",
     "homepage": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/packages/vue#readme",
+    "publishConfig": {
+        "registry": "https://nexus-npm-prod.nbg.webtrekk.com/repository/npm-internal/"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel"

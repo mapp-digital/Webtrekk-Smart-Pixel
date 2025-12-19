@@ -169,19 +169,17 @@
       i = 0;
     }
     _regeneratorDefine = function (e, r, n, t) {
-      if (r) i ? i(e, r, {
+      function o(r, n) {
+        _regeneratorDefine(e, r, function (e) {
+          return this._invoke(r, n, e);
+        });
+      }
+      r ? i ? i(e, r, {
         value: n,
         enumerable: !t,
         configurable: !t,
         writable: !t
-      }) : e[r] = n;else {
-        function o(r, n) {
-          _regeneratorDefine(e, r, function (e) {
-            return this._invoke(r, n, e);
-          });
-        }
-        o("next", 0), o("throw", 1), o("return", 2);
-      }
+      }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2));
     }, _regeneratorDefine(e, r, n, t);
   }
   function _toPrimitive(t, r) {
@@ -237,7 +235,7 @@
     if (window_ !== null && document_ !== null) {
       pixel_ = wtSmart.use(window_, document_);
       window_['wtSmart'] = pixel_;
-      window_['wtSmart']['_ps'](8, '2.1.0');
+      window_['wtSmart']['_ps'](8, '2.1.2');
     }
   };
 
