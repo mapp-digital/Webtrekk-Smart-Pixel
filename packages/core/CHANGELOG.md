@@ -1,4 +1,15 @@
-<a name="1.8.0"></a>
+<a name="1.8.2"></a>
+# 1.8.2 (2025-12-16)
+
+## Features
+- Add new product types for Mapp Fashion
+  - **fashionStyleId**: Product code or variant identifier (for example, style or group code)
+  - **fashionItemTitle**: Product name
+  - **fashionItemCategory**: Product category
+- Add new order type for Mapp Fashion
+  - **tax**: Tax amount
+
+<a name="1.8.1"></a>
 # 1.8.1 (2025-11-24)
 
 ## Bug Fixes

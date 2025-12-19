@@ -368,6 +368,7 @@ interface SmartPixelOrderAddProps {
     shippingCosts?: NumberOrString;
     grossMargin?: NumberOrString;
     orderStatus?: string;
+    tax?: NumberOrString;
     parameter?: DataObject;
 }
 
@@ -386,6 +387,7 @@ interface SmartPixelOrderGetProps {
     shippingCosts: number;
     grossMargin: number;
     orderStatus: string;
+    tax: number;
     parameter: DataObject;
 }
 
@@ -501,6 +503,9 @@ interface SmartPixelProductAddedProps {
     currency?: string;
     variant?: string;
     soldOut?: boolean;
+    fashionStyleId?: string;
+    fashionItemTitle?: string;
+    fashionItemCategory?: string;
     parameter?: DataObject;
     category?: DataObject;
 }
@@ -518,6 +523,9 @@ interface SmartPixelProductGetProps {
     currency: string;
     variant: string;
     soldOut: boolean;
+    fashionStyleId: string;
+    fashionItemTitle: string;
+    fashionItemCategory: string;
     parameter: DataObject;
     category: DataObject;
 }

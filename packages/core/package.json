@@ -1,6 +1,6 @@
 {
     "name": "@webtrekk-smart-pixel/core",
-    "version": "1.8.1",
+    "version": "1.8.2",
     "title": "Webtrekk Smart Pixel",
     "description": "Webtrekk provides a high-end analytical tool to analyze the traffic on your website, identify success factors and optimize it on the basis of actual key indicators.",
     "project": "SDK Pixel SDKs",
@@ -9,12 +9,12 @@
     "author": "Webtrekk GmbH",
     "license": "MIT",
     "homepage": "https://mapp.com",
+    "publishConfig": {
+        "registry": "https://nexus-npm-prod.nbg.webtrekk.com/repository/npm-internal/"
+    },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel"
-    },
-    "bugs": {
-        "url": "https://github.com/Webtrekk/Webtrekk-Smart-Pixel/issues"
+        "url": "https://github.com/mapp-digital/sdk-pixel-smart-pixel-sdk"
     },
     "devDependencies": {
         "body-parser": "^1.19.0",
