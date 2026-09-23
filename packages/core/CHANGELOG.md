@@ -1,3 +1,23 @@
+<a name="1.11.0"></a>
+# 1.11.0 (2025-12-16)
+
+## Features
+- **Track link clicks that open in a new tab**: Link clicks that cause a new browser tab to open are now tracked correctly. A `ClickTracker` channel is opened on the source page and picked up when the new tab initialises, so the click event is attributed properly. All open channels are notified on page start, duplicate notifications are suppressed, and a `location` check is used instead of the referrer header to ensure correct behaviour in Safari.
+
+## Known Limitations
+The following interactions cannot be tracked:
+
+**Drag & drop**
+- Dragging a link into the address bar, onto the tab bar, or onto an existing tab does not fire a click event and is therefore not tracked.
+
+**Right-click → "Open in new tab" via context menu**
+- Only works for links pointing to the same origin. Links to external domains cannot be tracked because `BroadcastChannel` is restricted to the same origin.
+- The destination page must have the SDK loaded. If it does not, the channel times out silently after 2 seconds.
+- If the tab is opened more than 30 seconds after the right-click, the pending entry has expired and the click is no longer attributed.
+
+**Browser support**
+- The new-tab tracking flow (right-click context menu) requires `BroadcastChannel` support. Browsers that do not support this API will fall back to standard click tracking only, meaning right-click → "Open in new tab" interactions are not captured. `BroadcastChannel` is supported in Chrome 54+, Firefox 38+, Safari 15.4+, and Edge 79+. Notably, Safari versions before 15.4 do not support `BroadcastChannel` and will not capture this interaction type.
+
 <a name="1.8.2"></a>
 # 1.8.2 (2025-12-16)
 

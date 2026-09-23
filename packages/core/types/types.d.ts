@@ -271,6 +271,9 @@ interface SmartPixelCustomerAddProps {
     registrationLastName?: string;
     registrationGender?: string;
     registrationTitle?: string;
+    registrationIsoCode?: string;
+    registrationIsoLanguage?: string;
+    registrationTimezone?: string;
     registrationOptin?: boolean;
     category?: DataObject;
 }
@@ -302,6 +305,9 @@ interface SmartPixelCustomerGetProps {
     registrationLastName: string;
     registrationGender: string;
     registrationTitle: string;
+    registrationIsoCode?: string;
+    registrationIsoLanguage?: string;
+    registrationTimezone?: string;
     registrationOptin: boolean;
     category: DataObject;
 }
@@ -489,8 +495,6 @@ interface SmartPixelSessionData {
 interface SmartPixelSession {
     data: SmartPixelSessionData;
     parameter: SmartPixelParameter;
-    category: SmartPixelCategory;
-    goal: SmartPixelGoal;
 }
 
 /* **********************************************
@@ -569,6 +573,7 @@ interface SmartPixelProductActions {
     deleteFromWishlist: SmartPixelProduct;
     displayReco: SmartPixelProduct;
     clickReco: SmartPixelProduct;
+    viewReco: SmartPixelProduct;
 }
 
 /* **********************************************
@@ -1062,6 +1067,7 @@ interface SmartPixelExtension {
  ********************************************** */
 interface SmartPixelExtensionMarketingAutomationSetConfig {
     trackId?: string;
+    widgetDomain?: string;
     mediacode?: string[];
     keyword?: string[];
     baseUrl?: string;
@@ -1070,6 +1076,7 @@ interface SmartPixelExtensionMarketingAutomationSetConfig {
 
 interface SmartPixelExtensionMarketingAutomationGetConfig {
     trackId: string;
+    widgetDomain?: string;
     mediacode: string[];
     keyword: string[];
     baseUrl: string;
@@ -1142,11 +1149,15 @@ interface SmartPixelExtensionRecommendationTrackingConfigMaxSendProducts {
 }
 
 interface SmartPixelExtensionRecommendationTrackingSetConfig {
+    viewPercent: number;
+    viewTime: number;
     maxSendProducts?: SmartPixelExtensionRecommendationTrackingConfigMaxSendProducts;
     maxCookieSize?: NumberOrString;
 }
 
 interface SmartPixelExtensionRecommendationTrackingGetConfig {
+    viewPercent: number;
+    viewTime: number;
     maxSendProducts: SmartPixelExtensionRecommendationTrackingConfigMaxSendProducts;
     maxCookieSize: NumberOrString;
 }
@@ -1206,9 +1217,7 @@ interface SmartPixelExtension {
 }
 
 /* **********************************************
- *                                              *
  *                EXTENSION:MEDIA               *
- *                                              *
  ********************************************** */
 interface SmartPixelExtensionMediaSession {
     new(name: string): SmartPixelExtensionMediaSession;
